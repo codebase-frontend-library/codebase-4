@@ -1,0 +1,70 @@
+// UTILITIES: MARGINS
+// ~~~~~~~~~~~~~~~~~~
+
+@each $key, $value in $spacing {
+
+  // All
+  .m-#{$key} {
+    margin: $value;
+  }
+
+  // Top
+  .mt-#{$key} {
+    margin-top: $value;
+  }
+
+  // Right
+  .mr-#{$key} {
+    margin-right: $value;
+  }
+
+  // Bottom
+  .mb-#{$key} {
+    margin-bottom: $value;
+  }
+
+  // Left
+  .ml-#{$key} {
+    margin-left: $value;
+  }
+
+  // Vertical (Top and Bottom)
+  .my-#{$key} {
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+
+  // Horizontal (Right and Left)
+  .mx-#{$key} {
+    margin-right: $value;
+    margin-left: $value;
+  }
+}
+
+// Horizontal Centering by `margin: auto`
+.mx-auto {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+// Responsive vertical margins
+.my-responsive {
+  margin-top: $spacing-responsive;
+  margin-bottom: $spacing-responsive;
+}
+
+.mt-responsive {
+  margin-top: $spacing-responsive;
+}
+
+.mb-responsive {
+  margin-bottom: $spacing-responsive;
+}

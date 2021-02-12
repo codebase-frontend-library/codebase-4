@@ -1,0 +1,9 @@
+// Dark theme (for dark mode AND/OR optional `.theme-dark` class toggler)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.theme-dark {
+  color: $color-text-dark;
+  background: $color-background-dark;
+
+  @include theme-dark;
+}

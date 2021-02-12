@@ -1,0 +1,37 @@
+// COMPONENTS: TABLES
+// ~~~~~~~~~~~~~~~~~~
+
+.table {
+  width: 100%;
+  margin-bottom: $text-base-line-height * 1rem;
+  border-collapse: collapse;
+  border-spacing: 0;
+  &:not(&.table-borderless) {
+    th, td {
+      border: 1px solid $color-fineline;
+    }
+  }
+  th, td {
+    //border: 1px solid $color-fineline;
+    padding: $table-padding;
+    vertical-align: top;
+    text-align: left;
+  }
+
+  // Table variations
+  &-striped {
+    thead,
+    tbody tr:nth-child(even) {
+      background: rgba(255,255,255, 0.05);
+    }
+    tbody tr:nth-child(odd) {
+      background: rgba(29,28,31, 0.05);
+
+    }
+  }
+  &-compact {
+    th, td {
+      padding: 0.25rem 0.5rem;
+    }
+  }
+}

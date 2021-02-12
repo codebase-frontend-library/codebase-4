@@ -1,0 +1,175 @@
+// BASICS: FORM ELEMENTS (INCLUDING 
+// ~~~~~~~~~~~~~~~~~~~~~
+
+label {
+  display: inline-block;
+  padding: .5rem 0;
+}
+
+input,
+select,
+textarea {
+  position: relative;
+  display: block;
+  width: 100%;
+  outline: 0 none;
+  border: $form-border-thickness solid $color-fineline;
+  @if $form-input-rounded-corners == true {
+    border-radius: $form-radius;
+  } @else {
+    border-radius: 0 !important;
+  }
+  padding: $form-padding-default;
+  min-height: 2.5 * $text-base-font-size;
+  line-height: (2.5 * ($text-base-font-size / 2)) - (2 * $form-border-thickness);
+  color: $color-text;
+  transition: all 0.3s ease;
+}
+[placeholder] {
+  text-overflow: ellipsis;
+}
+
+[type=button],
+[type=reset],
+[type=submit] {
+  width: auto;
+}
+select {
+  padding-top: .25em;
+  padding-bottom: .25em;
+  overflow: auto;
+}
+select:not([multiple]) {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='1.5'%3E%3Cpath d='M6 6l4 4 4-4' fill='none' stroke='%23000' stroke-width='1.33334'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1em 1em;
+}
+
+fieldset {
+  min-width: 0;
+}
+
+option {
+  padding: .25em 0;
+}
+
+[type="text"],
+[type="email"],
+[type="tel"],
+[type="search"],
+[type="number"],
+[type="date"],
+[type="month"],
+[type="password"],
+textarea,
+select {
+  -webkit-appearance: none;
+  @if $form-input-background==true {
+    background: $color-form-element;
+  }
+  &:focus-visible {
+    box-shadow: $ui-focus-glow;
+  }
+}
+
+input[type="number"] {
+  padding: 0;
+  padding-left: .125em;
+}
+
+select {
+  vertical-align: baseline;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  display: inline-block;
+  width: 2rem;
+  min-height: auto;
+  margin: 0;
+  padding: 0 0.25rem;
+  line-height: 1;
+}
+
+input[type="radio"] {
+  -webkit-appearance: radio;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: checkbox;
+}
+
+textarea {
+  vertical-align: top;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  line-height: 1.5;
+  overflow: auto;
+}
+
+// min heights to prevent empty date fields collapsing on iOS Safari (because no placeholder text)
+.form-element-sm {
+  min-height: 2 * $text-base-font-size;
+  padding: $form-padding-sm;
+}
+.form-element-lg {
+  min-height: 3 * $text-base-font-size;
+  padding: $form-padding-lg;
+}
+
+.flex input {
+  display: flex !important;
+}
+
+.inline-block input {
+  display: inline-block !important;
+}
+
+@mixin button {
+  position: relative;
+  -webkit-appearance: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.5rem;
+  margin: 0;
+  border: 1px solid $color-fineline;
+  border-radius: $border-radius-sm;
+  padding: $button-padding-default;
+  font-weight: $button-font-weight;
+  text-decoration: none !important; // prevents hover underline when applied to anchors
+  white-space: nowrap;
+  color: $color-text-alt;
+  background: transparent;
+  transition: $button-state-transition;
+  &:hover,
+  &:active,
+  &.active {
+    cursor: pointer;
+    background: $color-background-alt;
+  }
+
+  &:disabled {
+    position: relative;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &:focus-visible {
+    box-shadow: $ui-focus-glow;
+  }
+
+  @if $button-rounded-corners == true {
+    border-radius: $button-radius;
+  } else {
+    border-radius: 0;
+  }
+}
+
+button,
+[type="button"],
+[type="submit"],
+[type="reset"] {
+  @include button;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Docs for Codebase, the super tiny website frontend library (CSS/JS).">
+
+  <title>{{ title + ' · ' if title }}Codebase</title>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <meta name="msapplication-TileColor" content="#262626">
+  <meta name="theme-color" content="#262626">
+
+  <link href="/prism/prism.css" rel="stylesheet">
+  <!-- <link href="/dist/codebase.css" rel="stylesheet"> -->
+  <link href="/dist/codebase-l-d.css" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    h2, h3 {
+      scroll-margin-top: 82px;
+    }
+
+    /* Brand */
+    .theme-dark .codebase-docs,
+    .theme-dark .codebase-docs:hover {
+      color: #f2f2f2;
+    }
+    .theme-light .codebase-docs,
+    .theme-light .codebase-docs:hover {
+      color: #0d0d0d;
+    }
+
+    /* Homepage hero wallpaper */
+    .theme-light .docs-wallpaper {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 340 180' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-miterlimit='2'%3E%3Cpath d='M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z' fill-rule='nonzero' fill='%23f5f5f5' stroke='%23f5f5f5' stroke-width='10'/%3E%3C/svg%3E");
+    }
+
+    .theme-dark .docs-wallpaper {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 340 180' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-miterlimit='2'%3E%3Cpath d='M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z' fill-rule='nonzero' fill='%230d0d0d' stroke='%230d0d0d' stroke-width='10'/%3E%3C/svg%3E");
+    }
+
+    header.docs-wallpaper {
+      background-repeat: no-repeat;
+      background-size: 200vw auto;
+      background-position: -100vw 12.5vh;
+    }
+
+    #site-title {
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+    }
+    #site-title svg {
+      position: relative;
+      height: 18px;
+      width: 34px;
+      top: .0625em;
+      margin-right: .325em;
+      transform: scale(1.5);
+    }
+    .theme-toggle:hover {
+      cursor: pointer;
+    }
+    body.theme-dark .theme-moon {
+      display: none
+    }
+    body.theme-light .theme-sun {
+      display: none
+    }
+    #site-title a.active {
+      font-weight: bold;
+    }
+
+    #docs-menu {width: 320px; transition: all .3s linear;}
+    @media (max-width: 1023px) {
+      #docs-menu {position: fixed; min-height: 100%; top: 0; bottom: 0; left: 0; z-index: 999; overflow-y: auto; transform: translateX(-100%);}
+      #docs-menu.is-active {transform: translateX(0);}
+    }
+    @media (min-width: 1024px) {
+      #docs-main {position: relative; display: flex;}
+      #docs-menu {height: 100%;}
+      #docs-menu.is-active {margin-left: -320px;}
+      .docs-menu-inner {position: sticky; top: 57px; height: calc(100vh - 57px);}
+    }
+
+    /**
+     * Prism overrides
+     */
+    pre[class="language-html"],
+    pre[class="language-css"],
+    pre[class="language-scss"],
+    pre[class="language-js"] {
+      border: 1px solid rgba(153,153,153,.5);
+      margin-bottom: 1.5rem;
+    }
+    code[class="language-html"],
+    code[class="language-css"],
+    code[class="language-scss"],
+    code[class="language-js"] {
+      background: transparent;
+    }
+    .theme-light code[class*="language-"], .theme-light pre[class*="language-"] {
+      color: #f8f8f2;
+    }
+  </style>
+</head>
+<body>

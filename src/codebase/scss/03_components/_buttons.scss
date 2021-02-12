@@ -1,0 +1,73 @@
+// COMPONENTS: BUTTONS
+// ~~~~~~~~~~~~~~~~~~~
+
+.btn {
+  @include button; // see 00_setup/_base.scss
+  color: $color-ui-text;
+  background: $color-ui-default;
+  border-color: $color-ui-default;
+  &:hover,
+  &:active,
+  &.active {
+    background: $color-button-default-hover;
+    border-color: $color-button-default-hover;
+    color: $color-ui-text-hover;
+  }
+  &.block {
+    display: flex;
+    width: 100%;
+  }  
+}
+
+// Button size
+.btn {
+  &-sm {
+    height: 2rem;
+    padding: $button-padding-sm;
+  }
+  &-lg {
+    height: 3rem;
+    padding: $button-padding-lg;
+  }
+}
+// Button icon (makes square)
+.btn-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  height: $button-default-size-multiplier * 1rem;
+  width: $button-default-size-multiplier * 1rem;
+  min-width: $button-default-size-multiplier * 1rem;
+  &.btn-sm {
+    height: $button-sm-size-multiplier * 1rem;
+    width: $button-sm-size-multiplier * 1rem;
+    min-width: $button-sm-size-multiplier * 1rem;
+  }
+  &.btn-lg {
+    height: $button-lg-size-multiplier * 1rem;
+    width: $button-lg-size-multiplier * 1rem;
+    min-width: $button-lg-size-multiplier * 1rem;
+  }
+}
+
+// UI colors
+@each $key, $value in $color-ui {
+  .btn-#{$key} {
+    border-color: $value;
+    background: $value;
+  }
+}
+
+
+
+@each $key, $value in $color-button-hover {
+  .btn-#{$key} {
+    &:hover,
+    &:active,
+    &.active {
+      border-color: $value;
+      background: $value !important;
+    }
+  }
+}

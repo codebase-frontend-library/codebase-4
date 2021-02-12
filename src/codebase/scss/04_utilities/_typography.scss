@@ -1,0 +1,123 @@
+// UTILITIES: TEXT
+// ~~~~~~~~~~~~~~~
+
+// Also see `.t-` colors.
+
+// Text alignment
+@mixin text-alignment {
+  &-left {
+    text-align: left !important;
+  }
+  
+  &-center,
+  &-centered {
+    text-align: center !important;
+  }
+  
+  &-right {
+    text-align: right !important;
+  }
+}
+
+.t {
+  @include text-alignment;
+}
+
+@include break-min($mq-md) {
+  .t-md {
+    @include text-alignment;
+  }
+}
+
+@include break-min($mq-md) {
+  .t-lg {
+    @include text-alignment;
+  }
+}
+
+// Text styles
+.t-bolder,
+.t-heavy {
+  font-weight: $text-bolder-font-weight;
+}
+
+.t-bold,
+.t-strong {
+  font-weight: $text-bold-font-weight;
+}
+
+.t-semibold {
+  font-weight: $text-semibold-font-weight;
+}
+
+.t-normal {
+  font-weight: $text-base-font-weight;
+  font-style: normal;
+}
+
+.t-lighter,
+.t-thin {
+  font-weight: $text-thin-font-weight;
+}
+
+.t-italic,
+.t-em {
+  font-style: italic;
+}
+
+.t-decoration-none {
+  text-decoration: none !important;
+}
+
+.t-strike {
+  text-decoration: line-through;
+}
+
+.t-muted {
+  opacity: 0.5;
+}
+
+.t-uppercase {
+  text-transform: uppercase;
+}
+
+.t-loose {
+  letter-spacing: .0625rem;
+}
+
+.t-tight {
+  letter-spacing: -.0625rem;
+}
+
+.t-columns {
+  column-width: $text-columns-width;
+  column-gap: $text-columns-gap-width;
+}
+
+big,
+.t-big,
+.t-lg,
+.t-large {
+  font-size: 1.25em;
+  @include break-min($mq-md) {
+    font-size: 1.5em;
+  }
+  line-height: inherit;
+}
+
+small,
+.t-small,
+.t-sm {
+  font-size: .85em;
+  line-height: inherit;
+}
+
+.t-nowrap {
+  white-space: nowrap;
+}
+
+// Viewport width responsive text size e.g. for long reads
+
+.t-long-read {
+  font-size: clamp(1rem, calc(0.3rem + 1vw), 1.3rem);
+}

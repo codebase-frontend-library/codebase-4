@@ -1,0 +1,367 @@
+<script>
+  function docsOcState() {
+    let windowWidth = window.innerWidth;
+    return {
+      docsOcIsOpen: false,
+      docsOcCloseMdDown() {        
+        if (window.innerWidth !== windowWidth) {
+          this.docsOcIsOpen = false
+        }
+      }
+    }
+  }
+</script>
+
+<div
+x-data="docsOcState()"
+@resize.window="docsOcCloseMdDown()"
+>
+  <div
+    class="backdrop hide-md-up scroll-unlock"
+    x-show="docsOcIsOpen"
+    @click="docsOcIsOpen = false, $dispatch('docsocclose')"
+  ></div>
+
+  <div
+    id="docs-menu"
+    class="relative bg-color-background br-thin"
+    :class="{ 'is-active bs': docsOcIsOpen }"
+    x-on:docsctoggler.window="docsOcIsOpen = !docsOcIsOpen"
+  >
+    <div class="sticky hide-md-up bb-thin p-1 t-right bg-color-background" style="z-index: 1; height: 57px;">
+      <button
+        class="b-0 btn-icon rounded-full scroll-unlock"
+        @click="docsOcIsOpen = false, $dispatch('docsocclose')"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+    </div>
+    <div class="docs-menu-inner pb-3 overflow-y">
+      <div>
+        <div class="mt-3 hide-md-up">
+          <ul class="menu">
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="">Download</a>
+            </li>
+            <li>
+              <a href="">GitHub</a>
+            </li>
+          </ul>
+          <hr/>
+        </div>
+
+        <h4 class="mt-3 px-2 t-thin t-loose">Documentation</h4>
+
+        {% if '1-getting-started' in page.url %}
+        <div x-data="{ revealed: true }">
+        {% else %}
+        <div x-data="{ revealed: false }">
+        {% endif %}
+          <button
+            class="block b-0 unrounded p-1"
+            @click="revealed = !revealed"
+          >
+            <div class="flex">
+              <svg x-show="!revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 6 15 12 9 18" /></svg>
+              <svg x-show="revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
+              <span>Getting started</span>
+            </div>
+          </button>
+          <div
+            class="overflow-hidden max-height-0"
+            x-ref="panel"
+            x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
+            <div class="px-2">
+              <ul class="menu">
+                <li><a href="/docs/1-getting-started/simple-HTML-setup">Simple HTML setup</a></li>
+                <li><a href="/docs/1-getting-started/codebase-scss-library">The Codebase SCSS library</a></li>
+                <li><a href="/docs/1-getting-started/alpinejs-or-activator">AlpineJS or Activator components</a></li>
+                <li><a href="/docs/1-getting-started/responsive-design">Responsive design</a></li>
+                <li><a href="/docs/1-getting-started/light-and-dark-themes">Light and dark themes</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {% if '/docs/2-codebase-basics/' in page.url %}
+        <div x-data="{ revealed: true }">
+        {% else %}
+        <div x-data="{ revealed: false }">
+        {% endif %}
+          <button
+            class="block b-0 unrounded p-1"
+            @click="revealed = !revealed"
+          >
+            <div class="flex">
+              <svg x-show="!revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 6 15 12 9 18" /></svg>
+              <svg x-show="revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
+              <span>Codebase basics</span>
+            </div>
+          </button>
+          <div
+            class="overflow-hidden max-height-0"
+            x-ref="panel"
+            x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
+            <div class="px-2">
+              <ul class="menu">
+                <li><a href="/docs/2-codebase-basics/element-grid">Element grid</a></li>
+                <li><a href="/docs/2-codebase-basics/headings">Headings</a></li>
+                <li><a href="/docs/2-codebase-basics/paragraphs">Paragraphs</a></li>
+                <li><a href="/docs/2-codebase-basics/simple-text-elements">Simple text elements</a></li>
+                <li><a href="/docs/2-codebase-basics/lists">Lists</a></li>
+                <li><a href="/docs/2-codebase-basics/horizontal-rules">Horizontal rules</a></li>
+                <li><a href="/docs/2-codebase-basics/blockquotes">Blockquotes</a></li>
+                <li><a href="/docs/2-codebase-basics/tables">Tables</a></li>
+                <li><a href="/docs/2-codebase-basics/form-elements">Form elements</a></li>
+                <li><a href="/docs/2-codebase-basics/images">Images</a></li>
+                <li><a href="/docs/2-codebase-basics/audio-and-video">Audio and video</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {% if '3-responsive-layouts' in page.url %}
+        <div x-data="{ revealed: true }">
+        {% else %}
+        <div x-data="{ revealed: false }">
+        {% endif %}
+          <button
+            class="block b-0 unrounded p-1"
+            @click="revealed = !revealed"
+          >
+            <div class="flex">
+              <svg x-show="!revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 6 15 12 9 18" /></svg>
+              <svg x-show="revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
+              <span>Responsive layouts</span>
+            </div>
+          </button>
+          <div
+            class="overflow-hidden max-height-0"
+            x-ref="panel"
+            x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
+            <div class="px-2">
+              <ul class="menu">
+                <li><a href="/docs/3-responsive-layouts/containers">Containers</a></li>
+                <li><a href="/docs/3-responsive-layouts/bleeds">Bleeds</a></li>
+                <li><a href="/docs/3-responsive-layouts/grid">Grid system</a></li>
+                <li><a href="/docs/3-responsive-layouts/flex">Flex (flexbox) system</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-1 p-block t-thin t-loose t-uppercase t-small">Utilities</div>
+
+        {% if '4-layout-utilities' in page.url %}
+        <div x-data="{ revealed: true }">
+        {% else %}
+        <div x-data="{ revealed: false }">
+        {% endif %}
+          <button
+            class="block b-0 unrounded p-1"
+            @click="revealed = !revealed"
+          >
+            <div class="flex">
+              <svg x-show="!revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 6 15 12 9 18" /></svg>
+              <svg x-show="revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
+              <span>Layout</span>
+            </div>
+          </button>
+          <div
+            class="overflow-hidden max-height-0"
+            x-ref="panel"
+            x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
+            <div class="px-2">
+              <ul class="menu">
+                <li><a href="/docs/4-layout-utilities/blocks">Blocks</a></li>
+                <li><a href="/docs/4-layout-utilities/floats">Floats</a></li>
+                <li><a href="/docs/4-layout-utilities/positions">Positions</a></li>
+                <li><a href="/docs/4-layout-utilities/dimensions">Dimensions</a></li>
+                <li><a href="/docs/4-layout-utilities/overflows">Overflows</a></li>
+                <li><a href="/docs/4-layout-utilities/invisibility">Invisibility</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {% if '5-typographic-utilities' in page.url %}
+        <div x-data="{ revealed: true }">
+        {% else %}
+        <div x-data="{ revealed: false }">
+        {% endif %}
+          <button
+            class="block b-0 unrounded p-1"
+            @click="revealed = !revealed"
+          >
+            <div class="flex">
+              <svg x-show="!revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 6 15 12 9 18" /></svg>
+              <svg x-show="revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
+              <span>Typography</span>
+            </div>
+          </button>
+          <div
+            class="overflow-hidden max-height-0"
+            x-ref="panel"
+            x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
+            <div class="px-2">
+              <ul class="menu">
+                <li><a href="/docs/5-typographic-utilities/inline-text">Inline text</a></li>
+                <li><a href="/docs/5-typographic-utilities/headings">Headings</a></li>
+                <li><a href="/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
+                <li><a href="/docs/5-typographic-utilities/large-display-text">Large display text</a></li>
+                <li><a href="/docs/5-typographic-utilities/long-read-text">Long read text</a></li>
+                <li><a href="/docs/5-typographic-utilities/text-columns">Text columns</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {% if '6-decoration-utilities' in page.url %}
+        <div x-data="{ revealed: true }">
+        {% else %}
+        <div x-data="{ revealed: false }">
+        {% endif %}
+          <button
+            class="block b-0 unrounded p-1"
+            @click="revealed = !revealed"
+          >
+            <div class="flex">
+              <svg x-show="!revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 6 15 12 9 18" /></svg>
+              <svg x-show="revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
+              <span>Decoration</span>
+            </div>
+          </button>
+          <div
+            class="overflow-hidden max-height-0"
+            x-ref="panel"
+            x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
+            <div class="px-2">
+              <ul class="menu">
+                <li><a href="/docs/6-decoration-utilities/spacing">Spacing</a></li>
+                <li><a href="/docs/6-decoration-utilities/borders">Borders</a></li>
+                <li><a href="/docs/6-decoration-utilities/rounded-corners">Rounded corners</a></li>
+                <li><a href="/docs/6-decoration-utilities/box-shadows">Box shadows</a></li>
+                <li><a href="/docs/6-decoration-utilities/colors">Colors</a></li>
+                <li><a href="/docs/6-decoration-utilities/images">Images</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-1 p-block t-thin t-loose t-uppercase t-small">Components</div>
+
+        {% if '7-simple-components' in page.url %}
+        <div x-data="{ revealed: true }">
+        {% else %}
+        <div x-data="{ revealed: false }">
+        {% endif %}
+          <button
+            class="block b-0 unrounded p-1"
+            @click="revealed = !revealed"
+          >
+            <div class="flex">
+              <svg x-show="!revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 6 15 12 9 18" /></svg>
+              <svg x-show="revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
+              <span>Simple (CSS only)</span>
+            </div>
+          </button>
+          <div
+            class="overflow-hidden max-height-0"
+            x-ref="panel"
+            x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
+            <div class="px-2">
+              <ul class="menu">
+                <li><a href="/docs/7-simple-components/about-simple-components">About simple components</a></li>
+                <li><a href="/docs/7-simple-components/menus">Menus</a></li>
+                <li><a href="/docs/7-simple-components/heros">Heros</a></li>
+                <li><a href="/docs/7-simple-components/tables">Tables</a></li>
+                <li><a href="/docs/7-simple-components/buttons">Buttons</a></li>
+                <li><a href="/docs/7-simple-components/badges">Badges</a></li>
+                <li><a href="/docs/7-simple-components/labels">Labels</a></li>
+                <li><a href="/docs/7-simple-components/media-objects">Media objects</a></li>
+                <li><a href="/docs/7-simple-components/cards">Cards</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {% if '8-alpinejs-components' in page.url %}
+        <div x-data="{ revealed: true }">
+        {% else %}
+        <div x-data="{ revealed: false }">
+        {% endif %}
+          <button
+            class="block b-0 unrounded p-1"
+            @click="revealed = !revealed"
+          >
+            <div class="flex">
+              <svg x-show="!revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 6 15 12 9 18" /></svg>
+              <svg x-show="revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
+              <span>Using AlpineJS</span>
+            </div>
+          </button>
+          <div
+            class="overflow-hidden max-height-0"
+            x-ref="panel"
+            x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
+            <div class="px-2">
+              <ul class="menu">
+                <li><a href="/docs/8-alpinejs-components/about-alpinejs-components">About AlpineJS components</a></li>
+                <li><a href="/docs/8-alpinejs-components/alpinejs-showhides">Showhides</a></li>
+                <li><a href="/docs/8-alpinejs-components/alpinejs-dropdowns">Dropdowns</a></li>
+                <li><a href="/docs/8-alpinejs-components/alpinejs-modals">Modals</a></li>
+                <li><a href="/docs/8-alpinejs-components/alpinejs-offcanvas">Offcanvas</a></li>
+                <li><a href="/docs/8-alpinejs-components/alpinejs-tabs">Tabs</a></li>
+                <li><a href="/docs/8-alpinejs-components/alpinejs-accordions">Accordions</a></li>
+                <li><a href="/docs/8-alpinejs-components/alpinejs-slideshows">Slideshows</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {% if '9-activator-components' in page.url %}
+        <div x-data="{ revealed: true }">
+        {% else %}
+        <div x-data="{ revealed: false }">
+        {% endif %}
+          <button
+            class="block b-0 unrounded p-1"
+            @click="revealed = !revealed"
+          >
+            <div class="flex">
+              <svg x-show="!revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 6 15 12 9 18" /></svg>
+              <svg x-show="revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
+              <span>Using Activator</span>
+            </div>
+          </button>
+          <div
+            class="overflow-hidden max-height-0"
+            x-ref="panel"
+            x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
+            <div class="px-2">
+              <ul class="menu">
+                <li><a href="/docs/9-activator-components/about-activator-components">About Activator components</a></li>
+                <li><a href="/docs/9-activator-components/activator-classes-and-attributes">Activator classes and attributes</a></li>
+                <li><a href="/docs/9-activator-components/activator-showhides">Showhides</a></li>
+                <li><a href="/docs/9-activator-components/activator-dropdowns">Dropdowns</a></li>
+                <li><a href="/docs/9-activator-components/activator-modals">Modals</a></li>
+                <li><a href="/docs/9-activator-components/activator-offcanvas">Offcanvas</a></li>
+                <li><a href="/docs/9-activator-components/activator-tabs">Tabs</a></li>
+                <li><a href="/docs/9-activator-components/activator-accordions">Accordions</a></li>
+                <li><a href="/docs/9-activator-components/activator-slideshows">Slideshows</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

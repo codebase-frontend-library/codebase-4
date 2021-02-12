@@ -1,0 +1,343 @@
+// BASICS: DEFAULT VARIABLES
+// ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// INDEX ///////////////////////////////////////////////////////////////////////
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// (1.) Colors – from swatches in `__default-colors.scss`
+// (2.) Decoration – used in utilities and components
+// (3.) Layout
+// (4.) Basics and Typography
+// (5.) Components
+
+// These is the Codebase core variables -- theme variablles are not included here
+// (other than the light theme default).
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// (1.) Colors /////////////////////////////////////////////////////////////////
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Default (Light Theme) Colors
+$color-primary:                  $base-color-primary-500 !default;
+$color-secondary:                $base-color-secondary-500 !default;
+$color-success:                  $base-color-success-500 !default;
+$color-warning:                  $base-color-warning-500 !default;
+$color-danger:                   $base-color-danger-500 !default;
+
+$color-primary-hover:            $base-color-primary-600 !default;
+$color-secondary-hover:          $base-color-secondary-600 !default;
+$color-success-hover:            $base-color-success-600 !default;
+$color-warning-hover:            $base-color-warning-600 !default;
+$color-danger-hover:             $base-color-danger-600 !default;
+
+$color-primary-alt:              $base-color-primary-100 !default;
+$color-secondary-alt:            $base-color-secondary-100 !default;
+$color-success-alt:              $base-color-success-100 !default;
+$color-warning-alt:              $base-color-warning-100 !default;
+$color-danger-alt:               $base-color-danger-100 !default;
+
+$color-background:               #ffffff !default;
+$color-background-alt:           $base-color-detail-50 !default;
+$color-fineline:                 $base-color-detail-200 !default;
+$color-muted:                    $base-color-detail-400 !default;
+$color-ui-default:               $base-color-detail-500 !default;
+$color-button-default-hover:     $base-color-detail-600 !default;
+$color-text:                     $base-color-detail-750 !default;
+$color-text-alt:                 $base-color-detail-950 !default;
+
+$color-ui-text:                  #ffffff !default; // button text, etc.
+$color-ui-text-hover:            $color-ui-text !default;
+$color-ui-focus-glow:            rgba(51, 102, 225,.5) !default;
+$color-backdrop:                 rgba(0,0,0,.5) !default;
+$color-hyperlink:                lighten($color-primary, 10%) !default;
+$color-hyperlink-hover:          darken($color-primary, 5%) !default;
+$color-form-element:             $base-color-detail-50 !default;
+$color-highlight:                rgba(255,204,0,.8) !default;
+$color-selection:                rgba(51,204,51,0.5) !default;
+
+// Default Theme UI Color Map
+// Used for buttons, badges, labels and utility classes
+$color-ui: () !default;
+$color-ui: map-merge((
+  "primary":          $color-primary,
+  "secondary":        $color-secondary,
+  "success":          $color-success,
+  "warning":          $color-warning,
+  "danger":           $color-danger,
+), $color-ui);
+
+$color-button-hover: () !default;
+$color-button-hover: map-merge((
+  "primary":          $color-primary-hover,
+  "secondary":        $color-secondary-hover,
+  "success":          $color-success-hover,
+  "warning":          $color-warning-hover,
+  "danger":           $color-danger-hover,
+), $color-button-hover);
+
+// Default Theme UI Alt Color Map
+// Used for utility classes, so that you can create your own alerts, toasts, form reactivity, etc.
+$color-ui-alt: () !default;
+$color-ui-alt: map-merge((
+  "primary-alt":     $color-primary-alt,
+  "secondary-alt":   $color-secondary-alt,
+  "success-alt":     $color-success-alt,
+  "warning-alt":     $color-warning-alt,
+  "danger-alt":      $color-danger-alt,
+), $color-ui-alt);
+
+// Default scheme Utility Color Map
+$color-scheme: () !default;
+$color-scheme: map-merge((
+  "background":             $color-background,
+  "background-alt":         $color-background-alt,
+  "fineline":               $color-fineline,
+  "default":                $color-ui-default,
+  "text":                   $color-text,
+  "text-alt":               $color-text-alt
+), $color-scheme);
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// (2.) Decoration /////////////////////////////////////////////////////////////
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Codebase component decoration is all controlled by the following
+// set of decoration variables. These same variables are used
+// throughout Codebase typography, components and utilities.
+
+// Element grid
+// Throughout the Codebase SCSS, a 0.5rem element grid has been used
+// wherever possible. In other words, line-heights, margins and
+// paddings have been set at increments of 0.5rem.
+// In addition, a set of margin and padding decoration utility
+// classes are generated with increments of 0.5rem.
+// In some situations, a half element-grid unit is useful too.
+
+// SCSS map for decoration margins and paddings
+$spacing: () !default;
+$spacing: map-merge((
+  "0":                0,
+  "half":             0.25rem,   // half element grid unit (approx. 1 letter space width)
+  "1":                0.5rem,    // = 1 element grid unit
+  "2":                1rem,
+  "3":                1.5rem,    // = same as height of 1 line of default text
+  "4":                2rem,
+  "5":                2.5rem,
+  "6":                3rem,      // = same as 2 lines of text
+), $spacing);
+
+// Other Spacing
+$spacing-block:       0.5rem 1rem !default; // E.g. menu links (see also $table-padding)
+$spacing-responsive:  clamp(48px, 6vw, 120px) !default; // used for vertical margin and padding utilities only
+
+// Borders
+$border-thin:                   1px !default;
+$border-thick:                  4px !default;
+$border-heavy:                  8px !default;
+
+// Border radius (rounded corners)
+$border-radius-sm:              4px !default; // will be used for UI elements by default (see hereinafter)
+$border-radius:                 8px !default;
+$border-radius-lg:              16px !default;
+$border-radius-pill:            4em !default;
+$border-radius-circle:          50% !default;
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// (3.) Layout //////////////////////////////////////////////////////
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Widths (used for media query breakpoints, containers, and width utilities)
+$width-xxs:                   320px !default;
+$width-xs:                    568px !default;
+$width-sm:                    768px !default;
+$width-md:                    1024px !default;
+$width-lg:                    1280px !default;
+$width-xl:                    1440px !default;
+$width-xxl:                   1600px !default;
+$width-max:                   $width-xxl !default;
+
+// Containers
+$use-container-grid:          true !default;
+$container-grid-sm:           1fr 3% unquote('min(720px, 94%)') 3% 1fr !default; // 720px + 6% ≈ 768px
+$container-grid-md:           1fr 3% unquote('min(960px, 94%)') 3% 1fr !default; // 960px + 6% ≈ 1024px
+$container-grid-lg:           1fr 3% unquote('min(1200px, 94%)') 3% 1fr !default; // 1200px + 6% ≈ 1280px
+$container-grid-max:          1fr 3% unquote('min(1500px, 94%)') 3% 1fr !default; // 1500px + 6% ≈ 1600px
+
+$container-padding-fallback:  0 16px !default;
+
+// Breakpoints
+$mq-sm:                       $width-sm !default;
+$mq-md:                       $width-md !default;
+$mq-lg:                       $width-lg !default;
+
+// Flexbox System
+$flex-gap-width-negative: clamp(-12px, -1.25vw, -18px) !default;
+$flex-gap-width: clamp(12px, 1.25vw, 18px) !default;
+
+// CSS Grid System
+$grid-max-cols: 4 !default;
+$grid-max-rows: 4 !default;
+$grid-gap-width: clamp(24px, 2.5vw, 36px) !default;
+// `$grid-gap-width` is used for column gaps and margin-bottom (not row gaps)
+// of grid cells -- because you would still want vertical spacing on
+// collapsed grids (below the md or lg breakpoint)
+
+$sticky-gap:        1.5rem !default;
+
+$square-size-sm:    3rem !default;
+$square-size:       6rem !default;
+$square-size-lg:    12rem !default;
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// (4.) Basics and Typography ///////////////////////////////////////
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+$text-base-font-family:
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Roboto,
+  Oxygen-Sans,
+  Ubuntu,
+  Cantarell,
+  "Helvetica Neue",
+  sans-serif !default;
+
+$code-font-family:
+  SFMono-Regular,
+  Menlo,
+  Consolas,
+  Lucida Console,
+  Courier,
+  monospace !default;
+
+$heading-size-scale: () !default;
+$heading-size-scale: map-merge((
+  "h1":         2.625em,
+  "h2":         2em,
+  "h3":         1.625em,
+  "h4":         1.325em,
+  "h5":         1.125em,
+  "h6":         1em
+), $heading-size-scale);
+    
+$heading-weight: () !default;
+$heading-weight: map-merge((
+  "h1":         700,
+  "h2":         500,
+  "h3":         500,
+  "h4":         400,
+  "h5":         400,
+  "h6":         400
+), $heading-weight);
+
+$heading-line-height: () !default;
+$heading-line-height: map-merge((
+  "h1":         1.25,
+  "h2":         1.25,
+  "h3":         1.25,
+  "h4":         1.5,
+  "h5":         1.5,
+  "h6":         1.5
+), $heading-line-height);
+
+$text-base-font-size:               16px !default;
+$text-base-line-height:             1.5 !default;
+
+$text-thin-font-weight:             200 !default;
+$text-base-font-weight:             400 !default;
+$text-semibold-font-weight:         500 !default;
+$text-bold-font-weight:             700 !default;
+$text-bolder-font-weight:           900 !default;
+
+$text-columns-gap-width:            clamp(24px, 2.5vw, 36px) !default;
+$text-columns-width:                17.5em !default;
+
+// Hyperlinks
+$text-decoration-hyperlink:         underline !default;
+$text-hyperlink-hover:              true !default;
+$text-decoration-hyperlink-hover:   underline !default;
+
+// Blockquotes
+$blockquotes-font-size:             $text-base-font-size !default;
+$blockquotes-side-padding:          2.5vw !default;
+
+// Horizontal Rules
+$horizontal-rule-spacing:           1.5rem !default;
+$horizontal-rule-thickness:         $border-thin !default;
+
+// Lists
+$li-spacing:                        1rem !default;
+
+// Code (see also $code-font-family above)
+$code-rounded-corners:              true !default;
+$code-radius:                       $border-radius-sm !default;
+$code-background:                   true !default;
+
+// Forms
+$form-border-thickness:             1px !default;
+$form-input-background:             true !default;
+$form-input-rounded-corners:        true !default;
+$form-radius:                       $border-radius-sm !default;
+$form-sm-size-multiplier:           2 !default;
+$form-default-size-multiplier:      2.5 !default;
+$form-lg-size-multiplier:           3 !default;
+$form-padding-sm:                   0 0.25rem !default;
+$form-padding-default:              0 .5rem !default;
+$form-padding-lg:                   0 1rem !default;
+
+// UI focus glow (used for forms and buttons)
+// There is no `box-shadow-color` rule in CSS!
+$ui-focus-glow:                     0 0 0 3px $color-ui-focus-glow !default;
+
+$box-shadow-1:                      0 2px 6px rgba(0,0,0,.2) !default;
+$box-shadow-2:                      0 6px 12px rgba(0,0,0,.2) !default;
+$box-shadow-3:                      0 10px 18px rgba(0,0,0,.2) !default;
+$box-shadow-inset:                  inset 0 0 8px rgba(0,0,0,.2) !default;
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// (5.) Components //////////////////////////////////////////////////
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Buttons
+$button-state-transition:           all 0.15s ease-in-out !default;
+$button-border-thickness:           1px !default;
+$button-rounded-corners:            true !default;
+$button-radius:                     $border-radius-sm !default;
+$button-sm-size-multiplier:         $form-sm-size-multiplier !default;
+$button-default-size-multiplier:    $form-default-size-multiplier !default;
+$button-lg-size-multiplier:         $form-lg-size-multiplier !default;
+$button-padding-sm:                 0 .625rem !default;
+$button-padding-default:            0 1rem !default;
+$button-padding-lg:                 0 1.25rem !default;
+$button-padding-icon:               0 !default;
+$button-font-weight:                600 !default;
+
+// Labels
+$label-rounded-corners:             true !default;
+$label-border-radius:               $border-radius-sm !default;
+
+// Tabs
+$tab-control-border-radius:         $border-radius-sm !default !default;
+
+// Tables
+$table-padding:                     $spacing-block !default;
+
+// Offcanvas
+$offcanvas-width:                   $width-xs !default;
+$offcanvas-transition:              all 0.3s linear !default;
+
+// Modals
+$modal-transition-backdrop:         all 0.6s ease-in-out !default;
+$modal-transition-panel:            all 0.3s ease-in-out !default;
+$modal-narrow-min:                  300px !default;
+$modal-narrow-mq:                   $mq-md !default;
+$modal-narrow-max:                  600px !default;
+
+// z-index of components
+$z-index-dropdown-panel:            1 !default;
+$z-index-backdrop:                  998 !default;
+$z-index-modal:                     999 !default;
+$z-index-offcanvas:                 999 !default;
+$z-index-tab-active:                1 !default;

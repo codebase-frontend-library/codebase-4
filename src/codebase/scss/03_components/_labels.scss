@@ -1,0 +1,22 @@
+// COMPONENTS: LABELS
+// ~~~~~~~~~~~~~~~~~~
+
+.label {
+  position: relative;
+  display: inline-block;
+  @if $label-rounded-corners==true {
+    border-radius: $label-border-radius;
+  }
+  line-height: 1.5em;
+  padding: 0 0.4em 0.1em;
+  white-space: nowrap;
+  color: $color-ui-text;
+  background: $color-ui-default;
+}
+
+@each $key, $value in $color-ui {
+  .label-#{$key} {
+    border-color: $value;
+    background: $value;
+  }
+}

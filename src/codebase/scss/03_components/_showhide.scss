@@ -1,0 +1,15 @@
+// COMPONENTS: SHOWHIDE
+// ~~~~~~~~~~~~~~~~~~~~
+
+.showhide-panel,
+.accordion-panel {
+  overflow-y: hidden;
+  max-height: 0;
+  transition: max-height .6s cubic-bezier(0, 1, 0, 1);
+  cursor: default;
+
+  &.active {
+    max-height: 1000px;
+    transition-timing-function: ease-in;
+  }
+}

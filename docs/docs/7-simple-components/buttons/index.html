@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Docs for Codebase, the super tiny website frontend library (CSS/JS).">
+
+  <title>Buttons · Codebase</title>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <meta name="msapplication-TileColor" content="#262626">
+  <meta name="theme-color" content="#262626">
+
+  <link href="/prism/prism.css" rel="stylesheet">
+  <!-- <link href="/dist/codebase.css" rel="stylesheet"> -->
+  <link href="/dist/codebase-l-d.css" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    h2, h3 {
+      scroll-margin-top: 82px;
+    }
+
+    /* Brand */
+    .theme-dark .codebase-docs,
+    .theme-dark .codebase-docs:hover {
+      color: #f2f2f2;
+    }
+    .theme-light .codebase-docs,
+    .theme-light .codebase-docs:hover {
+      color: #0d0d0d;
+    }
+
+    /* Homepage hero wallpaper */
+    .theme-light .docs-wallpaper {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 340 180' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-miterlimit='2'%3E%3Cpath d='M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z' fill-rule='nonzero' fill='%23f5f5f5' stroke='%23f5f5f5' stroke-width='10'/%3E%3C/svg%3E");
+    }
+
+    .theme-dark .docs-wallpaper {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 340 180' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-miterlimit='2'%3E%3Cpath d='M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z' fill-rule='nonzero' fill='%230d0d0d' stroke='%230d0d0d' stroke-width='10'/%3E%3C/svg%3E");
+    }
+
+    header.docs-wallpaper {
+      background-repeat: no-repeat;
+      background-size: 200vw auto;
+      background-position: -100vw 12.5vh;
+    }
+
+    #site-title {
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+    }
+    #site-title svg {
+      position: relative;
+      height: 18px;
+      width: 34px;
+      top: .0625em;
+      margin-right: .325em;
+      transform: scale(1.5);
+    }
+    .theme-toggle:hover {
+      cursor: pointer;
+    }
+    body.theme-dark .theme-moon {
+      display: none
+    }
+    body.theme-light .theme-sun {
+      display: none
+    }
+    #site-title a.active {
+      font-weight: bold;
+    }
+
+    #docs-menu {width: 320px; transition: all .3s linear;}
+    @media (max-width: 1023px) {
+      #docs-menu {position: fixed; min-height: 100%; top: 0; bottom: 0; left: 0; z-index: 999; overflow-y: auto; transform: translateX(-100%);}
+      #docs-menu.is-active {transform: translateX(0);}
+    }
+    @media (min-width: 1024px) {
+      #docs-main {position: relative; display: flex;}
+      #docs-menu {height: 100%;}
+      #docs-menu.is-active {margin-left: -320px;}
+      .docs-menu-inner {position: sticky; top: 57px; height: calc(100vh - 57px);}
+    }
+
+    /**
+     * Prism overrides
+     */
+    pre[class="language-html"],
+    pre[class="language-css"],
+    pre[class="language-scss"],
+    pre[class="language-js"] {
+      border: 1px solid rgba(153,153,153,.5);
+      margin-bottom: 1.5rem;
+    }
+    code[class="language-html"],
+    code[class="language-css"],
+    code[class="language-scss"],
+    code[class="language-js"] {
+      background: transparent;
+    }
+    .theme-light code[class*="language-"], .theme-light pre[class*="language-"] {
+      color: #f8f8f2;
+    }
+  </style>
+</head>
+<body>
+
+<div class="fixed w-full" style="z-index: 990;">
+  <div id="top-nav" class="w-full flex flex-space-between bb-thin p-1 bg-color-background">
+  <div class="flex flex-row-reverse flex-middle">
+    <div>
+      <a id="site-title" class="codebase-docs p-block t-decoration-none t-loose" href="/index.html">
+        <!-- Codebase logo-->
+        <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2">
+          <path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"/>
+        </svg>
+        Codebase
+      </a>
+    </div>
+
+    <script>
+      function docsOc() {
+        return {
+          docsOcOpen: false,
+          docsOcState() {
+            let windowWidth = window.innerWidth;
+            if (windowWidth < 1024) {
+              this.docsOcOpen = false;
+            } else {
+              this.docsOcOpen = true;
+            }
+          }
+        }
+      }
+
+      let resizeResetHeader = () => {
+        window.addEventListener('resize', () => {
+          let xData = document.querySelector('[x-data]');
+          return xData.__x.$data.headerOffcanvas = false;
+        });
+      }
+      resizeResetHeader();
+    </script>
+
+    <div
+      x-data="docsOc()"
+      @load.window="docsOcState()"
+      @resize.window="docsOcState()"
+    >
+      <button
+        id="hamburger"
+        aria-label="Main menu"
+        aria-owns="docs-menu"
+        class="b-0 btn-icon rounded-full docs-scroll-lock"
+        aria-expanded="false"
+        :aria-expanded="docsOcOpen ? 'true' : 'false'"
+        x-on:docsOcclose.window="docsOcOpen = !docsOcOpen"
+        @click="{docsOcOpen = !docsOcOpen, $dispatch('docsctoggler')}"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <line x1="4" y1="6" x2="20" y2="6" />
+          <line x1="4" y1="12" x2="20" y2="12" />
+          <line x1="4" y1="18" x2="20" y2="18" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <ul class="menu flex flex-middle">
+    <li class="hide-below-md">
+      <a href="/">Home</a>
+    </li>
+    <li class="hide-below-md">
+      <a href="/docs/1-getting-started/simple-html-setup/">Documentation</a>
+    </li>
+    <li class="hide-below-md">
+      <a href="">Download</a>
+    </li>
+    <li class="hide-below-md">
+      <a href="https://github.com/codebase-frontend-library/codebase-4">GitHub</a>
+    </li>
+    <li>
+      <a class="theme-toggle">
+        <span class="theme-sun flex flex-middle" style="margin-top: -2px; margin-bottom: -2px;">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <circle cx="12" cy="12" r="4" />
+            <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+          </svg>
+          <span class="hide-below-md">Light Theme</span>
+        </span>
+        <span class="theme-moon flex flex-middle">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon-stars" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+            <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2" />
+            <path d="M19 11h2m-1 -1v2" />
+          </svg>
+          <span class="hide-below-md">Dark Theme</span>
+        </span>
+      </a>
+    </li>
+  </ul>
+</div>
+</div>
+
+<main id="docs-main" style="padding-top: 57px;">
+
+  <script>
+  function docsOcState() {
+    let windowWidth = window.innerWidth;
+    return {
+      docsOcIsOpen: false,
+      docsOcCloseMdDown() {        
+        if (window.innerWidth !== windowWidth) {
+          this.docsOcIsOpen = false
+        }
+      }
+    }
+  }
+</script>
+
+<div
+x-data="docsOcState()"
+@resize.window="docsOcCloseMdDown()"
+>
+  <div
+    class="backdrop hide-md-up scroll-unlock"
+    x-show="docsOcIsOpen"
+    @click="docsOcIsOpen = false, $dispatch('docsocclose')"
+  ></div>
+
+  <div
+    id="docs-menu"
+    class="relative bg-color-background br-thin"
+    :class="{ 'is-active bs': docsOcIsOpen }"
+    x-on:docsctoggler.window="docsOcIsOpen = !docsOcIsOpen"
+  >
+    <div class="sticky hide-md-up bb-thin p-1 t-right bg-color-background" style="z-index: 1; height: 57px;">
+      <button
+        class="b-0 btn-icon rounded-full scroll-unlock"
+        @click="docsOcIsOpen = false, $dispatch('docsocclose')"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+    </div>
+    <div class="docs-menu-inner pb-3 overflow-y">
+      <div>
+        <div class="mt-3 hide-md-up">
+          <ul class="menu">
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="">Download</a>
+            </li>
+            <li>
+              <a href="">GitHub</a>
+            </li>
+          </ul>
+          <hr/>
+        </div>
+
+        <h4 class="mt-3 px-2 t-thin t-loose">Documentation</h4>
+
+        
+        <div x-data="{ revealed: false }">
+        
+          <button
+            class="block b-0 unrounded p-1"
+            @click="revealed = !revealed"
+          >
+            <div class="flex">
+              <svg x-show="!revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 6 15 12 9 18" /></svg>
+              <svg x-show="revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
+              <span>Getting started</span>
+            </div>
+          </button>
+          <div
+            class="overflow-hidden max-height-0"
+            x-ref="panel"
+            x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
+            <div class="px-2">
+              <ul class="menu">
+                <li><a href="/docs/1-getting-started/simple-HTML-setup">Simple HTML setup</a></li>
+                <li><a href="/docs/1-getting-started/codebase-scss-library">The Codebase SCSS library</a></li>
+                <li><a href="/docs/1-getting-started/alpinejs-or-activator">AlpineJS or Activator components</a></li>
+                <li><a href="/docs/1-getting-started/responsive-design">Responsive design</a></li>
+                <li><a href="/docs/1-getting-started/light-and-dark-themes">Light and dark themes</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        
+        <div x-data="{ revealed: false }">
+        
+          <button
+            class="block b-0 unrounded p-1"
+            @click="revealed = !revealed"
+          >
+            <div class="flex">
+              <svg x-show="!revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 6 15 12 9 18" /></svg>
+              <svg x-show="revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
+              <span>Codebase basics</span>
+            </div>
+          </button>
+          <div
+            class="overflow-hidden max-height-0"
+            x-ref="panel"
+            x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
+            <div class="px-2">
+              <ul class="menu">
+                <li><a href="/docs/2-codebase-basics/element-grid">Element grid</a></li>
+                <li><a href="/docs/2-codebase-basics/headings">Headings</a></li>
+                <li><a href="/docs/2-codebase-basics/paragraphs">Paragraphs</a></li>
+                <li><a href="/docs/2-codebase-basics/simple-text-elements">Simple text elements</a></li>
+                <li><a href="/docs/2-codebase-basics/lists">Lists</a></li>
+                <li><a href="/docs/2-codebase-basics/horizontal-rules">Horizontal rules</a></li>
+                <li><a href="/docs/2-codebase-basics/blockquotes">Blockquotes</a></li>
+                <li><a href="/docs/2-codebase-basics/tables">Tables</a></li>
+                <li><a href="/docs/2-codebase-basics/form-elements">Form elements</a></li>
+                <li><a href="/docs/2-codebase-basics/images">Images</a></li>
+                <li><a href="/docs/2-codebase-basics/audio-and-video">Audio and video</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        
+        <div x-data="{ revealed: false }">
+        
+          <button
+            class="block b-0 unrounded p-1"
+            @click="revealed = !revealed"
+          >
+            <div class="flex">
+              <svg x-show="!revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 6 15 12 9 18" /></svg>
+              <svg x-show="revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
+              <span>Responsive layouts</span>
+            </div>
+          </button>
+          <div
+            class="overflow-hidden max-height-0"
+            x-ref="panel"
+            x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
+            <div class="px-2">
+              <ul class="menu">
+                <li><a href="/docs/3-responsive-layouts/containers">Containers</a></li>
+                <li><a href="/docs/3-responsive-layouts/bleeds">Bleeds</a></li>
+                <li><a href="/docs/3-responsive-layouts/grid">Grid system</a></li>
+                <li><a href="/docs/3-responsive-layouts/flex">Flex (flexbox) system</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-1 p-block t-thin t-loose t-uppercase t-small">Utilities</div>
+
+        
+        <div x-data="{ revealed: false }">
+        
+          <button
+            class="block b-0 unrounded p-1"
+            @click="revealed = !revealed"
+          >
+            <div class="flex">
+              <svg x-show="!revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 6 15 12 9 18" /></svg>
+              <svg x-show="revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
+              <span>Layout</span>
+            </div>
+          </button>
+          <div
+            class="overflow-hidden max-height-0"
+            x-ref="panel"
+            x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
+            <div class="px-2">
+              <ul class="menu">
+                <li><a href="/docs/4-layout-utilities/blocks">Blocks</a></li>
+                <li><a href="/docs/4-layout-utilities/floats">Floats</a></li>
+                <li><a href="/docs/4-layout-utilities/positions">Positions</a></li>
+                <li><a href="/docs/4-layout-utilities/dimensions">Dimensions</a></li>
+                <li><a href="/docs/4-layout-utilities/overflows">Overflows</a></li>
+                <li><a href="/docs/4-layout-utilities/invisibility">Invisibility</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        
+        <div x-data="{ revealed: false }">
+        
+          <button
+            class="block b-0 unrounded p-1"
+            @click="revealed = !revealed"
+          >
+            <div class="flex">
+              <svg x-show="!revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 6 15 12 9 18" /></svg>
+              <svg x-show="revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
+              <span>Typography</span>
+            </div>
+          </button>
+          <div
+            class="overflow-hidden max-height-0"
+            x-ref="panel"
+            x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
+            <div class="px-2">
+              <ul class="menu">
+                <li><a href="/docs/5-typographic-utilities/inline-text">Inline text</a></li>
+                <li><a href="/docs/5-typographic-utilities/headings">Headings</a></li>
+                <li><a href="/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
+                <li><a href="/docs/5-typographic-utilities/large-display-text">Large display text</a></li>
+                <li><a href="/docs/5-typographic-utilities/long-read-text">Long read text</a></li>
+                <li><a href="/docs/5-typographic-utilities/text-columns">Text columns</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        
+        <div x-data="{ revealed: false }">
+        
+          <button
+            class="block b-0 unrounded p-1"
+            @click="revealed = !revealed"
+          >
+            <div class="flex">
+              <svg x-show="!revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 6 15 12 9 18" /></svg>
+              <svg x-show="revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
+              <span>Decoration</span>
+            </div>
+          </button>
+          <div
+            class="overflow-hidden max-height-0"
+            x-ref="panel"
+            x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
+            <div class="px-2">
+              <ul class="menu">
+                <li><a href="/docs/6-decoration-utilities/spacing">Spacing</a></li>
+                <li><a href="/docs/6-decoration-utilities/borders">Borders</a></li>
+                <li><a href="/docs/6-decoration-utilities/rounded-corners">Rounded corners</a></li>
+                <li><a href="/docs/6-decoration-utilities/box-shadows">Box shadows</a></li>
+                <li><a href="/docs/6-decoration-utilities/colors">Colors</a></li>
+                <li><a href="/docs/6-decoration-utilities/images">Images</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-1 p-block t-thin t-loose t-uppercase t-small">Components</div>
+
+        
+        <div x-data="{ revealed: true }">
+        
+          <button
+            class="block b-0 unrounded p-1"
+            @click="revealed = !revealed"
+          >
+            <div class="flex">
+              <svg x-show="!revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 6 15 12 9 18" /></svg>
+              <svg x-show="revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
+              <span>Simple (CSS only)</span>
+            </div>
+          </button>
+          <div
+            class="overflow-hidden max-height-0"
+            x-ref="panel"
+            x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
+            <div class="px-2">
+              <ul class="menu">
+                <li><a href="/docs/7-simple-components/about-simple-components">About simple components</a></li>
+                <li><a href="/docs/7-simple-components/menus">Menus</a></li>
+                <li><a href="/docs/7-simple-components/heros">Heros</a></li>
+                <li><a href="/docs/7-simple-components/tables">Tables</a></li>
+                <li><a href="/docs/7-simple-components/buttons">Buttons</a></li>
+                <li><a href="/docs/7-simple-components/badges">Badges</a></li>
+                <li><a href="/docs/7-simple-components/labels">Labels</a></li>
+                <li><a href="/docs/7-simple-components/media-objects">Media objects</a></li>
+                <li><a href="/docs/7-simple-components/cards">Cards</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        
+        <div x-data="{ revealed: false }">
+        
+          <button
+            class="block b-0 unrounded p-1"
+            @click="revealed = !revealed"
+          >
+            <div class="flex">
+              <svg x-show="!revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 6 15 12 9 18" /></svg>
+              <svg x-show="revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
+              <span>Using AlpineJS</span>
+            </div>
+          </button>
+          <div
+            class="overflow-hidden max-height-0"
+            x-ref="panel"
+            x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
+            <div class="px-2">
+              <ul class="menu">
+                <li><a href="/docs/8-alpinejs-components/about-alpinejs-components">About AlpineJS components</a></li>
+                <li><a href="/docs/8-alpinejs-components/alpinejs-showhides">Showhides</a></li>
+                <li><a href="/docs/8-alpinejs-components/alpinejs-dropdowns">Dropdowns</a></li>
+                <li><a href="/docs/8-alpinejs-components/alpinejs-modals">Modals</a></li>
+                <li><a href="/docs/8-alpinejs-components/alpinejs-offcanvas">Offcanvas</a></li>
+                <li><a href="/docs/8-alpinejs-components/alpinejs-tabs">Tabs</a></li>
+                <li><a href="/docs/8-alpinejs-components/alpinejs-accordions">Accordions</a></li>
+                <li><a href="/docs/8-alpinejs-components/alpinejs-slideshows">Slideshows</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        
+        <div x-data="{ revealed: false }">
+        
+          <button
+            class="block b-0 unrounded p-1"
+            @click="revealed = !revealed"
+          >
+            <div class="flex">
+              <svg x-show="!revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 6 15 12 9 18" /></svg>
+              <svg x-show="revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
+              <span>Using Activator</span>
+            </div>
+          </button>
+          <div
+            class="overflow-hidden max-height-0"
+            x-ref="panel"
+            x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
+            <div class="px-2">
+              <ul class="menu">
+                <li><a href="/docs/9-activator-components/about-activator-components">About Activator components</a></li>
+                <li><a href="/docs/9-activator-components/activator-classes-and-attributes">Activator classes and attributes</a></li>
+                <li><a href="/docs/9-activator-components/activator-showhides">Showhides</a></li>
+                <li><a href="/docs/9-activator-components/activator-dropdowns">Dropdowns</a></li>
+                <li><a href="/docs/9-activator-components/activator-modals">Modals</a></li>
+                <li><a href="/docs/9-activator-components/activator-offcanvas">Offcanvas</a></li>
+                <li><a href="/docs/9-activator-components/activator-tabs">Tabs</a></li>
+                <li><a href="/docs/9-activator-components/activator-accordions">Accordions</a></li>
+                <li><a href="/docs/9-activator-components/activator-slideshows">Slideshows</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+  <article class="flex-item-grow-1">
+
+    <header class="mb-3 pt-responsive pb-3">
+        <div class="container container-sm py-3">
+          <div class="t-lg">
+            
+            <div class="mb-1 bb-thin pb-2 t-uppercase t-thin t-loose">Simple Components</div>
+            
+            <h1 class="mb-0">Buttons</h1>    
+          </div>
+        </div>
+    </header>
+
+    <section id="docs-mainbody" class="container container-sm mb-6">
+      <p>The <code>.btn</code> class enables you to apply button styles to <code>&lt;button&gt;</code> and other elements, such as input-buttons and hyperlinks.</p>
+<p><button>Button</button> – the Codebase basic (classless) button</p>
+<p><input type="submit"> – input button</p>
+<p><button class="btn" type="submit">Button</button> – button with <code>.btn</code> class</p>
+<p><input class="btn" type="submit"> – input button with <code>.btn</code> class</p>
+<p><a class="btn" role="button" href="">Hyperlink</a> – hyperlink dressed as a button</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span>Button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Input<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Input<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Hyperlink<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="block-buttons">Block Buttons</h2>
+<p>Buttons are normally inline elements. If you want a button to be a block element, simply add the <code>.block</code> layout utility class.</p>
+<p><code>.btn.block</code>:</p>
+<p><button class="btn block">Block button</button></p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn block<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Block button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<h2>Button UI colors</h2>
+<p><button>Classless</button>
+<button class="btn">Default</button>
+<button class="btn btn-primary">Primary</button>
+<button class="btn btn-secondary">Secondary</button>
+<button class="btn btn-success">success</button>
+<button class="btn btn-warning">Warning</button>
+<button class="btn btn-danger">Danger</button></p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span>Classless<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Default<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-primary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Primary<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-secondary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Secondary<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-success<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>success<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-warning<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Warning<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-danger<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Danger<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="button-states">Button States</h2>
+<p><code>:disabled</code> or <code>.disabled</code> / Normal / <code>:hover</code> / <code>:active</code> or <code>.active</code></p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span> <span class="token attr-name">disabled</span><span class="token punctuation">></span></span>Default disabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Default<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn active<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Default active<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<p>
+  <button disabled>Classless disabled</button>
+  <button>Default</button>
+  <button class="active">Default active</button>
+</p>
+<p>
+  <button class="btn" disabled>Default disabled</button>
+  <button class="btn">Default</button>
+  <button class="btn active">Default active</button>
+</p>
+<p>
+  <button class="btn btn-primary" disabled>Primary disabled</button>
+  <button class="btn btn-primary">Primary</button>
+  <button class="btn btn-primary active">Primary active</button>
+</p>
+<p>
+  <button class="btn btn-secondary" disabled>Secondary disabled</button>
+  <button class="btn btn-secondary">Secondary</button>
+  <button class="btn btn-secondary active">Secondary active</button>
+</p>
+<p>
+  <button class="btn btn-success" disabled>Success disabled</button>
+  <button class="btn btn-success">Success</button>
+  <button class="btn btn-success active">Success active</button>
+</p>
+<p>
+  <button class="btn btn-warning" disabled>Warning disabled</button>
+  <button class="btn btn-warning">Warning</button>
+  <button class="btn btn-warning active">Warning active</button>
+</p>
+<p>
+  <button class="btn btn-danger" disabled>Danger disabled</button>
+  <button class="btn btn-danger">Danger</button>
+  <button class="btn btn-danger active">Danger active</button>
+</p>
+<h2 id="pill-buttons">Pill Buttons</h2>
+<p><button class="btn rounded-pill">Pill-shaped button</button></p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn rounded-pill<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Pill-shaped button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="buttons-with-text-and-icons">Buttons with Text and Icons</h2>
+<div class="flex flex-middle flex-wrap mb-3">
+  <button class="btn btn-success"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg> <span>OK</span></button>&nbsp;
+  <button class="btn btn-secondary"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-folder" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2" /></svg> <span>Archive</span></button>&nbsp;
+  <button class="btn btn-primary"><span>Go</span> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="5" y1="12" x2="19" y2="12" /><line x1="13" y1="18" x2="19" y2="12" /><line x1="13" y1="6" x2="19" y2="12" /></svg></i></button>&nbsp;
+  <button class="btn btn-warning"><span>Help</span> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-help" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="12" cy="12" r="9" /><line x1="12" y1="17" x2="12" y2="17.01" /><path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4" /></svg></button>&nbsp;
+  <button class="btn btn-danger"><span>Reset</span> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg></button>&nbsp;
+  <button class="btn"><span>Menu</span> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="4" y1="6" x2="20" y2="6" /><line x1="4" y1="12" x2="20" y2="12" /><line x1="4" y1="18" x2="20" y2="18" /></svg></button>
+</div>
+<p><strong>Notes:</strong></p>
+<ol>
+<li>When you have more than one button in a row – e.g. you are creating a button group or tool bar – and you using icons and text in combination (or different text sizes in combination), buttons can become misaligned because the texts and icons have <em>different  baselines</em>. You can solve this problem by wrapping horizontally arranged groups of buttons in <code>.flex.flex-middle</code>.</li>
+<li>Depending on what icon font or SVG icon set you use, you may find it necessary to put the icon in its own tag within the button, and maybe also the accompanying text within its own tag within the button.</li>
+</ol>
+<h2 id="buttons-with-icons-only">Buttons with Icons Only</h2>
+<p><code>.btn.btn-icon</code> for square buttons (also use this for <code>.btn.btn-icon.rounded-full</code> below):</p>
+<p><button class="btn btn-icon"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="4" y1="6" x2="20" y2="6" /><line x1="4" y1="12" x2="20" y2="12" /><line x1="4" y1="18" x2="20" y2="18" />
+</svg></button>
+<button class="btn btn-success btn-icon"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" />
+</svg></button>
+<button class="btn btn-secondary btn-icon"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-folder" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2" /></svg></button>
+<button class="btn btn-primary btn-icon"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="5" y1="12" x2="19" y2="12" /><line x1="13" y1="18" x2="19" y2="12" /><line x1="13" y1="6" x2="19" y2="12" />
+</svg></button>
+<button class="btn btn-warning btn-icon"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-help" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="12" cy="12" r="9" /><line x1="12" y1="17" x2="12" y2="17.01" /><path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4" />
+</svg></button>
+<button class="btn btn-danger btn-icon"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg></button></p>
+<p>Since <code>.btn-icon</code> renders a square, you can also use <code>.rounded-full</code> to make it a circle (and not an oval).</p>
+<p><code>.btn.btn-icon.rounded-full</code>:</p>
+<p><button class="btn btn-icon rounded-full"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="4" y1="6" x2="20" y2="6" /><line x1="4" y1="12" x2="20" y2="12" /><line x1="4" y1="18" x2="20" y2="18" /></svg></button>
+<button class="btn btn-success btn-icon rounded-full"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg></button>
+<button class="btn btn-secondary btn-icon rounded-full"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-folder" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2" /></svg></button>
+<button class="btn btn-primary btn-icon rounded-full"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="5" y1="12" x2="19" y2="12" /><line x1="13" y1="18" x2="19" y2="12" /><line x1="13" y1="6" x2="19" y2="12" /></svg></button>
+<button class="btn btn-warning btn-icon rounded-full"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-help" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="12" cy="12" r="9" /><line x1="12" y1="17" x2="12" y2="17.01" /><path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4" /></svg></button>
+<button class="btn btn-danger btn-icon rounded-full"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg></button></p>
+<h2 id="button-sizes">Button Sizes</h2>
+<div class="inline-flex flex-middle mb-3"><a class="btn btn-primary btn-sm" href="">Small</a>&nbsp;<a class="btn btn-primary" href="">Default</a>&nbsp;<a class="btn btn-primary btn-lg" href="">Large</a></div>
+<div class="inline-flex flex-middle mb-3"><a class="btn btn-sucess btn-sm rounded-pill" href="">Small</a>&nbsp;<a class="btn btn-sucess rounded-pill" href="">Default</a>&nbsp;<a class="btn btn-sucess btn-lg rounded-pill" href="">Large</a></div>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-sm<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Small<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Default<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-lg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Large<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+<p><code>.btn-icon</code> at different sizes is set to maintain a square shape. This also means it maintains a circle shape if used in combination with <code>.rounded-full</code> (or even <code>.rounded-pill</code>):</p>
+<p><button class="btn btn-sm btn-icon rounded-full">A</button>
+<button class="btn btn-icon rounded-full">B</button>
+<button class="btn btn-lg btn-icon rounded-full">C</button></p>
+<div class="inline-flex flex-middle mb-3">
+<a class="btn btn-secondary btn-sm btn-icon" href=""><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mood-smile" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="12" cy="12" r="9" /><line x1="9" y1="10" x2="9.01" y2="10" /><line x1="15" y1="10" x2="15.01" y2="10" /><path d="M9.5 15a3.5 3.5 0 0 0 5 0" />
+</svg></a>&nbsp;<a class="btn btn-secondary btn-icon" href=""><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mood-smile" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="12" cy="12" r="9" /><line x1="9" y1="10" x2="9.01" y2="10" /><line x1="15" y1="10" x2="15.01" y2="10" /><path d="M9.5 15a3.5 3.5 0 0 0 5 0" />
+</svg></a>&nbsp;<a class="btn btn-secondary btn-lg btn-icon" href=""><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mood-smile" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="12" cy="12" r="9" /><line x1="9" y1="10" x2="9.01" y2="10" /><line x1="15" y1="10" x2="15.01" y2="10" /><path d="M9.5 15a3.5 3.5 0 0 0 5 0" /></svg></a>
+</div>
+<div class="inline-flex flex-middle mb-3">
+<a class="btn btn-danger btn-sm btn-icon rounded-full" href=""><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19.5 13.572l-7.5 7.428l-7.5 -7.428m0 0a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" /></svg></a>&nbsp;<a class="btn btn-danger btn-icon rounded-full" href=""><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19.5 13.572l-7.5 7.428l-7.5 -7.428m0 0a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" /></svg></a>&nbsp;<a class="btn btn-danger btn-lg btn-icon rounded-full" href=""><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19.5 13.572l-7.5 7.428l-7.5 -7.428m0 0a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" /></svg></a>
+</div>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-sm btn-icon rounded-full<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>A<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-icon rounded-full<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>B<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-lg btn-icon rounded-full<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>C<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<p>Do you want larger text and/or icon on <code>.btn-lg</code> too? Then add the <code>.t-lg</code> <a href="/docs/4-utilities/text">text utility</a>:</p>
+<p><a class="btn btn-primary btn-lg" href="">Normal text</a> – large button</p>
+<p><a class="btn btn-primary btn-lg t-lg" href="">Larger text</a> – large button with large text</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-primary btn-lg<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Normal text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-primary btn-lg t-lg<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Larger text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+<p><strong>Notes:</strong></p>
+<ol>
+<li>Buttons will always have bold text. (Using the text weight utilities, e.g. <code>.t-thin</code> won’t work on buttons.)</li>
+<li>Using <code>t-lg</code> will work for icon <em>fonts</em>, but not for SVG icons. If you want your SVG icon to be larger then make it larger directly, or apply a CSS scale transform to it.</li>
+</ol>
+<p>Examples using <a href="https://tablericons.com/">Tabler Icons</a> at 24px and 36px size:</p>
+<div class="flex flex-middle mb-3">
+<a class="btn btn-secondary btn-lg btn-icon" href=""><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mood-smile" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><circle cx="12" cy="12" r="9"></circle><line x1="9" y1="10" x2="9.01" y2="10"></line><line x1="15" y1="10" x2="15.01" y2="10"></line><path d="M9.5 15a3.5 3.5 0 0 0 5 0"></path></svg></a>&nbsp;<a class="btn btn-secondary btn-lg btn-icon" href=""><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mood-smile" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="12" cy="12" r="9" /><line x1="9" y1="10" x2="9.01" y2="10" /><line x1="15" y1="10" x2="15.01" y2="10" /><path d="M9.5 15a3.5 3.5 0 0 0 5 0" /></svg></a>&nbsp;<a class="btn btn-danger btn-lg btn-icon rounded-full" href=""><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19.5 13.572l-7.5 7.428l-7.5 -7.428m0 0a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" /></svg></a>&nbsp;<a class="btn btn-danger btn-lg btn-icon rounded-full" href=""><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19.5 13.572l-7.5 7.428l-7.5 -7.428m0 0a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" /></svg></a>
+</div>
+<p>(24px equates to the default single line height in Codebase. 36px equates to the <code>.t-lg</code> size, that is 150% larger.)</p>
+<h2 id="combining-buttons-and-(other)-form-elements">Combining Buttons and (Other) Form Elements</h2>
+<p>A row of buttons would touch each other (buttons are ordinarily inline elements), unless you leave spaces between them. Leave no spaces if you want the buttons to touch each other, as in a “tool bar”. Or if you find it necessary, wrap them in a <code>.flex</code>.</p>
+<p>You can remove some of the rounded corners using <code>.unrounded</code> utilities.</p>
+<div class="flex flex-center mb-3">
+<button class="btn-icon unrounded-right">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bold" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 5h6a3.5 3.5 0 0 1 0 7h-6z" /><path d="M13 12h1a3.5 3.5 0 0 1 0 7h-7v-7" /></svg>
+</button>
+<button class="btn-icon unrounded-left">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-italic" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="11" y1="5" x2="17" y2="5" /><line x1="7" y1="19" x2="13" y2="19" /><line x1="14" y1="5" x2="10" y2="19" /></svg>
+</button>
+&nbsp;
+<button class="btn-icon unrounded-right">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-align-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="4" y1="6" x2="20" y2="6" /><line x1="4" y1="12" x2="14" y2="12" /><line x1="4" y1="18" x2="18" y2="18" /></svg>
+</button>
+<button class="btn-icon unrounded">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-align-center" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="4" y1="6" x2="20" y2="6" /><line x1="8" y1="12" x2="16" y2="12" /><line x1="6" y1="18" x2="18" y2="18" /></svg>
+</button>
+<button class="btn-icon unrounded-left">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-align-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="4" y1="6" x2="20" y2="6" /><line x1="10" y1="12" x2="20" y2="12" /><line x1="6" y1="18" x2="20" y2="18" /></svg>
+</button>
+&nbsp;
+<button class="btn-icon">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-palette" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 21a9 9 0 1 1 0 -18a9 8 0 0 1 9 8a4.5 4 0 0 1 -4.5 4h-2.5a2 2 0 0 0 -1 3.75a1.3 1.3 0 0 1 -1 2.25" /><circle cx="7.5" cy="10.5" r=".5" fill="currentColor" /><circle cx="12" cy="7.5" r=".5" fill="currentColor" /><circle cx="16.5" cy="10.5" r=".5" fill="currentColor" />
+</svg>
+</button>
+</div>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn-icon unrounded-right<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token comment">&lt;!-- left-align icon --></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn-icon unrounded<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token comment">&lt;!-- center icon --></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn-icon unrounded-left<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token comment">&lt;!-- right-align icon --></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<p>Go large — to grab people’s attention:</p>
+<div class="w-xs mx-auto mb-3">
+  <form class="flex">
+    <input id="email-example" class="form-element-lg rounded-pill unrounded-right t-lg" name="examplename" placeholder="Your email" type="email">
+    <a class="btn btn-success btn-lg rounded-pill unrounded-left px-4 t-lg" href="">Subscribe</a>
+  </form>
+</div>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>email-example<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-element-lg rounded-pill unrounded-right t-lg<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>examplename<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Your email<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-success btn-lg rounded-pill unrounded-left px-4 t-lg<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Subscribe<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<p>Go small – to fit a form into a menubar, or into a table cell:</p>
+<div class="w-xxs mx-auto mb-3">
+  <form class="flex" action="">
+    <input type="text" class="b-color-primary unrounded-right" id="site-search" name="site-search" autocomplete="off" aria-label="" placeholder="Search...">
+    <button aria-label="Search" class="btn btn-primary btn-icon unrounded-left"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="10" cy="10" r="7" /><line x1="21" y1="21" x2="15" y2="15" /></svg></button>
+  </form>
+</div>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>b-color-primary unrounded-right<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>site-search<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>site-search<span class="token punctuation">"</span></span> <span class="token attr-name">autocomplete</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>off<span class="token punctuation">"</span></span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Search...<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Search<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-primary btn-icon unrounded-left<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token comment">&lt;!-- search icon --></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="outline-buttons">Outline buttons</h2>
+<p>Outline buttons (sometimes called “ghost buttons”) can be created using utility classes. Codebase utilities do not override the hover state, focus, etc.</p>
+<p>Do this:</p>
+<ol>
+<li>Put <code>.bg-transparent</code> to the button, in addition to e.g. <code>.btn.btn-success</code>.</li>
+<li>Put a text color on the button (in this example, <code>t-color-success</code>).</li>
+</ol>
+<p>(The border is taken care of already).</p>
+<p>Example:</p>
+<p><code>.btn.btn-success.bg-transparent.t-color-success</code>:</p>
+<p><a class="btn btn-success bg-transparent t-color-success" href="">Find out more <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="5" y1="12" x2="19" y2="12" /><line x1="13" y1="18" x2="19" y2="12" /><line x1="13" y1="6" x2="19" y2="12" /></svg></a></p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-success bg-transparent t-color-success<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Find out more →<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+<p><strong>Note:</strong> <code>.bg-transparent</code> is an alias of <code>.bg-color-transparent</code> – the example above could have used either.</p>
+
+    </section><!-- /#docs-mainbody -->
+
+    <footer class="container container-lg mb-responsive t-center">
+      <div class="clearfix bt-thin bb-thin py-2">
+        
+        <a class="my-1 float-left btn btn-primary" href="/docs/7-simple-components/tables">&larr; Tables</a>
+          
+        
+        <a class="my-1 float-right btn btn-primary" href="/docs/7-simple-components/badges">Badges &rarr;</a>
+          
+      </div>
+    </footer>
+
+  </article>
+</main>
+
+<footer class="container container-sm bt-thin pt-6 pb-3 bg-color-background-alt t-center">
+  <p>
+    <a class="codebase-docs h3 t-decoration-none" href="/index.html">
+      <span class="inline-flex flex-column flex-middle flex-center">
+      <!-- Codebase logo-->
+      <svg  style="height: 4rem; margin-bottom: 1rem;" viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2"><path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"/></svg>
+      <span>
+        Codebase <span class="t-thin">4.0.0</span>
+      </span>
+
+      </span>
+    </a>
+  </p>
+  <p><a href="https://github.com/codebase-frontend-library/codebase-4/blob/master/LICENSE">MIT licence</a> • Project developer: <a class="t-nowrap" href="https://github.com/SimonPadbury">Simon Padbury</a></p>
+  <p class="h4 t-thin t-loose">Accreditation:</p>
+  <p>All example icons in these docs are from <a href="https://tablericons.com/" target="_blank">Tabler Icons</a>. Icon size was set to 24px, stroke set to 1.5px, and stroke color edited to <code class="b-thin">stroke="currentColor"</code></p>
+  <p>Codebase is developed on <a href="https://gulpjs.com/" target="_blank">Gulp</a> with various plugins for <a href="https://sass-lang.com/" target="_blank">Sass</a> and <a href="https://babeljs.io/" target="_blank">Babel</a>. The documentation is developed on the <a href="https://www.11ty.dev/" target="_blank">Eleventy</a> static website generator, with Gulp and the plugins added in.</p>
+  
+</footer>
+
+<script src="/dist/activator.js"></script>
+<script src="/js/theme-switcher.js" defer></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.0/alpine.js" integrity="sha512-H/czL7oaLIK//KA+gobIejOMDjfHlfoPbM4QKJLvy1hxN18xdhXiaXPek6r5Q4KwcSZkKwlyQmLO8FvPRLl0FA==" crossorigin="anonymous"></script>
+
+<script>
+  // Used only on the docs sidebar (below 1024px width)
+  const docsScrLock = document.querySelector('.docs-scroll-lock')
+  docsScrLock.addEventListener('click', () => {
+    if ( window.innerWidth < 1024) {
+      document.querySelector('body').classList.add('body-scroll-lock')
+    }
+  })
+
+  // Used to supplement some Alpine components
+  const scrLock = document.querySelectorAll('.scroll-lock')
+  const scrUnlock = document.querySelectorAll('.scroll-unlock')
+  scrLock.forEach(el => {
+    el.addEventListener('click', () => {
+      document.querySelector('body').classList.add('body-scroll-lock')
+    })
+  })
+  scrUnlock.forEach(el => {
+    el.addEventListener('click', () => {
+      document.querySelector('body').classList.remove('body-scroll-lock')
+    })
+  })
+</script>
+
+</body>
+</html>

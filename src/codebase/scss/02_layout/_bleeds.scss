@@ -1,0 +1,22 @@
+
+
+@if $use-container-grid == true {
+  .full-bleed {
+    width: 100%;
+    grid-column: 1/6;
+  }
+  .partial-bleed-left {
+    grid-column: 1/4;
+  }
+  .partial-bleed-right {
+    grid-column: 3/6;
+  }
+}
+
+@else {
+  .full-bleed { // From: https://hankchizljaw.com/wrote/creating-a-full-bleed-css-utility/
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+}

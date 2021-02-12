@@ -1,0 +1,62 @@
+// UTILITIES: PADDINGS
+// ~~~~~~~~~~~~~~~~~~~
+
+@each $key, $value in $spacing {
+
+  // All
+  .p-#{$key} {
+    padding: $value;
+  }
+
+  // Top
+  .pt-#{$key} {
+    padding-top: $value;
+  }
+
+  // Right
+  .pr-#{$key} {
+    padding-right: $value;
+  }
+
+  // Bottom
+  .pb-#{$key} {
+    padding-bottom: $value;
+  }
+
+  // Left
+  .pl-#{$key} {
+    padding-left: $value;
+  }
+
+  // Vertical (Top and Bottom)
+  .py-#{$key} {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+
+  // Horizontal (Right and Left)
+  .px-#{$key} {
+    padding-right: $value;
+    padding-left: $value;
+  }
+}
+
+// Block Padding
+// (Same as default paddings in menu items, tab labels, buttons, etc.)
+.p-block {
+  padding: $spacing-block;
+}
+
+// Responsive vertical paddings
+.py-responsive {
+  padding-top: $spacing-responsive;
+  padding-bottom: $spacing-responsive;
+}
+
+.pt-responsive {
+  padding-top: $spacing-responsive;
+}
+
+.pb-responsive {
+  padding-bottom: $spacing-responsive;
+}

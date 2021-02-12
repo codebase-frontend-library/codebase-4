@@ -1,0 +1,54 @@
+/** 
+ * CODEBASE 4.0.0-alpha | MIT Licence 
+ * http://simonpadbury.github.io/Codebase/ 
+ */
+
+// Note: This is the Codebase Core master SCSS file. It doesn’t have the dark theme supplement.
+// (`codebase-dark.scss` has the same Codebase Core plus supplements for `prefers-color-scheme: dark`, plus dark and light theme CSS classes.)
+
+// SETUP
+@import "00_setup/__default-colors";
+@import "00_setup/__default-variables";
+@import "00_setup/_media-query-mixins";
+@import "00_setup/_base";
+
+// BASICS
+@import "01_basics/_text";
+@import "01_basics/_form-elements";
+@import "01_basics/_images";
+
+// LAYOUT
+@import "02_layout/_containers";
+@import "02_layout/_bleeds";
+@import "02_layout/_flex";
+@import "02_layout/_grid";
+
+// COMPONENTS
+@import "03_components/_buttons";
+@import "03_components/_control-indicators";
+@import "03_components/_labels";
+@import "03_components/_badges";
+@import "03_components/_tables";
+@import "03_components/_menus";
+@import "03_components/_dropdowns";
+@import "03_components/_showhide";
+@import "03_components/_tabs";
+@import "03_components/_slides";
+@import "03_components/_modals";
+@import "03_components/_offcanvas";
+
+// UTILITIES
+@import "04_utilities/_layout";
+@import "04_utilities/_margins";
+@import "04_utilities/_paddings";
+@import "04_utilities/_borders";
+@import "04_utilities/_border-radius";
+@import "04_utilities/_colors";
+@import "04_utilities/_box-shadows";
+@import "04_utilities/_invisibility";
+@import "04_utilities/_typography";
+@import "04_utilities/_images";
+@import "04_utilities/_cursor";
+@import "04_utilities/_transitions";
+
+// “Utility first” means that utility classes have priority from the point of view of the HTML/template creator -- therefore most come _after_ component classes in the stylesheet.

@@ -1,0 +1,34 @@
+// COMPONENTS: BADGES
+// ~~~~~~~~~~~~~~~~~~
+
+.badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  top: -0.4em;
+  min-width: 1.5em;
+  height: 1.5em;
+  border-radius: 2em;
+  padding: 0 0.325em;
+  font-size: 0.86em;
+  line-height: 0.8em;
+  text-align: center;
+  white-space: nowrap;
+  color: $color-ui-text;
+  background: $color-ui-default;
+}
+
+@each $key, $value in $color-ui {
+  .badge-#{$key} {
+    border-color: $value;
+    background: $value;
+  }
+}
+
+button > .badge,
+.btn > .badge {
+  position: absolute;
+  top: -.75em;  
+  right: -.75em;    
+}

@@ -1,0 +1,308 @@
+{% include "_html-head.njk" %}
+
+<div class="absolute w-full flex flex-space-between px-1 py-2">
+  <div class="flex flex-row-reverse flex-middle">
+    <div>
+      <a id="site-title" class="codebase-docs p-block t-decoration-none t-loose" href="/index.html">
+        <!-- Codebase logo-->
+        <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2">
+          <path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"/>
+        </svg>
+        Codebase
+      </a>
+    </div>
+  </div>
+
+  <ul class="menu flex flex-middle">
+    <li class="hide-below-md">
+      <a href="">Download</a>
+    </li>
+    <li class="hide-below-md">
+      <a href="https://github.com/codebase-frontend-library/codebase-4">GitHub</a>
+    </li>
+    <li>
+      <a class="theme-toggle">
+        <span class="theme-sun flex flex-middle">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <circle cx="12" cy="12" r="4" />
+            <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+          </svg>
+          <span class="hide-below-md">Light Theme</span>
+        </span>
+        <span class="theme-moon flex flex-middle">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon-stars" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+            <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2" />
+            <path d="M19 11h2m-1 -1v2" />
+          </svg>
+          <span class="hide-below-md">Dark Theme</span>
+        </span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<header class="h-full-vh flex flex-column flex-center docs-wallpaper" style="padding-top: 57px;">
+  
+  <div class="container container-sm">
+    <div class="t-lg">
+      <p class="h1 mb-1">Codebase is a super tiny website frontend library.</p>
+      <p class="mb-2 t-thin t-loose">Developed for content management systems and static site generators, Codebase is a small but powerful package of lessons learned from semantic CSS/JS component frameworks (e.g. Bootstrap, Foundation) and utility libraries (Tachyons, Tailwind), and some shiny new techniques.</p>
+      <p class="mb-2 t-thin t-loose">Plus, Codebase pairs well with AlpineJS.</p>
+    </div>
+    <hr class="mb-2">
+    <p>Version {{ metadata.version }} • <a href="https://github.com/codebase-frontend-library/codebase-4/blob/master/LICENSE">MIT licence</a> • Project developer: <a href="https://github.com/SimonPadbury">Simon Padbury</a></p>
+    <p>
+      <a class="btn btn-lg btn-primary" href="#docs-main">
+        Discover
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <line x1="12" y1="5" x2="12" y2="19" />
+          <line x1="18" y1="13" x2="12" y2="19" />
+          <line x1="6" y1="13" x2="12" y2="19" />
+        </svg>
+      </a>
+      <a class="btn btn-lg btn-success" href="/docs/1-getting-started/simple-HTML-setup/">
+        Get started
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <line x1="5" y1="12" x2="19" y2="12" />
+          <line x1="13" y1="18" x2="19" y2="12" />
+          <line x1="13" y1="6" x2="19" y2="12" />
+        </svg>
+      </a>
+    </p>
+  </div>
+
+</header>
+
+<div class="sticky w-full bt-thin" style="z-index: 990;">
+  {% include "top-nav.njk" %}
+</div>
+
+<main id="docs-main">
+  
+  {% include "side-nav.njk" %}
+
+  <div id="docs-mainbody" class="container container-sm pb-responsive" style="padding-top: 57px;">
+    
+    <div class="t-long-read pt-6">
+      <h2 class="mb-6">What’s to Like About Codebase?</h2>
+      <ul>
+        <li>
+          <strong class="t-text-alt">Easy to start.</strong> Codebase can be <a href="/docs/1-getting-started/simple-html-setup">dropped into your project</a> as-is. No installation. No config file.
+        </li>
+        <li>
+          <strong class="t-text-alt">Easy to learn.</strong> These <a href="/docs/1-getting-started/simple-HTML-setup/">docs</a> will give you a good idea of what Codebase can do, and how easy it is to use. There are a lot of similarities between Bootstrap and Tailwind – so, if you are familiar with them, you’ll feel at home here.
+        </li>
+      </ul>
+    </div>
+
+    <div class="my-6">
+      <p class="t-center">
+        <button class="btn btn-primary">A button</button>
+      </p>
+
+      <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-primary<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>A button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></code></pre>
+    </div>
+
+    <div class="t-long-read">
+      <ul>
+        <li>
+          <strong class="t-text-alt">Element grid.</strong> Classless HTML elements and utility classes are built on a “soft” 0.5rem <a href="/docs/2-codebase-basics/element-grid">element grid</a> (8px default), for consistent positioning thoroughout.
+        </li>
+        <li>
+          <strong class="t-text-alt">Responsive layouts.</strong> Codebase comes with a lot of <a href="/docs/3-layout-systems/flex">flexbox</a> and <a href="/docs/3-layout-systems/grid">grid</a> layout options, and utilities for <a href="/docs/5-typographic-utilities/long-read-text">responsive typography</a>, making it look good and work well on everything from small phones to large screens.
+        </li>
+      </ul>
+    </div>
+
+    <div class="my-6">
+      <div class="grid-3-cols grid-gap">
+        <div class="col-1-thru-2 b-thick b-color-success rounded p-1 t-heavy t-color-success">Main content</div>
+        <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Sidebar</div>
+      </div>
+
+      <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>grid-3-cols grid-gap<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><br><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col-1-thru-2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Main content<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><br><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span>&gt;</span></span>Sidebar<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+    </div>
+
+    <div class="t-long-read">
+      <ul>
+        <li>
+          <strong class="t-text-alt">Utility first.</strong> <a href="/docs/7-simple-components/about-simple-components">Components</a> in Codebase are mostly styled from compounds of utility classes (utility classes just do one thing well).
+        </li>
+      </ul>
+    </div>
+
+    <div class="my-6">
+      <div class="flex flex-column w-xxs mx-auto b-thin rounded bs-1 mb-3">
+        <a href="#/">
+          <img class="img-cover" src="/img/placeholder1000x600.svg">
+        </a>
+        <div class="flex-item-grow-1 p-2">
+          <h4 class="mb-1">Card Title</h4>
+          <p>
+            This simple card component is made entirely from utility classes.
+          </p>
+          <a href="" class="btn btn-primary">Button</a>
+        </div>
+      </div>
+
+      <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex flex-column b-thin rounded bs-1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-item-grow-1 p-2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Card Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">&gt;</span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><br>      Explanation text...<br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-primary<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+    </div>
+
+    <div class="t-long-read">
+      <ul>
+        <li>
+          <strong class="t-text-alt">Works with AlpineJS.</strong> Codebase comes with its own JavaScript called <a href="/docs/9-activator-components/activator-components-intro">Activator</a>, for activating dropdowns, tabs, modals, etc. But if you want to develop more powerful components, you can swap out Activator for <a href="https://github.com/alpinejs/alpine" target="_blank">AlpineJS</a>. These docs will show you how to set up several <a href="/docs/8-alpinejs-components/alpinejs-components-intro">Codebase components using Alpine</a>.
+        </li>
+      </ul>
+    </div>
+
+    <div class="my-6">
+      <div x-data="{ open: false }" class="mb-3">
+        <button
+          class="btn btn-primary"
+          @click="open = !open"
+          :aria-expanded="open ? 'true' : 'false'"
+        >AlpineJS powered dropdown <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
+        </button>
+        <div
+          class="absolute bs b-thin rounded-sm p-block bg-color-background"
+          x-show="open"
+          @click.away="open = false"
+        >Dropdown content</div>
+      </div>
+
+      <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">x-data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{ open: false }<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><br>    <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-primary<span class="token punctuation">"</span></span><br>    <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>open = !open<span class="token punctuation">"</span></span><br>    <span class="token attr-name">:aria-expanded</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>open ? <span class="token punctuation">'</span>true<span class="token punctuation">'</span> : <span class="token punctuation">'</span>false<span class="token punctuation">'</span><span class="token punctuation">"</span></span><br>  <span class="token punctuation">&gt;</span></span>AlpineJS powered dropdown <span class="token comment">&lt;!-- icon chevron down --&gt;</span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>    <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>absolute bs b-thin rounded-sm p-block bg-color-background<span class="token punctuation">"</span></span><br>    <span class="token attr-name">x-show</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>open<span class="token punctuation">"</span></span><br>    <span class="token attr-name">@click.away</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>open = false<span class="token punctuation">"</span></span><br>  <span class="token punctuation">&gt;</span></span>Dropdown content<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>    
+    </div>
+
+    <div class="t-long-read">
+      <ul>
+        <li>
+          <strong class="t-text-alt">Highly customizable.</strong> The Codebase stylesheet has been built from a complex set of <a href="https://sass-lang.com/">Sass (SCSS)</a> files, preprocessed and minified. <a href="/docs/1-getting-started/codebase-scss-library">Sass users</a> can override huge number of default variables, or change them directly, to their own design requirements.
+        </li>
+        <li>
+          <strong class="t-text-alt">Browser compatible.</strong> Codebase works on current and recent versions of all popular browsers and operating systems.
+        </li>
+      </ul>
+
+      <p class="t-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-safari" width="40" height="40" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <polyline points="8 16 10 10 16 8 14 14 8 16" />
+          <circle cx="12" cy="12" r="9" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-chrome" width="40" height="40" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <circle cx="12" cy="12" r="9" />
+          <circle cx="12" cy="12" r="3" />
+          <line x1="12" y1="9" x2="20.4" y2="9" />
+          <line x1="12" y1="9" x2="20.4" y2="9" transform="rotate(120 12 12)" />
+          <line x1="12" y1="9" x2="20.4" y2="9" transform="rotate(240 12 12)" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-firefox" width="40" height="40" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M4.028 7.82a9 9 0 1 0 12.823 -3.4c-1.636 -1.02 -3.064 -1.02 -4.851 -1.02h-1.647" />
+          <path d="M4.914 9.485c-1.756 -1.569 -.805 -5.38 .109 -6.17c.086 .896 .585 1.208 1.111 1.685c.88 -.275 1.313 -.282 1.867 0c.82 -.91 1.694 -2.354 2.628 -2.093c-1.082 1.741 -.07 3.733 1.371 4.173c-.17 .975 -1.484 1.913 -2.76 2.686c-1.296 .938 -.722 1.85 0 2.234c.949 .506 3.611 -.995 4.545 .354c-1.698 .102 -1.536 3.107 -3.983 2.727c2.523 .957 4.345 .462 5.458 -.34c1.965 -1.52 2.879 -3.542 2.879 -5.557c-.014 -1.398 .194 -2.695 -1.26 -4.75" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-edge" width="40" height="40" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M20.978 11.372a9 9 0 1 0 -1.593 5.773" />
+          <path d="M20.978 11.372c.21 2.993 -5.034 2.413 -6.913 1.486c1.392 -1.6 .402 -4.038 -2.274 -3.851c-1.745 .122 -2.927 1.157 -2.784 3.202c.28 3.99 4.444 6.205 10.36 4.79" />
+          <path d="M3.022 12.628c-.283 -4.043 8.717 -7.228 11.248 -2.688" />
+          <path d="M12.628 20.978c-2.993 .21 -5.162 -4.725 -3.567 -9.748" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-opera" width="40" height="40" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <circle cx="12" cy="12" r="9" />
+          <ellipse cx="12" cy="12" rx="3" ry="5" />
+        </svg>
+      </p>
+
+      <ul>
+        <li>
+          <strong class="t-text-alt">Light and dark themes.</strong> The Codebase stylesheet <code>codebase.css</code> has only a light theme (default). Also included is <code>codebase-l-d.css</code>, that has <a href="/docs/1-getting-started/light-and-dark-themes">light and dark theme CSS classes</a> baked in. These classes require a <a href="/docs/1-getting-started/light-and-dark-themes#an-example-theme-switcher-javascript">JavaScript theme switcher</a> for toggling <code>.theme-dark</code> or <code>.theme-light</code> in the <code>&lt;body&gt;</code> tag.</li>
+        </li>
+        <li>
+          <strong class="t-text-alt">Great for downstream designers.</strong> Codebase is so small, there’s no need for “tree-shaking” to purge unused CSS. And, since the whole Codebase CSS remains present in the deployed stylesheet, later designers can use all the utilities in styling their content, even creating complex landing pages, etc. directly in a CMS editor.
+        </li>
+      </ul>
+    </div>
+
+    <table class="table my-6">
+      <caption class="p-block t-bold">Comparing file sizes of Codebase with a few popular CSS/JS frontend kits<br>(as of January 2021)</caption>
+      <thead>
+      <tr>
+      <th>Name</th>
+      <th style="width: 40%">CSS file size (minified)</th>
+      <th style="width: 40%">JS file size (minified)</th>
+      </tr>
+      </thead><tbody>
+      <tr class="bg-color-success-alt">
+      <td class="b-color-success">Codebase 4.0.0</td>
+      <td>34 kb<br><br>60 kb if you want your visitors able to choose between dark and light themes.</td>
+      <td>3 kb (Codebase <a href="/docs/7-activator-components/activator-components">Activator</a> script)<br><br>Alternatively, use <a href="https://github.com/alpinejs/alpine">Alpine JS</a>, 77 kb</td>
+      </tr>
+      <tr>
+      <td>Bootstrap 5.0.0 beta 1</td>
+      <td>153 kb</td>
+      <td>81 kb</td>
+      </tr>
+      <tr>
+      <td>Foundation for Sites 6.3.3</td>
+      <td>168 kb</td>
+      <td>514 kb + 298 kb third party vendor requirements</td>
+      </tr>
+      <tr>
+      <td>Bulma 0.9.1</td>
+      <td>204 kb</td>
+      <td>None</td>
+      </tr>
+      <tr><td>UI Kit 3.6.13</td>
+      <td>271 kb</td>
+      <td>134 kb</td>
+      </tr>
+      <tr>
+      <td>Materialize 1.0.0</td>
+      <td>142 kb</td>
+      <td>181 kb</td>
+      </tr>
+      <tr>
+      <td>Tachyons 4.12.0</td>
+      <td>74 kb</td>
+      <td>None</td>
+      </tr>
+      <tr>
+      <td>Tailwind 2.x</td>
+      <td>Massive, but not intended for deployment in its entirety. (You use the parts you need, and purge the CSS that you didn’t use in your build process.)</td>
+      <td>None<br><br>(AlpineJS is a popular pairing with Tailwind)</td>
+      </tr>
+      </tbody>  
+    </table>
+
+    <div class="t-long-read">
+      <p>Ready for the next <span class="t-strike">big</span> <span class="t-heavy">small</span> thing?</p>
+    </div>
+
+    <p class="">
+      <a class="btn btn-lg btn-success" href="/docs/1-getting-started/simple-HTML-setup">
+        Get started
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <line x1="13" y1="18" x2="19" y2="12"></line>
+          <line x1="13" y1="6" x2="19" y2="12"></line>
+        </svg>
+      </a>
+    </p>
+        
+  </div><!-- /#docs-mainbody -->
+</main>
+
+{% include "footer.njk" %}
+
+{% include "_html-foot.njk" %}
+

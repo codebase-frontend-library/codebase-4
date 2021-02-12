@@ -1,0 +1,32 @@
+// COMPONENTS: MENUS
+// ~~~~~~~~~~~~~~~~~
+
+.menu { // usually `<ul>` or `<ol>`
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  > * { // usually `<li>`
+    list-style-type: none;
+    margin: 0;
+  }
+  a {
+    display: block;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    text-decoration: none;
+  }
+  .menu {
+    margin-bottom: 0;
+    a:not(.btn) {
+      color: $color-hyperlink;
+      &:hover {
+        color: $color-hyperlink-hover;
+      }
+    }
+  }
+}
+
+.menu:not(.menu-flush) a {
+  padding: $spacing-block;
+}

@@ -1,0 +1,31 @@
+<script src="/dist/activator.js"></script>
+<script src="/js/theme-switcher.js" defer></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.0/alpine.js" integrity="sha512-H/czL7oaLIK//KA+gobIejOMDjfHlfoPbM4QKJLvy1hxN18xdhXiaXPek6r5Q4KwcSZkKwlyQmLO8FvPRLl0FA==" crossorigin="anonymous"></script>
+
+<script>
+  // Used only on the docs sidebar (below 1024px width)
+  const docsScrLock = document.querySelector('.docs-scroll-lock')
+  docsScrLock.addEventListener('click', () => {
+    if ( window.innerWidth < 1024) {
+      document.querySelector('body').classList.add('body-scroll-lock')
+    }
+  })
+
+  // Used to supplement some Alpine components
+  const scrLock = document.querySelectorAll('.scroll-lock')
+  const scrUnlock = document.querySelectorAll('.scroll-unlock')
+  scrLock.forEach(el => {
+    el.addEventListener('click', () => {
+      document.querySelector('body').classList.add('body-scroll-lock')
+    })
+  })
+  scrUnlock.forEach(el => {
+    el.addEventListener('click', () => {
+      document.querySelector('body').classList.remove('body-scroll-lock')
+    })
+  })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,318 @@
+// UTILITIES: LAYOUT
+// ~~~~~~~~~~~~~~~~~
+
+.float {
+  &-left {
+    float: left;
+  }
+  &-right {
+    float: right;
+  }
+}
+.float-sm {
+  @include break-min($mq-sm) {
+    &-left {
+      float: left;
+    }
+    &-right {
+      float: right;
+    }
+  }
+}
+.float-md {
+  @include break-min($mq-md) {
+    &-left {
+      float: left;
+    }
+    &-right {
+      float: right;
+    }
+  }
+}
+.float-lg {
+  @include break-min($mq-md) {
+    &-left {
+      float: left;
+    }
+    &-right {
+      float: right;
+    }
+  }
+}
+
+.clearfix {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.block:not(.btn) {
+  display: block;
+  width: 100%;
+}
+
+.inline-block {
+  display: inline-block;
+  width: unset;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-x {
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+.overflow-y {
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+.overflow-x,
+.overflow-y {
+  scroll-snap-align: start;
+}
+
+.relative {
+  position: relative;
+}
+.relative-sm {
+  @include break-min($mq-sm) {
+    position: relative;
+  }
+}
+.relative-md {
+  @include break-min($mq-md) {
+    position: relative;
+  }
+}
+.relative-lg {
+  @include break-min($mq-md) {
+    position: relative;
+  }
+}
+
+.absolute {
+  position: absolute;
+}
+.absolute-sm {
+  @include break-min($mq-sm) {
+    position: absolute;
+  }
+}
+.absolute-md {
+  @include break-min($mq-md) {
+    position: absolute;
+  }
+}
+.absolute-lg {
+  @include break-min($mq-md) {
+    position: absolute;
+  }
+}
+
+.fixed {
+  position: fixed;
+}
+.fixed-sm {
+  @include break-min($mq-sm) {
+    position: fixed;
+  }
+}
+.fixed-md {
+  @include break-min($mq-md) {
+    position: fixed;
+  }
+}
+.fixed-lg {
+  @include break-min($mq-md) {
+    position: fixed;
+  }
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  &-gap-top {
+    top: $sticky-gap;
+  }
+  &-gap-bottom {
+    bottom: $sticky-gap;
+  }
+}
+.sticky-sm {
+  @include break-min($mq-sm) {
+    position: sticky;
+    top: 0;
+    &-gap-top {
+      top: $sticky-gap;
+    }
+    &-gap-bottom {
+      bottom: $sticky-gap;
+    }
+  }
+}
+.sticky-md {
+  @include break-min($mq-md) {
+    position: sticky;
+    top: 0;
+    &-gap-top {
+      top: $sticky-gap;
+    }
+    &-gap-bottom {
+      bottom: $sticky-gap;
+    }
+  }
+}
+.sticky-lg {
+  @include break-min($mq-md) {
+    position: sticky;
+    top: 0;
+    &-gap-top {
+      top: $sticky-gap;
+    }
+    &-gap-bottom {
+      bottom: $sticky-gap;
+    }
+  }
+}
+
+.top {
+  top: 0;
+  &-sm,
+  &-md,
+  &-lg {
+    top: 0
+  }
+}
+.right {
+  right: 0;
+  &-sm,
+  &-md,
+  &-lg {
+    right: 0
+  }
+}
+.bottom {
+  bottom: 0;
+  &-sm,
+  &-md,
+  &-lg {
+    bottom: 0
+  }
+}
+.left {
+  left: 0;
+  &-sm,
+  &-md,
+  &-lg {
+    left: 0
+  }
+}
+
+.box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $z-index-backdrop;
+  &-shaded {
+    background: $color-backdrop;
+    backdrop-filter: blur(5px);
+  }
+  &-black {
+    background: #000;
+  }
+}
+
+[class^=w-] {
+  width: 100%;
+}
+.w {
+  &-xxs {
+    max-width: $width-xxs;
+  }
+  &-xs {
+    max-width: $width-xs;
+  }
+  &-sm {
+    max-width: $width-sm;
+  }
+  &-md {
+    max-width: $width-md;
+  }
+  &-lg {
+    max-width: $width-lg;
+  }
+  &-xl {
+    max-width: $width-xl;
+  }
+  &-xxl {
+    max-width: $width-xxl;
+  }
+  &-full {
+    width: 100%;
+  }
+  &-auto {
+    width: auto;
+  }
+}
+
+.h-half-vh {
+  min-height: 50vh;
+}
+.h-full-vh {
+  min-height: 100vh;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.max-height-0 { // e.g. used for AlpineJS powered showhide
+  max-height: 0;
+}
+
+
+.square {
+  min-width: $square-size;
+  width: $square-size;
+  min-height: $square-size;
+  height: $square-size;
+  &-sm {
+    min-width: $square-size-sm;
+    width: $square-size-sm;
+    min-height: $square-size-sm;
+    height: $square-size-sm;
+  }
+  &-md {
+    min-width: $square-size;
+    width: $square-size;
+    min-height: $square-size;
+    height: $square-size;
+  }
+  &-lg {
+    min-width: $square-size-lg;
+    width: $square-size-lg;
+    min-height: $square-size-lg;
+    height: $square-size-lg;
+  }
+}

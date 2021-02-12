@@ -1,0 +1,42 @@
+// LAYOUT: CONTAINERS
+// ~~~~~~~~~~~~~~~~~~
+
+@if $use-container-grid == true {
+  // Based on https://joshwcomeau.com/css/full-bleed/
+  .container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: $container-grid-max;
+  }
+  .container > * {
+    grid-column: 3;
+    width: 100%;
+  }
+  .container-lg {
+    grid-template-columns: $container-grid-lg;
+  }
+  .container-md {
+    grid-template-columns: $container-grid-md;
+  }
+  .container-sm {
+    grid-template-columns: $container-grid-sm;
+  }
+}
+
+@else {
+  .container {
+    width: 100%;
+    max-width: $width-max;
+    margin: 0 auto;
+    padding: $container-padding-fallback;
+    &-xl {
+      max-width: $width-xl;
+    }
+    &-lg {
+      max-width: $width-lg;
+    }
+    &-md {
+      max-width: $width-md;
+    }
+  }
+}

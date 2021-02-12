@@ -1,0 +1,38 @@
+// UTILITIES: INVISIBILITY
+// ~~~~~~~~~~~~~~~~~~~~~~~
+
+.hidden {
+  display: none !important;
+}
+
+.hide-below-sm {
+  @media screen and (max-width: $mq-sm - 1px) {
+    display: none !important;
+  }
+}
+.hide-below-md {
+  @media screen and (max-width: $mq-md - 1px) {
+    display: none !important;
+  }
+}
+.hide-below-lg {
+  @media screen and (max-width: $mq-lg - 1px) {
+    display: none !important;
+  }
+}
+
+.hide-sm-up {
+  @media screen and (min-width: $mq-sm) {
+    display: none !important;
+  }
+}
+.hide-md-up {
+  @media screen and (min-width: $mq-md) {
+    display: none !important;
+  }
+}
+.hide-lg-up {
+  @media screen and (min-width: $mq-lg) {
+    display: none !important;
+  }
+}

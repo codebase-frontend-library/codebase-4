@@ -1,0 +1,90 @@
+// COMPONENTS: OFFCANVAS
+// ~~~~~~~~~~~~~~~~~~~~~
+
+@mixin offcanvas-panel-setup {
+  position: fixed;
+  min-height: 100vh;
+  top: 0;
+  bottom: 0;
+  z-index: $z-index-offcanvas;
+  width: 320px;
+  overflow-y: auto;
+  transition: $offcanvas-transition;
+}
+
+// NOTE: The class `.offcanvas-panel` has been removed because it no longer has any 
+// style rules, and because `activator.js` looks for and finds `-panel` in the 
+// modifier classes anyway. However, for sake of consistency with other components, 
+// we will still retain `offcanvas-panel` in the HTML -- it’s easier not to learn and 
+// teach that `offcanvas-panel` is an “exception to the rule” of Activator components.
+
+@mixin offcanvas-panel-right {
+  right: 0;
+  transform: translateX(110%);
+  &.active {
+    transform: translateX(0);
+  }
+}
+
+@mixin offcanvas-panel-left {
+  left: 0;
+  transform: translateX(-110%);
+  &.active {
+    transform: translateX(0);
+  }
+}
+
+.offcanvas-panel-all {
+  @include offcanvas-panel-setup;
+  &.offcanvas-panel-right {
+    @include offcanvas-panel-right;      
+  }
+  &.offcanvas-panel-left {
+    @include offcanvas-panel-left;      
+  }
+}
+
+.offcanvas-panel-below-lg {
+  @include break-max($mq-lg) {
+    @include offcanvas-panel-setup;
+    &.offcanvas-panel-right {
+      @include offcanvas-panel-right;      
+    }
+    &.offcanvas-panel-left {
+      @include offcanvas-panel-left;      
+    }
+  }
+  @include break-min($mq-lg) {
+    box-shadow: none !important;
+  }
+}
+
+.offcanvas-panel-below-md {
+  @include break-max($mq-md) {
+    @include offcanvas-panel-setup;
+    &.offcanvas-panel-right {
+      @include offcanvas-panel-right;      
+    }
+    &.offcanvas-panel-left {
+      @include offcanvas-panel-left;      
+    }
+  }
+  @include break-min($mq-md) {
+    box-shadow: none !important;
+  }
+}
+
+.offcanvas-panel-below-sm {
+  @include break-max($mq-sm) {
+    @include offcanvas-panel-setup;
+    &.offcanvas-panel-right {
+      @include offcanvas-panel-right;      
+    }
+    &.offcanvas-panel-left {
+      @include offcanvas-panel-left;      
+    }
+  }
+  @include break-min($mq-sm) {
+    box-shadow: none !important;
+  }
+}

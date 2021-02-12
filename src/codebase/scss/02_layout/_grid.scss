@@ -1,0 +1,92 @@
+// LAYOUT: GRID
+// ~~~~~~~~~~~~
+
+@mixin grid-setup {
+  &-2-cols {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(1rem, 1fr));
+  }
+  &-3-cols {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(1rem, 1fr));
+  }
+  &-4-cols {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(1rem, 1fr));
+  }
+  &-5-cols {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(1rem, 1fr));
+  }
+}
+
+[class^=grid] > * {
+  grid-row: 1;
+}
+ 
+.grid {
+  @include grid-setup;
+}
+.grid-sm {
+  @include break-min($mq-sm) {
+    @include grid-setup;
+  }
+}
+.grid-md {
+  @include break-min($mq-md) {
+    @include grid-setup;
+  }
+}
+.grid-lg {
+  @include break-min($mq-lg) {
+    @include grid-setup;
+  }
+}
+
+.grid-gap {
+  grid-column-gap: $grid-gap-width;
+  > * {
+    margin-bottom: $grid-gap-width;
+  }
+}
+
+@mixin grid-columns {
+  &-1 {grid-column: 1}
+  &-1-thru-2 {grid-column: 1 / span 2}
+  &-1-thru-3 {grid-column: 1 / span 3}
+  &-1-thru-4 {grid-column: 1 / span 4}
+  &-1-thru-5 {grid-column: 1 / span 5}
+
+  &-2 {grid-column: 2}
+  &-2-thru-3 {grid-column: 2 / span 2}
+  &-2-thru-4 {grid-column: 2 / span 3}
+  &-2-thru-5 {grid-column: 2 / span 4}
+
+  &-3 {grid-column: 3}
+  &-3-thru-4 {grid-column: 3 / span 2}
+  &-3-thru-5 {grid-column: 3 / span 3}
+
+  &-4 {grid-column: 4}
+  &-4-thru-5 {grid-column: 4 / span 2}
+
+  &-5 {grid-column: 5}
+}
+
+.col {
+  @include grid-columns;
+}
+.col-sm {
+  @include break-min($mq-sm) {
+    @include grid-columns;
+  }
+}
+.col-md {
+  @include break-min($mq-md) {
+    @include grid-columns;
+  }
+}
+.col-lg {
+  @include break-min($mq-lg) {
+    @include grid-columns;
+  }
+}

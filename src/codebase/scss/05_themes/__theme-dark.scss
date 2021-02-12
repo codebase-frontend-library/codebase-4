@@ -1,0 +1,344 @@
+// Dark theme (for dark mode AND/OR optional `.theme-dark` class toggler)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Dark Theme Colors (`*-dark`)
+$color-primary-dark:             $base-color-primary-600 !default;
+$color-secondary-dark:           $base-color-secondary-600 !default;
+$color-success-dark:             $base-color-success-600 !default;
+$color-warning-dark:             $base-color-warning-600 !default;
+$color-danger-dark:              $base-color-danger-600 !default;
+
+$color-primary-hover-dark:       $base-color-primary-700 !default;
+$color-secondary-hover-dark:     $base-color-secondary-700 !default;
+$color-success-hover-dark:       $base-color-success-700 !default;
+$color-warning-hover-dark:       $base-color-warning-700 !default;
+$color-danger-hover-dark:        $base-color-danger-700 !default;
+
+$color-primary-alt-dark:         $base-color-primary-900 !default;
+$color-secondary-alt-dark:       $base-color-secondary-900 !default;
+$color-success-alt-dark:         $base-color-success-900 !default;
+$color-warning-alt-dark:         $base-color-warning-900 !default;
+$color-danger-alt-dark:          $base-color-danger-900 !default;
+
+$color-background-dark:          $base-color-detail-850 !default;
+$color-background-alt-dark:      $base-color-detail-800 !default;
+$color-fineline-dark:            $base-color-detail-650 !default;
+$color-ui-default-dark:          $base-color-detail-700 !default;
+$color-button-default-hover-dark:$base-color-detail-750 !default;
+$color-text-dark:                $base-color-detail-300 !default;
+$color-text-alt-dark:            $base-color-detail-100 !default;
+
+$color-ui-text-dark:             $color-ui-text !default; // button text, etc.
+$color-ui-text-hover-dark:       $color-ui-text-dark !default;
+$color-ui-focus-glow-dark:       lighten($color-primary-dark, 10%) !default;
+$color-hyperlink-dark:           lighten($color-primary-dark, 20%) !default; // because $color-primary-dark is too dark for hyperlink text
+$color-hyperlink-hover-dark:     lighten($color-primary-dark, 10%) !default;
+$color-selection-dark:           rgba(51,204,51,0.35) !default;
+$color-highlight-dark:           rgba(255,255,0,.25) !default;
+$color-form-element-dark:        $base-color-detail-800 !default;
+
+// UI focus glow (used for forms and buttons)
+// There is no `box-shadow-color` rule in CSS!
+$ui-focus-glow-dark:             0 0 0 2px $color-ui-focus-glow-dark !default;
+
+// Dark theme UI color map
+// Used for buttons, badges, labels and utility classes
+$color-ui-dark: () !default;
+$color-ui-dark: map-merge((
+  "primary":          $color-primary-dark,
+  "secondary":        $color-secondary-dark,
+  "success":          $color-success-dark,
+  "warning":          $color-warning-dark,
+  "danger":           $color-danger-dark
+), $color-ui-dark);
+
+$color-button-hover-dark: () !default;
+$color-button-hover-dark: map-merge((
+  "primary":          $color-primary-hover-dark,
+  "secondary":        $color-secondary-hover-dark,
+  "success":          $color-success-hover-dark,
+  "warning":          $color-warning-hover-dark,
+  "danger":           $color-danger-hover-dark
+), $color-button-hover-dark);
+
+// Dark theme UI alt color map
+// Used for utility classes, so that you can create your own alerts, toasts, form reactivity, etc.
+$color-ui-alt-dark: () !default;
+$color-ui-alt-dark: map-merge((
+  "primary-alt":     $color-primary-alt-dark,
+  "secondary-alt":   $color-secondary-alt-dark,
+  "success-alt":     $color-success-alt-dark,
+  "warning-alt":     $color-warning-alt-dark,
+  "danger-alt":      $color-danger-alt-dark
+), $color-ui-alt-dark);
+
+// Scheme utility color map
+$color-scheme-dark: () !default;
+$color-scheme-dark: map-merge((
+  "background":      $color-background-dark,
+  "background-alt":  $color-background-alt-dark,
+  "fineline":        $color-fineline-dark,
+  "default":         $color-ui-default-dark,
+  "text":            $color-text-dark,
+  "text-alt":        $color-text-alt-dark
+), $color-scheme-dark);
+
+// The mixin
+
+@mixin theme-dark {
+  *::selection {
+    background: $color-selection-dark;
+  }
+
+  h1, .h1,
+  h2, .h2,
+  h3, .h3,
+  h4, .h4,
+  h5, .h5,
+  h6, .h6 {
+    color: $color-text-alt-dark;
+  }
+
+  a {
+    color: $color-hyperlink;
+    @if $text-hyperlink-hover==true {
+      &:hover,
+      &:active {
+        color: $color-hyperlink-hover-dark;
+      }
+    }
+  }
+
+  button:not(.btn),
+  [type="button"],
+  [type="submit"],
+  [type="reset"] {
+    color: $color-text-alt-dark;
+    border-color: $color-fineline-dark;
+    &:hover,
+    &:active,
+    &.active {
+      background: $color-background-alt-dark;
+    }
+    &:focus-visible {
+      box-shadow: $ui-focus-glow-dark;
+    }
+  }
+
+  code,
+  kbd,
+  samp {
+    color: $color-text-alt-dark;
+    @if $code-background==true {
+      background: $color-background-alt-dark;
+    }
+  }
+
+  hr {
+    border-color: $color-fineline-dark;
+  }
+
+  mark {
+    background: $color-highlight-dark;
+  }
+
+  input,
+  select,
+  textarea {
+    border-color: $color-fineline-dark;
+    color: $color-text-dark;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="search"],
+  input[type="number"],
+  input[type="date"],
+  input[type="month"],
+  input[type="password"],
+  textarea,
+  select {
+    @if $form-input-background==true {
+      background: $color-form-element-dark;
+    }
+    &:focus {
+      box-shadow: $ui-focus-glow-dark;
+    }
+  }
+
+  select:not([multiple]) {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='1.5'%3E%3Cpath d='M6 6l4 4 4-4' fill='none' stroke='%23fff' stroke-width='1.33334'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 1em 1em;
+  }
+  
+  .label, .badge {
+    color: $color-ui-text-dark;
+    background: $color-ui-default-dark;
+  }
+  @each $key, $value in $color-ui-dark {
+    .label-#{$key} {
+      background: $value;
+      border-color: $value;
+    }
+  }
+  @each $key, $value in $color-ui-dark {
+    .badge-#{$key} {
+      background: $value;
+      border-color: $value;
+    }
+  }
+
+
+  // Buttons
+  .btn {
+    color: $color-ui-text-dark;
+    background: $color-ui-default-dark;
+    border-color: $color-ui-default-dark;
+    &:hover,
+    &:active,
+    &.active {
+      background: $color-button-default-hover-dark;
+      border-color: $color-button-default-hover-dark;
+      color: $color-ui-text-hover-dark;
+    }
+  }
+
+  @each $key, $value in $color-ui-dark {
+    .btn-#{$key} {
+      background: $value;
+      border-color: $value;
+    }
+  }
+
+  @each $key, $value in $color-button-hover-dark {
+    .btn-#{$key} {
+      &:hover,
+      &:active,
+      &.active {
+        border-color: $value;
+        background: $value !important;
+      }
+    }
+  }
+
+  .menu {
+    a:not(.btn) {
+      color: $color-hyperlink-dark;
+      &:hover {
+        color: $color-hyperlink-hover-dark;
+      }
+    }
+  }
+
+  .table {
+    &:not(.table-borderless) {
+      th, td {
+        border-color: $color-fineline-dark;
+      }
+    }
+    &-striped {
+      thead,
+      tbody tr:nth-child(even) {
+        background: rgba(0,0,0, 0.05);
+      }
+      tbody tr:nth-child(odd) {
+        background: rgba(255,255,255, 0.05);
+      }
+    }
+  }
+
+  // Counterintuitively, tabs may look better with inverted colors in dark mode.
+  .tab-control {
+    border-color: $color-fineline-dark;
+    background: $color-background-dark;
+    &.active {
+      position: relative;
+      z-index: $z-index-tab-active;
+      background: $color-background-alt-dark;
+    }
+  }
+
+  .tab-panel {
+    position: relative;
+    top: -1px;
+    border-color: $color-fineline-dark;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    background: $color-background-alt-dark;
+  }
+
+  // Control indicators
+  .control-indicator-plus::after {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='1.5'%3E%3Cpath d='M8 14V2M2 8h12' fill='none' stroke='%23cdcdcd' stroke-width='2'/%3E%3C/svg%3E");
+  }
+  .control-indicator-plus.active::after {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='1.5'%3E%3Cpath d='M2 8h12' fill='none' stroke='%23cdcdcd' stroke-width='2'/%3E%3C/svg%3E");
+  }
+  .control-indicator-chevron::after {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='1.5'%3E%3Cpath d='M3 6l5 5 5-5' fill='none' stroke='%23cdcdcd' stroke-width='1.5'/%3E%3C/svg%3E");
+  }
+
+  // Utilities
+
+  .b-dashed, .bt-dashed, .br-dashed, .bb-dashed, .bl-dashed,
+  .b-thin, .bt-thin, .br-thin, .bb-thin, .bl-thin,
+  .b-thick, .bt-thick, .br-thick, .bb-thick, .bl-thick,
+  .b-heavy, .bt-heavy, .br-heavy, .bb-heavy, .bl-heavy {
+    border-color: $color-fineline-dark;
+  }
+
+  .t-color-ui {
+    color: $color-ui-text-dark !important;
+  }
+
+  .b-color-ui {
+    border-color: $color-ui-text-dark !important;
+  }
+  
+  @each $key, $value in $color-ui-dark {
+    .bg-color-#{$key} {
+      background: $value;
+    }
+    .t-color-#{$key} {
+      color: $value;
+    }
+    .b-color-#{$key} {
+      border-color: $value;
+    }
+  }
+
+  @each $key, $value in $color-ui-alt-dark {
+    .bg-color-#{$key} {
+      background: $value;
+    }
+    .t-color-#{$key} {
+      color: $value;
+    }
+    .b-color-#{$key} {
+      border-color: $value;
+    }
+  }
+
+  @each $key, $value in $color-scheme-dark {
+    .bg-color-#{$key} {
+      background: $value;
+    }
+    .t-color-#{$key} {
+      color: $value;
+    }
+    .b-color-#{$key} {
+      border-color: $value;
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: $color-text-dark;
+    background: $color-background-dark;
+  }
+  @include theme-dark;
+}

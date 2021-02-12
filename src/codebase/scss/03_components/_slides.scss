@@ -1,0 +1,14 @@
+// COMPONENTS: SLIDES
+// ~~~~~~~~~~~~~~~~~~
+
+.slide-control {
+  width: 2rem;
+  height: 1rem
+}
+
+.slide-panel {
+  display: none;
+}
+.slide-panel.active {
+  display: block;
+}

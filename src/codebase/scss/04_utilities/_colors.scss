@@ -1,0 +1,57 @@
+// UTILITIES: COLORS
+// ~~~~~~~~~~~~~~~~~
+
+// .bg-color-     background color
+// .t-color-      text color
+// .b-color-      border color
+
+.bg-color-transparent,
+.bg-transparent {
+  background-color: transparent !important;
+}
+
+.t-color-ui-text {
+  color: $color-ui-text !important;
+}
+
+.b-color-ui-text,
+.btn.b-color-ui-text:hover {
+  border-color: $color-ui-text !important;
+}
+
+
+@each $key, $value in $color-ui {
+  .bg-color-#{$key} {
+    background: $value;
+  }
+  .t-color-#{$key} {
+    color: $value;
+  }
+  .b-color-#{$key} {
+    border-color: $value;
+  }
+}
+
+@each $key, $value in $color-ui-alt {
+  .bg-color-#{$key} {
+    background: $value;
+  }
+  .t-color-#{$key} {
+    color: $value;
+  }
+  .b-color-#{$key} {
+    border-color: $value;
+  }
+}
+
+@each $key, $value in $color-scheme {
+  .bg-color-#{$key} {
+    background: $value;
+  }
+  .t-color-#{$key} {
+    color: $value;
+  }
+  .b-color-#{$key} {
+    border-color: $value;
+  }
+}

@@ -1,0 +1,12 @@
+// UTILITIES: TRANSITIONS
+// ~~~~~~~~~~~~~~~~~~~~~~
+
+.transition-all-short {
+  transition: all .2s ease;
+}
+.transition-all {
+  transition: all .4s ease;
+}
+.transition-all-long {
+  transition: all .6s ease;
+}

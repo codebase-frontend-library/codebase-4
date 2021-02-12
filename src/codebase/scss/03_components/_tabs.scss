@@ -1,0 +1,41 @@
+// COMPONENTS: TABS
+// ~~~~~~~~~~~~~~~~
+
+.tab-wrapper {
+  margin-bottom: $text-base-line-height * 1.5rem;
+}
+.tab-control {
+  border: 1px solid $color-fineline;
+  border-bottom: 0;
+  border-top-left-radius: $tab-control-border-radius;
+  border-top-right-radius: $tab-control-border-radius;
+  overflow: hidden;
+  padding: $spacing-block;
+  background: $color-background-alt;
+  &:hover {
+    cursor: pointer;
+  }
+  &.active {
+    position: relative;
+    z-index: $z-index-tab-active;
+    background: $color-background;
+  }
+}
+.tab-panel {
+  position: relative;
+  display: none;
+  top: -1px;
+  border: 1px solid $color-fineline;
+  padding: $spacing-block;
+  background: $color-background;
+  &.active {
+    display: block;
+  }
+}
+
+.slide-panel {
+  display: none;
+  &.active {
+    display: block;
+  }
+}

@@ -1,0 +1,11 @@
+// COMPONENTS: INDICATORS
+// ~~~~~~~~~~~~~~~~~~~~~~
+
+// Use for symbols or icons on buttons, to indicate flipping their control state from “open” to “close“
+
+.indicator-open {
+  visibility: visible;
+  .active & {
+    display: none;
+  }
+}

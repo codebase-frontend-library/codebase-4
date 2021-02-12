@@ -1,0 +1,31 @@
+// COMPONENTS: CONTROL INDICATORS
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Plus (and minus)
+.control-indicator-plus::after {
+  width: 1em;
+  height: 1em;
+  content: '';
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='1.5'%3E%3Cpath d='M8 14V2M2 8h12' fill='none' stroke='%23474747' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 1em 1em;
+}
+.control-indicator-plus.active::after {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='1.5'%3E%3Cpath d='M2 8h12' fill='none' stroke='%23474747' stroke-width='2'/%3E%3C/svg%3E");
+}
+
+// Chevron
+.control-indicator-chevron::after {
+  width: 1em;
+  height: 1em;
+  content: '';
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='1.5'%3E%3Cpath d='M3 6l5 5 5-5' fill='none' stroke='%23474747' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 1em 1em;
+}
+
+.control-indicator-chevron.active::after {
+  transform: rotate(180deg);
+}

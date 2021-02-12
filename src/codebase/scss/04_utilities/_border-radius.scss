@@ -1,0 +1,62 @@
+// UTILITIES: BORDER RADIUS (ROUNDED CORNERS)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.unrounded {
+  border-radius: 0;
+}
+
+.rounded {
+  border-radius: $border-radius;
+  &-sm {
+    border-radius: $border-radius-sm;      
+  }
+  &-lg {
+    border-radius: $border-radius-lg;      
+  }
+  &-pill {
+    border-radius: $border-radius-pill;
+  }
+  &-full {
+    border-radius: $border-radius-circle;
+  }
+}
+
+[class*="rounded"] {
+  overflow: hidden;
+}
+
+.unrounded-top-right {
+  border-top-right-radius: 0 !important;
+}
+
+.unrounded-bottom-right {
+  border-bottom-right-radius: 0 !important;
+}
+
+.unrounded-bottom-left {
+  border-bottom-left-radius: 0 !important;
+}
+
+.unrounded-top-left {
+  border-top-left-radius: 0 !important;
+}
+
+.unrounded-top {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+.unrounded-right {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.unrounded-bottom {
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+.unrounded-left {
+  border-bottom-left-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+}

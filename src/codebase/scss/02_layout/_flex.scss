@@ -1,0 +1,94 @@
+// LAYOUT: FLEXBOX
+// ~~~~~~~~~~~~~~~
+
+@mixin flex {
+  display: flex;
+  &-wrap {
+    flex-flow: row wrap;
+  }
+  &-row-reverse {
+    flex-direction: row-reverse;
+  }
+  &-column {
+    flex-direction: column;
+  }
+  &-column-reverse {
+    flex-direction: column-reverse;
+  }
+  // Stretching
+  &-grow-equal {
+    > * {
+      flex: 1;
+    }
+  }
+  &-grow-auto {
+    > * {
+      flex: auto;
+    }
+  }
+  // Spacing
+  &-gap {                             // bleeding edge; check CanIuse
+    gap: $flex-gap-width;
+  }
+  &-space-around {
+    justify-content: space-around;
+  }
+  &-space-between {
+    justify-content: space-between;
+  }
+  &-space-evenly {
+    justify-content: space-evenly;
+  }
+  &-start {
+    justify-content: flex-start;
+  }
+  &-center {
+    justify-content: center;
+  }
+  &-end {
+    justify-content: flex-end;
+  }
+  &-top {
+    align-items: flex-start;
+  }
+  &-middle {
+    align-items: center;
+  }
+  &-bottom {
+    align-items: flex-end;
+  }
+}
+
+.inline-flex {
+  display: inline-flex !important;
+}
+
+.flex {
+  @include flex;
+}
+.flex-sm {
+  @include break-min($mq-sm) {
+    @include flex;
+  }
+}
+.flex-md {
+  @include break-min($mq-md) {
+    @include flex;
+  }
+}
+.flex-lg {
+  @include break-min($mq-lg) {
+    @include flex;
+  }
+}
+
+// Individual flex items
+.flex-item-grow-1 {
+  flex-grow: 1;
+}
+.flex-item-order-start {
+  order: 0;
+}
+.flex-item-order-end {
+  order: 9999;
+}

@@ -1,0 +1,102 @@
+// BASICS: DEFAULT DETAIL COLORS AND UI COLORS
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Detail Colors ///////////////////////////////////////////////////////////////
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// In Codebase, a grayscale (white to black in with 5% increments) has been used for typograpy, border lines, and 
+// default UI elements. These color variables have been named generically as 
+// “detail colors” rather than actual color names, so that you can 
+// override them to any color you like. E.g. adjust them to “warm grays” or
+// “cool grays”.
+
+// This same detail color scale has been used in the (default) light theme 
+// and dark theme.
+
+$base-color-detail-50:        #f2f2f2 !default;
+$base-color-detail-100:       #e6e6e6 !default;
+$base-color-detail-150:       #d9d9d9 !default;
+$base-color-detail-200:       #cccccc !default;
+$base-color-detail-250:       #bfbfbf !default;
+$base-color-detail-300:       #b3b3b3 !default;
+$base-color-detail-350:       #a6a6a6 !default;
+$base-color-detail-400:       #999999 !default;
+$base-color-detail-450:       #8c8c8c !default;
+$base-color-detail-500:       #808080 !default;
+$base-color-detail-550:       #737373 !default;
+$base-color-detail-600:       #666666 !default;
+$base-color-detail-650:       #595959 !default;
+$base-color-detail-700:       #4d4d4d !default;
+$base-color-detail-750:       #404040 !default;
+$base-color-detail-800:       #333333 !default;
+$base-color-detail-850:       #262626 !default;
+$base-color-detail-900:       #1a1a1a !default;
+$base-color-detail-950:       #0d0d0d !default;
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// User Interface (UI) Colors //////////////////////////////////////////////////
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// How the UI Color Scheme Works
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// 100: Light mode UI alt backgrounds
+// 200:
+// 300:
+// 400:
+// 500: Light mode UI backgrounds (e.g. buttons)
+// 600: Light mode UI hover backgrounds // dark mode UI backgrounds
+// 700: dark mode UI hover backgrounds
+// 800:
+// 900: dark mode UI alt backgrounds
+
+$base-color-primary-100:      #c9edfb !default;
+$base-color-primary-200:      #95d8f7 !default;
+$base-color-primary-300:      #5eb4e7 !default;
+$base-color-primary-400:      #358fd0 !default;
+$base-color-primary-500:      #025eb1 !default;
+$base-color-primary-600:      #014898 !default;
+$base-color-primary-700:      #01367f !default;
+$base-color-primary-800:      #002666 !default;
+$base-color-primary-900:      #001b54 !default;
+
+$base-color-secondary-100:    #cbfdfc !default;
+$base-color-secondary-200:    #97f8fc !default;
+$base-color-secondary-300:    #63e7f7 !default;
+$base-color-secondary-400:    #3ccff0 !default;
+$base-color-secondary-500:    #00ace6 !default;
+$base-color-secondary-600:    #0085c5 !default;
+$base-color-secondary-700:    #0064a5 !default;
+$base-color-secondary-800:    #004785 !default;
+$base-color-secondary-900:    #00336e !default;
+
+$base-color-success-100:      #dafadf !default;
+$base-color-success-200:      #b6f6c6 !default;
+$base-color-success-300:      #8ce3aa !default;
+$base-color-success-400:      #68c993 !default;
+$base-color-success-500:      #3ba575 !default;
+$base-color-success-600:      #2b8d6b !default;
+$base-color-success-700:      #1d7660 !default;
+$base-color-success-800:      #125f53 !default;
+$base-color-success-900:      #0b4f4b !default;
+
+$base-color-warning-100:      #fdf4cb !default;
+$base-color-warning-200:      #fce697 !default;
+$base-color-warning-300:      #f7d263 !default;
+$base-color-warning-400:      #f0bc3c !default;
+$base-color-warning-500:      #e69d00 !default;
+$base-color-warning-600:      #c58000 !default;
+$base-color-warning-700:      #a56600 !default;
+$base-color-warning-800:      #854e00 !default;
+$base-color-warning-900:      #6e3c00 !default;
+
+$base-color-danger-100:       #fee2d0 !default;
+$base-color-danger-200:       #febea2 !default;
+$base-color-danger-300:       #fe9174 !default;
+$base-color-danger-400:       #fd6851 !default;
+$base-color-danger-500:       #fc2318 !default;
+$base-color-danger-600:       #d81118 !default;
+$base-color-danger-700:       #b50c20 !default;
+$base-color-danger-800:       #920723 !default;
+$base-color-danger-900:       #780426 !default;

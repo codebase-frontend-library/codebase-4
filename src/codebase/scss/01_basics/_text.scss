@@ -1,0 +1,191 @@
+// BASICS: TYPOGRAPHY
+// ~~~~~~~~~~~~~~~~~~
+
+// See also `.t-` utilities.
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: 0;
+  margin-bottom: $text-base-line-height * 1rem;
+  color: $color-text-alt;
+}
+
+h1,
+.h1 {
+  font-size: map-get($heading-size-scale, h1);
+  font-weight: map-get($heading-weight, h1);
+  line-height: map-get($heading-line-height, h1);
+}
+
+h2,
+.h2 {
+  font-size: map-get($heading-size-scale, h2);
+  font-weight: map-get($heading-weight, h2);
+  line-height: map-get($heading-line-height, h2);
+}
+
+h3,
+.h3 {
+  font-size: map-get($heading-size-scale, h3);
+  font-weight: map-get($heading-weight, h3);
+  line-height: map-get($heading-line-height, h3);
+}
+
+h4,
+.h4 {
+  font-size: map-get($heading-size-scale, h4);
+  font-weight: map-get($heading-weight, h4);
+  line-height: map-get($heading-line-height, h4);
+}
+
+h5,
+.h5 {
+  font-size: map-get($heading-size-scale, h5);
+  font-weight: map-get($heading-weight, h5);
+  line-height: map-get($heading-line-height, h5);
+}
+
+h6,
+.h6 {
+  font-size: map-get($heading-size-scale, h6);
+  font-weight: map-get($heading-weight, h6);
+  line-height: map-get($heading-line-height, h6);
+}
+
+@include break-max($mq-sm) {
+  h1,
+  .h1 {
+    font-size: map-get($heading-size-scale, h1) * .875;
+  }
+  h2,
+  .h2 {
+    font-size: map-get($heading-size-scale, h2) * .875;
+  }
+  h3,
+  .h3 {
+    font-size: map-get($heading-size-scale, h3) * .875;
+  }
+  h4,
+  .h4 {
+    font-size: map-get($heading-size-scale, h4) * .875;
+  }
+  h5,
+  .h5 {
+    font-size: map-get($heading-size-scale, h5) * .875;
+  }
+  h6,
+  .h6 {
+    font-size: map-get($heading-size-scale, h6) * .875;
+  }
+}
+
+blockquote, p, li, dt, dd, th, td {
+  font-size: 1em;
+}
+
+blockquote,
+p,
+dl {
+  margin-top: 0;
+  margin-bottom: $text-base-line-height * 1rem;
+}
+
+ol,
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: $text-base-line-height * 1rem;
+}
+
+li {
+  margin-bottom: $li-spacing;
+}
+
+li > ol,
+li > ul {
+  margin-top: 0.75em;
+}
+
+dd {
+  margin-bottom: $text-base-line-height * 1rem;
+}
+
+dt {
+  font-weight: $text-bold-font-weight;
+}
+
+dd {
+  margin-left: 2em;
+}
+
+hr {
+  height: 0;
+  width: 100%;
+  margin-top: $horizontal-rule-spacing;
+  margin-bottom: $horizontal-rule-spacing;
+  border: 0;
+  border-top: $horizontal-rule-thickness solid $color-fineline;
+  .container > & {
+    margin-top: 0;
+  }
+}
+
+blockquote {
+  margin: ($text-base-line-height * 1rem) 0;
+  padding-right: $blockquotes-side-padding;
+  padding-left: $blockquotes-side-padding;
+  font-size: $blockquotes-font-size;
+}
+
+a {
+  color: $color-hyperlink;
+  text-decoration: $text-decoration-hyperlink;
+  text-decoration-skip-ink: auto;
+  @if $text-hyperlink-hover==true {
+    &:hover,
+    &:active {
+      color: $color-hyperlink-hover;
+      text-decoration: $text-decoration-hyperlink-hover;
+    }
+  }
+}
+
+b, strong {
+  font-weight: $text-bold-font-weight;
+}
+
+code,
+kbd,
+samp {
+  display: inline-block;
+  font-family: $code-font-family;
+  color: $color-text-alt;
+  font-size: 0.9em;
+  line-height: 1.5em;
+  padding: 0.1em 0.4em;
+  @if $code-rounded-corners==true {
+    border-radius: $code-radius;
+  }
+  @if $code-background==true {
+    background: $color-background-alt;
+  }
+}
+
+mark {
+  color: currentColor;
+  background: $color-highlight;
+}
+
+pre {
+  width: 100%;
+  margin-top: $text-base-line-height * 1remm;
+  margin-bottom: $text-base-line-height * 1rem;
+  code {
+    display: block;
+    overflow-x: auto;
+  }
+}

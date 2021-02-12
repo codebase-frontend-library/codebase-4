@@ -1,0 +1,256 @@
+// Optional Light Theme (for light Mode Toggle)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin theme-light {
+  color: $color-text;
+  background: $color-background;
+  
+  *::selection {
+    background: $color-selection;
+  }
+
+  h1, .h1,
+  h2, .h2,
+  h3, .h3,
+  h4, .h4,
+  h5, .h5,
+  h6, .h6 {
+    color: $color-text-alt;
+  }
+
+  a {
+    color: $color-hyperlink;
+    @if $text-hyperlink-hover==true {
+      &:hover,
+      &:active {
+        color: $color-hyperlink-hover;
+      }
+    }
+  }
+
+  button:not(.btn),
+  [type="button"],
+  [type="submit"],
+  [type="reset"] {
+    color: $color-text-alt;
+    border-color: $color-fineline;
+    &:hover,
+    &:active,
+    &.active {
+      background: $color-background-alt;
+    }
+    &:focus-visible {
+      box-shadow: $ui-focus-glow;
+    }
+  }
+
+  code,
+  kbd,
+  samp {
+    color: $color-text-alt;
+    @if $code-background==true {
+      background: $color-background-alt;
+    }
+  }
+
+  hr {
+    border-color: $color-fineline;
+  }
+
+  mark {
+    background: $color-highlight;
+  }
+
+  input,
+  select,
+  textarea {
+    border-color: $color-fineline;
+    color: $color-text;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="search"],
+  input[type="number"],
+  input[type="date"],
+  input[type="month"],
+  input[type="password"],
+  textarea,
+  select {
+    @if $form-input-background==true {
+      background: $color-form-element;
+    }
+    &:focus {
+      box-shadow: $ui-focus-glow;
+    }
+  }
+
+  select:not([multiple]) {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='1.5'%3E%3Cpath d='M6 6l4 4 4-4' fill='none' stroke='%23000' stroke-width='1.33334'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 1em 1em;
+  }
+
+  .label, .badge {
+    color: $color-ui-text;
+    background: $color-ui-default;
+  }
+  @each $key, $value in $color-ui {
+    .badge-#{$key} {
+      background: $value;
+      border-color: $value;
+    }
+  }
+  @each $key, $value in $color-ui {
+    .label-#{$key} {
+      background: $value;
+      border-color: $value;
+    }
+  }
+
+  .menu {
+    a:not(.btn) {
+      color: $color-hyperlink;
+      &:hover {
+        color: $color-hyperlink-hover;
+      }
+    }
+  }
+
+  .table {
+    &:not(.table-borderless) {
+      th, td {
+        border-color: $color-fineline;
+      }
+    }
+    &-striped {
+      thead,
+      tbody tr:nth-child(even) {
+        background: rgba(29,28,31, 0.05);
+      }
+      tbody tr:nth-child(odd) {
+        background: rgba(255,255,255, 0.05);
+      }
+    }
+  }
+
+  .tab-control {
+    border-color: $color-fineline;
+    background: $color-background-alt;
+    &.active {
+      position: relative;
+      z-index: $z-index-tab-active;
+      background: $color-background;
+    }
+  }
+
+  .tab-panel {
+    position: relative;
+    top: -1px;
+    border-color: $color-fineline;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    background: $color-background;
+  }
+
+  // Buttons
+  .btn {
+    color: $color-ui-text;
+    background: $color-ui-default;
+    border-color: $color-ui-default;
+    &:hover,
+    &:active,
+    &.active {
+      background: $color-button-default-hover;
+      border-color: $color-button-default-hover;
+      color: $color-ui-text-hover;
+    }
+  }
+
+  @each $key, $value in $color-ui {
+    .btn-#{$key} {
+      background: $value;
+      border-color: $value;
+    }
+  }
+
+  @each $key, $value in $color-button-hover {
+    .btn-#{$key} {
+      &:hover,
+      &:active,
+      &.active {
+        border-color: $value;
+        background: $value !important;
+      }
+    }
+  }
+
+  // Control indicators
+  .control-indicator-plus::after {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='1.5'%3E%3Cpath d='M8 14V2M2 8h12' fill='none' stroke='%23474747' stroke-width='2'/%3E%3C/svg%3E");
+  }
+  .control-indicator-plus.active::after {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='1.5'%3E%3Cpath d='M2 8h12' fill='none' stroke='%23474747' stroke-width='2'/%3E%3C/svg%3E");
+  }
+  .control-indicator-chevron::after {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='1.5'%3E%3Cpath d='M3 6l5 5 5-5' fill='none' stroke='%23474747' stroke-width='1.5'/%3E%3C/svg%3E");
+  }
+
+  // Utilities
+
+  .b-dashed, .bt-dashed, .br-dashed, .bb-dashed, .bl-dashed,
+  .b-thin, .bt-thin, .br-thin, .bb-thin, .bl-thin,
+  .b-thick, .bt-thick, .br-thick, .bb-thick, .bl-thick,
+  .b-heavy, .bt-heavy, .br-heavy, .bb-heavy, .bl-heavy {
+    border-color: $color-fineline;
+  }
+
+  .t-color-ui {
+    color: $color-ui-text !important;
+  }
+
+  .b-color-ui {
+    border-color: $color-ui-text !important;
+  }  
+
+  @each $key, $value in $color-ui {
+    .bg-color-#{$key} {
+      background: $value;
+    }
+    .t-color-#{$key} {
+      color: $value;
+    }
+    .b-color-#{$key} {
+      border-color: $value;
+    }
+  }
+
+  @each $key, $value in $color-ui-alt {
+    .bg-color-#{$key} {
+      background: $value;
+    }
+    .t-color-#{$key} {
+      color: $value;
+    }
+    .b-color-#{$key} {
+      border-color: $value;
+    }
+  }
+
+  @each $key, $value in $color-scheme {
+    .bg-color-#{$key} {
+      background: $value;
+    }
+    .t-color-#{$key} {
+      color: $value;
+    }
+    .b-color-#{$key} {
+      border-color: $value;
+    }
+  }
+}
+
+.theme-light {
+  @include theme-light;
+}

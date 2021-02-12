@@ -1,0 +1,10 @@
+// COMPONENTS: DROPDOWNS
+// ~~~~~~~~~~~~~~~~~~~~~
+
+.dropdown-panel {
+  position: absolute;
+  display: none;
+  &.active {
+    display: block
+  }
+}

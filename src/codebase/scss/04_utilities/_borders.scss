@@ -1,0 +1,117 @@
+// UTILITIES: BORDERS
+// ~~~~~~~~~~~~~~~~~~
+
+// Border All
+.b {
+  &-0 {
+    border: 0 !important;
+  }
+
+  &-dashed {
+    border: $border-thin dashed $color-fineline;
+  }
+
+  &-thin {
+    border: $border-thin solid $color-fineline;
+  }
+
+  &-thick {
+    border: $border-thick solid $color-fineline;
+  }
+
+  &-heavy {
+    border: $border-heavy solid $color-fineline;
+  }
+}
+
+// Border Top
+.bt {
+  &-0 {
+    border-top: 0 !important;
+  }
+
+  &-dashed {
+    border-top: $border-thin dashed $color-fineline;
+  }
+
+  &-thin {
+    border-top: $border-thin solid $color-fineline;
+  }
+
+  &-thick {
+    border-top: $border-thick solid $color-fineline;
+  }
+
+  &-heavy {
+    border-top: $border-heavy solid $color-fineline;
+  }
+}
+
+// Border Right
+.br {
+  &-0 {
+    border-right: 0 !important;
+  }
+
+  &-dashed {
+    border-right: $border-thin dashed $color-fineline;
+  }
+
+  &-thin {
+    border-right: $border-thin solid $color-fineline;
+  }
+
+  &-thick {
+    border-right: $border-thick solid $color-fineline;
+  }
+
+  &-heavy {
+    border-right: $border-heavy solid $color-fineline;
+  }
+}
+
+// Border Bottom
+.bb {
+  &-0 {
+    border-bottom: 0 !important;
+  }
+
+  &-dashed {
+    border-bottom: $border-thin dashed $color-fineline;
+  }
+
+  &-thin {
+    border-bottom: $border-thin solid $color-fineline;
+  }
+
+  &-thick {
+    border-bottom: $border-thick solid $color-fineline;
+  }
+
+  &-heavy {
+    border-bottom: $border-heavy solid $color-fineline;
+  }
+}
+
+// Border Left
+.bl {
+  &-0 {
+    border-left: 0 !important;
+  }
+
+  &-dashed {
+    border-left: $border-thin dashed $color-fineline;
+  }
+
+  &-thin {
+    border-left: $border-thin solid $color-fineline;
+  }
+
+  &-thick {
+    border-left: $border-thick solid $color-fineline;
+  }
+
+  &-heavy {
+    border-left: $border-heavy solid $color-fineline;
+  }
+}
