@@ -29,3 +29,13 @@ _Version 4.0.0_
 ***
 
 [Go to the docs](/codebase-4/docs/index.html)
+
+***
+
+Production Codebase CSS and Activator JS (ES5) are in the Docs `dist/` folder - see [https://github.com/codebase-frontend-library/codebase-4/tree/master/docs/dist](https://github.com/codebase-frontend-library/codebase-4/tree/master/docs/dist)
+
+Codebase SCSS and Activator JS ES6 are in the Source `codebase/` folder - see https://github.com/codebase-frontend-library/codebase-4/tree/master/src/codebase
+
+***
+
+Codebase CSS and Activator JS have been built using [Gulp](https://gulpjs.com/) with plugins for [Sass](https://sass-lang.com/) and [Babel](https://babeljs.io/). Documentation has been built using [Eleventy](https://www.11ty.dev/). Docs demo icons are from [Tabler icons](https://tablericons.com/).
