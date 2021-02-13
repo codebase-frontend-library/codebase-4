@@ -2,15 +2,15 @@
 title: "Headings"
 headerTitle: "Heading Formats"
 layout: layout.njk
-prevPage: "/docs/5-typographic-utilities/inline-text"
-nextPage: "/docs/5-typographic-utilities/text-alignment"
+prevPage: "/codebase-4/docs/5-typographic-utilities/inline-text"
+nextPage: "/codebase-4/docs/5-typographic-utilities/text-alignment"
 prevButton: "Inline text"
 nextButton: "Text alignment"
 ---
 
 <p class="t-lg t-thin">Sometimes you may need to make some text as large as a heading – but without it actually being a heading. Or, sometimes you may need to change a heading size without breaking the semantic heirarchical ordering (because that woud be bad for SEO).</p>
 
-These heading format utility classes will help you out. They are styled the same as the Codebase basic (classless) styling for `<h1>` through `<h6>` [headings](/docs/2-codebase-basics/headings).
+These heading format utility classes will help you out. They are styled the same as the Codebase basic (classless) styling for `<h1>` through `<h6>` [headings](/codebase-4/docs/2-codebase-basics/headings).
 
 These are all `<div>` elements, in disguise:
 

@@ -1,8 +1,8 @@
 ---
 title: "Borders"
 layout: layout.njk
-prevPage: "/docs/6-decoration-utilities/spacing"
-nextPage: "/docs/6-decoration-utilities/rounded-corners"
+prevPage: "/codebase-4/docs/6-decoration-utilities/spacing"
+nextPage: "/codebase-4/docs/6-decoration-utilities/rounded-corners"
 prevButton: "Spacing"
 nextButton: "Rounded corners"
 ---
@@ -42,6 +42,6 @@ Here’s the full set:
 * `.b-thick` / `.bt-thick` / `.br-thick` / `.bb-thick` / `.bl-thick`
 * `.b-heavy` / `.bt-heavy` / `.br-heavy` / `.bb-heavy` / `.bl-heavy`
 
-By default, borders are colored by the variable `$color-fineline`, same as table borders, tab labels, and horizontal rules. Borders can be assigned other Codebase colors using `.b-color-{color}` classes. See [color utilities](/docs/6-decoration-utilities/colors).
+By default, borders are colored by the variable `$color-fineline`, same as table borders, tab labels, and horizontal rules. Borders can be assigned other Codebase colors using `.b-color-{color}` classes. See [color utilities](/codebase-4/docs/6-decoration-utilities/colors).
 
 **Note:** the `.b-color-{color}` utilities will color the border on all sides (same color for all of top, right, bottom, and left).

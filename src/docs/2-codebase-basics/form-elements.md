@@ -1,8 +1,8 @@
 ---
 title: "Form Elements"
 layout: layout.njk
-prevPage: "/docs/2-codebase-basics/tables"
-nextPage: "/docs/2-codebase-basics/images"
+prevPage: "/codebase-4/docs/2-codebase-basics/tables"
+nextPage: "/codebase-4/docs/2-codebase-basics/images"
 prevButton: "Tables"
 nextButton: "Images"
 ---
@@ -153,4 +153,4 @@ This is what a Codebase default (classless) button looks like:
 
 <input value="Submit" type="submit"> – input button `<input type="submit">`
 
-See also the [button component](/docs/7-simple-components/buttons).
+See also the [button component](/codebase-4/docs/7-simple-components/buttons).

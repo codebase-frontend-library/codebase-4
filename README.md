@@ -28,4 +28,4 @@ _Version 4.0.0_
 
 ***
 
-[Go to the docs](/docs/index.html)
+[Go to the docs](/codebase-4/docs/index.html)

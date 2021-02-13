@@ -3,7 +3,7 @@
 <div class="absolute w-full flex flex-space-between px-1 py-2">
   <div class="flex flex-row-reverse flex-middle">
     <div>
-      <a id="site-title" class="codebase-docs p-block t-decoration-none t-loose" href="/index.html">
+      <a id="site-title" class="codebase-docs p-block t-decoration-none t-loose" href="{{ '/' | url }}">
         <!-- Codebase logo-->
         <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2">
           <path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"/>
@@ -64,7 +64,7 @@
           <line x1="6" y1="13" x2="12" y2="19" />
         </svg>
       </a>
-      <a class="btn btn-lg btn-success" href="/docs/1-getting-started/simple-HTML-setup/">
+      <a class="btn btn-lg btn-success" href="{{ '/docs/1-getting-started/simple-HTML-setup/' | url }}">
         Get started
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
           <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -87,15 +87,14 @@
   {% include "side-nav.njk" %}
 
   <div id="docs-mainbody" class="container container-sm pb-responsive" style="padding-top: 57px;">
-    
     <div class="t-long-read pt-6">
       <h2 class="mb-6">What’s to Like About Codebase?</h2>
       <ul>
         <li>
-          <strong class="t-text-alt">Easy to start.</strong> Codebase can be <a href="/docs/1-getting-started/simple-html-setup">dropped into your project</a> as-is. No installation. No config file.
+          <strong class="t-text-alt">Easy to start.</strong> Codebase can be <a href="{{ '/docs/1-getting-started/simple-html-setup' | url }}">dropped into your project</a> as-is. No installation. No config file.
         </li>
         <li>
-          <strong class="t-text-alt">Easy to learn.</strong> These <a href="/docs/1-getting-started/simple-HTML-setup/">docs</a> will give you a good idea of what Codebase can do, and how easy it is to use. There are a lot of similarities between Bootstrap and Tailwind – so, if you are familiar with them, you’ll feel at home here.
+          <strong class="t-text-alt">Easy to learn.</strong> These <a href="{{ '/docs/1-getting-started/simple-HTML-setup/' | url }}">docs</a> will give you a good idea of what Codebase can do, and how easy it is to use. There are a lot of similarities between Bootstrap and Tailwind – so, if you are familiar with them, you’ll feel at home here.
         </li>
       </ul>
     </div>
@@ -111,10 +110,10 @@
     <div class="t-long-read">
       <ul>
         <li>
-          <strong class="t-text-alt">Element grid.</strong> Classless HTML elements and utility classes are built on a “soft” 0.5rem <a href="/docs/2-codebase-basics/element-grid">element grid</a> (8px default), for consistent positioning thoroughout.
+          <strong class="t-text-alt">Element grid.</strong> Classless HTML elements and utility classes are built on a “soft” 0.5rem <a href="{{ '/docs/2-codebase-basics/element-grid' | url }}">element grid</a> (8px default), for consistent positioning thoroughout.
         </li>
         <li>
-          <strong class="t-text-alt">Responsive layouts.</strong> Codebase comes with a lot of <a href="/docs/3-layout-systems/flex">flexbox</a> and <a href="/docs/3-layout-systems/grid">grid</a> layout options, and utilities for <a href="/docs/5-typographic-utilities/long-read-text">responsive typography</a>, making it look good and work well on everything from small phones to large screens.
+          <strong class="t-text-alt">Responsive layouts.</strong> Codebase comes with a lot of <a href="{{ '/docs/3-layout-systems/flex' | url }}">flexbox</a> and <a href="{{ '/docs/3-layout-systems/grid' | url }}">grid</a> layout options, and utilities for <a href="{{ '/docs/5-typographic-utilities/long-read-text' | url }}">responsive typography</a>, making it look good and work well on everything from small phones to large screens.
         </li>
       </ul>
     </div>
@@ -131,7 +130,7 @@
     <div class="t-long-read">
       <ul>
         <li>
-          <strong class="t-text-alt">Utility first.</strong> <a href="/docs/7-simple-components/about-simple-components">Components</a> in Codebase are mostly styled from compounds of utility classes (utility classes just do one thing well).
+          <strong class="t-text-alt">Utility first.</strong> <a href="{{ '/docs/7-simple-components/about-simple-components' | url }}">Components</a> in Codebase are mostly styled from compounds of utility classes (utility classes just do one thing well).
         </li>
       </ul>
     </div>
@@ -139,7 +138,7 @@
     <div class="my-6">
       <div class="flex flex-column w-xxs mx-auto b-thin rounded bs-1 mb-3">
         <a href="#/">
-          <img class="img-cover" src="/img/placeholder1000x600.svg">
+          <img class="img-cover" src="{{ '/img/placeholder1000x600.svg' | url }}">
         </a>
         <div class="flex-item-grow-1 p-2">
           <h4 class="mb-1">Card Title</h4>
@@ -156,7 +155,7 @@
     <div class="t-long-read">
       <ul>
         <li>
-          <strong class="t-text-alt">Works with AlpineJS.</strong> Codebase comes with its own JavaScript called <a href="/docs/9-activator-components/activator-components-intro">Activator</a>, for activating dropdowns, tabs, modals, etc. But if you want to develop more powerful components, you can swap out Activator for <a href="https://github.com/alpinejs/alpine" target="_blank">AlpineJS</a>. These docs will show you how to set up several <a href="/docs/8-alpinejs-components/alpinejs-components-intro">Codebase components using Alpine</a>.
+          <strong class="t-text-alt">Works with AlpineJS.</strong> Codebase comes with its own JavaScript called <a href="{{ '/docs/9-activator-components/activator-components-intro' | url }}">Activator</a>, for activating dropdowns, tabs, modals, etc. But if you want to develop more powerful components, you can swap out Activator for <a href="https://github.com/alpinejs/alpine" target="_blank">AlpineJS</a>. These docs will show you how to set up several <a href="{{ '/docs/8-alpinejs-components/alpinejs-components-intro' | url }}">Codebase components using Alpine</a>.
         </li>
       </ul>
     </div>
@@ -182,7 +181,7 @@
     <div class="t-long-read">
       <ul>
         <li>
-          <strong class="t-text-alt">Highly customizable.</strong> The Codebase stylesheet has been built from a complex set of <a href="https://sass-lang.com/">Sass (SCSS)</a> files, preprocessed and minified. <a href="/docs/1-getting-started/codebase-scss-library">Sass users</a> can override huge number of default variables, or change them directly, to their own design requirements.
+          <strong class="t-text-alt">Highly customizable.</strong> The Codebase stylesheet has been built from a complex set of <a href="https://sass-lang.com/">Sass (SCSS)</a> files, preprocessed and minified. <a href="{{ '/docs/1-getting-started/codebase-scss-library' | url }}">Sass users can override a huge number of default variables</a>, or change them directly, to their own design requirements.
         </li>
         <li>
           <strong class="t-text-alt">Browser compatible.</strong> Codebase works on current and recent versions of all popular browsers and operating systems.
@@ -221,10 +220,9 @@
           <ellipse cx="12" cy="12" rx="3" ry="5" />
         </svg>
       </p>
-
       <ul>
         <li>
-          <strong class="t-text-alt">Light and dark themes.</strong> The Codebase stylesheet <code>codebase.css</code> has only a light theme (default). Also included is <code>codebase-l-d.css</code>, that has <a href="/docs/1-getting-started/light-and-dark-themes">light and dark theme CSS classes</a> baked in. These classes require a <a href="/docs/1-getting-started/light-and-dark-themes#an-example-theme-switcher-javascript">JavaScript theme switcher</a> for toggling <code>.theme-dark</code> or <code>.theme-light</code> in the <code>&lt;body&gt;</code> tag.</li>
+          <strong class="t-text-alt">Light and dark themes.</strong> The Codebase stylesheet <code>codebase.css</code> has only a light theme (default). Also included is <code>codebase-l-d.css</code>, that has <a href="{{ '/docs/1-getting-started/light-and-dark-themes' | url }}">light and dark theme CSS classes</a> baked in. These classes require a <a href="{{ '/docs/1-getting-started/light-and-dark-themes#an-example-theme-switcher-javascript' | url }}">JavaScript theme switcher</a> for toggling <code>.theme-dark</code> or <code>.theme-light</code> in the <code>&lt;body&gt;</code> tag.</li>
         </li>
         <li>
           <strong class="t-text-alt">Great for downstream designers.</strong> Codebase is so small, there’s no need for “tree-shaking” to purge unused CSS. And, since the whole Codebase CSS remains present in the deployed stylesheet, later designers can use all the utilities in styling their content, even creating complex landing pages, etc. directly in a CMS editor.
@@ -244,7 +242,7 @@
       <tr class="bg-color-success-alt">
       <td class="b-color-success">Codebase 4.0.0</td>
       <td>34 kb<br><br>60 kb if you want your visitors able to choose between dark and light themes.</td>
-      <td>3 kb (Codebase <a href="/docs/7-activator-components/activator-components">Activator</a> script)<br><br>Alternatively, use <a href="https://github.com/alpinejs/alpine">Alpine JS</a>, 77 kb</td>
+      <td>3 kb (Codebase <a href="{{ '/docs/9-activator-components/about-activator-components' | url }}">Activator</a> script)<br><br>Alternatively, use <a href="https://github.com/alpinejs/alpine">Alpine JS</a>, 77 kb</td>
       </tr>
       <tr>
       <td>Bootstrap 5.0.0 beta 1</td>
@@ -283,12 +281,12 @@
       </tbody>  
     </table>
 
-    <div class="t-long-read">
+    <div class="t-center t-long-read">
       <p>Ready for the next <span class="t-strike">big</span> <span class="t-heavy">small</span> thing?</p>
     </div>
 
-    <p class="">
-      <a class="btn btn-lg btn-success" href="/docs/1-getting-started/simple-HTML-setup">
+    <p class="t-center">
+      <a class="btn btn-lg btn-success" href="{{ '/docs/1-getting-started/simple-HTML-setup' | url }}">
         Get started
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
           <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>

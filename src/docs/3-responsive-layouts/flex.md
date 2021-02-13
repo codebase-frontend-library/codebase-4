@@ -2,8 +2,8 @@
 title: "Flex"
 headerTitle: "Flex System (Flexbox)"
 layout: layout.njk
-prevPage: "/docs/3-responsive-layouts/grid"
-nextPage: "/docs/4-layout-utilities/blocks"
+prevPage: "/codebase-4/docs/3-responsive-layouts/grid"
+nextPage: "/codebase-4/docs/4-layout-utilities/blocks"
 prevButton: "Grid"
 nextButton: "Blocks"
 ---
@@ -42,7 +42,7 @@ All the following examples below use `.flex` as-is, so that the demos can be see
 **Notes:**
 
 1. All flexbox system wrappers affect their immediate child elements.
-2. The Codebase flexbox systems don’t constrain the immediate child elements to proportional widths (in a row) or heights (in a column). So, if you need something like “25% with sidebar with 75% main content”, then you need the Codebase [grid system](/docs/3-responsive-layouts/grid).
+2. The Codebase flexbox systems don’t constrain the immediate child elements to proportional widths (in a row) or heights (in a column). So, if you need something like “25% with sidebar with 75% main content”, then you need the Codebase [grid system](/codebase-4/docs/3-responsive-layouts/grid).
 
 
 `.flex` :
@@ -75,19 +75,19 @@ All the following examples below use `.flex` as-is, so that the demos can be see
 `.flex.flex-grow-auto` :
 
 <div class="flex flex-grow-auto mb-3">
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">This is the first flex-item</div>
+  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">First flex-item</div>
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Another flex-item</div>
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Third</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">This is the last flex-item in this flexbox set</div>
+  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Last flex-item in this flexbox set</div>
 </div>
 
 `.flex.flex-gap.flex-grow-auto.flex-wrap` :
 
 <div class="flex flex-gap flex-grow-auto flex-wrap mb-3">
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">This is the first flex-item</div>
+  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">First flex-item</div>
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Another flex-item</div>
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Third</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">This is the last flex-item in this flexbox set.</div>
+  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Last flex-item in this flexbox set.</div>
 </div>
 
 `.flex.flex-space-between` :

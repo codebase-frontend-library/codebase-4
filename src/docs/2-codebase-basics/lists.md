@@ -1,13 +1,13 @@
 ---
 title: "Lists"
 layout: layout.njk
-prevPage: "/docs/2-codebase-basics/simple-text-elements"
-nextPage: "/docs/2-codebase-basics/horizontal-rules"
+prevPage: "/codebase-4/docs/2-codebase-basics/simple-text-elements"
+nextPage: "/codebase-4/docs/2-codebase-basics/horizontal-rules"
 prevButton: "Simple test elements"
 nextButton: "Horizontal rules"
 ---
 
-## Ordered lists (numbered)
+## Ordered Lists (Numbered)
 
 <ol>
 <li>List item</li>
@@ -43,7 +43,7 @@ nextButton: "Horizontal rules"
 
 See [https://www.w3schools.com/html/html_lists_ordered.asp](https://www.w3schools.com/html/html_lists_ordered.asp) for more on ordered lists.
 
-## Unordered list (bullet pointed)
+## Unordered Lists (Bullet Pointed)
 
 <ul>
 <li>List item</li>
@@ -77,7 +77,7 @@ See [https://www.w3schools.com/html/html_lists_ordered.asp](https://www.w3school
 </ul>
 ```
 
-## Definition lists
+## Definition Lists
 
 <dl>
 <dt>Title 1</dt>

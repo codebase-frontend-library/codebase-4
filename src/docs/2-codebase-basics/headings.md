@@ -1,8 +1,8 @@
 ---
 title: "Headings"
 layout: layout.njk
-prevPage: "/docs/2-codebase-basics/element-grid"
-nextPage: "/docs/2-codebase-basics/paragraphs"
+prevPage: "/codebase-4/docs/2-codebase-basics/element-grid"
+nextPage: "/codebase-4/docs/2-codebase-basics/paragraphs"
 prevButton: "Element grid"
 nextButton: "Paragraphs"
 ---
@@ -23,10 +23,10 @@ nextButton: "Paragraphs"
 <h6>h6 Heading</h6>
 ```
 
-Same as with [paragraphs](/docs/2-codebase-basics/paragraphs), headings have zero top margin while the bottom margin is set as equal to _one line-height of the default text size_, i.e. 1.5rem – thereby leaving an “empty line” gap between paragraphs and headings.
+Same as with [paragraphs](/codebase-4/docs/2-codebase-basics/paragraphs), headings have zero top margin while the bottom margin is set as equal to _one line-height of the default text size_, i.e. 1.5rem – thereby leaving an “empty line” gap between paragraphs and headings.
 
 Heading sizes, weights and line heights are set using three SCSS maps in the default variables file – you can control the rhythm of each from there.
 
 Below the small media query breakpoint (768px, default), all headings are size reduced to 87.5%, so that they do not look too big on small devices.
 
-All these same styles are also available as `.h1` to `.h6` block [text utility classes](/docs/5-typographic-utilities/inline-text).
+All these same styles are also available as `.h1` to `.h6` block [text utility classes](/codebase-4/docs/5-typographic-utilities/inline-text).

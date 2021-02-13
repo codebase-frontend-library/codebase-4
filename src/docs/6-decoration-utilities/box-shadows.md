@@ -1,8 +1,8 @@
 ---
 title: "Box Shadows"
 layout: layout.njk
-prevPage: "/docs/6-decoration-utilities/rounded-corners"
-nextPage: "/docs/6-decoration-utilities/colors"
+prevPage: "/codebase-4/docs/6-decoration-utilities/rounded-corners"
+nextPage: "/codebase-4/docs/6-decoration-utilities/colors"
 prevButton: "Rounded corners"
 nextButton: "Colors"
 ---
@@ -21,4 +21,4 @@ The units are meant to represent layer “lifts” along the z-axis. The higher 
 
 <div class="bs-3 mb-6 p-2">.bs-3</div>
 
-Box shadows are not clearly visible in the dark theme, of course. So, you may prefer to pair a box shadow with a [border](/docs/4-utilities/borders), same as I have done in the first [card component](/docs/5-simple-components/cards) example.
+Box shadows are not clearly visible in the dark theme, of course. So, you may prefer to pair a box shadow with a [border](/codebase-4/docs/4-utilities/borders), same as I have done in the first [card component](/codebase-4/docs/5-simple-components/cards) example.

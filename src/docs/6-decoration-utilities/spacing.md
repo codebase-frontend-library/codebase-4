@@ -2,8 +2,8 @@
 title: "Spacing"
 headerTitle: "Spacing (Margins and Paddings)"
 layout: layout.njk
-prevPage: "/docs/5-typographic-utilities/text-columns"
-nextPage: "/docs/6-decoration-utilities/borders"
+prevPage: "/codebase-4/docs/5-typographic-utilities/text-columns"
+nextPage: "/codebase-4/docs/6-decoration-utilities/borders"
 prevButton: "Text columns"
 nextButton: "Borders"
 ---

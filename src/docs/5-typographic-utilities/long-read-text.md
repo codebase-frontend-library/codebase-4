@@ -1,8 +1,8 @@
 ---
 title: "Long-Read Text"
 layout: layout.njk
-prevPage: "/docs/5-typographic-utilities/large-display-text"
-nextPage: "/docs/5-typographic-utilities/text-columns"
+prevPage: "/codebase-4/docs/5-typographic-utilities/large-display-text"
+nextPage: "/codebase-4/docs/5-typographic-utilities/text-columns"
 prevButton: "Large display text"
 nextButton: "Text columns"
 ---

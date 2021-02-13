@@ -2,8 +2,8 @@
 title: "Dropdowns (AlpineJS)"
 headerTitle: "Dropdowns"
 layout: layout.njk
-prevPage: "/docs/8-alpinejs-components/alpinejs-showhides"
-nextPage: "/docs/8-alpinejs-components/alpinejs-modals"
+prevPage: "/codebase-4/docs/8-alpinejs-components/alpinejs-showhides"
+nextPage: "/codebase-4/docs/8-alpinejs-components/alpinejs-modals"
 prevButton: "AlpineJS showhides"
 nextButton: "AlpineJS modals"
 ---

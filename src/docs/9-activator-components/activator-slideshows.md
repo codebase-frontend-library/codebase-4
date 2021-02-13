@@ -2,7 +2,7 @@
 title: "Slideshows (Activator Component)"
 headerTitle: "Slideshows"
 layout: layout.njk
-prevPage: "/docs/9-activator-components/activator-accordions"
+prevPage: "/codebase-4/docs/9-activator-components/activator-accordions"
 prevButton: "Activator accordions"
 ---
 

@@ -1,19 +1,19 @@
 ---
 title: "Cards"
 layout: layout.njk
-prevPage: "/docs/7-simple-components/media-objects"
-nextPage: "/docs/8-alpinejs-components/about-alpinejs-components"
+prevPage: "/codebase-4/docs/7-simple-components/media-objects"
+nextPage: "/codebase-4/docs/8-alpinejs-components/about-alpinejs-components"
 prevButton: "Media objects"
 nextButton: "About AlpineJS components"
 ---
 
 <p class="t-lg t-thin">Codebase cards are built entirely of utility classes – they have no unique card CSS.</p>
 
-Control the width of a card any way that makes sense in your design. “Raise” cards with a [box-shadow](/docs/4-utilities/box-shadows) – or not. Give them [rounded corners](/4-utilities/rounded-corners) – or not. Add an image if you need to. Or a header and footer. You’ll probably want a call-to-action button or link. But it’s all up to you.
+Control the width of a card any way that makes sense in your design. “Raise” cards with a [box-shadow](/codebase-4/docs/4-utilities/box-shadows) – or not. Give them [rounded corners](/4-utilities/rounded-corners) – or not. Add an image if you need to. Or a header and footer. You’ll probably want a call-to-action button or link. But it’s all up to you.
 
 <div class="flex flex-column w-xxs mx-auto b-thin rounded bs-1 mb-3">
   <a href="">
-    <img class="img-cover" src="/img/placeholder1000x600.svg">
+    <img class="img-cover" src="/codebase-4/img/placeholder1000x600.svg">
   </a>
   <div class="flex-item-grow-1 p-2">
     <h4 class="mb-2">Card Title</h4>
@@ -45,7 +45,7 @@ Another example, with a header and a footer:
   <div class="bb-thin p-block">Header</div>
   <div class="flex flex-column">
     <a href="">
-      <img class="img-cover" src="/img/placeholder1000x600.svg">
+      <img class="img-cover" src="/codebase-4/img/placeholder1000x600.svg">
     </a>
     <div class="p-2">
       <h4 class="mb-0">Card Title</h4>

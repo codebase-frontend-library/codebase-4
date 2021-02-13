@@ -2,8 +2,8 @@
 title: "Modals (Activator Component)"
 headerTitle: "Modals"
 layout: layout.njk
-prevPage: "/docs/9-activator-components/activator-dropdowns"
-nextPage: "/docs/9-activator-components/activator-offcanvas"
+prevPage: "/codebase-4/docs/9-activator-components/activator-dropdowns"
+nextPage: "/codebase-4/docs/9-activator-components/activator-offcanvas"
 prevButton: "Activator dropdowns"
 nextButton: "Activator offcanvas"
 ---

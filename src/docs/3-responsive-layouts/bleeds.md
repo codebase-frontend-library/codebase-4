@@ -1,8 +1,8 @@
 ---
 title: "Bleeds"
 layout: layout.njk
-prevPage: "/docs/3-responsive-layouts/containers"
-nextPage: "/docs/3-responsive-layouts/grid"
+prevPage: "/codebase-4/docs/3-responsive-layouts/containers"
+nextPage: "/codebase-4/docs/3-responsive-layouts/grid"
 prevButton: "Containers"
 nextButton: "Grid"
 ---
@@ -11,7 +11,7 @@ The Codebase `.full-bleed` CSS class uses CSS grid, following [Josh W Comeau’s
 
 Codebase also has `.partial-bleed-left` and `.partial-bleed-right`.
 
-<p class="bl-heavy b-color-primary bg-color-primary-alt p-2">Codebase layout bleeds only work as <em>immediate child</em> elements inside Codebase <a href="/docs/3-responsive-layouts/containers">containers</a>.</p>
+<p class="bl-heavy b-color-primary bg-color-primary-alt p-2">Codebase layout bleeds only work as <em>immediate child</em> elements inside Codebase <a href="/codebase-4/docs/3-responsive-layouts/containers">containers</a>.</p>
 
 <div class="full-bleed mb-3 p-6 bg-color-background-alt">Full bleed content...</div>
 

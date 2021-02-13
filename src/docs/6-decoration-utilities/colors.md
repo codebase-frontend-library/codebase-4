@@ -1,8 +1,8 @@
 ---
 title: "Color Utilities"
 layout: layout.njk
-prevPage: "/docs/6-decoration-utilities/box-shadows"
-nextPage: "/docs/6-decoration-utilities/images"
+prevPage: "/codebase-4/docs/6-decoration-utilities/box-shadows"
+nextPage: "/codebase-4/docs/6-decoration-utilities/images"
 prevButton: "Box shadows"
 nextButton: "Images"
 ---

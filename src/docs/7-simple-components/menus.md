@@ -2,8 +2,8 @@
 title: "Menus"
 headerTitle: "Menus (and Menubars)"
 layout: layout.njk
-prevPage: "/docs/7-simple-components/about-simple-components"
-nextPage: "/docs/7-simple-components/heros"
+prevPage: "/codebase-4/docs/7-simple-components/about-simple-components"
+nextPage: "/codebase-4/docs/7-simple-components/heros"
 prevButton: "About simple components"
 nextButton: "Heros"
 ---
@@ -56,7 +56,7 @@ Add your own inset padding if you want to make sub-menus.
 </ul>
 ```
 
-**Note:** menus have no bottom margin – because a bottom margin causes gaps that you don’t want when you have sub-menus (a.k.a. child menus), and it messes with your layout when you are making a menubar. But if you do need some bottom margin or padding, you can easily add these using  [spacing utility classes](/docs/6-decoration-utilities/spacing).
+**Note:** menus have no bottom margin – because a bottom margin causes gaps that you don’t want when you have sub-menus (a.k.a. child menus), and it messes with your layout when you are making a menubar. But if you do need some bottom margin or padding, you can easily add these using  [spacing utility classes](/codebase-4/docs/6-decoration-utilities/spacing).
 
 ## Menus without side padding
 
@@ -89,7 +89,7 @@ We’ve got you covered. Simply add the `.menu-flush` modifier class.
 
 ## Menubars
 
-Combine `.menu` with [flex layout classes](/docs/3-responsive-layouts/flex) for making menubars.
+Combine `.menu` with [flex layout classes](/codebase-4/docs/3-responsive-layouts/flex) for making menubars.
 
 In the example below, `.flex-sm` has been used, so that the menu stays as a columnar menu below the `md` media query breakpoint width (i.e. below 768px, default), and becomes a menubar from that width up.
 

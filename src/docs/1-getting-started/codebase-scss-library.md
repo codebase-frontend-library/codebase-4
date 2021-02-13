@@ -2,8 +2,8 @@
 title: "SCSS Library"
 headerTitle: "The Codebase SCSS Library"
 layout: layout.njk
-prevPage: "/docs/1-getting-started/simple-html-setup"
-nextPage: "/docs/1-getting-started/alpinejs-or-activator"
+prevPage: "/codebase-4/docs/1-getting-started/simple-html-setup"
+nextPage: "/codebase-4/docs/1-getting-started/alpinejs-or-activator"
 prevButton: "Simple HTML setup"
 nextButton: "AlpineJS or Activator"
 ---

@@ -16,11 +16,14 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/prism");
   eleventyConfig.addPassthroughCopy({"src/favicon": "/"});
-
+  
+  
+  
   return {
     dir: {
       input: "src",
       output: "docs"
-    }
+    },
+    pathPrefix: "/codebase-4/"
   };
 }

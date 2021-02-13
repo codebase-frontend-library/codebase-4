@@ -2,8 +2,8 @@
 title: "Display Text"
 headerTitle: "Large Display Text"
 layout: layout.njk
-prevPage: "/docs/5-typographic-utilities/text-alignment"
-nextPage: "/docs/5-typographic-utilities/long-read-text"
+prevPage: "/codebase-4/docs/5-typographic-utilities/text-alignment"
+nextPage: "/codebase-4/docs/5-typographic-utilities/long-read-text"
 prevButton: "Text alignment"
 nextButton: "Long-read text"
 ---
@@ -45,19 +45,19 @@ You probably wouldn’t want to do this kind of thing:
 Notes:
 
 1. The media query breakpoint width for `.t-lg` is 1024px (default) while the headings’ downsizing breakpoint is 768px (default). So, wrapping `.t-lg` around headings will cause them to have _two_ downsize steps. _This is good_ – this is what you want, for making your impressively large display headings and messages play well on phones in portrait orientation.
-2. You can’t combine or nest `.t-lg` and `.t-long-read` (see [long-read text](/docs/5-typographic-utilities/long-read-text)), because `.t-long-read` overrules `.t-lg`. 
+2. You can’t combine or nest `.t-lg` and `.t-long-read` (see [long-read text](/codebase-4/docs/5-typographic-utilities/long-read-text)), because `.t-long-read` overrules `.t-lg`. 
 
 Example from the _cover_ of the [Codebase docs](/):
 
 <div class="py-6 t-lg">
-  <p class="h1 mb-1 t-bold">Codebase is a super tiny website frontend library.</p>
+  <p class="h1 mb-1">Codebase is a super tiny website frontend library.</p>
   <p class="mb-2 t-thin t-loose">Developed for content management systems and static site generators, Codebase is a small but powerful package of lessons learned from semantic CSS/JS component frameworks (e.g. Bootstrap, Foundation) and utility libraries (Tachyons, Tailwind), and some shiny new techniques.</p>
   <p class="mb-2 t-thin t-loose">Plus, Codebase pairs well with AlpineJS.</p>
 </div>
 
 ```html
 <div class="t-lg">
-  <p class="h1 mb-1 t-bold">Codebase is a super tiny website frontend library.</p>
+  <p class="h1 mb-1">Codebase is a super tiny website frontend library.</p>
   <p class="mb-2 t-thin t-loose">Developed for content management systems and static site generators, Codebase is a small but powerful package of lessons learned from semantic CSS/JS component frameworks (e.g. Bootstrap, Foundation) and utility libraries (Tachyons, Tailwind), and some shiny new techniques.</p>
   <p class="mb-2 t-thin t-loose">Plus, Codebase pairs well with AlpineJS.</p>
 </div>

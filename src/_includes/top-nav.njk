@@ -1,7 +1,7 @@
 <div id="top-nav" class="w-full flex flex-space-between bb-thin p-1 bg-color-background">
   <div class="flex flex-row-reverse flex-middle">
     <div>
-      <a id="site-title" class="codebase-docs p-block t-decoration-none t-loose" href="/index.html">
+      <a id="site-title" class="codebase-docs p-block t-decoration-none t-loose" href="{{ '/' | url }}">
         <!-- Codebase logo-->
         <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2">
           <path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"/>
@@ -61,10 +61,10 @@
 
   <ul class="menu flex flex-middle">
     <li class="hide-below-md">
-      <a href="/">Home</a>
+      <a href="{{ '/' | url }}">Home</a>
     </li>
     <li class="hide-below-md">
-      <a href="/docs/1-getting-started/simple-html-setup/">Documentation</a>
+      <a href="{{ '/docs/1-getting-started/simple-html-setup/' | url }}">Documentation</a>
     </li>
     <li class="hide-below-md">
       <a href="">Download</a>

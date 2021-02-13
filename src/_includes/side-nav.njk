@@ -45,13 +45,13 @@ x-data="docsOcState()"
         <div class="mt-3 hide-md-up">
           <ul class="menu">
             <li>
-              <a href="/">Home</a>
+              <a href="{{ '/' | url }}">Home</a>
             </li>
             <li>
               <a href="">Download</a>
             </li>
             <li>
-              <a href="">GitHub</a>
+              <a href="https://github.com/codebase-frontend-library/codebase-4">GitHub</a>
             </li>
           </ul>
           <hr/>
@@ -80,11 +80,11 @@ x-data="docsOcState()"
             x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
             <div class="px-2">
               <ul class="menu">
-                <li><a href="/docs/1-getting-started/simple-HTML-setup">Simple HTML setup</a></li>
-                <li><a href="/docs/1-getting-started/codebase-scss-library">The Codebase SCSS library</a></li>
-                <li><a href="/docs/1-getting-started/alpinejs-or-activator">AlpineJS or Activator components</a></li>
-                <li><a href="/docs/1-getting-started/responsive-design">Responsive design</a></li>
-                <li><a href="/docs/1-getting-started/light-and-dark-themes">Light and dark themes</a></li>
+                <li><a href="{{ '/docs/1-getting-started/simple-HTML-setup' | url }}">Simple HTML setup</a></li>
+                <li><a href="{{ '/docs/1-getting-started/codebase-scss-library' | url }}">The Codebase SCSS library</a></li>
+                <li><a href="{{ '/docs/1-getting-started/alpinejs-or-activator' | url }}">AlpineJS or Activator components</a></li>
+                <li><a href="{{ '/docs/1-getting-started/responsive-design' | url }}">Responsive design</a></li>
+                <li><a href="{{ '/docs/1-getting-started/light-and-dark-themes' | url }}">Light and dark themes</a></li>
               </ul>
             </div>
           </div>
@@ -111,17 +111,17 @@ x-data="docsOcState()"
             x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
             <div class="px-2">
               <ul class="menu">
-                <li><a href="/docs/2-codebase-basics/element-grid">Element grid</a></li>
-                <li><a href="/docs/2-codebase-basics/headings">Headings</a></li>
-                <li><a href="/docs/2-codebase-basics/paragraphs">Paragraphs</a></li>
-                <li><a href="/docs/2-codebase-basics/simple-text-elements">Simple text elements</a></li>
-                <li><a href="/docs/2-codebase-basics/lists">Lists</a></li>
-                <li><a href="/docs/2-codebase-basics/horizontal-rules">Horizontal rules</a></li>
-                <li><a href="/docs/2-codebase-basics/blockquotes">Blockquotes</a></li>
-                <li><a href="/docs/2-codebase-basics/tables">Tables</a></li>
-                <li><a href="/docs/2-codebase-basics/form-elements">Form elements</a></li>
-                <li><a href="/docs/2-codebase-basics/images">Images</a></li>
-                <li><a href="/docs/2-codebase-basics/audio-and-video">Audio and video</a></li>
+                <li><a href="{{ '/docs/2-codebase-basics/element-grid' | url }}">Element grid</a></li>
+                <li><a href="{{ '/docs/2-codebase-basics/headings' | url }}">Headings</a></li>
+                <li><a href="{{ '/docs/2-codebase-basics/paragraphs' | url }}">Paragraphs</a></li>
+                <li><a href="{{ '/docs/2-codebase-basics/simple-text-elements' | url }}">Simple text elements</a></li>
+                <li><a href="{{ '/docs/2-codebase-basics/lists' | url }}">Lists</a></li>
+                <li><a href="{{ '/docs/2-codebase-basics/horizontal-rules' | url }}">Horizontal rules</a></li>
+                <li><a href="{{ '/docs/2-codebase-basics/blockquotes' | url }}">Blockquotes</a></li>
+                <li><a href="{{ '/docs/2-codebase-basics/tables' | url }}">Tables</a></li>
+                <li><a href="{{ '/docs/2-codebase-basics/form-elements' | url }}">Form elements</a></li>
+                <li><a href="{{ '/docs/2-codebase-basics/images' | url }}">Images</a></li>
+                <li><a href="{{ '/docs/2-codebase-basics/audio-and-video' | url }}">Audio and video</a></li>
               </ul>
             </div>
           </div>
@@ -148,10 +148,10 @@ x-data="docsOcState()"
             x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
             <div class="px-2">
               <ul class="menu">
-                <li><a href="/docs/3-responsive-layouts/containers">Containers</a></li>
-                <li><a href="/docs/3-responsive-layouts/bleeds">Bleeds</a></li>
-                <li><a href="/docs/3-responsive-layouts/grid">Grid system</a></li>
-                <li><a href="/docs/3-responsive-layouts/flex">Flex (flexbox) system</a></li>
+                <li><a href="{{ '/docs/3-responsive-layouts/containers' | url }}">Containers</a></li>
+                <li><a href="{{ '/docs/3-responsive-layouts/bleeds' | url }}">Bleeds</a></li>
+                <li><a href="{{ '/docs/3-responsive-layouts/grid' | url }}">Grid system</a></li>
+                <li><a href="{{ '/docs/3-responsive-layouts/flex' | url }}">Flex (flexbox) system</a></li>
               </ul>
             </div>
           </div>
@@ -180,12 +180,12 @@ x-data="docsOcState()"
             x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
             <div class="px-2">
               <ul class="menu">
-                <li><a href="/docs/4-layout-utilities/blocks">Blocks</a></li>
-                <li><a href="/docs/4-layout-utilities/floats">Floats</a></li>
-                <li><a href="/docs/4-layout-utilities/positions">Positions</a></li>
-                <li><a href="/docs/4-layout-utilities/dimensions">Dimensions</a></li>
-                <li><a href="/docs/4-layout-utilities/overflows">Overflows</a></li>
-                <li><a href="/docs/4-layout-utilities/invisibility">Invisibility</a></li>
+                <li><a href="{{ '/docs/4-layout-utilities/blocks' | url }}">Blocks</a></li>
+                <li><a href="{{ '/docs/4-layout-utilities/floats' | url }}">Floats</a></li>
+                <li><a href="{{ '/docs/4-layout-utilities/positions' | url }}">Positions</a></li>
+                <li><a href="{{ '/docs/4-layout-utilities/dimensions' | url }}">Dimensions</a></li>
+                <li><a href="{{ '/docs/4-layout-utilities/overflows' | url }}">Overflows</a></li>
+                <li><a href="{{ '/docs/4-layout-utilities/invisibility' | url }}">Invisibility</a></li>
               </ul>
             </div>
           </div>
@@ -212,12 +212,12 @@ x-data="docsOcState()"
             x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
             <div class="px-2">
               <ul class="menu">
-                <li><a href="/docs/5-typographic-utilities/inline-text">Inline text</a></li>
-                <li><a href="/docs/5-typographic-utilities/headings">Headings</a></li>
-                <li><a href="/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
-                <li><a href="/docs/5-typographic-utilities/large-display-text">Large display text</a></li>
-                <li><a href="/docs/5-typographic-utilities/long-read-text">Long read text</a></li>
-                <li><a href="/docs/5-typographic-utilities/text-columns">Text columns</a></li>
+                <li><a href="{{ '/docs/5-typographic-utilities/inline-text' | url }}">Inline text</a></li>
+                <li><a href="{{ '/docs/5-typographic-utilities/headings' | url }}">Headings</a></li>
+                <li><a href="{{ '/docs/5-typographic-utilities/text-alignment' | url }}">Text alignment</a></li>
+                <li><a href="{{ '/docs/5-typographic-utilities/large-display-text' | url }}">Large display text</a></li>
+                <li><a href="{{ '/docs/5-typographic-utilities/long-read-text' | url }}">Long read text</a></li>
+                <li><a href="{{ '/docs/5-typographic-utilities/text-columns' | url }}">Text columns</a></li>
               </ul>
             </div>
           </div>
@@ -244,12 +244,12 @@ x-data="docsOcState()"
             x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
             <div class="px-2">
               <ul class="menu">
-                <li><a href="/docs/6-decoration-utilities/spacing">Spacing</a></li>
-                <li><a href="/docs/6-decoration-utilities/borders">Borders</a></li>
-                <li><a href="/docs/6-decoration-utilities/rounded-corners">Rounded corners</a></li>
-                <li><a href="/docs/6-decoration-utilities/box-shadows">Box shadows</a></li>
-                <li><a href="/docs/6-decoration-utilities/colors">Colors</a></li>
-                <li><a href="/docs/6-decoration-utilities/images">Images</a></li>
+                <li><a href="{{ '/docs/6-decoration-utilities/spacing' | url }}">Spacing</a></li>
+                <li><a href="{{ '/docs/6-decoration-utilities/borders' | url }}">Borders</a></li>
+                <li><a href="{{ '/docs/6-decoration-utilities/rounded-corners' | url }}">Rounded corners</a></li>
+                <li><a href="{{ '/docs/6-decoration-utilities/box-shadows' | url }}">Box shadows</a></li>
+                <li><a href="{{ '/docs/6-decoration-utilities/colors' | url }}">Colors</a></li>
+                <li><a href="{{ '/docs/6-decoration-utilities/images' | url }}">Images</a></li>
               </ul>
             </div>
           </div>
@@ -278,15 +278,15 @@ x-data="docsOcState()"
             x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
             <div class="px-2">
               <ul class="menu">
-                <li><a href="/docs/7-simple-components/about-simple-components">About simple components</a></li>
-                <li><a href="/docs/7-simple-components/menus">Menus</a></li>
-                <li><a href="/docs/7-simple-components/heros">Heros</a></li>
-                <li><a href="/docs/7-simple-components/tables">Tables</a></li>
-                <li><a href="/docs/7-simple-components/buttons">Buttons</a></li>
-                <li><a href="/docs/7-simple-components/badges">Badges</a></li>
-                <li><a href="/docs/7-simple-components/labels">Labels</a></li>
-                <li><a href="/docs/7-simple-components/media-objects">Media objects</a></li>
-                <li><a href="/docs/7-simple-components/cards">Cards</a></li>
+                <li><a href="{{ '/docs/7-simple-components/about-simple-components' | url }}">About simple components</a></li>
+                <li><a href="{{ '/docs/7-simple-components/menus' | url }}">Menus</a></li>
+                <li><a href="{{ '/docs/7-simple-components/heros' | url }}">Heros</a></li>
+                <li><a href="{{ '/docs/7-simple-components/tables' | url }}">Tables</a></li>
+                <li><a href="{{ '/docs/7-simple-components/buttons' | url }}">Buttons</a></li>
+                <li><a href="{{ '/docs/7-simple-components/badges' | url }}">Badges</a></li>
+                <li><a href="{{ '/docs/7-simple-components/labels' | url }}">Labels</a></li>
+                <li><a href="{{ '/docs/7-simple-components/media-objects' | url }}">Media objects</a></li>
+                <li><a href="{{ '/docs/7-simple-components/cards' | url }}">Cards</a></li>
               </ul>
             </div>
           </div>
@@ -313,14 +313,14 @@ x-data="docsOcState()"
             x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
             <div class="px-2">
               <ul class="menu">
-                <li><a href="/docs/8-alpinejs-components/about-alpinejs-components">About AlpineJS components</a></li>
-                <li><a href="/docs/8-alpinejs-components/alpinejs-showhides">Showhides</a></li>
-                <li><a href="/docs/8-alpinejs-components/alpinejs-dropdowns">Dropdowns</a></li>
-                <li><a href="/docs/8-alpinejs-components/alpinejs-modals">Modals</a></li>
-                <li><a href="/docs/8-alpinejs-components/alpinejs-offcanvas">Offcanvas</a></li>
-                <li><a href="/docs/8-alpinejs-components/alpinejs-tabs">Tabs</a></li>
-                <li><a href="/docs/8-alpinejs-components/alpinejs-accordions">Accordions</a></li>
-                <li><a href="/docs/8-alpinejs-components/alpinejs-slideshows">Slideshows</a></li>
+                <li><a href="{{ '/docs/8-alpinejs-components/about-alpinejs-components' | url }}">About AlpineJS components</a></li>
+                <li><a href="{{ '/docs/8-alpinejs-components/alpinejs-showhides' | url }}">Showhides</a></li>
+                <li><a href="{{ '/docs/8-alpinejs-components/alpinejs-dropdowns' | url }}">Dropdowns</a></li>
+                <li><a href="{{ '/docs/8-alpinejs-components/alpinejs-modals' | url }}">Modals</a></li>
+                <li><a href="{{ '/docs/8-alpinejs-components/alpinejs-offcanvas' | url }}">Offcanvas</a></li>
+                <li><a href="{{ '/docs/8-alpinejs-components/alpinejs-tabs' | url }}">Tabs</a></li>
+                <li><a href="{{ '/docs/8-alpinejs-components/alpinejs-accordions' | url }}">Accordions</a></li>
+                <li><a href="{{ '/docs/8-alpinejs-components/alpinejs-slideshows' | url }}">Slideshows</a></li>
               </ul>
             </div>
           </div>
@@ -347,15 +347,15 @@ x-data="docsOcState()"
             x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
             <div class="px-2">
               <ul class="menu">
-                <li><a href="/docs/9-activator-components/about-activator-components">About Activator components</a></li>
-                <li><a href="/docs/9-activator-components/activator-classes-and-attributes">Activator classes and attributes</a></li>
-                <li><a href="/docs/9-activator-components/activator-showhides">Showhides</a></li>
-                <li><a href="/docs/9-activator-components/activator-dropdowns">Dropdowns</a></li>
-                <li><a href="/docs/9-activator-components/activator-modals">Modals</a></li>
-                <li><a href="/docs/9-activator-components/activator-offcanvas">Offcanvas</a></li>
-                <li><a href="/docs/9-activator-components/activator-tabs">Tabs</a></li>
-                <li><a href="/docs/9-activator-components/activator-accordions">Accordions</a></li>
-                <li><a href="/docs/9-activator-components/activator-slideshows">Slideshows</a></li>
+                <li><a href="{{ '/docs/9-activator-components/about-activator-components' | url }}">About Activator components</a></li>
+                <li><a href="{{ '/docs/9-activator-components/activator-classes-and-attributes' | url }}">Activator classes and attributes</a></li>
+                <li><a href="{{ '/docs/9-activator-components/activator-showhides' | url }}">Showhides</a></li>
+                <li><a href="{{ '/docs/9-activator-components/activator-dropdowns' | url }}">Dropdowns</a></li>
+                <li><a href="{{ '/docs/9-activator-components/activator-modals' | url }}">Modals</a></li>
+                <li><a href="{{ '/docs/9-activator-components/activator-offcanvas' | url }}">Offcanvas</a></li>
+                <li><a href="{{ '/docs/9-activator-components/activator-tabs' | url }}">Tabs</a></li>
+                <li><a href="{{ '/docs/9-activator-components/activator-accordions' | url }}">Accordions</a></li>
+                <li><a href="{{ '/docs/9-activator-components/activator-slideshows' | url }}">Slideshows</a></li>
               </ul>
             </div>
           </div>

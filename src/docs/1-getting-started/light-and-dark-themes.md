@@ -2,8 +2,8 @@
 title: "Light and Dark Themes"
 headerTitle: "Codebase’s Light and Dark Themes"
 layout: layout.njk
-prevPage: "/docs/1-getting-started/responsive-design"
-nextPage: "/docs/2-codebase-basics/element-grid"
+prevPage: "/codebase-4/docs/1-getting-started/responsive-design"
+nextPage: "/codebase-4/docs/2-codebase-basics/element-grid"
 prevButton: "Responsive design"
 nextButton: "Element grid"
 ---

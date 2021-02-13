@@ -6,19 +6,18 @@
   <meta name="description" content="Docs for Codebase, the super tiny website frontend library (CSS/JS).">
 
   <title>Element Grid · Codebase</title>
-
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="msapplication-config" content="/browserconfig.xml">
+  <link rel="icon" type="image/svg+xml" href="/codebase-4/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/codebase-4/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/codebase-4/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/codebase-4/favicon-16x16.png">
+  <link rel="manifest" href="/codebase-4/site.webmanifest">
+  <meta name="msapplication-config" content="/codebase-4/browserconfig.xml">
   <meta name="msapplication-TileColor" content="#262626">
   <meta name="theme-color" content="#262626">
 
-  <link href="/prism/prism.css" rel="stylesheet">
-  <!-- <link href="/dist/codebase.css" rel="stylesheet"> -->
-  <link href="/dist/codebase-l-d.css" rel="stylesheet">
+  <link href="/codebase-4/prism/prism.css" rel="stylesheet">
+  <!-- <link href="/codebase-4/dist/codebase.css" rel="stylesheet"> -->
+  <link href="/codebase-4/dist/codebase-l-d.css" rel="stylesheet">
   <style>
     html {
       scroll-behavior: smooth;
@@ -116,7 +115,7 @@
   <div id="top-nav" class="w-full flex flex-space-between bb-thin p-1 bg-color-background">
   <div class="flex flex-row-reverse flex-middle">
     <div>
-      <a id="site-title" class="codebase-docs p-block t-decoration-none t-loose" href="/index.html">
+      <a id="site-title" class="codebase-docs p-block t-decoration-none t-loose" href="/codebase-4/">
         <!-- Codebase logo-->
         <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2">
           <path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"/>
@@ -176,10 +175,10 @@
 
   <ul class="menu flex flex-middle">
     <li class="hide-below-md">
-      <a href="/">Home</a>
+      <a href="/codebase-4/">Home</a>
     </li>
     <li class="hide-below-md">
-      <a href="/docs/1-getting-started/simple-html-setup/">Documentation</a>
+      <a href="/codebase-4/docs/1-getting-started/simple-html-setup/">Documentation</a>
     </li>
     <li class="hide-below-md">
       <a href="">Download</a>
@@ -261,13 +260,13 @@ x-data="docsOcState()"
         <div class="mt-3 hide-md-up">
           <ul class="menu">
             <li>
-              <a href="/">Home</a>
+              <a href="/codebase-4/">Home</a>
             </li>
             <li>
               <a href="">Download</a>
             </li>
             <li>
-              <a href="">GitHub</a>
+              <a href="https://github.com/codebase-frontend-library/codebase-4">GitHub</a>
             </li>
           </ul>
           <hr/>
@@ -294,11 +293,11 @@ x-data="docsOcState()"
             x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
             <div class="px-2">
               <ul class="menu">
-                <li><a href="/docs/1-getting-started/simple-HTML-setup">Simple HTML setup</a></li>
-                <li><a href="/docs/1-getting-started/codebase-scss-library">The Codebase SCSS library</a></li>
-                <li><a href="/docs/1-getting-started/alpinejs-or-activator">AlpineJS or Activator components</a></li>
-                <li><a href="/docs/1-getting-started/responsive-design">Responsive design</a></li>
-                <li><a href="/docs/1-getting-started/light-and-dark-themes">Light and dark themes</a></li>
+                <li><a href="/codebase-4/docs/1-getting-started/simple-HTML-setup">Simple HTML setup</a></li>
+                <li><a href="/codebase-4/docs/1-getting-started/codebase-scss-library">The Codebase SCSS library</a></li>
+                <li><a href="/codebase-4/docs/1-getting-started/alpinejs-or-activator">AlpineJS or Activator components</a></li>
+                <li><a href="/codebase-4/docs/1-getting-started/responsive-design">Responsive design</a></li>
+                <li><a href="/codebase-4/docs/1-getting-started/light-and-dark-themes">Light and dark themes</a></li>
               </ul>
             </div>
           </div>
@@ -323,17 +322,17 @@ x-data="docsOcState()"
             x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
             <div class="px-2">
               <ul class="menu">
-                <li><a href="/docs/2-codebase-basics/element-grid">Element grid</a></li>
-                <li><a href="/docs/2-codebase-basics/headings">Headings</a></li>
-                <li><a href="/docs/2-codebase-basics/paragraphs">Paragraphs</a></li>
-                <li><a href="/docs/2-codebase-basics/simple-text-elements">Simple text elements</a></li>
-                <li><a href="/docs/2-codebase-basics/lists">Lists</a></li>
-                <li><a href="/docs/2-codebase-basics/horizontal-rules">Horizontal rules</a></li>
-                <li><a href="/docs/2-codebase-basics/blockquotes">Blockquotes</a></li>
-                <li><a href="/docs/2-codebase-basics/tables">Tables</a></li>
-                <li><a href="/docs/2-codebase-basics/form-elements">Form elements</a></li>
-                <li><a href="/docs/2-codebase-basics/images">Images</a></li>
-                <li><a href="/docs/2-codebase-basics/audio-and-video">Audio and video</a></li>
+                <li><a href="/codebase-4/docs/2-codebase-basics/element-grid">Element grid</a></li>
+                <li><a href="/codebase-4/docs/2-codebase-basics/headings">Headings</a></li>
+                <li><a href="/codebase-4/docs/2-codebase-basics/paragraphs">Paragraphs</a></li>
+                <li><a href="/codebase-4/docs/2-codebase-basics/simple-text-elements">Simple text elements</a></li>
+                <li><a href="/codebase-4/docs/2-codebase-basics/lists">Lists</a></li>
+                <li><a href="/codebase-4/docs/2-codebase-basics/horizontal-rules">Horizontal rules</a></li>
+                <li><a href="/codebase-4/docs/2-codebase-basics/blockquotes">Blockquotes</a></li>
+                <li><a href="/codebase-4/docs/2-codebase-basics/tables">Tables</a></li>
+                <li><a href="/codebase-4/docs/2-codebase-basics/form-elements">Form elements</a></li>
+                <li><a href="/codebase-4/docs/2-codebase-basics/images">Images</a></li>
+                <li><a href="/codebase-4/docs/2-codebase-basics/audio-and-video">Audio and video</a></li>
               </ul>
             </div>
           </div>
@@ -358,10 +357,10 @@ x-data="docsOcState()"
             x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
             <div class="px-2">
               <ul class="menu">
-                <li><a href="/docs/3-responsive-layouts/containers">Containers</a></li>
-                <li><a href="/docs/3-responsive-layouts/bleeds">Bleeds</a></li>
-                <li><a href="/docs/3-responsive-layouts/grid">Grid system</a></li>
-                <li><a href="/docs/3-responsive-layouts/flex">Flex (flexbox) system</a></li>
+                <li><a href="/codebase-4/docs/3-responsive-layouts/containers">Containers</a></li>
+                <li><a href="/codebase-4/docs/3-responsive-layouts/bleeds">Bleeds</a></li>
+                <li><a href="/codebase-4/docs/3-responsive-layouts/grid">Grid system</a></li>
+                <li><a href="/codebase-4/docs/3-responsive-layouts/flex">Flex (flexbox) system</a></li>
               </ul>
             </div>
           </div>
@@ -388,12 +387,12 @@ x-data="docsOcState()"
             x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
             <div class="px-2">
               <ul class="menu">
-                <li><a href="/docs/4-layout-utilities/blocks">Blocks</a></li>
-                <li><a href="/docs/4-layout-utilities/floats">Floats</a></li>
-                <li><a href="/docs/4-layout-utilities/positions">Positions</a></li>
-                <li><a href="/docs/4-layout-utilities/dimensions">Dimensions</a></li>
-                <li><a href="/docs/4-layout-utilities/overflows">Overflows</a></li>
-                <li><a href="/docs/4-layout-utilities/invisibility">Invisibility</a></li>
+                <li><a href="/codebase-4/docs/4-layout-utilities/blocks">Blocks</a></li>
+                <li><a href="/codebase-4/docs/4-layout-utilities/floats">Floats</a></li>
+                <li><a href="/codebase-4/docs/4-layout-utilities/positions">Positions</a></li>
+                <li><a href="/codebase-4/docs/4-layout-utilities/dimensions">Dimensions</a></li>
+                <li><a href="/codebase-4/docs/4-layout-utilities/overflows">Overflows</a></li>
+                <li><a href="/codebase-4/docs/4-layout-utilities/invisibility">Invisibility</a></li>
               </ul>
             </div>
           </div>
@@ -418,12 +417,12 @@ x-data="docsOcState()"
             x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
             <div class="px-2">
               <ul class="menu">
-                <li><a href="/docs/5-typographic-utilities/inline-text">Inline text</a></li>
-                <li><a href="/docs/5-typographic-utilities/headings">Headings</a></li>
-                <li><a href="/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
-                <li><a href="/docs/5-typographic-utilities/large-display-text">Large display text</a></li>
-                <li><a href="/docs/5-typographic-utilities/long-read-text">Long read text</a></li>
-                <li><a href="/docs/5-typographic-utilities/text-columns">Text columns</a></li>
+                <li><a href="/codebase-4/docs/5-typographic-utilities/inline-text">Inline text</a></li>
+                <li><a href="/codebase-4/docs/5-typographic-utilities/headings">Headings</a></li>
+                <li><a href="/codebase-4/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
+                <li><a href="/codebase-4/docs/5-typographic-utilities/large-display-text">Large display text</a></li>
+                <li><a href="/codebase-4/docs/5-typographic-utilities/long-read-text">Long read text</a></li>
+                <li><a href="/codebase-4/docs/5-typographic-utilities/text-columns">Text columns</a></li>
               </ul>
             </div>
           </div>
@@ -448,12 +447,12 @@ x-data="docsOcState()"
             x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
             <div class="px-2">
               <ul class="menu">
-                <li><a href="/docs/6-decoration-utilities/spacing">Spacing</a></li>
-                <li><a href="/docs/6-decoration-utilities/borders">Borders</a></li>
-                <li><a href="/docs/6-decoration-utilities/rounded-corners">Rounded corners</a></li>
-                <li><a href="/docs/6-decoration-utilities/box-shadows">Box shadows</a></li>
-                <li><a href="/docs/6-decoration-utilities/colors">Colors</a></li>
-                <li><a href="/docs/6-decoration-utilities/images">Images</a></li>
+                <li><a href="/codebase-4/docs/6-decoration-utilities/spacing">Spacing</a></li>
+                <li><a href="/codebase-4/docs/6-decoration-utilities/borders">Borders</a></li>
+                <li><a href="/codebase-4/docs/6-decoration-utilities/rounded-corners">Rounded corners</a></li>
+                <li><a href="/codebase-4/docs/6-decoration-utilities/box-shadows">Box shadows</a></li>
+                <li><a href="/codebase-4/docs/6-decoration-utilities/colors">Colors</a></li>
+                <li><a href="/codebase-4/docs/6-decoration-utilities/images">Images</a></li>
               </ul>
             </div>
           </div>
@@ -480,15 +479,15 @@ x-data="docsOcState()"
             x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
             <div class="px-2">
               <ul class="menu">
-                <li><a href="/docs/7-simple-components/about-simple-components">About simple components</a></li>
-                <li><a href="/docs/7-simple-components/menus">Menus</a></li>
-                <li><a href="/docs/7-simple-components/heros">Heros</a></li>
-                <li><a href="/docs/7-simple-components/tables">Tables</a></li>
-                <li><a href="/docs/7-simple-components/buttons">Buttons</a></li>
-                <li><a href="/docs/7-simple-components/badges">Badges</a></li>
-                <li><a href="/docs/7-simple-components/labels">Labels</a></li>
-                <li><a href="/docs/7-simple-components/media-objects">Media objects</a></li>
-                <li><a href="/docs/7-simple-components/cards">Cards</a></li>
+                <li><a href="/codebase-4/docs/7-simple-components/about-simple-components">About simple components</a></li>
+                <li><a href="/codebase-4/docs/7-simple-components/menus">Menus</a></li>
+                <li><a href="/codebase-4/docs/7-simple-components/heros">Heros</a></li>
+                <li><a href="/codebase-4/docs/7-simple-components/tables">Tables</a></li>
+                <li><a href="/codebase-4/docs/7-simple-components/buttons">Buttons</a></li>
+                <li><a href="/codebase-4/docs/7-simple-components/badges">Badges</a></li>
+                <li><a href="/codebase-4/docs/7-simple-components/labels">Labels</a></li>
+                <li><a href="/codebase-4/docs/7-simple-components/media-objects">Media objects</a></li>
+                <li><a href="/codebase-4/docs/7-simple-components/cards">Cards</a></li>
               </ul>
             </div>
           </div>
@@ -513,14 +512,14 @@ x-data="docsOcState()"
             x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
             <div class="px-2">
               <ul class="menu">
-                <li><a href="/docs/8-alpinejs-components/about-alpinejs-components">About AlpineJS components</a></li>
-                <li><a href="/docs/8-alpinejs-components/alpinejs-showhides">Showhides</a></li>
-                <li><a href="/docs/8-alpinejs-components/alpinejs-dropdowns">Dropdowns</a></li>
-                <li><a href="/docs/8-alpinejs-components/alpinejs-modals">Modals</a></li>
-                <li><a href="/docs/8-alpinejs-components/alpinejs-offcanvas">Offcanvas</a></li>
-                <li><a href="/docs/8-alpinejs-components/alpinejs-tabs">Tabs</a></li>
-                <li><a href="/docs/8-alpinejs-components/alpinejs-accordions">Accordions</a></li>
-                <li><a href="/docs/8-alpinejs-components/alpinejs-slideshows">Slideshows</a></li>
+                <li><a href="/codebase-4/docs/8-alpinejs-components/about-alpinejs-components">About AlpineJS components</a></li>
+                <li><a href="/codebase-4/docs/8-alpinejs-components/alpinejs-showhides">Showhides</a></li>
+                <li><a href="/codebase-4/docs/8-alpinejs-components/alpinejs-dropdowns">Dropdowns</a></li>
+                <li><a href="/codebase-4/docs/8-alpinejs-components/alpinejs-modals">Modals</a></li>
+                <li><a href="/codebase-4/docs/8-alpinejs-components/alpinejs-offcanvas">Offcanvas</a></li>
+                <li><a href="/codebase-4/docs/8-alpinejs-components/alpinejs-tabs">Tabs</a></li>
+                <li><a href="/codebase-4/docs/8-alpinejs-components/alpinejs-accordions">Accordions</a></li>
+                <li><a href="/codebase-4/docs/8-alpinejs-components/alpinejs-slideshows">Slideshows</a></li>
               </ul>
             </div>
           </div>
@@ -545,15 +544,15 @@ x-data="docsOcState()"
             x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
             <div class="px-2">
               <ul class="menu">
-                <li><a href="/docs/9-activator-components/about-activator-components">About Activator components</a></li>
-                <li><a href="/docs/9-activator-components/activator-classes-and-attributes">Activator classes and attributes</a></li>
-                <li><a href="/docs/9-activator-components/activator-showhides">Showhides</a></li>
-                <li><a href="/docs/9-activator-components/activator-dropdowns">Dropdowns</a></li>
-                <li><a href="/docs/9-activator-components/activator-modals">Modals</a></li>
-                <li><a href="/docs/9-activator-components/activator-offcanvas">Offcanvas</a></li>
-                <li><a href="/docs/9-activator-components/activator-tabs">Tabs</a></li>
-                <li><a href="/docs/9-activator-components/activator-accordions">Accordions</a></li>
-                <li><a href="/docs/9-activator-components/activator-slideshows">Slideshows</a></li>
+                <li><a href="/codebase-4/docs/9-activator-components/about-activator-components">About Activator components</a></li>
+                <li><a href="/codebase-4/docs/9-activator-components/activator-classes-and-attributes">Activator classes and attributes</a></li>
+                <li><a href="/codebase-4/docs/9-activator-components/activator-showhides">Showhides</a></li>
+                <li><a href="/codebase-4/docs/9-activator-components/activator-dropdowns">Dropdowns</a></li>
+                <li><a href="/codebase-4/docs/9-activator-components/activator-modals">Modals</a></li>
+                <li><a href="/codebase-4/docs/9-activator-components/activator-offcanvas">Offcanvas</a></li>
+                <li><a href="/codebase-4/docs/9-activator-components/activator-tabs">Tabs</a></li>
+                <li><a href="/codebase-4/docs/9-activator-components/activator-accordions">Accordions</a></li>
+                <li><a href="/codebase-4/docs/9-activator-components/activator-slideshows">Slideshows</a></li>
               </ul>
             </div>
           </div>
@@ -610,9 +609,9 @@ The line heights for headers have also been set using 0.5rem increments.</p>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1274.281 771.306"><path d="M97 48.003v48M97 48.003H49.276M49.276 48.003v48M49.276 96.003H97M49.276 96.003v48M49.276 96.003H1.552M1 96.003v48M1.552 144.003h47.724M97 144.003v48M97 144.003H49.276M49.276 144.003v48M49.276 192.003H97M49.276 192.003v48M49.276 192.003H1.552M1 192.003v48M1.552 240.003h47.724M96.448 240.003v48M96.448 240.003H48.724M48.724 240.003v48M48.724 288.003h47.724M48.724 288.003v48M48.724 288.003H1M1 288.003v48M1 336.003h47.724M841.276 48.003H97M841.276 192.003H97M841.276 336.003H48.724" stroke="currentColor" stroke-width="1.562" stroke-dasharray="4.684,4.684" fill="none"/><text transform="matrix(5.67 0 0 5.67 118.898 14.175)"><tspan x="-20.797" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">Default text, paragraphs...</tspan></text><text transform="matrix(5.67 0 0 5.67 466.669 118.869)"><tspan x="-61.188" y="6.5" font-family="ArialMT" font-size="21" fill="currentColor">Lorem ipsum</tspan></text><path d="M865 48.003c17.974 0-5.75 72 24.276 72-29.92 0-6.302 72-24.276 72m0 0M865 192.003c17.974 0-5.75 72 24.276 72-29.92 0-6.302 72-24.276 72m0 0" stroke="currentColor" stroke-width="2" fill="none"/><path d="M145 432.003v240M49 432.003v240M938.224 432.003H49M937.276 624.003H49M938.224 672.003H49" stroke="currentColor" stroke-width="1.562" stroke-dasharray="4.684,4.684" fill="none"/><text transform="matrix(5.67 0 0 5.67 167.813 398.175)"><tspan x="-29.424" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">Padding for menu items, table cells...</tspan></text><text transform="matrix(5.67 0 0 5.67 491.893 550.869)"><tspan x="-61.188" y="6.5" font-family="ArialMT" font-size="21" fill="currentColor">Lorem ipsum</tspan></text><path d="M961 432.003c17.974 0-5.75 24 24.276 24-29.92 0-6.302 24-24.276 24m0 0M961 480.003c17.974 0-5.75 72 24.276 72-29.92 0-6.302 72-24.276 72m0 0" stroke="currentColor" stroke-width="2" fill="none"/><path d="M937.276 480.003H49M938.224 432.003v240M841 432.003v240" stroke="currentColor" stroke-width="1.562" stroke-dasharray="4.684,4.684" fill="none"/><path d="M961 624.003c17.974 0-5.75 24 24.276 24-29.92 0-6.302 24-24.276 24m0 0" stroke="currentColor" stroke-width="2" fill="none"/><text transform="matrix(5.67 0 0 5.67 998.659 110.177)"><tspan x="-15.11" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">line-height: 1.5rem</tspan></text><text transform="matrix(5.67 0 0 5.67 1011.728 132.857)"><tspan x="-17.415" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">= 3 element grid units</tspan></text><text transform="matrix(5.67 0 0 5.67 1016.988 254.177)"><tspan x="-18.342" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">margin-bottom: 1.5rem</tspan></text><text transform="matrix(5.67 0 0 5.67 1011.728 276.857)"><tspan x="-17.415" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">= 3 element grid units</tspan></text><text transform="matrix(5.67 0 0 5.67 1136.63 446.175)"><tspan x="-22.513" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">0.5rem = 1 element grid unit</tspan></text><text transform="matrix(5.67 0 0 5.67 1136.63 638.175)"><tspan x="-22.513" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">0.5rem = 1 element grid unit</tspan></text><text transform="matrix(5.67 0 0 5.67 1141.631 542.177)"><tspan x="-23.395" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">1.5rem = 3 element grid units</tspan></text><text transform="matrix(5.67 0 0 5.67 1067.409 564.857)"><tspan x="-10.304" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">(default text)</tspan></text><path d="M937 696.003c0 17.974-48-5.75-48 24.276 0-29.92-48-6.302-48-24.276m0 0" stroke="currentColor" stroke-width="2" fill="none"/><g><text transform="matrix(5.67 0 0 5.67 891.835 734.451)"><tspan x="-4.519" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">1rem </tspan></text><text transform="matrix(5.67 0 0 5.67 891.839 757.131)"><tspan x="-17.415" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">= 2 element grid units</tspan></text></g><path d="M145 696.003c0 17.974-48-5.75-48 24.276 0-29.92-48-6.302-48-24.276m0 0" stroke="currentColor" stroke-width="2" fill="none"/><g><text transform="matrix(5.67 0 0 5.67 99.835 734.451)"><tspan x="-4.519" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">1rem </tspan></text><text transform="matrix(5.67 0 0 5.67 99.839 757.131)"><tspan x="-17.415" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">= 2 element grid units</tspan></text></g></svg></div>
 </div>
 <div class="mb-3 bl-heavy b-color-primary p-2 bg-color-primary-alt">
-<strong>Note:</strong> this <code>padding: 0.5rem 1rem;</code> in the illustration above is also available as the padding utility class <code>.p-block</code>. See <a href="/docs/6-decoration-utilities/spacing">spacing</a>.
+<strong>Note:</strong> this <code>padding: 0.5rem 1rem;</code> in the illustration above is also available as the padding utility class <code>.p-block</code>. See <a href="/codebase-4/docs/6-decoration-utilities/spacing">spacing</a>.
 </div>
-<p>The element grid has been used throughout Codebase’s classless (basic) styling. Where element grid units have been used in <a href="/docs/6-decoration-utilities/spacing">spacing</a> utility classes (i.e. margins and paddings), these are provided as follows:</p>
+<p>The element grid has been used throughout Codebase’s classless (basic) styling. Where element grid units have been used in <a href="/codebase-4/docs/6-decoration-utilities/spacing">spacing</a> utility classes (i.e. margins and paddings), these are provided as follows:</p>
 <table class="table">
   <thead>
     <tr>
@@ -656,10 +655,10 @@ The line heights for headers have also been set using 0.5rem increments.</p>
     <footer class="container container-lg mb-responsive t-center">
       <div class="clearfix bt-thin bb-thin py-2">
         
-        <a class="my-1 float-left btn btn-primary" href="/docs/1-getting-started/light-and-dark-themes">&larr; Light and dark themes</a>
+        <a class="my-1 float-left btn btn-primary" href="/codebase-4/docs/1-getting-started/light-and-dark-themes">&larr; Light and dark themes</a>
           
         
-        <a class="my-1 float-right btn btn-primary" href="/docs/2-codebase-basics/headings">Headings &rarr;</a>
+        <a class="my-1 float-right btn btn-primary" href="/codebase-4/docs/2-codebase-basics/headings">Headings &rarr;</a>
           
       </div>
     </footer>
@@ -669,7 +668,7 @@ The line heights for headers have also been set using 0.5rem increments.</p>
 
 <footer class="container container-sm bt-thin pt-6 pb-3 bg-color-background-alt t-center">
   <p>
-    <a class="codebase-docs h3 t-decoration-none" href="/index.html">
+    <a class="codebase-docs h3 t-decoration-none" href="/codebase-4/">
       <span class="inline-flex flex-column flex-middle flex-center">
       <!-- Codebase logo-->
       <svg  style="height: 4rem; margin-bottom: 1rem;" viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2"><path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"/></svg>
@@ -687,8 +686,8 @@ The line heights for headers have also been set using 0.5rem increments.</p>
   
 </footer>
 
-<script src="/dist/activator.js"></script>
-<script src="/js/theme-switcher.js" defer></script>
+<script src="/codebase-4/dist/activator.js"></script>
+<script src="/codebase-4/js/theme-switcher.js" defer></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.0/alpine.js" integrity="sha512-H/czL7oaLIK//KA+gobIejOMDjfHlfoPbM4QKJLvy1hxN18xdhXiaXPek6r5Q4KwcSZkKwlyQmLO8FvPRLl0FA==" crossorigin="anonymous"></script>
 

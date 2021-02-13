@@ -2,8 +2,8 @@
 title: "Floats"
 headerTitle: "Floats and Clearfix"
 layout: layout.njk
-prevPage: "/docs/4-layout-utilities/blocks"
-nextPage: "/docs/4-layout-utilities/positions"
+prevPage: "/codebase-4/docs/4-layout-utilities/blocks"
+nextPage: "/codebase-4/docs/4-layout-utilities/positions"
 prevButton: "Block"
 nextButton: "Positions"
 ---

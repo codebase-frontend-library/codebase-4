@@ -2,8 +2,8 @@
 title: "Blocks"
 headerTitle: "Block Utilities"
 layout: layout.njk
-prevPage: "/docs/3-responsive-layouts/grid"
-nextPage: "/docs/4-layout-utilities/floats"
+prevPage: "/codebase-4/docs/3-responsive-layouts/grid"
+nextPage: "/codebase-4/docs/4-layout-utilities/floats"
 prevButton: "Columnar grid system"
 nextButton: "Floats"
 ---

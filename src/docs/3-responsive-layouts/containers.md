@@ -2,8 +2,8 @@
 title: "Containers"
 headerTitle: "Codebase Containers"
 layout: layout.njk
-prevPage: "/docs/2-codebase-basics/audio-and-video"
-nextPage: "/docs/3-responsive-layouts/bleeds"
+prevPage: "/codebase-4/docs/2-codebase-basics/audio-and-video"
+nextPage: "/codebase-4/docs/3-responsive-layouts/bleeds"
 prevButton: "Audio and video"
 nextButton: "Bleeds"
 ---
@@ -65,7 +65,7 @@ _Direct child_ elements are placed in the middle column using the style rule `> 
   </div>
 </div>
 
-See also Codebase [bleeds](/docs/3-responsive-layouts/bleeds).
+See also Codebase [bleeds](/codebase-4/docs/3-responsive-layouts/bleeds).
 
 **Notes:**
 
@@ -97,7 +97,7 @@ See also Codebase [bleeds](/docs/3-responsive-layouts/bleeds).
 
 ***
 
-Codebase has another way of controlling the width of elements, by using [width utilities](/docs/4-layout-utilities/dimensions#widths). This may be useful to you, in some situations.
+Codebase has another way of controlling the width of elements, by using [width utilities](/codebase-4/docs/4-layout-utilities/dimensions#widths). This may be useful to you, in some situations.
 
 You can also push a width-constrained element horizontally to the center of its wrapper, using the `.mx-auto` margin-utility. You will also want to set side paddings using padding utilities, so that any text in your element is moved in from the edges of smaller device screens.
 
@@ -108,4 +108,4 @@ Here’s how you would set up a `md` i.e. medium width wrapper (default width of
   Lorem ipsum dolor sit amet ...
 </div>
 ```
-For more information margins and paddings, see [spacing utilities](/docs/6-decoration-utilities/spacing).
+For more information margins and paddings, see [spacing utilities](/codebase-4/docs/6-decoration-utilities/spacing).

@@ -1,8 +1,8 @@
 ---
 title: "Blockquotes"
 layout: layout.njk
-prevPage: "/docs/2-codebase-basics/horizontal-rules"
-nextPage: "/docs/2-codebase-basics/tables"
+prevPage: "/codebase-4/docs/2-codebase-basics/horizontal-rules"
+nextPage: "/codebase-4/docs/2-codebase-basics/tables"
 prevButton: "Block quotes"
 nextButton: "Tables"
 ---

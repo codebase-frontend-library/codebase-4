@@ -2,8 +2,8 @@
 title: "AlpineJS or Activator"
 headerTitle: "Using AlpineJS or Activator in Codebase"
 layout: layout.njk
-prevPage: "/docs/1-getting-started/codebase-scss"
-nextPage: "/docs/1-getting-started/responsive-design"
+prevPage: "/codebase-4/docs/1-getting-started/codebase-scss"
+nextPage: "/codebase-4/docs/1-getting-started/responsive-design"
 prevButton: "Codebase SCSS"
 nextButton: "Responsive design"
 ---
@@ -19,10 +19,10 @@ Actually, some older web designers may still prefer the way `activator.js` does 
 Besides the Codebase-based AlpineJS demos in these docs, there are plenty of tutorials and videos out there showing you how to use Alpine.
 
 <div class="flex flex-grow-equal flex-gap flex-wrap my-6 pb-3">
-  <a class="btn btn-primary rounded-pill" href="/docs/8-alpinejs-components/about-alpinejs-components">Codebase with AlpineJS</a>
-  <a class="btn btn-secondary rounded-pill" href="/docs/9-activator-components/about-activator-components">Codebase with Activator</a>
+  <a class="btn btn-primary rounded-pill" href="/codebase-4/docs/8-alpinejs-components/about-alpinejs-components">Codebase with AlpineJS</a>
+  <a class="btn btn-secondary rounded-pill" href="/codebase-4/docs/9-activator-components/about-activator-components">Codebase with Activator</a>
 </div>
 
 ***
 
-**Note:** Converting Codebase components from Activator to AlpineJS, or _vise versa_, involves more than simply swapping out one script for the other. The HTML also needs to be reconfigured. AlpineJS uses its own _declarations_ as HTML attributes. The way that the Codebase `activator.js` works is completely different – it uses `data` attributes, `aria` attributes and `id`s.
+**Note:** Converting Codebase components from Activator to AlpineJS, or _vise versa_, involves more than simply swapping out one script for the other. The HTML also needs to be reconfigured. AlpineJS uses its own _declarations_ as HTML attributes. The way that the Codebase `activator.js` works is completely different – it uses `id`, `aria` attributes, `data` attributes.

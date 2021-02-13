@@ -2,8 +2,8 @@
 title: "Showhides (AlpineJS)"
 headerTitle: "Showhides (a.k.a. Slide-Reveals)"
 layout: layout.njk
-prevPage: "/docs/8-alpinejs-components/about-alpinejs-components"
-nextPage: "/docs/8-alpinejs-components/alpinejs-dropdowns"
+prevPage: "/codebase-4/docs/8-alpinejs-components/about-alpinejs-components"
+nextPage: "/codebase-4/docs/8-alpinejs-components/alpinejs-dropdowns"
 prevButton: "About AlpineJS components"
 nextButton: "AlpineJS dropdowns"
 ---

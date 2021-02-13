@@ -1,8 +1,8 @@
 ---
 title: "Dimensions"
 layout: layout.njk
-prevPage: "/docs/4-layout-utilities/positions"
-nextPage: "/docs/4-layout-utilities/overflows"
+prevPage: "/codebase-4/docs/4-layout-utilities/positions"
+nextPage: "/codebase-4/docs/4-layout-utilities/overflows"
 prevButton: "Positions"
 nextButton: "Overflows"
 ---
@@ -87,7 +87,7 @@ The `.box` utility expands a block to the full width and height of its containin
 
 See `.box` demonstrated in the _positions demo_ below. The centered/middled label is inside a `.box`.
 
-`.box` is used to overlay text over an image in the Codebase [hero component](/docs/7-simple-components/heros).
+`.box` is used to overlay text over an image in the Codebase [hero component](/codebase-4/docs/7-simple-components/heros).
 
 <div class="full-bleed mb-3 bg-color-background-alt">
   <div class="relative h-half-vh">
@@ -131,4 +131,4 @@ See `.box` demonstrated in the _positions demo_ below. The centered/middled labe
 </div>
 ```
 
-(Interested in those colors? See [color utilities](/docs/6-decoration-utilities/colors).)
+(Interested in those colors? See [color utilities](/codebase-4/docs/6-decoration-utilities/colors).)

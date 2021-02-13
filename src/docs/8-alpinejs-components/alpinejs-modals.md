@@ -2,8 +2,8 @@
 title: "Modals (AlpineJS)"
 headerTitle: "Modals"
 layout: layout.njk
-prevPage: "/docs/8-alpinejs-components/alpinejs-dropdowns"
-nextPage: "/docs/8-alpinejs-components/alpinejs-offcanvas"
+prevPage: "/codebase-4/docs/8-alpinejs-components/alpinejs-dropdowns"
+nextPage: "/codebase-4/docs/8-alpinejs-components/alpinejs-offcanvas"
 prevButton: "AlpineJS dropdowns"
 nextButton: "AlpineJS offcanvas"
 ---

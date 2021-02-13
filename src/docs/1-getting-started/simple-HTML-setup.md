@@ -2,15 +2,15 @@
 title: "Simple HTML Setup"
 headerTitle: "Simple HTML Setup"
 layout: layout.njk
-nextPage: "/docs/1-getting-started/codebase-scss-library"
+nextPage: "/codebase-4/docs/1-getting-started/codebase-scss-library"
 nextButton: "The Codebase SCSS Library"
 ---
 
 <p class="t-lg t-thin">You can start working immediately with Codebase in a simple HTML setup.</p>
 
-If you have knowlesge of Sass/SCSS and a preprocessor, you can override the Codebase `!default` SCSS variables – see the [Codebase SCSS library](/docs/1-getting-started/codebase-scss-library).
+If you have knowlesge of Sass/SCSS and a preprocessor, you can override the Codebase `!default` SCSS variables – see the [Codebase SCSS library](/codebase-4/docs/1-getting-started/codebase-scss-library).
 
-Use use the Codebase [Activator](/docs/9-activator-components/about-activator-components/) JavaScript to power Codebase frontend components, such as dropdowns, tabs and modals. If you want even more JavaScript power, use [AlpineJS](https://github.com/alpinejs/alpine) instead. These docs will show you how to use both – see [Activator or AlpineJS components](/docs/1-getting-started/alpinejs-or-activator).
+Use use the Codebase [Activator](/codebase-4/docs/9-activator-components/about-activator-components/) JavaScript to power Codebase frontend components, such as dropdowns, tabs and modals. If you want even more JavaScript power, use [AlpineJS](https://github.com/alpinejs/alpine) instead. These docs will show you how to use both – see [Activator or AlpineJS components](/codebase-4/docs/1-getting-started/alpinejs-or-activator).
 
 ### Using the Default Codebase CSS (and Activator JS)
 
@@ -43,7 +43,7 @@ Use use the Codebase [Activator](/docs/9-activator-components/about-activator-co
 
 ### Using AlpineJS Instead of Activator
 
-If you use AlpineJS instead of Activator, then you will want the [AlpineJS components](/docs/8-alpinejs-components/about-alpinejs-components) section of these docs.
+If you use AlpineJS instead of Activator, then you will want the [AlpineJS components](/codebase-4/docs/8-alpinejs-components/about-alpinejs-components) section of these docs.
 
 ### Using the Codebase Light and Dark Themes
 
@@ -72,4 +72,4 @@ Include a theme switcher JavaScript – to programatically insert either `.theme
 </html>
 ```
 
-Learn about Codebase’s [light and dark themes, and example theme-switcher](/docs/1-getting-started/light-and-dark-themes).
+Learn about Codebase’s [light and dark themes, and example theme-switcher](/codebase-4/docs/1-getting-started/light-and-dark-themes).

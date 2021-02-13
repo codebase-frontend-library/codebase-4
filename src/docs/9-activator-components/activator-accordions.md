@@ -2,15 +2,15 @@
 title: "Accordions (Activator Component)"
 headerTitle: "Accordions"
 layout: layout.njk
-prevPage: "/docs/9-activator-components/activator-tabs"
-nextPage: "/docs/9-activator-components/activator-slideshows"
+prevPage: "/codebase-4/docs/9-activator-components/activator-tabs"
+nextPage: "/codebase-4/docs/9-activator-components/activator-slideshows"
 prevButton: "Activator tabs"
 nextButton: "Activator slideshows"
 ---
 
 Codebase accordions are tab-like acrivator components.
 
-Sometimes, when you think you need an accordion, what you really need is a set of independent [showhide](/docs/7-activator-components/activator-showhide) components (as they are called in Codebase).
+Sometimes, when you think you need an accordion, what you really need is a set of independent [showhide](/codebase-4/docs/7-activator-components/activator-showhide) components (as they are called in Codebase).
 
 Do you really need to close one panel when you open another? If you do, then you need an accordion. And here below is a Codebase accordion implimentation.
 

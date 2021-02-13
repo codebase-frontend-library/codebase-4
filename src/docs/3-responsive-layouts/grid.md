@@ -2,8 +2,8 @@
 title: "Grid"
 headerTitle: "Columnar Grid System"
 layout: layout.njk
-prevPage: "/docs/3-responsive-layouts/bleeds"
-nextPage: "/docs/3-responsive-layouts/flex"
+prevPage: "/codebase-4/docs/3-responsive-layouts/bleeds"
+nextPage: "/codebase-4/docs/3-responsive-layouts/flex"
 prevButton: "Bleeds"
 nextButton: "Flex"
 ---
@@ -206,4 +206,4 @@ You can combine two or more grids on the same set of elements. Here's an example
 </div>
 ```
 
-On medium screens up, you will see that the example above is wider than the docs text column. This is accomplished using [full bleed](/docs/3-responsive-layouts/bleeds) wrapped around another container.
+On medium screens up, you will see that the example above is wider than the docs text column. This is accomplished using [full bleed](/codebase-4/docs/3-responsive-layouts/bleeds) wrapped around another container.

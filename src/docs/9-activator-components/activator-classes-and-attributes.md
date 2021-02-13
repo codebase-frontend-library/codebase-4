@@ -1,8 +1,8 @@
 ---
 title: "Activator Classes and Attributes"
 layout: layout.njk
-prevPage: "/docs/9-activator-components/about-activator-components"
-nextPage: "/docs/9-activator-components/activator-showhides"
+prevPage: "/codebase-4/docs/9-activator-components/about-activator-components"
+nextPage: "/codebase-4/docs/9-activator-components/activator-showhides"
 prevButton: "About Activator components"
 nextButton: "Activator showhides"
 ---
