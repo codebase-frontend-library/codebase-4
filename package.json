@@ -5,14 +5,28 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev-eleventy": "npx @11ty/eleventy --serve --quiet",
-    "dev": "gulp & npx @11ty/eleventy --serve --quiet"
+    "dev": "gulp & npx @11ty/eleventy --serve --quiet",
+    "build": "npx @11ty/eleventy --pathprefix='codebase-4'"
   },
-  "keywords": ["css", "sass", "js", "responsive", "frontend", "library", "framework", "utility classes", "components", "AlpineJS", "Eleventy", "documentation"],
+  "keywords": [
+    "css",
+    "sass",
+    "js",
+    "responsive",
+    "frontend",
+    "library",
+    "framework",
+    "utility classes",
+    "components",
+    "AlpineJS",
+    "Eleventy",
+    "documentation"
+  ],
   "author": "",
   "license": "MIT",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/codebase-frontend-library/codebase-4"
+    "type": "git",
+    "url": "https://github.com/codebase-frontend-library/codebase-4"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
