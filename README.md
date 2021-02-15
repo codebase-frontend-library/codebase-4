@@ -28,7 +28,7 @@ _Version 4.0.1_
 
 ***
 
-[View the docs](https://codebase-frontend-library.github.io/codebase-4/)
+[View the docs](https://codebase-frontend-library.github.io/codebase-4/) &rarr;
 
 ***
 
