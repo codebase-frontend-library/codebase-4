@@ -28,7 +28,7 @@ _Version 4.0.1_
 
 ***
 
-[Go to the docs](/codebase-4/docs/index.html)
+[View the docs](https://codebase-frontend-library.github.io/codebase-4/)
 
 ***
 
