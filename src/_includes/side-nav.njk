@@ -25,7 +25,7 @@ x-data="docsOcState()"
   <div
     id="docs-menu"
     class="relative bg-color-background br-thin"
-    :class="{ 'is-active bs': docsOcIsOpen }"
+    :class="{ 'active': docsOcIsOpen }"
     x-on:docsctoggler.window="docsOcIsOpen = !docsOcIsOpen"
   >
     <div class="sticky hide-md-up bb-thin p-1 t-right bg-color-background" style="z-index: 1; height: 57px;">
@@ -80,7 +80,7 @@ x-data="docsOcState()"
             x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
             <div class="px-2">
               <ul class="menu">
-                <li><a href="{{ '/docs/1-getting-started/simple-HTML-setup' | url }}">Simple HTML setup</a></li>
+                <li><a href="{{ '/docs/1-getting-started/simple-html-setup' | url }}">Simple HTML setup</a></li>
                 <li><a href="{{ '/docs/1-getting-started/codebase-scss-library' | url }}">The Codebase SCSS library</a></li>
                 <li><a href="{{ '/docs/1-getting-started/alpinejs-or-activator' | url }}">AlpineJS or Activator components</a></li>
                 <li><a href="{{ '/docs/1-getting-started/responsive-design' | url }}">Responsive design</a></li>
@@ -157,7 +157,7 @@ x-data="docsOcState()"
           </div>
         </div>
 
-        <div class="mt-1 p-block t-thin t-loose t-uppercase t-small">Utilities</div>
+        <div class="mt-1 p-block t-loose t-uppercase t-small">Utilities</div>
 
         {% if '4-layout-utilities' in page.url %}
         <div x-data="{ revealed: true }">
@@ -255,7 +255,7 @@ x-data="docsOcState()"
           </div>
         </div>
 
-        <div class="mt-1 p-block t-thin t-loose t-uppercase t-small">Components</div>
+        <div class="mt-1 p-block t-loose t-uppercase t-small">Components</div>
 
         {% if '7-simple-components' in page.url %}
         <div x-data="{ revealed: true }">

@@ -12,9 +12,9 @@
     }
   })
 
-  // Used to supplement some Alpine components
-  const scrLock = document.querySelectorAll('.scroll-lock')
-  const scrUnlock = document.querySelectorAll('.scroll-unlock')
+  // Used to supplement Alpine modal components
+  const scrLock = Array.from(document.querySelectorAll('.scroll-lock'))
+  const scrUnlock = Array.from(document.querySelectorAll('.scroll-unlock'))
   scrLock.forEach(el => {
     el.addEventListener('click', () => {
       document.querySelector('body').classList.add('body-scroll-lock')

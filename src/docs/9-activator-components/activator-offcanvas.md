@@ -19,7 +19,8 @@ This first example has an offcanvas panel at all viewport widths.
   aria-controls="offcanvas-1"
   aria-expanded="false"
   data-control="toggle"
-  data-click-away="true">
+  data-click-away="true"
+  data-scroll-lock="true">
   &larr; Offcanvas demo 1
 </button> — clicking this button will open a demo offcanvas panel to the left.
 
@@ -41,7 +42,8 @@ This first example has an offcanvas panel at all viewport widths.
   aria-controls="offcanvas-1"
   aria-expanded="false"
   data-control="toggle"
-  data-click-away="true">
+  data-click-away="true"
+  data-scroll-lock="true">
   &larr; Offcanvas demo 1
 </button> – offcanvas panel will slide in from the left
 
@@ -74,7 +76,8 @@ Let’s add two more things:
   aria-controls="offcanvas-2"
   aria-expanded="false"
   data-control="toggle"
-  data-click-away="true">
+  data-click-away="true"
+  data-scroll-lock="true">
   Offcanvas demo 2 &rarr;
 </button> <span class="hide-md-up">– offcanvas panel will slide in from the right</span>
 
@@ -98,7 +101,8 @@ Let’s add two more things:
   aria-controls="offcanvas-2"
   aria-expanded="false"
   data-control="toggle"
-  data-click-away="true">
+  data-click-away="true"
+  data-scroll-lock="true">
   Offcanvas demo 2 &rarr;
 </button>
 

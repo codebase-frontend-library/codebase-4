@@ -12,9 +12,9 @@ If you have knowlesge of Sass/SCSS and a preprocessor, you can override the Code
 
 Use use the Codebase [Activator](/codebase-4/docs/9-activator-components/about-activator-components/) JavaScript to power Codebase frontend components, such as dropdowns, tabs and modals. If you want even more JavaScript power, use [AlpineJS](https://github.com/alpinejs/alpine) instead. These docs will show you how to use both – see [Activator or AlpineJS components](/codebase-4/docs/1-getting-started/alpinejs-or-activator).
 
-<div class="flex flex-grow-equal flex-gap flex-wrap my-6 pb-3">
-  <a class="btn btn-primary rounded-pill" href="https://github.com/codebase-frontend-library/codebase-4/archive/master.zip">Download Codebase (.zip)</a>
-  <a class="btn btn-secondary rounded-pill" href="https://github.com/codebase-frontend-library/codebase-4">Codebase GitHub repostory</a>
+<div class="grid-sm-2-cols grid-gap my-6 t-center">
+  <a class="mb-3 btn btn-primary rounded-pill" href="https://github.com/codebase-frontend-library/codebase-4/archive/master.zip">Download Codebase (.zip)</a>
+  <a class="mb-3 btn btn-secondary rounded-pill" href="https://github.com/codebase-frontend-library/codebase-4">Codebase GitHub repostory</a>
 </div>
 
 ### Using the Default Codebase CSS (and Activator JS)

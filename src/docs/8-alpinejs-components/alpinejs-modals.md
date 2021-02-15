@@ -313,7 +313,7 @@ The _close_ (dismiss) button is within the top-right corner of the black backdro
         </div>
         <h2>Full-Cover Modal</h2>
         <hr>
-        <div class="grid grid-md-2-cols grid-lg-3-cols grid-gap">
+        <div class="grid-md-3-cols grid-gap">
           <div>
             <h4>Department 1
             </h4>
@@ -347,6 +347,8 @@ The _close_ (dismiss) button is within the top-right corner of the black backdro
               <li><a href="#">Link</a></li>
             </ul>
           </div>
+        </div>
+        <div class="grid-md-3-cols grid-gap">
           <div>
             <h4>Department 4
             </h4>
@@ -413,13 +415,15 @@ All you need for this is a tiny JavaScript that looks for some extra CSS classes
 The scroll-lock JavaScript is as follows:
 
 ```js
-const scrLock = document.querySelectorAll('.scroll-lock')
-const scrUnlock = document.querySelectorAll('.scroll-unlock')
+const scrLock = Array.from(document.querySelectorAll('.scroll-lock'))
+const scrUnlock = Array.from(document.querySelectorAll('.scroll-unlock'))
+
 scrLock.forEach(el => {
   el.addEventListener('click', () => {
     document.querySelector('body').classList.add('body-scroll-lock')
   });
 })
+
 scrUnlock.forEach(el => {
   el.addEventListener('click', () => {
     document.querySelector('body').classList.remove('body-scroll-lock')

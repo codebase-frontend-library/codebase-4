@@ -3,9 +3,9 @@
 // ~~~~~~~~~~~~~~~~~~~~~~
 
 document.addEventListener('DOMContentLoaded', () => {
-  const clickAways = document.querySelectorAll('[data-click-away="true"]');
-  const controls = document.querySelectorAll('[class*=-control]');
-  const closure = document.querySelectorAll('[class*=-close]');
+  const clickAways = Array.from(document.querySelectorAll('[data-click-away="true"]'));
+  const controls = Array.from(document.querySelectorAll('[class*=-control]'));
+  const closure = Array.from(document.querySelectorAll('[class*=-close]'));
 
   // Find and decorate the click-away dismissers
   clickAways.forEach(element => {

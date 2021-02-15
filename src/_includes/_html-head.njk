@@ -79,12 +79,12 @@
     #docs-menu {width: 320px; transition: all .3s linear;}
     @media (max-width: 1023px) {
       #docs-menu {position: fixed; min-height: 100%; top: 0; bottom: 0; left: 0; z-index: 999; overflow-y: auto; transform: translateX(-100%);}
-      #docs-menu.is-active {transform: translateX(0);}
+      #docs-menu.active {transform: translateX(0); box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.5), 0 8px 24px -3px rgba(0,0,0,0.2),0 16px 36px -2px rgba(0,0,0,0.1);}
     }
     @media (min-width: 1024px) {
       #docs-main {position: relative; display: flex;}
       #docs-menu {height: 100%;}
-      #docs-menu.is-active {margin-left: -320px;}
+      #docs-menu.active {margin-left: -320px;}
       .docs-menu-inner {position: sticky; top: 57px; height: calc(100vh - 57px);}
     }
 

@@ -27,8 +27,15 @@
     }
   }
   // Spacing
-  &-gap {                             // bleeding edge; check CanIuse
-    gap: $flex-gap-width;
+  &-gap {
+    //gap: $flex-gap-width;       // bleeding edge; check CanIuse
+    position: relative;
+    margin-right: -.75rem;
+    margin-left: -.75rem;
+    > * {
+      margin-right: .75rem !important;
+      margin-left: .75rem !important; 
+    }
   }
   &-space-around {
     justify-content: space-around;

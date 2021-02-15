@@ -79,12 +79,12 @@
     #docs-menu {width: 320px; transition: all .3s linear;}
     @media (max-width: 1023px) {
       #docs-menu {position: fixed; min-height: 100%; top: 0; bottom: 0; left: 0; z-index: 999; overflow-y: auto; transform: translateX(-100%);}
-      #docs-menu.is-active {transform: translateX(0);}
+      #docs-menu.active {transform: translateX(0); box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.5), 0 8px 24px -3px rgba(0,0,0,0.2),0 16px 36px -2px rgba(0,0,0,0.1);}
     }
     @media (min-width: 1024px) {
       #docs-main {position: relative; display: flex;}
       #docs-menu {height: 100%;}
-      #docs-menu.is-active {margin-left: -320px;}
+      #docs-menu.active {margin-left: -320px;}
       .docs-menu-inner {position: sticky; top: 57px; height: calc(100vh - 57px);}
     }
 
@@ -240,7 +240,7 @@ x-data="docsOcState()"
   <div
     id="docs-menu"
     class="relative bg-color-background br-thin"
-    :class="{ 'is-active bs': docsOcIsOpen }"
+    :class="{ 'active': docsOcIsOpen }"
     x-on:docsctoggler.window="docsOcIsOpen = !docsOcIsOpen"
   >
     <div class="sticky hide-md-up bb-thin p-1 t-right bg-color-background" style="z-index: 1; height: 57px;">
@@ -293,7 +293,7 @@ x-data="docsOcState()"
             x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
             <div class="px-2">
               <ul class="menu">
-                <li><a href="/codebase-4/docs/1-getting-started/simple-HTML-setup">Simple HTML setup</a></li>
+                <li><a href="/codebase-4/docs/1-getting-started/simple-html-setup">Simple HTML setup</a></li>
                 <li><a href="/codebase-4/docs/1-getting-started/codebase-scss-library">The Codebase SCSS library</a></li>
                 <li><a href="/codebase-4/docs/1-getting-started/alpinejs-or-activator">AlpineJS or Activator components</a></li>
                 <li><a href="/codebase-4/docs/1-getting-started/responsive-design">Responsive design</a></li>
@@ -366,7 +366,7 @@ x-data="docsOcState()"
           </div>
         </div>
 
-        <div class="mt-1 p-block t-thin t-loose t-uppercase t-small">Utilities</div>
+        <div class="mt-1 p-block t-loose t-uppercase t-small">Utilities</div>
 
         
         <div x-data="{ revealed: false }">
@@ -458,7 +458,7 @@ x-data="docsOcState()"
           </div>
         </div>
 
-        <div class="mt-1 p-block t-thin t-loose t-uppercase t-small">Components</div>
+        <div class="mt-1 p-block t-loose t-uppercase t-small">Components</div>
 
         
         <div x-data="{ revealed: false }">
@@ -705,17 +705,20 @@ x-data="docsOcState()"
 </li>
 <li>
 <p>Each grid child element (i.e. column) get constrained to <code>grid-row: 1</code>. Therefore, you can <em>reorder</em> grid items without CSS grid wanting to place disorderly items on a new row. So, for example, this kind of thing just works:</p>
+ <div class="grid-sm-4-cols grid-gap my-6">
+   <div class="col-sm-4  b-thick b-color-success rounded p-1 t-heavy t-color-success">One</div>
+   <div class="col-sm-1  b-thick b-color-success rounded p-1 t-heavy t-color-success">Two</div>
+   <div class="col-sm-3  b-thick b-color-success rounded p-1 t-heavy t-color-success">Three</div>
+   <div class="col-sm-2  b-thick b-color-success rounded p-1 t-heavy t-color-success">Four</div>
+ </div>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>grid-sm-4-cols grid-gap<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col-sm-4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>One<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col-sm-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Two<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col-sm-3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Three<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col-sm-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Four<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+</li>
+<li>
+<p>Since each Codebase grid child element gets constrained to <code>grid-row: 1</code>, grid columns <em>do not wrap</em> on to new rows. So, you can’t have more columns within a grid (or <code>-thru-</code> spanning totals within a grid) than you specify in the wrapper (either <code>-2-cols</code>, <code>-3-cols</code>, or <code>-4-cols</code>).</p>
 </li>
 </ol>
-<div class="grid-sm-4-cols grid-gap my-6">
-  <div class="col-sm-4  b-thick b-color-success rounded p-1 t-heavy t-color-success">One</div>
-  <div class="col-sm-1  b-thick b-color-success rounded p-1 t-heavy t-color-success">Two</div>
-  <div class="col-sm-3  b-thick b-color-success rounded p-1 t-heavy t-color-success">Three</div>
-  <div class="col-sm-2  b-thick b-color-success rounded p-1 t-heavy t-color-success">Four</div>
-</div>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>grid-sm-4-cols grid-gap<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col-sm-4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>One<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col-sm-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Two<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col-sm-3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Three<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col-sm-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Four<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
 <h2 id="grids-with-more-than-one-breakpoint-width">Grids With More Than One Breakpoint Width</h2>
-<p>You can combine two or more grids on the same set of elements. Here's an example where the sidebar is ~<sup>2</sup>/<sub>5</sub> width for small screens and ~<sup>1</sup>/<sub>4</sub> width for large screens (I’m saying approximately, because <code>grid-gap</code> is also in play):</p>
+<p>You can combine two or more grids on the same set of elements. Here's an example where the sidebar is approx. <sup>2</sup>/<sub>5</sub> width for small screens and approx. <sup>1</sup>/<sub>4</sub> width for large screens (I’m saying approximately, because <code>grid-gap</code> is also in play):</p>
 <div class="full-bleed my-6">
 <div class="container container-lg">
   <div class="grid-sm-5-cols grid-lg-4-cols grid-gap">
@@ -777,9 +780,9 @@ x-data="docsOcState()"
     }
   })
 
-  // Used to supplement some Alpine components
-  const scrLock = document.querySelectorAll('.scroll-lock')
-  const scrUnlock = document.querySelectorAll('.scroll-unlock')
+  // Used to supplement Alpine modal components
+  const scrLock = Array.from(document.querySelectorAll('.scroll-lock'))
+  const scrUnlock = Array.from(document.querySelectorAll('.scroll-unlock'))
   scrLock.forEach(el => {
     el.addEventListener('click', () => {
       document.querySelector('body').classList.add('body-scroll-lock')

@@ -170,25 +170,27 @@ Notes:
 
 3. Each grid child element (i.e. column) get constrained to `grid-row: 1`. Therefore, you can _reorder_ grid items without CSS grid wanting to place disorderly items on a new row. So, for example, this kind of thing just works:
 
-<div class="grid-sm-4-cols grid-gap my-6">
-  <div class="col-sm-4  b-thick b-color-success rounded p-1 t-heavy t-color-success">One</div>
-  <div class="col-sm-1  b-thick b-color-success rounded p-1 t-heavy t-color-success">Two</div>
-  <div class="col-sm-3  b-thick b-color-success rounded p-1 t-heavy t-color-success">Three</div>
-  <div class="col-sm-2  b-thick b-color-success rounded p-1 t-heavy t-color-success">Four</div>
-</div>
+    <div class="grid-sm-4-cols grid-gap my-6">
+      <div class="col-sm-4  b-thick b-color-success rounded p-1 t-heavy t-color-success">One</div>
+      <div class="col-sm-1  b-thick b-color-success rounded p-1 t-heavy t-color-success">Two</div>
+      <div class="col-sm-3  b-thick b-color-success rounded p-1 t-heavy t-color-success">Three</div>
+      <div class="col-sm-2  b-thick b-color-success rounded p-1 t-heavy t-color-success">Four</div>
+    </div>
 
-```html
-<div class="grid-sm-4-cols grid-gap">
-  <div class="col-sm-4">One</div>
-  <div class="col-sm-1">Two</div>
-  <div class="col-sm-3">Three</div>
-  <div class="col-sm-2">Four</div>
-</div>
-```
+    ```html
+    <div class="grid-sm-4-cols grid-gap">
+      <div class="col-sm-4">One</div>
+      <div class="col-sm-1">Two</div>
+      <div class="col-sm-3">Three</div>
+      <div class="col-sm-2">Four</div>
+    </div>
+    ```
+
+4. Since each Codebase grid child element gets constrained to `grid-row: 1`, grid columns _do not wrap_ on to new rows. So, you can’t have more columns within a grid (or `-thru-` spanning totals within a grid) than you specify in the wrapper (either `-2-cols`, `-3-cols`, or `-4-cols`).
 
 ## Grids With More Than One Breakpoint Width
 
-You can combine two or more grids on the same set of elements. Here's an example where the sidebar is ~<sup>2</sup>/<sub>5</sub> width for small screens and ~<sup>1</sup>/<sub>4</sub> width for large screens (I’m saying approximately, because `grid-gap` is also in play):
+You can combine two or more grids on the same set of elements. Here's an example where the sidebar is approx. <sup>2</sup>/<sub>5</sub> width for small screens and approx. <sup>1</sup>/<sub>4</sub> width for large screens (I’m saying approximately, because `grid-gap` is also in play):
 
 <div class="full-bleed my-6">
 <div class="container container-lg">

@@ -18,9 +18,9 @@ Actually, some older web designers may still prefer the way `activator.js` does 
 
 Besides the Codebase-based AlpineJS demos in these docs, there are plenty of tutorials and videos out there showing you how to use Alpine.
 
-<div class="flex flex-grow-equal flex-gap flex-wrap my-6 pb-3">
-  <a class="btn btn-primary rounded-pill" href="/codebase-4/docs/8-alpinejs-components/about-alpinejs-components">Codebase with AlpineJS</a>
-  <a class="btn btn-secondary rounded-pill" href="/codebase-4/docs/9-activator-components/about-activator-components">Codebase with Activator</a>
+<div class="grid-sm-2-cols grid-gap my-6 t-center">
+  <a class="mb-3 btn btn-primary rounded-pill" href="/codebase-4/docs/8-alpinejs-components/about-alpinejs-components">Codebase with AlpineJS</a>
+  <a class="mb-3 btn btn-secondary rounded-pill" href="/codebase-4/docs/9-activator-components/about-activator-components">Codebase with Activator</a>
 </div>
 
 ***

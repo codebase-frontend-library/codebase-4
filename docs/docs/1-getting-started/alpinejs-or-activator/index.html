@@ -79,12 +79,12 @@
     #docs-menu {width: 320px; transition: all .3s linear;}
     @media (max-width: 1023px) {
       #docs-menu {position: fixed; min-height: 100%; top: 0; bottom: 0; left: 0; z-index: 999; overflow-y: auto; transform: translateX(-100%);}
-      #docs-menu.is-active {transform: translateX(0);}
+      #docs-menu.active {transform: translateX(0); box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.5), 0 8px 24px -3px rgba(0,0,0,0.2),0 16px 36px -2px rgba(0,0,0,0.1);}
     }
     @media (min-width: 1024px) {
       #docs-main {position: relative; display: flex;}
       #docs-menu {height: 100%;}
-      #docs-menu.is-active {margin-left: -320px;}
+      #docs-menu.active {margin-left: -320px;}
       .docs-menu-inner {position: sticky; top: 57px; height: calc(100vh - 57px);}
     }
 
@@ -240,7 +240,7 @@ x-data="docsOcState()"
   <div
     id="docs-menu"
     class="relative bg-color-background br-thin"
-    :class="{ 'is-active bs': docsOcIsOpen }"
+    :class="{ 'active': docsOcIsOpen }"
     x-on:docsctoggler.window="docsOcIsOpen = !docsOcIsOpen"
   >
     <div class="sticky hide-md-up bb-thin p-1 t-right bg-color-background" style="z-index: 1; height: 57px;">
@@ -293,7 +293,7 @@ x-data="docsOcState()"
             x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
             <div class="px-2">
               <ul class="menu">
-                <li><a href="/codebase-4/docs/1-getting-started/simple-HTML-setup">Simple HTML setup</a></li>
+                <li><a href="/codebase-4/docs/1-getting-started/simple-html-setup">Simple HTML setup</a></li>
                 <li><a href="/codebase-4/docs/1-getting-started/codebase-scss-library">The Codebase SCSS library</a></li>
                 <li><a href="/codebase-4/docs/1-getting-started/alpinejs-or-activator">AlpineJS or Activator components</a></li>
                 <li><a href="/codebase-4/docs/1-getting-started/responsive-design">Responsive design</a></li>
@@ -366,7 +366,7 @@ x-data="docsOcState()"
           </div>
         </div>
 
-        <div class="mt-1 p-block t-thin t-loose t-uppercase t-small">Utilities</div>
+        <div class="mt-1 p-block t-loose t-uppercase t-small">Utilities</div>
 
         
         <div x-data="{ revealed: false }">
@@ -458,7 +458,7 @@ x-data="docsOcState()"
           </div>
         </div>
 
-        <div class="mt-1 p-block t-thin t-loose t-uppercase t-small">Components</div>
+        <div class="mt-1 p-block t-loose t-uppercase t-small">Components</div>
 
         
         <div x-data="{ revealed: false }">
@@ -582,9 +582,9 @@ x-data="docsOcState()"
 <p>For a while I considered not having an accompanying JavaScipt for Codebase 4, and just demonstrating how Codebase plays well with Alpine JS. Then I found a situation where Alpine couldn’t be used. For a CMS project where we needed to add a simple tab system directly into a page <em>via the editor</em> (it happened to be the HubSpot editor, but the same thing happens in other CMS editors), the unrecognised Alpine declarations (<code>x-show</code>, <code>x-bind</code>, <code>x-model</code>, etc.) were stripped out, removing the functionality that I needed. So, Codebase 4 comes with a tiny JavaScript called <code>activator.js</code> – only 3 KB, minified.</p>
 <p>Actually, some older web designers may still prefer the way <code>activator.js</code> does things. But do try to discover for yourself that AlpineJS is more powerful, because of its declarative approach to DOM manipulation. I Alpine  over <code>activator.js</code> for most use cases. It really is worth you taking time to learn something new.</p>
 <p>Besides the Codebase-based AlpineJS demos in these docs, there are plenty of tutorials and videos out there showing you how to use Alpine.</p>
-<div class="flex flex-grow-equal flex-gap flex-wrap my-6 pb-3">
-  <a class="btn btn-primary rounded-pill" href="/codebase-4/docs/8-alpinejs-components/about-alpinejs-components">Codebase with AlpineJS</a>
-  <a class="btn btn-secondary rounded-pill" href="/codebase-4/docs/9-activator-components/about-activator-components">Codebase with Activator</a>
+<div class="grid-sm-2-cols grid-gap my-6 t-center">
+  <a class="mb-3 btn btn-primary rounded-pill" href="/codebase-4/docs/8-alpinejs-components/about-alpinejs-components">Codebase with AlpineJS</a>
+  <a class="mb-3 btn btn-secondary rounded-pill" href="/codebase-4/docs/9-activator-components/about-activator-components">Codebase with Activator</a>
 </div>
 <hr>
 <p><strong>Note:</strong> Converting Codebase components from Activator to AlpineJS, or <em>vise versa</em>, involves more than simply swapping out one script for the other. The HTML also needs to be reconfigured. AlpineJS uses its own <em>declarations</em> as HTML attributes. The way that the Codebase <code>activator.js</code> works is completely different – it uses <code>id</code>, <code>aria</code> attributes, <code>data</code> attributes.</p>
@@ -639,9 +639,9 @@ x-data="docsOcState()"
     }
   })
 
-  // Used to supplement some Alpine components
-  const scrLock = document.querySelectorAll('.scroll-lock')
-  const scrUnlock = document.querySelectorAll('.scroll-unlock')
+  // Used to supplement Alpine modal components
+  const scrLock = Array.from(document.querySelectorAll('.scroll-lock'))
+  const scrUnlock = Array.from(document.querySelectorAll('.scroll-unlock'))
   scrLock.forEach(el => {
     el.addEventListener('click', () => {
       document.querySelector('body').classList.add('body-scroll-lock')

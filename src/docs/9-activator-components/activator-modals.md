@@ -490,7 +490,7 @@ Codebase modal panels have no styling of their own – you can use utility class
           <h2>Full-Cover Modal</h2>
         </div>
         <hr>
-        <div class="grid grid-md-2-cols grid-lg-3-cols grid-gap">
+        <div class="grid-md-3-cols grid-gap">
           <div>
             <h4>Department 1
             </h4>
@@ -524,6 +524,8 @@ Codebase modal panels have no styling of their own – you can use utility class
               <li><a href="#">Link</a></li>
             </ul>
           </div>
+        </div>
+        <div class="grid-md-3-cols grid-gap">
           <div>
             <h4>Department 4
             </h4>

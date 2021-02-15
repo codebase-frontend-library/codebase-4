@@ -79,12 +79,12 @@
     #docs-menu {width: 320px; transition: all .3s linear;}
     @media (max-width: 1023px) {
       #docs-menu {position: fixed; min-height: 100%; top: 0; bottom: 0; left: 0; z-index: 999; overflow-y: auto; transform: translateX(-100%);}
-      #docs-menu.is-active {transform: translateX(0);}
+      #docs-menu.active {transform: translateX(0); box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.5), 0 8px 24px -3px rgba(0,0,0,0.2),0 16px 36px -2px rgba(0,0,0,0.1);}
     }
     @media (min-width: 1024px) {
       #docs-main {position: relative; display: flex;}
       #docs-menu {height: 100%;}
-      #docs-menu.is-active {margin-left: -320px;}
+      #docs-menu.active {margin-left: -320px;}
       .docs-menu-inner {position: sticky; top: 57px; height: calc(100vh - 57px);}
     }
 
@@ -240,7 +240,7 @@ x-data="docsOcState()"
   <div
     id="docs-menu"
     class="relative bg-color-background br-thin"
-    :class="{ 'is-active bs': docsOcIsOpen }"
+    :class="{ 'active': docsOcIsOpen }"
     x-on:docsctoggler.window="docsOcIsOpen = !docsOcIsOpen"
   >
     <div class="sticky hide-md-up bb-thin p-1 t-right bg-color-background" style="z-index: 1; height: 57px;">
@@ -293,7 +293,7 @@ x-data="docsOcState()"
             x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
             <div class="px-2">
               <ul class="menu">
-                <li><a href="/codebase-4/docs/1-getting-started/simple-HTML-setup">Simple HTML setup</a></li>
+                <li><a href="/codebase-4/docs/1-getting-started/simple-html-setup">Simple HTML setup</a></li>
                 <li><a href="/codebase-4/docs/1-getting-started/codebase-scss-library">The Codebase SCSS library</a></li>
                 <li><a href="/codebase-4/docs/1-getting-started/alpinejs-or-activator">AlpineJS or Activator components</a></li>
                 <li><a href="/codebase-4/docs/1-getting-started/responsive-design">Responsive design</a></li>
@@ -366,7 +366,7 @@ x-data="docsOcState()"
           </div>
         </div>
 
-        <div class="mt-1 p-block t-thin t-loose t-uppercase t-small">Utilities</div>
+        <div class="mt-1 p-block t-loose t-uppercase t-small">Utilities</div>
 
         
         <div x-data="{ revealed: false }">
@@ -458,7 +458,7 @@ x-data="docsOcState()"
           </div>
         </div>
 
-        <div class="mt-1 p-block t-thin t-loose t-uppercase t-small">Components</div>
+        <div class="mt-1 p-block t-loose t-uppercase t-small">Components</div>
 
         
         <div x-data="{ revealed: false }">
@@ -772,9 +772,9 @@ x-data="docsOcState()"
     }
   })
 
-  // Used to supplement some Alpine components
-  const scrLock = document.querySelectorAll('.scroll-lock')
-  const scrUnlock = document.querySelectorAll('.scroll-unlock')
+  // Used to supplement Alpine modal components
+  const scrLock = Array.from(document.querySelectorAll('.scroll-lock'))
+  const scrUnlock = Array.from(document.querySelectorAll('.scroll-unlock'))
   scrLock.forEach(el => {
     el.addEventListener('click', () => {
       document.querySelector('body').classList.add('body-scroll-lock')
