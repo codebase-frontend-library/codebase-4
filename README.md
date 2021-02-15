@@ -2,7 +2,7 @@
 
 The super tiny website frontend library.
 
-_Version 4.0.0_
+_Version 4.0.1_
 
 ## Features
 
