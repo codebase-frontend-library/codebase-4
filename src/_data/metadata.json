@@ -1,4 +1,7 @@
 {
   "title": "Codebase",
-  "version": "4.0.1"
+  "version": "4.0.1",
+  "codebaseSize": "35 KB",
+  "codebaseLDSize": "60 KB",
+  "activatorSize": "3 KB"
 }
