@@ -43,15 +43,15 @@ The `.square-*` sizes are equal to  `sm` 3rem<sup>2</sup> (24px devault), `md` 6
 
 <div class="flex flex-wrap flex-middle flex-gap mb-3">
   <div class="square-sm">
-    <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" width="200" height="200" style="max-width: 100%; height: auto;"><defs><linearGradient id="gradient1" gradientTransform="rotate(45)"><stop offset="5%" stop-color="rgba(255,255,0,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(255,0,0,.5)" /></linearGradient><linearGradient id="gradient2" gradientTransform="rotate(135)"><stop offset="5%" stop-color="rgba(0,0,255,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(0,255,0,.5)" /></linearGradient></defs><rect width="100%" height="100%" fill="url('#gradient1')" /><rect width="100%" height="100%" fill="url('#gradient2')" /></svg>
+    <img src="/codebase-4/img/placeholder250x250.svg" alt="A square image">
   </div>
 
   <div class="square">
-    <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" width="200" height="200" style="max-width: 100%; height: auto;"><defs><linearGradient id="gradient1" gradientTransform="rotate(45)"><stop offset="5%" stop-color="rgba(255,255,0,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(255,0,0,.5)" /></linearGradient><linearGradient id="gradient2" gradientTransform="rotate(135)"><stop offset="5%" stop-color="rgba(0,0,255,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(0,255,0,.5)" /></linearGradient></defs><rect width="100%" height="100%" fill="url('#gradient1')" /><rect width="100%" height="100%" fill="url('#gradient2')" /></svg>
+    <img src="/codebase-4/img/placeholder250x250.svg" alt="A square image">
   </div>
 
   <div class="square-lg">
-    <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" width="200" height="200" style="max-width: 100%; height: auto;"><defs><linearGradient id="gradient1" gradientTransform="rotate(45)"><stop offset="5%" stop-color="rgba(255,255,0,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(255,0,0,.5)" /></linearGradient><linearGradient id="gradient2" gradientTransform="rotate(135)"><stop offset="5%" stop-color="rgba(0,0,255,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(0,255,0,.5)" /></linearGradient></defs><rect width="100%" height="100%" fill="url('#gradient1')" /><rect width="100%" height="100%" fill="url('#gradient2')" /></svg>
+    <img src="/codebase-4/img/placeholder250x250.svg" alt="A square image">
   </div>
 </div>
 
@@ -66,6 +66,50 @@ The `.square-*` sizes are equal to  `sm` 3rem<sup>2</sup> (24px devault), `md` 6
 
 <div class="square-lg">
   <img src="" alt="">
+</div>
+```
+
+That `.square-lg` is a good e.g. size for author photos in traditional two-column blog layouts. It is also good for pairing with `.rounded-full` – making it easy to create the popular three-up gallery, that’s used for showing a team, or product features, or featured products. Here’s a whole demo of this in a [full-bleed](/codebase-4/docs/3-responsive-layouts/bleeds) and [container](/codebase-4/docs/3-responsive-layouts/containers) pairing (required here because we’re busting out of this narrow documentation column), a 3 column [small grid](/codebase-4/docs/3-responsive-layouts/grid), and various other decoration utilities:
+
+<div class="full-bleed container container-lg my-responsive py-responsive bg-color-background-alt">
+  <div class="grid-sm-3-cols grid-gap t-center">
+    <div>
+      <img class="square-lg mx-auto b-thick rounded-full" src="/codebase-4/img/placeholder250x250.svg" alt="A square image">
+      <h3 class="my-2">A Short Title</h3>
+      <p class="w-xxs mx-auto mb-0">A little bit of descriptive text that will wrap on to multiple lines.</p>
+    </div>
+    <div>
+      <img class="square-lg mx-auto b-thick rounded-full" src="/codebase-4/img/placeholder250x250.svg" alt="A square image">
+      <h3 class="my-2">Another Short Title</h3>
+      <p class="w-xxs mx-auto mb-0">A little bit of descriptive text that will wrap on to multiple lines.</p>
+    </div>
+    <div>
+      <img class="square-lg mx-auto b-thick rounded-full" src="/codebase-4/img/placeholder250x250.svg" alt="A square image">
+      <h3 class="my-2">A Third Short Title</h3>
+      <p class="w-xxs mx-auto mb-0">A little bit of descriptive text that will wrap on to multiple lines.</p>
+    </div>
+  </div>
+</div>
+
+```html
+<div class="full-bleed container container-lg my-responsive py-responsive bg-color-background-alt">
+  <div class="grid-sm-3-cols grid-gap t-center">
+    <div>
+      <img class="square-lg mx-auto b-thick rounded-full" src="/codebase-4/img/placeholder250x250.svg" alt="A square image">
+      <h3 class="my-2">A Short Title</h3>
+      <p class="w-xxs mx-auto mb-0">A little bit of descriptive text that will wrap on to multiple lines.</p>
+    </div>
+    <div>
+      <img class="square-lg mx-auto b-thick rounded-full" src="/codebase-4/img/placeholder250x250.svg" alt="A square image">
+      <h3 class="my-2">Another Short Title</h3>
+      <p class="w-xxs mx-auto mb-0">A little bit of descriptive text that will wrap on to multiple lines.</p>
+    </div>
+    <div>
+      <img class="square-lg mx-auto b-thick rounded-full" src="/codebase-4/img/placeholder250x250.svg" alt="A square image">
+      <h3 class="my-2">A Third Short Title</h3>
+      <p class="w-xxs mx-auto mb-0">A little bit of descriptive text that will wrap on to multiple lines.</p>
+    </div>
+  </div>
 </div>
 ```
 
