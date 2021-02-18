@@ -71,7 +71,7 @@ The `.square-*` sizes are equal to  `sm` 3rem<sup>2</sup> (24px devault), `md` 6
 
 That `.square-lg` is a good e.g. size for author photos in traditional two-column blog layouts. It is also good for pairing with `.rounded-full` – making it easy to create the popular three-up gallery, that’s used for showing a team, or product features, or featured products. Here’s a whole demo of this in a [full-bleed](/codebase-4/docs/3-responsive-layouts/bleeds) and [container](/codebase-4/docs/3-responsive-layouts/containers) pairing (required here because we’re busting out of this narrow documentation column), a 3 column [small grid](/codebase-4/docs/3-responsive-layouts/grid), and various other decoration utilities:
 
-<div class="full-bleed container container-lg my-responsive py-responsive bg-color-background-alt">
+<div class="container-grid-full-bleed container-grid container-grid-lg my-responsive py-responsive bg-color-background-alt">
   <div class="grid-sm-3-cols grid-gap t-center">
     <div>
       <img class="square-lg mx-auto b-thick rounded-full" src="/codebase-4/img/placeholder250x250.svg" alt="A square image">
@@ -92,7 +92,7 @@ That `.square-lg` is a good e.g. size for author photos in traditional two-colum
 </div>
 
 ```html
-<div class="full-bleed container container-lg my-responsive py-responsive bg-color-background-alt">
+<div class="container-grid-full-bleed container-grid container-grid-lg my-responsive py-responsive bg-color-background-alt">
   <div class="grid-sm-3-cols grid-gap t-center">
     <div>
       <img class="square-lg mx-auto b-thick rounded-full" src="/codebase-4/img/placeholder250x250.svg" alt="A square image">
@@ -133,7 +133,7 @@ See `.box` demonstrated in the _positions demo_ below. The centered/middled labe
 
 `.box` is used to overlay text over an image in the Codebase [hero component](/codebase-4/docs/7-simple-components/heros).
 
-<div class="full-bleed mb-3 bg-color-background-alt">
+<div class="container-grid-full-bleed mb-3 bg-color-background-alt">
   <div class="relative h-half-vh">
     <div class="absolute top w-full flex flex-center">
       <label class="label bg-color-primary">.absolute.top</label>
@@ -154,7 +154,7 @@ See `.box` demonstrated in the _positions demo_ below. The centered/middled labe
 </div>
 
 ```html
-<div class="full-bleed mb-3 bg-color-background-alt">
+<div class="container-grid-full-bleed mb-3 bg-color-background-alt">
   <div class="relative h-half-vh">
     <div class="absolute top w-full flex flex-center">
       <label class="label bg-color-primary">.absolute.top</label>

@@ -11,8 +11,8 @@ nextButton: "Text columns"
 
 On narrow viewports (small devices), the text within the example `.t-long-read` wrapper below will be the Codebase default size (1rem, i.e. 16px). On wider viewports, the text is scaled up using CSS clamp to a comfortable maximum.
 
-<div class="full-bleed mb-6">
-<div class="container">
+<div class="container-grid-full-bleed mb-6">
+<div class="container-grid">
 <div class="flex-md flex-gap flex-grow-equal">
 <div class="b-thin p-1">
 <p>Default sizes:</p>

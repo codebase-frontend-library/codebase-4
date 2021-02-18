@@ -1,22 +1,25 @@
+// LAYOUT: FULL BLEEDS
+// ~~~~~~~~~~~~~~~~~~~
 
+// From: https://hankchizljaw.com/wrote/creating-a-full-bleed-css-utility/
 
-@if $use-container-grid == true {
-  .full-bleed {
-    width: 100%;
-    grid-column: 1/6;
-  }
-  .partial-bleed-left {
-    grid-column: 1/4;
-  }
-  .partial-bleed-right {
-    grid-column: 3/6;
-  }
+.full-bleed { 
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
-@else {
-  .full-bleed { // From: https://hankchizljaw.com/wrote/creating-a-full-bleed-css-utility/
-    width: 100vw;
-    margin-left: 50%;
-    transform: translateX(-50%);
-  }
+// Based on https://joshwcomeau.com/css/full-bleed/
+
+.container-grid-full-bleed {
+  width: 100%;
+  grid-column: 1/6;
+}
+
+.container-grid-partial-bleed-left {
+  grid-column: 1/4;
+}
+
+.container-grid-partial-bleed-right {
+  grid-column: 3/6;
 }

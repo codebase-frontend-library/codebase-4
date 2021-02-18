@@ -11,7 +11,7 @@
   <article class="flex-item-grow-1">
 
     <header class="mb-3 pt-responsive pb-3">
-        <div class="container container-sm py-3">
+        <div class="container-grid container-grid-sm py-3">
           <div class="t-lg">
             {% if '1-getting-started' in page.url %}
             <div class="mb-1 bb-thin pb-2 t-uppercase t-thin t-loose">Getting Started</div>
@@ -37,11 +37,11 @@
         </div>
     </header>
 
-    <section id="docs-mainbody" class="container container-sm mb-6">
+    <section id="docs-mainbody" class="container-grid container-grid-sm mb-6">
       {{ content | safe }}
     </section><!-- /#docs-mainbody -->
 
-    <footer class="container container-lg mb-responsive t-center">
+    <footer class="container-grid container-grid-lg mb-responsive t-center">
       <div class="clearfix bt-thin bb-thin py-2">
         {% if prevPage %}
         <a class="my-1 float-left btn btn-primary" href="{{prevPage}}">&larr; {{ prevButton if prevButton else "Previous page" }}</a>

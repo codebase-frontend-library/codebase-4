@@ -44,9 +44,14 @@
 }
 
 .grid-gap {
-  grid-column-gap: $grid-gap-width;
+  margin-right: $grid-gap-width;
   > * {
     margin-bottom: $grid-gap-width;
+  }
+}
+@supports (grid-column-gap: $grid-gap-width) {
+  .grid-gap {
+    grid-column-gap: $grid-gap-width;
   }
 }
 
@@ -58,16 +63,16 @@
   &-1-thru-5 {grid-column: 1 / span 5}
 
   &-2 {grid-column: 2}
-  &-2-thru-3 {grid-column: 2 / span 2}
-  &-2-thru-4 {grid-column: 2 / span 3}
-  &-2-thru-5 {grid-column: 2 / span 4}
+  &-2-thru-3 {grid-column: 2 / span 3}
+  &-2-thru-4 {grid-column: 2 / span 4}
+  &-2-thru-5 {grid-column: 2 / span 5}
 
   &-3 {grid-column: 3}
-  &-3-thru-4 {grid-column: 3 / span 2}
-  &-3-thru-5 {grid-column: 3 / span 3}
+  &-3-thru-4 {grid-column: 3 / span 4}
+  &-3-thru-5 {grid-column: 3 / span 5}
 
   &-4 {grid-column: 4}
-  &-4-thru-5 {grid-column: 4 / span 2}
+  &-4-thru-5 {grid-column: 4 / span 5}
 
   &-5 {grid-column: 5}
 }

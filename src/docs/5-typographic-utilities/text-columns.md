@@ -11,8 +11,8 @@ nextButton: "Spacing"
 
 The number of columns you get depends on how wide the wrapper is that they are put inside (and how wide a screen they are displayed on). Column max-widths and gap widths can be changed in the default variables.
 
-<div class="full-bleed my-responsive">
-  <div class="container">
+<div class="container-grid-full-bleed my-responsive">
+  <div class="container-grid">
     <div class="t-columns">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a viverra nisi. In vel porttitor mauris, id ullamcorper odio. Morbi id ornare neque. Aenean faucibus risus quis ipsum malesuada, iaculis semper lectus pellentesque. In ornare lectus dui, tempor ultricies felis commodo nec. Praesent placerat venenatis nibh vel consequat. Mauris vitae molestie tellus. Maecenas feugiat vulputate purus, sit amet rutrum ligula venenatis eleifend. Vivamus suscipit nisi eget faucibus sagittis. Praesent tincidunt est nisl, vel convallis ligula blandit sit amet. Proin vestibulum justo sit amet enim consequat tristique.</p>
       <p>Maecenas posuere elit justo, sit amet bibendum tellus sagittis ut. Pellentesque nec sapien eu quam lacinia sollicitudin. Morbi ut malesuada magna. Vivamus in augue consequat, pretium diam nec, ultrices dui. Donec rutrum et massa id sodales. Morbi auctor enim at tortor tempus, in auctor augue ultrices. Integer pellentesque varius tincidunt. Cras tincidunt urna sed ipsum aliquet iaculis.</p>

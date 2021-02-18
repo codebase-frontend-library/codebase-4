@@ -327,6 +327,7 @@ x-data="docsOcState()"
                 <li><a href="/codebase-4/docs/2-codebase-basics/paragraphs">Paragraphs</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/simple-text-elements">Simple text elements</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/lists">Lists</a></li>
+                <li><a href="/codebase-4/docs/2-codebase-basics/details">Collapsible details</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/horizontal-rules">Horizontal rules</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/blockquotes">Blockquotes</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/tables">Tables</a></li>
@@ -338,33 +339,33 @@ x-data="docsOcState()"
           </div>
         </div>
 
-        
-        <div x-data="{ revealed: false }">
-        
-          <button
-            class="block b-0 unrounded p-1"
-            @click="revealed = !revealed"
-          >
-            <div class="flex">
-              <svg x-show="!revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 6 15 12 9 18" /></svg>
-              <svg x-show="revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
-              <span>Responsive layouts</span>
-            </div>
-          </button>
-          <div
-            class="overflow-hidden max-height-0"
-            x-ref="panel"
-            x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
-            <div class="px-2">
-              <ul class="menu">
-                <li><a href="/codebase-4/docs/3-responsive-layouts/containers">Containers</a></li>
-                <li><a href="/codebase-4/docs/3-responsive-layouts/bleeds">Bleeds</a></li>
-                <li><a href="/codebase-4/docs/3-responsive-layouts/grid">Grid system</a></li>
-                <li><a href="/codebase-4/docs/3-responsive-layouts/flex">Flex (flexbox) system</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <div class="mt-1 p-block t-loose t-uppercase t-small">Responsive Layouts</div>
+
+        <style>
+          .menu.responsive-layouts a {
+            display: block;
+            padding-left: 2rem;
+            font-weight: 600;
+          }
+          .theme-dark .menu.responsive-layouts a {
+            color: #e6e6e6 !important;
+          }
+          .theme-dark .menu.responsive-layouts a:hover {
+            background: #333;
+          }
+          .theme-light .menu.responsive-layouts a {
+            color: #0d0d0d !important;
+          }
+          .theme-light .menu.responsive-layouts a:hover {
+            background: #f2f2f2;
+          }
+        </style>
+        <ul class="menu responsive-layouts">
+          <li><a href="/codebase-4/docs/3-responsive-layouts/containers">Containers</a></li>
+          <li><a href="/codebase-4/docs/3-responsive-layouts/bleeds">Bleeds</a></li>
+          <li><a href="/codebase-4/docs/3-responsive-layouts/flex">Flex system (flexbox)</a></li>
+          <li><a href="/codebase-4/docs/3-responsive-layouts/grid">Grid system</a></li>
+        </ul>
 
         <div class="mt-1 p-block t-loose t-uppercase t-small">Utilities</div>
 
@@ -566,7 +567,7 @@ x-data="docsOcState()"
   <article class="flex-item-grow-1">
 
     <header class="mb-3 pt-responsive pb-3">
-        <div class="container container-sm py-3">
+        <div class="container-grid container-grid-sm py-3">
           <div class="t-lg">
             
             <div class="mb-1 bb-thin pb-2 t-uppercase t-thin t-loose">Simple Components</div>
@@ -576,18 +577,18 @@ x-data="docsOcState()"
         </div>
     </header>
 
-    <section id="docs-mainbody" class="container container-sm mb-6">
+    <section id="docs-mainbody" class="container-grid container-grid-sm mb-6">
       <p>Traditional “media objects” (à la <a href="http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/" target="_blank">Nicole Sullivan</a>) can be built entirely using Codebase utility classes:</p>
 <div class="flex flex-gap">
   <a class="square" href="">
     <img class="img-cover" src="/codebase-4/img/placeholder250x250.svg">
   </a>
-  <div class="flex-item-grow-1">
+  <div>
     <h4 class="mb-1">Name or Title</h4>
     <p>Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</p>
   </div>  
 </div>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex flex-gap<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>square<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-item-grow-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Name or Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>A message or some descriptive text...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>  <br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex flex-gap<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>square<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Name or Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>A message or some descriptive text...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>  <br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
 <p>Example with image on the right, and some other decoration:</p>
 <div class="flex flex-row-reverse mb-3 b-thin rounded-lg p-2">
   <a class="square rounded" href="">
@@ -600,27 +601,27 @@ x-data="docsOcState()"
 </div>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex flex-row-reverse mb-3 b-thin rounded-lg p-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>square rounded<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mr-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Card Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Lorem ipsum dolor sit amet, adipiscing honestatis ius ut, nisl consulatu pro in. Imperdiet evertitur no usu, his te suavitate salutatus. <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
 <p>Media objects can easily be modified as required, and nested. For example:</p>
-<div class="flex flex-gap">
-  <a class="square-sm" href="">
+<div class="flex">
+  <a class="mr-2 square-sm b-thin rounded-full" href="">
     <img class="img-cover" src="/codebase-4/img/placeholder250x250.svg">
   </a>
-  <div class="flex-item-grow-1">
+  <div>
     <h4 class="m-0">Message 1</h4>
     <div class="mb-3 bg-color-primary-alt rounded-lg unrounded-top-left p-2">Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</div>
-    <div class="flex flex-gap">
-      <a class="square-sm" href="">
+    <div class="flex">
+      <a class="mr-2 square-sm b-thin rounded-full" href="">
         <img class="img-cover" src="/codebase-4/img/placeholder250x250.svg">
       </a>
-      <div class="flex-item-grow-1">
+      <div>
         <h4 class="m-0">Response 1</h4>
         <div class="mb-3 bg-color-primary-alt rounded-lg unrounded-top-left p-2">Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</div>
       </div>
     </div>
-    <div class="flex flex-gap">
-      <a class="square-sm" href="">
+    <div class="flex">
+      <a class="mr-2 square-sm b-thin rounded-full" href="">
         <img class="img-cover" src="/codebase-4/img/placeholder250x250.svg">
       </a>
-      <div class="flex-item-grow-1">
+      <div>
         <h4 class="m-0">Response 2</h4>
         <div class="mb-3 bg-color-primary-alt rounded-lg unrounded-top-left p-2">Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</div>
       </div>
@@ -629,7 +630,7 @@ x-data="docsOcState()"
 </div>
     </section><!-- /#docs-mainbody -->
 
-    <footer class="container container-lg mb-responsive t-center">
+    <footer class="container-grid container-grid-lg mb-responsive t-center">
       <div class="clearfix bt-thin bb-thin py-2">
         
         <a class="my-1 float-left btn btn-primary" href="/codebase-4/docs/7-simple-components/labels">&larr; Labels</a>
@@ -643,14 +644,14 @@ x-data="docsOcState()"
   </article>
 </main>
 
-<footer class="container container-sm bt-thin pt-6 pb-3 bg-color-background-alt t-center">
+<footer class="container-grid container-grid-sm bt-thin pt-6 pb-3 bg-color-background-alt t-center">
   <p>
     <a class="codebase-docs h3 t-decoration-none" href="/codebase-4/">
       <span class="inline-flex flex-column flex-middle flex-center">
       <!-- Codebase logo-->
       <svg  style="height: 4rem; margin-bottom: 1rem;" viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2"><path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"/></svg>
       <span>
-        Codebase <span class="t-thin">4.0.1</span>
+        Codebase <span class="t-thin">4.0.2</span>
       </span>
 
       </span>

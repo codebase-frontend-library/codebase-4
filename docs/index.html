@@ -164,7 +164,7 @@
       <p class="mb-2 t-thin t-loose">Codebase pairs well with AlpineJS.</p>
     </div>
     <hr class="mb-2">
-    <p>Version 4.0.1 • <a href="https://github.com/codebase-frontend-library/codebase-4/blob/master/LICENSE">MIT licence</a> • Project developer: <a href="https://github.com/SimonPadbury">Simon Padbury</a></p>
+    <p>Version 4.0.2 • <a href="https://github.com/codebase-frontend-library/codebase-4/blob/master/LICENSE">MIT licence</a> • Project developer: <a href="https://github.com/SimonPadbury">Simon Padbury</a></p>
     <p>
       <a class="btn btn-lg btn-primary" href="#docs-main">
         Discover
@@ -405,6 +405,7 @@ x-data="docsOcState()"
                 <li><a href="/codebase-4/docs/2-codebase-basics/paragraphs">Paragraphs</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/simple-text-elements">Simple text elements</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/lists">Lists</a></li>
+                <li><a href="/codebase-4/docs/2-codebase-basics/details">Collapsible details</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/horizontal-rules">Horizontal rules</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/blockquotes">Blockquotes</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/tables">Tables</a></li>
@@ -416,33 +417,33 @@ x-data="docsOcState()"
           </div>
         </div>
 
-        
-        <div x-data="{ revealed: false }">
-        
-          <button
-            class="block b-0 unrounded p-1"
-            @click="revealed = !revealed"
-          >
-            <div class="flex">
-              <svg x-show="!revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 6 15 12 9 18" /></svg>
-              <svg x-show="revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
-              <span>Responsive layouts</span>
-            </div>
-          </button>
-          <div
-            class="overflow-hidden max-height-0"
-            x-ref="panel"
-            x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
-            <div class="px-2">
-              <ul class="menu">
-                <li><a href="/codebase-4/docs/3-responsive-layouts/containers">Containers</a></li>
-                <li><a href="/codebase-4/docs/3-responsive-layouts/bleeds">Bleeds</a></li>
-                <li><a href="/codebase-4/docs/3-responsive-layouts/grid">Grid system</a></li>
-                <li><a href="/codebase-4/docs/3-responsive-layouts/flex">Flex (flexbox) system</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <div class="mt-1 p-block t-loose t-uppercase t-small">Responsive Layouts</div>
+
+        <style>
+          .menu.responsive-layouts a {
+            display: block;
+            padding-left: 2rem;
+            font-weight: 600;
+          }
+          .theme-dark .menu.responsive-layouts a {
+            color: #e6e6e6 !important;
+          }
+          .theme-dark .menu.responsive-layouts a:hover {
+            background: #333;
+          }
+          .theme-light .menu.responsive-layouts a {
+            color: #0d0d0d !important;
+          }
+          .theme-light .menu.responsive-layouts a:hover {
+            background: #f2f2f2;
+          }
+        </style>
+        <ul class="menu responsive-layouts">
+          <li><a href="/codebase-4/docs/3-responsive-layouts/containers">Containers</a></li>
+          <li><a href="/codebase-4/docs/3-responsive-layouts/bleeds">Bleeds</a></li>
+          <li><a href="/codebase-4/docs/3-responsive-layouts/flex">Flex system (flexbox)</a></li>
+          <li><a href="/codebase-4/docs/3-responsive-layouts/grid">Grid system</a></li>
+        </ul>
 
         <div class="mt-1 p-block t-loose t-uppercase t-small">Utilities</div>
 
@@ -668,7 +669,7 @@ x-data="docsOcState()"
           <strong class="t-text-alt">Element grid.</strong> Classless HTML elements and utility classes are built on a “soft” 0.5rem <a href="/codebase-4/docs/2-codebase-basics/element-grid">element grid</a> (8px default), for consistent positioning thoroughout.
         </li>
         <li>
-          <strong class="t-text-alt">Responsive layouts.</strong> Codebase comes with a lot of <a href="/codebase-4/docs/3-layout-systems/flex">flexbox</a> and <a href="/codebase-4/docs/3-layout-systems/grid">grid</a> layout options, and utilities for <a href="/codebase-4/docs/5-typographic-utilities/long-read-text">responsive typography</a>, making it look good and work well on everything from small phones to large screens.
+          <strong class="t-text-alt">Responsive layouts.</strong> Codebase is loaded with <a href="/codebase-4/docs/3-layout-systems/flex">flexbox</a> and <a href="/codebase-4/docs/3-layout-systems/grid">grid</a> layout options, and utilities for <a href="/codebase-4/docs/5-typographic-utilities/long-read-text">responsive typography</a>, making it look good and work well on everything from small phones to large screens.
         </li>
       </ul>
     </div>
@@ -795,8 +796,8 @@ x-data="docsOcState()"
       </tr>
       </thead><tbody>
       <tr class="bg-color-success-alt">
-      <td class="b-color-success">Codebase 4.0.1</td>
-      <td>35 KB<br><br>60 KB if you want your visitors able to choose between dark and light themes.</td>
+      <td class="b-color-success">Codebase 4.0.2</td>
+      <td>37 KB<br><br>62 KB if you want your visitors able to choose between dark and light themes.</td>
       <td>3 KB (Codebase <a href="/codebase-4/docs/9-activator-components/about-activator-components">Activator</a> script)<br><br>Alternatively, use <a href="https://github.com/alpinejs/alpine">Alpine JS</a>, 77 kb</td>
       </tr>
       <tr>
@@ -855,14 +856,14 @@ x-data="docsOcState()"
   </div><!-- /#docs-mainbody -->
 </main>
 
-<footer class="container container-sm bt-thin pt-6 pb-3 bg-color-background-alt t-center">
+<footer class="container-grid container-grid-sm bt-thin pt-6 pb-3 bg-color-background-alt t-center">
   <p>
     <a class="codebase-docs h3 t-decoration-none" href="/codebase-4/">
       <span class="inline-flex flex-column flex-middle flex-center">
       <!-- Codebase logo-->
       <svg  style="height: 4rem; margin-bottom: 1rem;" viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2"><path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"/></svg>
       <span>
-        Codebase <span class="t-thin">4.0.1</span>
+        Codebase <span class="t-thin">4.0.2</span>
       </span>
 
       </span>

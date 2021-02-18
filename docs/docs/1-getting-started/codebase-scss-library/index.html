@@ -327,6 +327,7 @@ x-data="docsOcState()"
                 <li><a href="/codebase-4/docs/2-codebase-basics/paragraphs">Paragraphs</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/simple-text-elements">Simple text elements</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/lists">Lists</a></li>
+                <li><a href="/codebase-4/docs/2-codebase-basics/details">Collapsible details</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/horizontal-rules">Horizontal rules</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/blockquotes">Blockquotes</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/tables">Tables</a></li>
@@ -338,33 +339,33 @@ x-data="docsOcState()"
           </div>
         </div>
 
-        
-        <div x-data="{ revealed: false }">
-        
-          <button
-            class="block b-0 unrounded p-1"
-            @click="revealed = !revealed"
-          >
-            <div class="flex">
-              <svg x-show="!revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 6 15 12 9 18" /></svg>
-              <svg x-show="revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
-              <span>Responsive layouts</span>
-            </div>
-          </button>
-          <div
-            class="overflow-hidden max-height-0"
-            x-ref="panel"
-            x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
-            <div class="px-2">
-              <ul class="menu">
-                <li><a href="/codebase-4/docs/3-responsive-layouts/containers">Containers</a></li>
-                <li><a href="/codebase-4/docs/3-responsive-layouts/bleeds">Bleeds</a></li>
-                <li><a href="/codebase-4/docs/3-responsive-layouts/grid">Grid system</a></li>
-                <li><a href="/codebase-4/docs/3-responsive-layouts/flex">Flex (flexbox) system</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <div class="mt-1 p-block t-loose t-uppercase t-small">Responsive Layouts</div>
+
+        <style>
+          .menu.responsive-layouts a {
+            display: block;
+            padding-left: 2rem;
+            font-weight: 600;
+          }
+          .theme-dark .menu.responsive-layouts a {
+            color: #e6e6e6 !important;
+          }
+          .theme-dark .menu.responsive-layouts a:hover {
+            background: #333;
+          }
+          .theme-light .menu.responsive-layouts a {
+            color: #0d0d0d !important;
+          }
+          .theme-light .menu.responsive-layouts a:hover {
+            background: #f2f2f2;
+          }
+        </style>
+        <ul class="menu responsive-layouts">
+          <li><a href="/codebase-4/docs/3-responsive-layouts/containers">Containers</a></li>
+          <li><a href="/codebase-4/docs/3-responsive-layouts/bleeds">Bleeds</a></li>
+          <li><a href="/codebase-4/docs/3-responsive-layouts/flex">Flex system (flexbox)</a></li>
+          <li><a href="/codebase-4/docs/3-responsive-layouts/grid">Grid system</a></li>
+        </ul>
 
         <div class="mt-1 p-block t-loose t-uppercase t-small">Utilities</div>
 
@@ -566,7 +567,7 @@ x-data="docsOcState()"
   <article class="flex-item-grow-1">
 
     <header class="mb-3 pt-responsive pb-3">
-        <div class="container container-sm py-3">
+        <div class="container-grid container-grid-sm py-3">
           <div class="t-lg">
             
             <div class="mb-1 bb-thin pb-2 t-uppercase t-thin t-loose">Getting Started</div>
@@ -576,7 +577,7 @@ x-data="docsOcState()"
         </div>
     </header>
 
-    <section id="docs-mainbody" class="container container-sm mb-6">
+    <section id="docs-mainbody" class="container-grid container-grid-sm mb-6">
       <p class="t-lg t-thin">Codebase is, primarily, a highly versatile SCSS library, preprocessed and minified to CSS.</p>
 <p>You can just drop the CSS into your ptoject and use it as-is, but Sass/SCSS aficionados may wish to override the any or many of the <code>!default</code> variables in <code>_src/codebase/scss/00_setup/__default-variables.scss</code>. This can be done as follows:</p>
 <pre class="language-scss"><code class="language-scss"><span class="token comment">// (1.) In your master SCSS file, override the</span><br><span class="token comment">// Codebase `!default` variables, e.g.</span><br><br><span class="token property"><span class="token variable">$color-background</span></span><span class="token punctuation">:</span> lightseagreen<span class="token punctuation">;</span><br><br><span class="token comment">// (2.) After your overrides, import the </span><br><span class="token comment">// Codebase master file into your SCSS</span><br><br><span class="token keyword">@import</span> <span class="token string">"path/to/codebase/scss/codebase.scss"</span><span class="token punctuation">;</span><br><br><span class="token comment">// (3.) Set your project SCSS styles </span><br><span class="token comment">// after importing Codebase</span><br><br><span class="token selector">body </span><span class="token punctuation">{</span><br><br>  <span class="token comment">// This below will now receive your override </span><br>  <span class="token comment">// for $color-background, instead of the </span><br>  <span class="token comment">// `$color-background: #ffffff !default` </span><br>  <span class="token comment">// from Codebase</span><br>  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token variable">$color-background</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
@@ -584,7 +585,7 @@ x-data="docsOcState()"
 
     </section><!-- /#docs-mainbody -->
 
-    <footer class="container container-lg mb-responsive t-center">
+    <footer class="container-grid container-grid-lg mb-responsive t-center">
       <div class="clearfix bt-thin bb-thin py-2">
         
         <a class="my-1 float-left btn btn-primary" href="/codebase-4/docs/1-getting-started/simple-html-setup">&larr; Simple HTML setup</a>
@@ -598,14 +599,14 @@ x-data="docsOcState()"
   </article>
 </main>
 
-<footer class="container container-sm bt-thin pt-6 pb-3 bg-color-background-alt t-center">
+<footer class="container-grid container-grid-sm bt-thin pt-6 pb-3 bg-color-background-alt t-center">
   <p>
     <a class="codebase-docs h3 t-decoration-none" href="/codebase-4/">
       <span class="inline-flex flex-column flex-middle flex-center">
       <!-- Codebase logo-->
       <svg  style="height: 4rem; margin-bottom: 1rem;" viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2"><path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"/></svg>
       <span>
-        Codebase <span class="t-thin">4.0.1</span>
+        Codebase <span class="t-thin">4.0.2</span>
       </span>
 
       </span>

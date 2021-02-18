@@ -8,7 +8,7 @@ prevButton: "AlpineJS modals"
 nextButton: "AlpineJS tabs"
 ---
 
-<p class="t-lg t-thin">Codebase’s offcanvas side panels can slide in from the right of the left; they can be dismissed by a close button and/or by clicking outside; and they can become like a normal on-canvas panel above a media query breakpoint of your choice.</p>
+<p class="t-lg t-thin">Codebase’s offcanvas side panels can slide in from the right of the left; they can be dismissed by a close button and/or by clicking outside; and they can become like a normal on-canvas panel above a breakpoint of your choice.</p>
 
 More important, however, is to understand the way any offcanvas panel can be built using AlpineJS.
 
@@ -116,9 +116,9 @@ The state is managed by an additional tiny JavaScript function that you will nee
 
 Let’s add two more things:
 
-1. Using some Codebase CSS classes, the trigger button can be hidden above a media query threshold (e.g. for medium screens up), and the offcanvas panel can become like a normal on-canvas element. You could use this for creating a sidebar that only operates as an offcanvas sidebar on small tablets and phones.
+1. Using some Codebase CSS classes, the trigger button can be hidden above a breakpoint threshold (e.g. for medium screens up), and the offcanvas panel can become like a normal on-canvas element. You could use this for creating a sidebar that only operates as an offcanvas sidebar on small tablets and phones.
 
-2. As the viewport width expands through or contracts through your chosen media query threshold (in this example, medium = 1024px (default)) you will want the offcanvas Alpine component to deactivate, so that the page layout is not messed up e.g. when rotating an tablet or large phone between landscape and portrait orientation.
+2. As the viewport width expands through or contracts through your chosen breakpoint (in this example, medium = 1024px (default)) you will want the offcanvas Alpine component to deactivate, so that the page layout is not messed up e.g. when rotating an tablet or large phone between landscape and portrait orientation.
 
 <div
   class="hide-md-up"
@@ -150,7 +150,7 @@ Let’s add two more things:
           Close &times;
         </button>
       </div>
-      <p>This is an offcanvas panel that becomes a normal panel above the media query for medium viewports (default 1024px).</p>
+      <p>This is an offcanvas panel that becomes a normal panel above the breakpoint for medium viewports (default 1024px).</p>
       <p>Your browser window will need to be narrower than 1024px so that you can see this example in operation. Also, if you can open the offcanvas sidebar and then adjust your browser width, you’ll see that the panel is automatically dismissed.</p>
     </div>
   </div>

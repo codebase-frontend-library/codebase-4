@@ -30,11 +30,13 @@
   &-gap {
     //gap: $flex-gap-width;       // bleeding edge; check CanIuse
     position: relative;
-    margin-right: -.75rem;
-    margin-left: -.75rem;
+    width: calc(100% + #{$flex-gap-width});
+    margin-right: -$flex-gap-width / 2;
+    margin-left: -$flex-gap-width / 2;
     > * {
-      margin-right: .75rem !important;
-      margin-left: .75rem !important; 
+      margin-right: $flex-gap-width / 2;
+      margin-bottom: $flex-gap-width;
+      margin-left: $flex-gap-width / 2;
     }
   }
   &-space-around {
@@ -66,26 +68,49 @@
   }
 }
 
+@mixin flex-items {
+  @if $use-flex-pseudo-grid == true {
+    & > .flex-item {
+      &-1 {width: (1 / 12) * 100%}
+      &-2 {width: (2 / 12) * 100%}
+      &-3 {width: (3 / 12) * 100%}
+      &-4 {width: (4 / 12) * 100%}
+      &-5 {width: (5 / 12) * 100%}
+      &-6 {width: (6 / 12) * 100%}
+      &-7 {width: (7 / 12) * 100%}
+      &-8 {width: (8 / 12) * 100%}
+      &-9 {width: (9 / 12) * 100%}
+      &-10 {width: (10 / 12) * 100%}
+      &-11 {width: (11 / 12) * 100%}
+      &-12 {width: (12 / 12) * 100%}
+    }
+  }
+}
+
 .inline-flex {
   display: inline-flex !important;
 }
 
 .flex {
   @include flex;
+  @include flex-items;
 }
 .flex-sm {
   @include break-min($mq-sm) {
     @include flex;
+    @include flex-items;
   }
 }
 .flex-md {
   @include break-min($mq-md) {
     @include flex;
+    @include flex-items;
   }
 }
 .flex-lg {
   @include break-min($mq-lg) {
     @include flex;
+    @include flex-items;
   }
 }
 

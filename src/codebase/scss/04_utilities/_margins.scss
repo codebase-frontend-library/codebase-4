@@ -57,14 +57,18 @@
 
 // Responsive vertical margins
 .my-responsive {
+  margin-top: 48px;
+  margin-bottom: 48px;
   margin-top: $spacing-responsive;
   margin-bottom: $spacing-responsive;
 }
 
 .mt-responsive {
+  margin-top: 48px;
   margin-top: $spacing-responsive;
 }
 
 .mb-responsive {
+  margin-bottom: 48px;
   margin-bottom: $spacing-responsive;
 }

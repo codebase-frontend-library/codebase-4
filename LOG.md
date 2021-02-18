@@ -1,8 +1,13 @@
 # Log
 
-**Codebase 4 is very different from Codebase 3, and is not backwards compatible.**
+## 18 February 2021 - Codebase 4.0.2
 
-(v.3 will recieve no further development, and will be archived.)
+* CSS: [Breaking change:] renamed the CSS grid `.container` as `.container-grid`, and exposed the (was false variable toggled) traditional `.container` (that has x-axis margin auto centering). Similarly exposed the full-bleed utility (uses nrgative margin and CSS transform) and renamed the CSS grid bleeds as `.container-grid-full-bleed` etc. All in an effort to support IE11 (2013) - as is the 12-column flexbod pseudo grid, logged below.
+* CSS: added a responsive 12-column flexbox pseudo grid.
+* CSS: added classless styling for the `<details>` and `<summary>` tags.
+* Docs: updated the container and bleeds pages.
+* Docs: added 12-column flexbox pseudo grid to the flex system page.
+* Docs: added a Details page.
 
 ## 15 February 2021 - Codebase 4.0.1
 

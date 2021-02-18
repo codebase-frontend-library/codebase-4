@@ -8,7 +8,7 @@ prevButton: "Activator modals"
 nextButton: "Activator tabs"
 ---
 
-<p class="t-lg t-thin">Codebase’s offcanvas side panels can slide in from the right of the left; they can be dismissed by a close button and/or by clicking outside; and they can become like a normal on-canvas panel above a media query breakpoint of your choice.</p>
+<p class="t-lg t-thin">Codebase’s offcanvas side panels can slide in from the right of the left; they can be dismissed by a close button and/or by clicking outside; and they can become like a normal on-canvas panel above a breakpoint of your choice.</p>
 
 ## Example 1: Simple offcanvas
 
@@ -65,11 +65,11 @@ This first example has an offcanvas panel at all viewport widths.
 
 Let’s add two more things:
 
-1. Using some Codebase CSS classes, the trigger button can be hidden above a media query threshold (e.g. for large screens up), and the offcanvas panel can become like a normal on-canvas element. You could use this for creating a sidebar that only operates as an offcanvas sidebar on small tablets and phones.
+1. Using some Codebase CSS classes, the trigger button can be hidden above a breakpoint (e.g. for large screens up), and the offcanvas panel can become like a normal on-canvas element. You could use this for creating a sidebar that only operates as an offcanvas sidebar on small tablets and phones.
 
-2. As the viewport width expands through or contracts through your chosen media query threshold (in this example, medium = 1024px (default)) you will want the offcanvas component to deactivate, so that the page layout is not messed up e.g. when rotating an tablet or large phone between landscape and portrait orientation.
+2. As the viewport width expands through or contracts through your chosen breakpoint (in this example, medium = 1024px (default)) you will want the offcanvas component to deactivate, so that the page layout is not messed up e.g. when rotating an tablet or large phone between landscape and portrait orientation.
 
-**Note:** Codebase responsive offcanvas panels also have a _box-shadow removal override_ that kicks in when the panel is being displayed like a normal on-canvas panel. So, `.bs` utility classes won’t work on a responsive offcanvas panels _above_ its media query breakpoint width.
+**Note:** Codebase responsive offcanvas panels also have a _box-shadow removal override_ that kicks in when the panel is being displayed like a normal on-canvas panel. So, `.bs` utility classes won’t work on a responsive offcanvas panels _above_ its breakpoint.
 
 <button
   class="btn btn-primary offcanvas-control hide-md-up"
@@ -89,7 +89,7 @@ Let’s add two more things:
         Close
       </button>
     </div>
-    <p>This is an offcanvas panel that becomes a normal panel above the media query for medium viewports (default 1024px).</p>
+    <p>This is an offcanvas panel that becomes a normal panel above the breakpoint for medium viewports (default 1024px).</p>
     <p>Your browser window will need to be narrower than 1024px so that you can see this example in operation. Also, if you can open the offcanvas sidebar and then adjust your browser width, you’ll see that the panel is automatically dismissed.</p>
   </div>
 </div>
@@ -114,7 +114,7 @@ Let’s add two more things:
         Close
       </button>
     </div>
-    <p>This is an offcanvas panel that becomes a normal panel above the media query for medium viewports (default 1024px).</p>
+    <p>This is an offcanvas panel that becomes a normal panel above the breakpoint for medium viewports (default 1024px).</p>
     <p>Your browser window will need to be narrower than 1024px so that you can see this example in operation. Also, if you can open the offcanvas sidebar and then adjust your browser width, you’ll see that the panel is automatically dismissed.</p>
   </div>
 </div>

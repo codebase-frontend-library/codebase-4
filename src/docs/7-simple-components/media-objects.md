@@ -13,7 +13,7 @@ Traditional “media objects” (à la <a href="http://www.stubbornella.org/cont
   <a class="square" href="">
     <img class="img-cover" src="/codebase-4/img/placeholder250x250.svg">
   </a>
-  <div class="flex-item-grow-1">
+  <div>
     <h4 class="mb-1">Name or Title</h4>
     <p>Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</p>
   </div>  
@@ -24,7 +24,7 @@ Traditional “media objects” (à la <a href="http://www.stubbornella.org/cont
   <a class="square" href="">
     <img src="" alt="">
   </a>
-  <div class="flex-item-grow-1">
+  <div>
     <h4 class="mb-1">Name or Title</h4>
     <p>A message or some descriptive text...</p>
   </div>  
@@ -57,27 +57,27 @@ Example with image on the right, and some other decoration:
 
 Media objects can easily be modified as required, and nested. For example:
 
-<div class="flex flex-gap">
-  <a class="square-sm" href="">
+<div class="flex">
+  <a class="mr-2 square-sm b-thin rounded-full" href="">
     <img class="img-cover" src="/codebase-4/img/placeholder250x250.svg">
   </a>
-  <div class="flex-item-grow-1">
+  <div>
     <h4 class="m-0">Message 1</h4>
     <div class="mb-3 bg-color-primary-alt rounded-lg unrounded-top-left p-2">Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</div>
-    <div class="flex flex-gap">
-      <a class="square-sm" href="">
+    <div class="flex">
+      <a class="mr-2 square-sm b-thin rounded-full" href="">
         <img class="img-cover" src="/codebase-4/img/placeholder250x250.svg">
       </a>
-      <div class="flex-item-grow-1">
+      <div>
         <h4 class="m-0">Response 1</h4>
         <div class="mb-3 bg-color-primary-alt rounded-lg unrounded-top-left p-2">Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</div>
       </div>
     </div>
-    <div class="flex flex-gap">
-      <a class="square-sm" href="">
+    <div class="flex">
+      <a class="mr-2 square-sm b-thin rounded-full" href="">
         <img class="img-cover" src="/codebase-4/img/placeholder250x250.svg">
       </a>
-      <div class="flex-item-grow-1">
+      <div>
         <h4 class="m-0">Response 2</h4>
         <div class="mb-3 bg-color-primary-alt rounded-lg unrounded-top-left p-2">Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</div>
       </div>

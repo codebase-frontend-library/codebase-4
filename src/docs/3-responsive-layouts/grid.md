@@ -1,11 +1,11 @@
 ---
 title: "Grid"
-headerTitle: "Columnar Grid System"
+headerTitle: "Grid System"
 layout: layout.njk
-prevPage: "/codebase-4/docs/3-responsive-layouts/bleeds"
-nextPage: "/codebase-4/docs/3-responsive-layouts/flex"
-prevButton: "Bleeds"
-nextButton: "Flex"
+prevPage: "/codebase-4/docs/3-responsive-layouts/flex"
+nextPage: "/codebase-4/docs/4-layout-utilities/blocks"
+prevButton: "Flex system"
+nextButton: "Blocks"
 ---
 
 <p class="t-lg t-thin">Codebase’s simple columnar grid system <em>actually uses CSS grid</em>.</p>
@@ -16,11 +16,19 @@ However I have found myself repeatedy using a simple set of CSS grid layout clas
 
 The Codebase grid is also good for situations where you are working within a CMS editor (where you have access to the content source code), and you want some ready-made responsive grid layout CSS classes for a local layout.
 
+<p class="bl-heavy b-color-secondary bg-color-secondary-alt p-2">Codebase’s real <a href="https://caniuse.com/css-grid">CSS grid</a> grid system is designed for modern browsers. Don’t use it if you must support Internet Explorer =&lt; 11 (2013), or any other old browser. Codebase contains no browser specific prefixes on this grid system, or on its <a href="/codebase-4/docs/3-responsive-layouts/containers/#modern-container-grids">modern container grid</a> classes.<br><br>Codebase also has a responsive <a href="/codebase-4/docs/3-responsive-layouts/flex/#flex-pseudo-grids">12-column flexbox pseudo grid</a>, if you need it.</p>
+
 Here are three important features of the Codebase grid system:
 
 1. The Codebase grid uses _CSS grid_. It doesn’t work the same way as a flexbox pseudo grid.
 2. You get to choose how many column tracks: (2, 3, 4 or 5) at the various Codebase breakpoint widths
 3. You also get to control the columns on a per-breakpoint basis
+
+***
+
+<blockquote>There is, of course, a lot more that <em>CSS grid</em> can do than this simple columnar (i.e. one dimensional) grid. The Codebase grid system just covers the most common webpage layouts. CSS grid is really two dimensional – or even three dimensional, because grid items can even be overlapped and/or stacked, for creating highly interesting and versatile webpage layouts.</blockquote>
+
+***
 
 ## Setting Up the Codebase Grid
 
@@ -192,7 +200,7 @@ Notes:
 
 You can combine two or more grids on the same set of elements. Here's an example where the sidebar is approx. <sup>2</sup>/<sub>5</sub> width for small screens and approx. <sup>1</sup>/<sub>4</sub> width for large screens (I’m saying approximately, because `grid-gap` is also in play):
 
-<div class="full-bleed my-6">
+<div class="container-grid-full-bleed my-6">
 <div class="container container-lg">
   <div class="grid-sm-5-cols grid-lg-4-cols grid-gap">
     <div class="col-sm-1-thru-3 col-lg-1-thru-3 b-thick b-color-success rounded p-1 t-heavy t-color-success">Main</div>

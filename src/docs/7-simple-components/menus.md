@@ -91,7 +91,7 @@ We’ve got you covered. Simply add the `.menu-flush` modifier class.
 
 Combine `.menu` with [flex layout classes](/codebase-4/docs/3-responsive-layouts/flex) for making menubars.
 
-In the example below, `.flex-sm` has been used, so that the menu stays as a columnar menu below the `md` media query breakpoint width (i.e. below 768px, default), and becomes a menubar from that width up.
+In the example below, `.flex-sm` has been used, so that the menu stays as a columnar menu below the `md` breakpoint width (i.e. below 768px, default), and becomes a menubar from that width up.
 
 With some other simple components inside for proof of concept.
 

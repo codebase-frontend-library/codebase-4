@@ -116,6 +116,7 @@ x-data="docsOcState()"
                 <li><a href="{{ '/docs/2-codebase-basics/paragraphs' | url }}">Paragraphs</a></li>
                 <li><a href="{{ '/docs/2-codebase-basics/simple-text-elements' | url }}">Simple text elements</a></li>
                 <li><a href="{{ '/docs/2-codebase-basics/lists' | url }}">Lists</a></li>
+                <li><a href="{{ '/docs/2-codebase-basics/details' | url }}">Collapsible details</a></li>
                 <li><a href="{{ '/docs/2-codebase-basics/horizontal-rules' | url }}">Horizontal rules</a></li>
                 <li><a href="{{ '/docs/2-codebase-basics/blockquotes' | url }}">Blockquotes</a></li>
                 <li><a href="{{ '/docs/2-codebase-basics/tables' | url }}">Tables</a></li>
@@ -127,35 +128,33 @@ x-data="docsOcState()"
           </div>
         </div>
 
-        {% if '3-responsive-layouts' in page.url %}
-        <div x-data="{ revealed: true }">
-        {% else %}
-        <div x-data="{ revealed: false }">
-        {% endif %}
-          <button
-            class="block b-0 unrounded p-1"
-            @click="revealed = !revealed"
-          >
-            <div class="flex">
-              <svg x-show="!revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 6 15 12 9 18" /></svg>
-              <svg x-show="revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
-              <span>Responsive layouts</span>
-            </div>
-          </button>
-          <div
-            class="overflow-hidden max-height-0"
-            x-ref="panel"
-            x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
-            <div class="px-2">
-              <ul class="menu">
-                <li><a href="{{ '/docs/3-responsive-layouts/containers' | url }}">Containers</a></li>
-                <li><a href="{{ '/docs/3-responsive-layouts/bleeds' | url }}">Bleeds</a></li>
-                <li><a href="{{ '/docs/3-responsive-layouts/grid' | url }}">Grid system</a></li>
-                <li><a href="{{ '/docs/3-responsive-layouts/flex' | url }}">Flex (flexbox) system</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <div class="mt-1 p-block t-loose t-uppercase t-small">Responsive Layouts</div>
+
+        <style>
+          .menu.responsive-layouts a {
+            display: block;
+            padding-left: 2rem;
+            font-weight: 600;
+          }
+          .theme-dark .menu.responsive-layouts a {
+            color: #e6e6e6 !important;
+          }
+          .theme-dark .menu.responsive-layouts a:hover {
+            background: #333;
+          }
+          .theme-light .menu.responsive-layouts a {
+            color: #0d0d0d !important;
+          }
+          .theme-light .menu.responsive-layouts a:hover {
+            background: #f2f2f2;
+          }
+        </style>
+        <ul class="menu responsive-layouts">
+          <li><a href="{{ '/docs/3-responsive-layouts/containers' | url }}">Containers</a></li>
+          <li><a href="{{ '/docs/3-responsive-layouts/bleeds' | url }}">Bleeds</a></li>
+          <li><a href="{{ '/docs/3-responsive-layouts/flex' | url }}">Flex system (flexbox)</a></li>
+          <li><a href="{{ '/docs/3-responsive-layouts/grid' | url }}">Grid system</a></li>
+        </ul>
 
         <div class="mt-1 p-block t-loose t-uppercase t-small">Utilities</div>
 

@@ -1,9 +1,9 @@
 ---
 title: "Horizontal Rules"
 layout: layout.njk
-prevPage: "/codebase-4/docs/2-codebase-basics/lists"
+prevPage: "/codebase-4/docs/2-codebase-basics/details"
 nextPage: "/codebase-4/docs/2-codebase-basics/blockquotes"
-prevButton: "Lists"
+prevButton: "Collapsible details"
 nextButton: "Blockquotes"
 ---
 
@@ -12,6 +12,8 @@ nextButton: "Blockquotes"
 Example:
 
 ***
+
+(That was it, above.)
 
 ```html
 <hr>

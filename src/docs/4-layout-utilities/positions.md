@@ -16,18 +16,18 @@ Codebase has utility classes for 4 kinds of positions:
 * `.fixed` / `.sm-fixed` / `.md-fixed` / `.lg-fixed`
 * `.sticky` / `.sm-sticky` / `.md-sticky` / `.lg-sticky`
 
-**In conjunction with the _absolute_ and _fixed_ positioning utilities above**, there are are also the following for attaching elements to the edges (these will have no effect below the _absolute_ or _fixed_ specified media query breakpoint, if you use one):
+**In conjunction with the _absolute_ and _fixed_ positioning utilities above**, there are are also the following for attaching elements to the edges (these will have no effect below the _absolute_ or _fixed_ specified breakpoint, if you use one):
 
 * `.top` / `.sm-top` / `.md-top` / `.lg-top`
 * `.right` / `.md-right` / `.md-right` / `.lg-right`
 * `.bottom` / `.sm-bottom` / `.md-bottom` / `.lg-bottom`
 * `.left` / `.md-left` / `.md-left` / `.lg-left`
 
-Following is a demo of some of these position utilities. In the demo, the “always” versions of these layout utilities are demonstrated. The `*-md` and `*-lg` variants work in a similar way, except that they only take effect above their respective media query breakpoint widths.
+Following is a demo of some of these position utilities. In the demo, the “always” versions of these layout utilities are demonstrated. The `*-md` and `*-lg` variants work in a similar way, except that they only take effect above their respective breakpoint widths.
 
 The demo also uses [full-bleed](/codebase-4/docs/3-responsive-layouts/bleeds) from the Codebase layout system, and some height and width [dimension](/codebase-4/docs/4-layout-utilities/dimensions) utilities.
 
-<div class="full-bleed my-responsive bg-color-background-alt">
+<div class="container-grid-full-bleed my-responsive bg-color-background-alt">
   <div class="relative h-half-vh">
     <div class="absolute top w-full flex flex-center">
       <label class="label bg-color-primary">.absolute.top</label>

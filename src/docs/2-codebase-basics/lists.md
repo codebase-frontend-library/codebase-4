@@ -2,9 +2,9 @@
 title: "Lists"
 layout: layout.njk
 prevPage: "/codebase-4/docs/2-codebase-basics/simple-text-elements"
-nextPage: "/codebase-4/docs/2-codebase-basics/horizontal-rules"
-prevButton: "Simple test elements"
-nextButton: "Horizontal rules"
+nextPage: "/codebase-4/docs/2-codebase-basics/details"
+prevButton: "Simple text elements"
+nextButton: "Collapsible details"
 ---
 
 ## Ordered Lists (Numbered)

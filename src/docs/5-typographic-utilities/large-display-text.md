@@ -44,7 +44,7 @@ You probably wouldn’t want to do this kind of thing:
 
 Notes:
 
-1. The media query breakpoint width for `.t-lg` is 1024px (default) while the headings’ downsizing breakpoint is 768px (default). So, wrapping `.t-lg` around headings will cause them to have _two_ downsize steps. _This is good_ – this is what you want, for making your impressively large display headings and messages play well on phones in portrait orientation.
+1. The breakpoint width for `.t-lg` is 1024px (default) while the headings’ downsizing breakpoint is 768px (default). So, wrapping `.t-lg` around headings will cause them to have _two_ downsize steps. _This is good_ – this is what you want, for making your impressively large display headings and messages play well on phones in portrait orientation.
 2. You can’t combine or nest `.t-lg` and `.t-long-read` (see [long-read text](/codebase-4/docs/5-typographic-utilities/long-read-text)), because `.t-long-read` overrules `.t-lg`. 
 
 Example from the _cover_ of the [Codebase docs](/):

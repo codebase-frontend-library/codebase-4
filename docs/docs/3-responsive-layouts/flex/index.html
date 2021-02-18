@@ -327,6 +327,7 @@ x-data="docsOcState()"
                 <li><a href="/codebase-4/docs/2-codebase-basics/paragraphs">Paragraphs</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/simple-text-elements">Simple text elements</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/lists">Lists</a></li>
+                <li><a href="/codebase-4/docs/2-codebase-basics/details">Collapsible details</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/horizontal-rules">Horizontal rules</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/blockquotes">Blockquotes</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/tables">Tables</a></li>
@@ -338,33 +339,33 @@ x-data="docsOcState()"
           </div>
         </div>
 
-        
-        <div x-data="{ revealed: true }">
-        
-          <button
-            class="block b-0 unrounded p-1"
-            @click="revealed = !revealed"
-          >
-            <div class="flex">
-              <svg x-show="!revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 6 15 12 9 18" /></svg>
-              <svg x-show="revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
-              <span>Responsive layouts</span>
-            </div>
-          </button>
-          <div
-            class="overflow-hidden max-height-0"
-            x-ref="panel"
-            x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
-            <div class="px-2">
-              <ul class="menu">
-                <li><a href="/codebase-4/docs/3-responsive-layouts/containers">Containers</a></li>
-                <li><a href="/codebase-4/docs/3-responsive-layouts/bleeds">Bleeds</a></li>
-                <li><a href="/codebase-4/docs/3-responsive-layouts/grid">Grid system</a></li>
-                <li><a href="/codebase-4/docs/3-responsive-layouts/flex">Flex (flexbox) system</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <div class="mt-1 p-block t-loose t-uppercase t-small">Responsive Layouts</div>
+
+        <style>
+          .menu.responsive-layouts a {
+            display: block;
+            padding-left: 2rem;
+            font-weight: 600;
+          }
+          .theme-dark .menu.responsive-layouts a {
+            color: #e6e6e6 !important;
+          }
+          .theme-dark .menu.responsive-layouts a:hover {
+            background: #333;
+          }
+          .theme-light .menu.responsive-layouts a {
+            color: #0d0d0d !important;
+          }
+          .theme-light .menu.responsive-layouts a:hover {
+            background: #f2f2f2;
+          }
+        </style>
+        <ul class="menu responsive-layouts">
+          <li><a href="/codebase-4/docs/3-responsive-layouts/containers">Containers</a></li>
+          <li><a href="/codebase-4/docs/3-responsive-layouts/bleeds">Bleeds</a></li>
+          <li><a href="/codebase-4/docs/3-responsive-layouts/flex">Flex system (flexbox)</a></li>
+          <li><a href="/codebase-4/docs/3-responsive-layouts/grid">Grid system</a></li>
+        </ul>
 
         <div class="mt-1 p-block t-loose t-uppercase t-small">Utilities</div>
 
@@ -566,7 +567,7 @@ x-data="docsOcState()"
   <article class="flex-item-grow-1">
 
     <header class="mb-3 pt-responsive pb-3">
-        <div class="container container-sm py-3">
+        <div class="container-grid container-grid-sm py-3">
           <div class="t-lg">
             
             <div class="mb-1 bb-thin pb-2 t-uppercase t-thin t-loose">Responsive Layouts</div>
@@ -576,7 +577,7 @@ x-data="docsOcState()"
         </div>
     </header>
 
-    <section id="docs-mainbody" class="container container-sm mb-6">
+    <section id="docs-mainbody" class="container-grid container-grid-sm mb-6">
       <p class="t-lg t-thin">Codebase’s <code>.flex</code> flexbox layout system enables you to organize wrapped groups of elements in a row (e.g. for a menubar, or a media object) or in a column (e.g. for a card).</p>
 <p>All the following examples below use <code>.flex</code> as-is, so that the demos can be seen at all screen widths. There are also alternative (not modifier) responsive flex wrappers <code>.flex-sm</code>, <code>.flex-md</code> and <code>.flex-lg</code> that can be used <em>instead</em> of <code>.flex</code>. Thus the flexbox effect will kick in at small, medium or large viewport widths – below these breakpoints the child block element layout will be as normal, stacked in a single column of 100% width. The same modifier classes below will all just work with these alternative responsive <code>.flex-</code> wrappers.</p>
 <table class="table">
@@ -610,7 +611,7 @@ x-data="docsOcState()"
 <li>All flexbox system wrappers affect their immediate child elements.</li>
 <li>The Codebase flexbox systems don’t constrain the immediate child elements to proportional widths (in a row) or heights (in a column). So, if you need something like “25% with sidebar with 75% main content”, then you need the Codebase <a href="/codebase-4/docs/3-responsive-layouts/grid">grid system</a>.</li>
 </ol>
-<p><code>.flex</code> :</p>
+<p><code>.flex</code>:</p>
 <div class="flex mb-3">
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">One</div>
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Two</div>
@@ -618,6 +619,7 @@ x-data="docsOcState()"
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Four</div>
 </div>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>One<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>Two<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>Three<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>Four<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>The <code>.flex</code> wrapper, and its breakpoint width variants (see above), is great for making <a href="/codebase-4/docs/7-simple-components/menus/#menubars">menubars</a>.</p>
 <p><code>.flex.flex-grow-equal</code> :</p>
 <div class="flex flex-grow-equal mb-3">
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">One</div>
@@ -625,6 +627,9 @@ x-data="docsOcState()"
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Three</div>
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Four</div>
 </div>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex flex-grow-equal<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>One<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>Two<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>Three<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>Four<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p><code>.flex-grow-equal</code> may be all you need if you want a number of equal width columns (e.g. for a “two up” or “three up”). You can easily combine it with  a flex system wrapper with built-in breakpoint width (e.g. <code>.flex-md</code>) instead of <code>.flex</code>, so that your mini “pseudo grid” takes effect only above that device width (or window width).</p>
+<p class="bl-heavy b-color-secondary bg-color-secondary-alt p-2">Codebase also contains a simple 12-column flexbox <a href="#flex-pseudo-grids">pseudo grid</a> if you need it – e.g. if you need a (pseudo) grid system that supports ancient web browsers. But for more power, go for Codebase’s real <em>CSS grid</em> [grid system](/codebase-4/docs/3-responsive-layouts/grid).</p>
 <p><code>.flex.flex-grow-auto</code> :</p>
 <div class="flex flex-grow-auto mb-3">
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">First flex-item</div>
@@ -656,58 +661,57 @@ x-data="docsOcState()"
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Item</div>
 </div>
 <p><code>.flex.flex-start</code> / <code>.flex.flex-center</code> / <code>.flex.flex-end</code> :</p>
-<div class="flex flex-start mb-3 b-dashed">
+<div class="flex flex-start mb-3 b-thick">
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">One</div>
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Two</div>
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Three</div>
 </div>
-<div class="flex flex-center mb-3 b-dashed">
+<div class="flex flex-center mb-3 b-thick">
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">One</div>
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Two</div>
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Three</div>
 </div>
-<div class="flex flex-end mb-3 b-dashed">
+<div class="flex flex-end mb-3 b-thick">
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">One</div>
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Two</div>
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Three</div>
 </div>
 <p><code>.flex.flex-top</code> / <code>.flex.flex-middle</code> / <code>.flex.flex-bottom</code> :</p>
-<div class="flex flex-top b-dashed mb-3" style="height: 150px">
+<div class="flex flex-top b-thick mb-3" style="height: 150px">
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">One</div>
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Two</div>
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Three</div>
 </div>
-<div class="flex flex-middle mb-3 b-dashed" style="height: 150px">
+<div class="flex flex-middle mb-3 b-thick" style="height: 150px">
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">One</div>
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Two</div>
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Three</div>
 </div>
-<div class="flex flex-bottom mb-3 b-dashed" style="height: 150px">
+<div class="flex flex-bottom mb-3 b-thick" style="height: 150px">
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">One</div>
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Two</div>
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Three</div>
 </div>
 <p><code>.flex.flex-center.flex-middle</code> :</p>
-<div class="flex flex-center flex-middle b-dashed mb-3" style="height: 150px">
+<div class="flex flex-center flex-middle b-thick mb-3" style="height: 150px">
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">One</div>
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Two</div>
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Three</div>
 </div>
 <p>Same as above but with <code>.flex-column</code>:</p>
 <p><code>.flex.flex-column.flex-center.flex-middle</code> :</p>
-<div class="flex flex-column flex-center flex-middle b-dashed mb-3" style="height: 150px">
+<div class="flex flex-column flex-center flex-middle b-thick mb-3" style="height: 150px">
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">One</div>
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Two</div>
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Three</div>
 </div>
-<h3 id="flex-items">Flex items</h3>
-<p>There are only three Codebase flexbox child block element class:</p>
+<h2 id="flex-items">Flex items</h2>
 <ul>
 <li><code>.flex-item-grow-1</code> – does not have a max-width – it will simply expand to occupy the available space.</li>
 <li><code>.flex-item-order-start</code> - re-orders a flex-item to <code>order: 0</code></li>
 <li><code>.flex-item-order-end</code> - re-orders a flex-item to <code>order: 9999</code></li>
 </ul>
-<p>Note that these flex item will only take effect inside of a <code>.flex</code> wrapper (and only then if above your specified media query breakpoint width, whether <code>sm</code>, <code>md</code> or <code>lg</code>).</p>
+<p>Note that these flex item will only take effect inside of a <code>.flex</code> wrapper (and only then if above your specified breakpoint width, whether <code>sm</code>, <code>md</code> or <code>lg</code>).</p>
 <p>Examples of <code>.flex-item-grow-1</code>:</p>
 <div class="flex b-dashed mb-3">
   <div class="flex-item-grow-1 b-thick b-color-success rounded p-1 t-heavy t-color-success"><code>.flex-item-grow-1</code></div>
@@ -726,15 +730,37 @@ x-data="docsOcState()"
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">other</div>
   <div class="flex-item-grow-1 b-thick b-color-success rounded p-1 t-heavy t-color-success"><code>.flex-item-grow-1</code></div>
 </div>
+<h2 id="flex-pseudo-grids">Flex Pseudo Grids</h2>
+<p>There is a really simple 12-column pseudo grid system built into Codebase. All you need to do is add a suffix from <code>-1</code> to <code>-12</code> to the <code>.flex-item</code> prefix.</p>
+<div class="flex mb-3">
+  <div class="flex-item-4 b-thick b-color-success rounded p-1 t-heavy t-color-success">One third</div>
+  <div class="flex-item-4 b-thick b-color-success rounded p-1 t-heavy t-color-success">One third</div>
+  <div class="flex-item-4 b-thick b-color-success rounded p-1 t-heavy t-color-success">One third</div>
+</div>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-item-4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>One third<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-item-4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>One third<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-item-4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>One third<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>If the wrapper is <code>.flex</code>, the pseudo grid happens on all viewport widths. Alternatively, use wrappers <code>.flex-sm</code>, <code>.flex-md</code>, or <code>.flex-lg</code> to make this flexbox columnar pseudo-grid to take effect only above the <code>sm</code> (768px default), <code>md</code> (1024px default) or <code>lg</code> (1280px default) viewport breakpoint widths.</p>
+<p>You can also use the flex wrapper modifiers <code>.flex-gap</code> and/or <code>.flex-row-reverse</code> on these pseudo grids.</p>
+<div class="flex-md flex-gap flex-row-reverse">
+  <div class="flex-item-3 b-thick b-color-success rounded p-1 t-heavy t-color-success">One quarter</div>
+  <div class="flex-item-9 b-thick b-color-success rounded p-1 t-heavy t-color-success">Three quarters</div>
+</div>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-md flex-gap flex-row-reverse<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-item-3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>One quarter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-item-9<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Three quarters<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>Notes:</p>
+<ol>
+<li>Since the responsive viewport-width control is on the wrapper, you can’t <em>combine</em> these pseudo grids on the same HTML elements.</li>
+<li>The Codebase flex pseudo grid only works on <em>widths</em>, therefore do not use it with <code>.flex-column</code>.</li>
+<li>If you want a more versatile (and true) columnar grid, then you need the Codebase <a href="/codebase-4/docs/3-responsive-layouts/grid">grid system</a>.</li>
+</ol>
+
     </section><!-- /#docs-mainbody -->
 
-    <footer class="container container-lg mb-responsive t-center">
+    <footer class="container-grid container-grid-lg mb-responsive t-center">
       <div class="clearfix bt-thin bb-thin py-2">
         
-        <a class="my-1 float-left btn btn-primary" href="/codebase-4/docs/3-responsive-layouts/grid">&larr; Grid</a>
+        <a class="my-1 float-left btn btn-primary" href="/codebase-4/docs/3-responsive-layouts/bleeds">&larr; Bleeds</a>
           
         
-        <a class="my-1 float-right btn btn-primary" href="/codebase-4/docs/4-layout-utilities/blocks">Blocks &rarr;</a>
+        <a class="my-1 float-right btn btn-primary" href="/codebase-4/docs/3-responsive-layouts/grid">Grid system &rarr;</a>
           
       </div>
     </footer>
@@ -742,14 +768,14 @@ x-data="docsOcState()"
   </article>
 </main>
 
-<footer class="container container-sm bt-thin pt-6 pb-3 bg-color-background-alt t-center">
+<footer class="container-grid container-grid-sm bt-thin pt-6 pb-3 bg-color-background-alt t-center">
   <p>
     <a class="codebase-docs h3 t-decoration-none" href="/codebase-4/">
       <span class="inline-flex flex-column flex-middle flex-center">
       <!-- Codebase logo-->
       <svg  style="height: 4rem; margin-bottom: 1rem;" viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2"><path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"/></svg>
       <span>
-        Codebase <span class="t-thin">4.0.1</span>
+        Codebase <span class="t-thin">4.0.2</span>
       </span>
 
       </span>

@@ -7,7 +7,7 @@ prevButton: "Blockquotes"
 nextButton: "Form elements"
 ---
 
-<p class="t-lg t-thin">Classless tabled receive no special styling from Codebase.</p>
+<p class="t-lg t-thin">Classless tables receive no special styling from Codebase.</p>
 
 This is what a classless table looks like:
 

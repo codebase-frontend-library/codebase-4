@@ -1,6 +1,6 @@
 // CODEBASE v.4 ACTIVATOR
 // (An improvement over the Codebase 3 activator. Not backwards compatible.)
-// ~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 document.addEventListener('DOMContentLoaded', () => {
   const clickAways = Array.from(document.querySelectorAll('[data-click-away="true"]'));

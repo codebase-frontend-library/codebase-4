@@ -158,13 +158,12 @@ $width-xxl:                   1600px !default;
 $width-max:                   $width-xxl !default;
 
 // Containers
-$use-container-grid:          true !default;
+$container-padding:           0 1rem !default; // for traditional containers only
+
 $container-grid-sm:           1fr 3% unquote('min(720px, 94%)') 3% 1fr !default; // 720px + 6% ≈ 768px
 $container-grid-md:           1fr 3% unquote('min(960px, 94%)') 3% 1fr !default; // 960px + 6% ≈ 1024px
 $container-grid-lg:           1fr 3% unquote('min(1200px, 94%)') 3% 1fr !default; // 1200px + 6% ≈ 1280px
 $container-grid-max:          1fr 3% unquote('min(1500px, 94%)') 3% 1fr !default; // 1500px + 6% ≈ 1600px
-
-$container-padding-fallback:  0 16px !default;
 
 // Breakpoints
 $mq-sm:                       $width-sm !default;
@@ -172,22 +171,18 @@ $mq-md:                       $width-md !default;
 $mq-lg:                       $width-lg !default;
 
 // Flexbox System
-$flex-gap-width-negative: clamp(-12px, -1.25vw, -18px) !default;
-$flex-gap-width: clamp(12px, 1.25vw, 18px) !default;
+$flex-gap-width:              1.5rem !default; //clamp(12px, 1.25vw, 18px) !default;
+$use-flex-pseudo-grid:        true !default;
 
 // CSS Grid System
-$grid-max-cols: 4 !default;
-$grid-max-rows: 4 !default;
-$grid-gap-width: clamp(24px, 2.5vw, 36px) !default;
-// `$grid-gap-width` is used for column gaps and margin-bottom (not row gaps)
-// of grid cells -- because you would still want vertical spacing on
-// collapsed grids (below the md or lg breakpoint)
+$grid-max-cols:               4 !default;
+$grid-gap-width:              1.5rem !default; //clamp(24px, 2.5vw, 36px) !default;
 
-$sticky-gap:        1.5rem !default;
-
-$square-size-sm:    3rem !default;
-$square-size:       6rem !default;
-$square-size-lg:    12rem !default;
+// Layout utilities
+$sticky-gap:                  1.5rem !default;
+$square-size-sm:              3rem !default;
+$square-size:                 6rem !default;
+$square-size-lg:              12rem !default;
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // (4.) Basics and Typography ///////////////////////////////////////

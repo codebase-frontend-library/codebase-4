@@ -1,42 +1,39 @@
 // LAYOUT: CONTAINERS
 // ~~~~~~~~~~~~~~~~~~
 
-@if $use-container-grid == true {
-  // Based on https://joshwcomeau.com/css/full-bleed/
-  .container {
-    width: 100%;
-    display: grid;
-    grid-template-columns: $container-grid-max;
+.container {
+  display: block;
+  width: 100%;
+  max-width: $width-max;
+  margin: 0 auto;
+  padding: $container-padding;
+  &-lg {
+    max-width: $width-lg;
   }
-  .container > * {
-    grid-column: 3;
-    width: 100%;
+  &-md {
+    max-width: $width-md;
   }
-  .container-lg {
-    grid-template-columns: $container-grid-lg;
-  }
-  .container-md {
-    grid-template-columns: $container-grid-md;
-  }
-  .container-sm {
-    grid-template-columns: $container-grid-sm;
+  &-sm {
+    max-width: $width-sm;
   }
 }
 
-@else {
-  .container {
-    width: 100%;
-    max-width: $width-max;
-    margin: 0 auto;
-    padding: $container-padding-fallback;
-    &-xl {
-      max-width: $width-xl;
-    }
-    &-lg {
-      max-width: $width-lg;
-    }
-    &-md {
-      max-width: $width-md;
-    }
-  }
+// Based on https://joshwcomeau.com/css/full-bleed/
+.container-grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: $container-grid-max;
+}
+.container-grid > * {
+  grid-column: 3;
+  width: 100%;
+}
+.container-grid-lg {
+  grid-template-columns: $container-grid-lg;
+}
+.container-grid-md {
+  grid-template-columns: $container-grid-md;
+}
+.container-grid-sm {
+  grid-template-columns: $container-grid-sm;
 }

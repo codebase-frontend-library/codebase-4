@@ -1,6 +1,5 @@
 ---
 title: "Light and Dark Themes"
-headerTitle: "Codebase’s Light and Dark Themes"
 layout: layout.njk
 prevPage: "/codebase-4/docs/1-getting-started/responsive-design"
 nextPage: "/codebase-4/docs/2-codebase-basics/element-grid"
@@ -8,7 +7,7 @@ prevButton: "Responsive design"
 nextButton: "Element grid"
 ---
 
-<p class="t-lg t-thin">Codebase has simple built in light and dark CSS themes in <code>codebase-l-d.css</code> – to get you started.</p>
+<p class="t-lg t-thin">Codebase has simple built-in light and dark CSS themes in <code>codebase-l-d.css</code> – to get you started.</p>
 
 Switch between the light and dark themes in these docs: 
 
@@ -160,7 +159,7 @@ What this JavaScript theme switcher is doing:
 
 4. Finally, when the visitor closes the tab or closes or the browser (either way, they’ve finished their session on our website), then this sessionStorage data item is deleted – it is only a _session_ storage item, therefore it does not persist after the visitor’s has ended their session on your website.
 
-## The Codebase light and dark themes CSS
+## The Codebase Light and Dark Themes CSS
 
 The Codebase SCSS library is built fro _two_ index files: `codebase.scss` and `codebase-l-d.scss`.
 

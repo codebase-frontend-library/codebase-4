@@ -7,11 +7,16 @@ const cssnano = require('cssnano');
 const postcss = require('gulp-postcss');
 const sourcemaps = require('gulp-sourcemaps');
 
+const cssProcessors = [
+  autoprefixer(),
+  cssnano()
+]
+
 function cssTask() {
   return src('./src/codebase/scss/codebase.scss', { allowEmpty: true })
     .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: 'compressed'})).on('error', sass.logError)
-    .pipe(postcss([autoprefixer(), cssnano()]))
+    .pipe(postcss(cssProcessors))
     .pipe(sourcemaps.write('.'))
     .pipe(dest('./src/dist'))
 }
@@ -20,7 +25,7 @@ function cssTask2() {
   return src('./src/codebase/scss/codebase-l-d.scss', { allowEmpty: true })
     .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: 'compressed'})).on('error', sass.logError)
-    .pipe(postcss([autoprefixer(), cssnano()]))
+    .pipe(postcss(cssProcessors))
     .pipe(sourcemaps.write('.'))
     .pipe(dest('./src/dist'))
 }
@@ -29,7 +34,7 @@ function jsTask() {
   return src('./src/codebase/js/activator.js', { allowEmpty: true })
     .pipe(sourcemaps.init())
     .pipe(babel({
-      presets: ['@babel/env']
+      presets: [['@babel/preset-env', { "targets": "> 0.25%, Explorer 11" }]]
     }))
     .pipe(uglify())
     .pipe(sourcemaps.write('.'))

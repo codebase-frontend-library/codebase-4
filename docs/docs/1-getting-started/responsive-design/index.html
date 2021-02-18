@@ -327,6 +327,7 @@ x-data="docsOcState()"
                 <li><a href="/codebase-4/docs/2-codebase-basics/paragraphs">Paragraphs</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/simple-text-elements">Simple text elements</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/lists">Lists</a></li>
+                <li><a href="/codebase-4/docs/2-codebase-basics/details">Collapsible details</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/horizontal-rules">Horizontal rules</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/blockquotes">Blockquotes</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/tables">Tables</a></li>
@@ -338,33 +339,33 @@ x-data="docsOcState()"
           </div>
         </div>
 
-        
-        <div x-data="{ revealed: false }">
-        
-          <button
-            class="block b-0 unrounded p-1"
-            @click="revealed = !revealed"
-          >
-            <div class="flex">
-              <svg x-show="!revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 6 15 12 9 18" /></svg>
-              <svg x-show="revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
-              <span>Responsive layouts</span>
-            </div>
-          </button>
-          <div
-            class="overflow-hidden max-height-0"
-            x-ref="panel"
-            x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
-            <div class="px-2">
-              <ul class="menu">
-                <li><a href="/codebase-4/docs/3-responsive-layouts/containers">Containers</a></li>
-                <li><a href="/codebase-4/docs/3-responsive-layouts/bleeds">Bleeds</a></li>
-                <li><a href="/codebase-4/docs/3-responsive-layouts/grid">Grid system</a></li>
-                <li><a href="/codebase-4/docs/3-responsive-layouts/flex">Flex (flexbox) system</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <div class="mt-1 p-block t-loose t-uppercase t-small">Responsive Layouts</div>
+
+        <style>
+          .menu.responsive-layouts a {
+            display: block;
+            padding-left: 2rem;
+            font-weight: 600;
+          }
+          .theme-dark .menu.responsive-layouts a {
+            color: #e6e6e6 !important;
+          }
+          .theme-dark .menu.responsive-layouts a:hover {
+            background: #333;
+          }
+          .theme-light .menu.responsive-layouts a {
+            color: #0d0d0d !important;
+          }
+          .theme-light .menu.responsive-layouts a:hover {
+            background: #f2f2f2;
+          }
+        </style>
+        <ul class="menu responsive-layouts">
+          <li><a href="/codebase-4/docs/3-responsive-layouts/containers">Containers</a></li>
+          <li><a href="/codebase-4/docs/3-responsive-layouts/bleeds">Bleeds</a></li>
+          <li><a href="/codebase-4/docs/3-responsive-layouts/flex">Flex system (flexbox)</a></li>
+          <li><a href="/codebase-4/docs/3-responsive-layouts/grid">Grid system</a></li>
+        </ul>
 
         <div class="mt-1 p-block t-loose t-uppercase t-small">Utilities</div>
 
@@ -566,7 +567,7 @@ x-data="docsOcState()"
   <article class="flex-item-grow-1">
 
     <header class="mb-3 pt-responsive pb-3">
-        <div class="container container-sm py-3">
+        <div class="container-grid container-grid-sm py-3">
           <div class="t-lg">
             
             <div class="mb-1 bb-thin pb-2 t-uppercase t-thin t-loose">Getting Started</div>
@@ -576,13 +577,13 @@ x-data="docsOcState()"
         </div>
     </header>
 
-    <section id="docs-mainbody" class="container container-sm mb-6">
+    <section id="docs-mainbody" class="container-grid container-grid-sm mb-6">
       <p class="t-lg t-thin">Responsive design in Codebase is accomplished by containers and max-width wrappers, flexbox and CSS grid systems, media query breakpoint widths, and CSS clamp controlled prose typography.</p>
 <p>Layouts in Codebase follow the familiar responsive “from small screens up” design methodology. For controlling layouts on increasingly wider viewports, all the following are available:</p>
 <ul>
 <li>A series of <em>CSS grid</em> based <a href="/codebase-4/docs/3-responsive-layouts/containers">containers</a> are available for centered layouts with max-width constraints</li>
 <li><a href="/codebase-4/docs/3-responsive-layouts/bleeds">bleed</a> inserts to enable to content to extend wider than container columns</li>
-<li><a href="/codebase-4/docs/3-responsive-layouts/flex">Flexbox</a> and <a href="/codebase-4/docs/3-responsive-layouts/grid">CSS grid</a> systems have three media query breakpoint width variants</li>
+<li><a href="/codebase-4/docs/3-responsive-layouts/flex">Flexbox</a> and <a href="/codebase-4/docs/3-responsive-layouts/grid">CSS grid</a> systems have three breakpoint width variants</li>
 <li><a href="/codebase-4/docs/4-layout-utilities/dimensions/#max-width-wrappers">max-width wrappers</a> and <a href="/codebase-4/docs/4-layout-utilities/dimensions/#heights">heights</a> utilities</li>
 <li>Responsive <a href="/codebase-4/docs/4-layout-utilities/floats">floats</a> and <a href="/codebase-4/docs/4-layout-utilities/positions">positions</a> utilities</li>
 <li>Responsive <a href="/codebase-4/docs/6-decoration-utilities/spacing#responsive-y-axis-spacing">y-axis spacing</a> (margins and paddings) using <a href="https://chipcullen.com/css-min-max-clamp-functions/">CSS clamp</a>.</li>
@@ -597,16 +598,16 @@ x-data="docsOcState()"
 <li>Responsive <a href="/codebase-4/docs/5-typographic-utilities/text-alignment">text alignment</a> utilities</li>
 </ul>
 <h2 id="codebase-media-query-breakpoint-widths">Codebase Media Query Breakpoint Widths</h2>
-<p>There are three media query breakpoint widths in Codebase. These are used in CSS classes for responsive flex and grid layouts, floats, headings, display text, text alignments, offcanvas side panels and invisibility utilities.</p>
+<p>There are three breakpoint widths in Codebase. These are used in CSS classes for responsive flex and grid layouts, floats, headings, display text, text alignments, offcanvas side panels and invisibility utilities.</p>
 <pre class="language-scss"><code class="language-scss"><span class="token comment">// Small</span><br><span class="token property"><span class="token variable">$mq-sm</span></span><span class="token punctuation">:</span> 768px <span class="token statement keyword">!default</span><span class="token punctuation">;</span><br><br><span class="token comment">// Medium</span><br><span class="token property"><span class="token variable">$mq-md</span></span><span class="token punctuation">:</span> 1024px <span class="token statement keyword">!default</span><span class="token punctuation">;</span><br><br><span class="token comment">// Large</span><br><span class="token property"><span class="token variable">$mq-lg</span></span><span class="token punctuation">:</span> 1280px <span class="token statement keyword">!default</span><span class="token punctuation">;</span></code></pre>
-<div class="full-bleed my-6">
-<div class="container container-md">
+<div class="container-grid-full-bleed my-6">
+<div class="container-grid container-grid-lg">
 <svg xmlns="http://www.w3.org/2000/svg" width="1176" height="194" viewBox="0 0 588 97"><text transform="translate(150 12)"><tspan x="-10.117" y="1" font-family="Arial-BoldMT" font-size="14" fill="currentColor">sm</tspan></text><path d="M150.5 96.5v-72" fill="#FFF"/><path d="M150.5 96.5v-72" stroke="currentColor" fill="none"/><text transform="translate(294 12)"><tspan x="-10.5" y="1" font-family="Arial-BoldMT" font-size="14" fill="currentColor">md</tspan></text><path d="M294.5 96.5v-72" fill="#FFF"/><path d="M294.5 96.5v-72" stroke="currentColor" fill="none"/><text transform="translate(438 12)"><tspan x="-6.221" y="1" font-family="Arial-BoldMT" font-size="14" fill="currentColor">lg</tspan></text><path d="M438.5 96.5v-72" fill="#FFF"/><path d="M438.5 96.5v-72" stroke="currentColor" fill="none"/><text transform="translate(171 29)"><tspan x="-18" y="2" font-family="ArialMT" font-size="8" fill="currentColor">768px</tspan></text><text transform="translate(123.667 29)"><tspan x="-18.479" y="2" font-family="ArialMT" font-size="8" fill="currentColor">up to 767px </tspan></text><text transform="translate(315 29)"><tspan x="-18" y="2" font-family="ArialMT" font-size="8" fill="currentColor">1024px</tspan></text><text transform="translate(273 29)"><tspan x="-8.246" y="2" font-family="ArialMT" font-size="8" fill="currentColor">1023px</tspan></text><text transform="translate(474.667 29)"><tspan x="-33.667" y="2" font-family="ArialMT" font-size="8" fill="currentColor">1280px and up</tspan></text><text transform="translate(417 29)"><tspan x="-8.246" y="2" font-family="ArialMT" font-size="8" fill="currentColor">1279px</tspan></text><g stroke="currentColor"><path d="M15.5 48.5h126" fill="none"/><path d="M15.5 45.5l-8 3 8 3zM141.5 51.5l8-3-8-3z" fill="currentColor"/></g><g stroke="currentColor"><path d="M159.5 48.5h126" fill="none"/><path d="M159.5 45.5l-8 3 8 3zM285.5 51.5l8-3-8-3z" fill="currentColor"/></g><g stroke="currentColor"><path d="M303.5 48.5h126" fill="none"/><path d="M303.5 45.5l-8 3 8 3zM429.5 51.5l8-3-8-3z" fill="currentColor"/></g><g stroke="currentColor"><path d="M447.5 48.5h126" fill="none"/><path d="M447.5 45.5l-8 3 8 3zM573.5 51.5l8-3-8-3z" fill="currentColor"/></g><text transform="translate(78 66)"><tspan x="-14.678" y="1" font-family="ArialMT" font-size="8" fill="currentColor"> Phones</tspan></text><text transform="translate(222 66)"><tspan x="-47.588" y="1" font-family="ArialMT" font-size="8" fill="currentColor"> Large phones (landscape)</tspan></text><text transform="translate(222 78)"><tspan x="-29.938" y="1" font-family="ArialMT" font-size="8" fill="currentColor"> Tablets (portrait)</tspan></text><text transform="translate(366 66)"><tspan x="-35.725" y="1" font-family="ArialMT" font-size="8" fill="currentColor"> Tablets (landscape)</tspan></text><text transform="translate(510 66)"><tspan x="-51.51" y="1" font-family="ArialMT" font-size="8" fill="currentColor"> Laptops, desktops, TVs, etc.</tspan></text></svg>
 </div>
 </div>
     </section><!-- /#docs-mainbody -->
 
-    <footer class="container container-lg mb-responsive t-center">
+    <footer class="container-grid container-grid-lg mb-responsive t-center">
       <div class="clearfix bt-thin bb-thin py-2">
         
         <a class="my-1 float-left btn btn-primary" href="/codebase-4/docs/1-getting-started/alpinejs-or-activator">&larr; AlpineJS or activator</a>
@@ -620,14 +621,14 @@ x-data="docsOcState()"
   </article>
 </main>
 
-<footer class="container container-sm bt-thin pt-6 pb-3 bg-color-background-alt t-center">
+<footer class="container-grid container-grid-sm bt-thin pt-6 pb-3 bg-color-background-alt t-center">
   <p>
     <a class="codebase-docs h3 t-decoration-none" href="/codebase-4/">
       <span class="inline-flex flex-column flex-middle flex-center">
       <!-- Codebase logo-->
       <svg  style="height: 4rem; margin-bottom: 1rem;" viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2"><path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"/></svg>
       <span>
-        Codebase <span class="t-thin">4.0.1</span>
+        Codebase <span class="t-thin">4.0.2</span>
       </span>
 
       </span>

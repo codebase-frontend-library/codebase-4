@@ -35,9 +35,9 @@ Notes:
 </div>
 ```
 
-Go large using `.full-bleed` on the wrapper, and controlling the wrapper height:
+Go large using `.container-grid-full-bleed` on the wrapper, and controlling the wrapper height:
 
-<div class="full-bleed mb-3">
+<div class="container-grid-full-bleed mb-3">
   <div class="relative" style="height: 500px">
     <img class="img-cover" src="/codebase-4/img/placeholder1000x1000.svg" alt="Image alt text">
     <div class="box flex flex-column flex-center flex-middle t-center">
@@ -48,7 +48,7 @@ Go large using `.full-bleed` on the wrapper, and controlling the wrapper height:
 </div>
 
 ```html
-<div class="full-bleed mb-3">
+<div class="container-grid-full-bleed mb-3">
   <div class="relative" style="height: 500px">
     <img class="img-cover" src="" alt="">
     <div class="box flex flex-column flex-center flex-middle t-center">

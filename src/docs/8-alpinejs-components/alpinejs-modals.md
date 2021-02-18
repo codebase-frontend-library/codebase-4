@@ -134,7 +134,7 @@ The _close_ (dismiss) button is within the top-right corner of the black backdro
   <button class="btn btn-primary mb-3 scroll-lock" @click="modal = !modal" :aria-expanded="modal ? 'true' : 'false'">Modal example 2a</button> – modal with a tall narrow image
   <div class="modal-wrapper" :class="{ 'active': modal }">
     <div class="backdrop backdrop-black scroll-unlock flex flex-top flex-end p-2">
-      <button class="modal-close btn btn-transparent btn-icon b-0" @click="modal = false">
+      <button class="modal-close btn btn-icon bg-transparent b-0" @click="modal = false">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
       </button>
     </div>
@@ -149,7 +149,7 @@ The _close_ (dismiss) button is within the top-right corner of the black backdro
   <button class="btn btn-primary mb-3 scroll-lock" @click="modal = !modal" :aria-expanded="modal ? 'true' : 'false'">Modal example 2b</button> – modal with a short wide image
   <div class="modal-wrapper" :class="{ 'active': modal }">
     <div class="backdrop backdrop-black scroll-unlock flex flex-top flex-end p-2">
-      <button class="modal-close btn btn-transparent btn-icon b-0" @click="modal = false">
+      <button class="modal-close btn btn-icon bg-transparent b-0" @click="modal = false">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
       </button>
     </div>
@@ -164,7 +164,7 @@ The _close_ (dismiss) button is within the top-right corner of the black backdro
   <button class="btn btn-primary mb-3 scroll-lock" @click="modal = !modal" :aria-expanded="modal ? 'true' : 'false'">Modal example 2c</button> – modal with a gigantic image
   <div class="modal-wrapper" :class="{ 'active': modal }">
     <div class="backdrop backdrop-black scroll-unlock flex flex-top flex-end p-2">
-      <button class="modal-close btn btn-transparent btn-icon b-0" @click="modal = false">
+      <button class="modal-close btn btn-icon bg-transparent b-0" @click="modal = false">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
       </button>
     </div>

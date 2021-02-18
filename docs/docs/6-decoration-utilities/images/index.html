@@ -327,6 +327,7 @@ x-data="docsOcState()"
                 <li><a href="/codebase-4/docs/2-codebase-basics/paragraphs">Paragraphs</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/simple-text-elements">Simple text elements</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/lists">Lists</a></li>
+                <li><a href="/codebase-4/docs/2-codebase-basics/details">Collapsible details</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/horizontal-rules">Horizontal rules</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/blockquotes">Blockquotes</a></li>
                 <li><a href="/codebase-4/docs/2-codebase-basics/tables">Tables</a></li>
@@ -338,33 +339,33 @@ x-data="docsOcState()"
           </div>
         </div>
 
-        
-        <div x-data="{ revealed: false }">
-        
-          <button
-            class="block b-0 unrounded p-1"
-            @click="revealed = !revealed"
-          >
-            <div class="flex">
-              <svg x-show="!revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 6 15 12 9 18" /></svg>
-              <svg x-show="revealed" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
-              <span>Responsive layouts</span>
-            </div>
-          </button>
-          <div
-            class="overflow-hidden max-height-0"
-            x-ref="panel"
-            x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
-            <div class="px-2">
-              <ul class="menu">
-                <li><a href="/codebase-4/docs/3-responsive-layouts/containers">Containers</a></li>
-                <li><a href="/codebase-4/docs/3-responsive-layouts/bleeds">Bleeds</a></li>
-                <li><a href="/codebase-4/docs/3-responsive-layouts/grid">Grid system</a></li>
-                <li><a href="/codebase-4/docs/3-responsive-layouts/flex">Flex (flexbox) system</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <div class="mt-1 p-block t-loose t-uppercase t-small">Responsive Layouts</div>
+
+        <style>
+          .menu.responsive-layouts a {
+            display: block;
+            padding-left: 2rem;
+            font-weight: 600;
+          }
+          .theme-dark .menu.responsive-layouts a {
+            color: #e6e6e6 !important;
+          }
+          .theme-dark .menu.responsive-layouts a:hover {
+            background: #333;
+          }
+          .theme-light .menu.responsive-layouts a {
+            color: #0d0d0d !important;
+          }
+          .theme-light .menu.responsive-layouts a:hover {
+            background: #f2f2f2;
+          }
+        </style>
+        <ul class="menu responsive-layouts">
+          <li><a href="/codebase-4/docs/3-responsive-layouts/containers">Containers</a></li>
+          <li><a href="/codebase-4/docs/3-responsive-layouts/bleeds">Bleeds</a></li>
+          <li><a href="/codebase-4/docs/3-responsive-layouts/flex">Flex system (flexbox)</a></li>
+          <li><a href="/codebase-4/docs/3-responsive-layouts/grid">Grid system</a></li>
+        </ul>
 
         <div class="mt-1 p-block t-loose t-uppercase t-small">Utilities</div>
 
@@ -566,7 +567,7 @@ x-data="docsOcState()"
   <article class="flex-item-grow-1">
 
     <header class="mb-3 pt-responsive pb-3">
-        <div class="container container-sm py-3">
+        <div class="container-grid container-grid-sm py-3">
           <div class="t-lg">
             
             <div class="mb-1 bb-thin pb-2 t-uppercase t-thin t-loose">Decoration Utilities</div>
@@ -576,7 +577,7 @@ x-data="docsOcState()"
         </div>
     </header>
 
-    <section id="docs-mainbody" class="container container-sm mb-6">
+    <section id="docs-mainbody" class="container-grid container-grid-sm mb-6">
       <p class="t-lg t-thin">A few image manipulation classes.</p>
 <h2 id="cover-images">Cover images</h2>
 <p><code>.img-cover</code> – this class sets the image to expand (or contract) to the full width and height of its wrapping block, without distortion.</p>
@@ -590,8 +591,8 @@ x-data="docsOcState()"
 <li>This utility class works on the <code>&lt;img&gt;</code> tag. It does not work very well on an <em>embedded</em> <code>&lt;svg&gt;</code>. But it works fine on an SVG image inserted into a page the normal way for images: <code>&lt;img src=&quot;filename.svg&quot;&gt;</code>.</li>
 <li>Your image will need to be approximately a square. Also, ensure that the most important part of your image is in the center and middle – otherwise it may get “cropped” when viewed on some device sizes (or browser widths).</li>
 </ol>
-<div class="full-bleed my-6">
-<div class="container container-md">
+<div class="container-grid-full-bleed my-6">
+<div class="container-grid container-grid-md">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 769.343 445"><path d="M517 144h216v216H517V144z" fill="none"/><path d="M517 144h216v216H517V144z" stroke="currentColor" fill="none"/><path d="M564.25 360V144h121.5v216h-121.5z" fill="rgba(204,204,204,.2)"/><path d="M564.25 360V144h121.5v216h-121.5z" stroke="currentColor" stroke-dasharray="3,3" fill="none"/><path d="M1 60h384v384H1V60z" fill="none"/><path d="M1 60h384v384H1V60z" stroke="currentColor" fill="none"/><path d="M1 144h384v216H1V144z" fill="rgba(204,204,204,.2)"/><path d="M1 144h384v216H1V144z" stroke="currentColor" stroke-dasharray="3,3" fill="none"/><path d="M301 60v384H85V60h216zM733 312.75H517v-121.5h216v121.5z" stroke="currentColor" stroke-dasharray="3,3" fill="none"/><text transform="translate(193 44.5)"><tspan x="-138.171" y="4.5" font-family="ArialMT" font-size="14" fill="currentColor">Your &quot;image-cover&quot; image on a larger device</tspan></text><text transform="translate(625.171 132)"><tspan x="-142.833" y="1" font-family="ArialMT" font-size="14" fill="currentColor">Your &quot;image-cover&quot; image on a smaller device</tspan></text><text transform="translate(625.171 252.5)"><tspan x="-34.487" y="-11.5" font-family="ArialMT" font-size="14" fill="currentColor">Visitors will </tspan> <tspan x="-38.91" y="4.5" font-family="ArialMT" font-size="14" fill="currentColor">only see this </tspan> <tspan x="-38.121" y="20.5" font-family="ArialMT" font-size="14" fill="currentColor">vertical slice</tspan></text><text transform="translate(400 12)"><tspan x="-201.923" y="1" font-family="Arial-BoldMT" font-size="14" fill="currentColor">Why &quot;image-cover&quot; images need to be approximately square</tspan></text><g stroke="currentColor"><path d="M409 351V153" fill="none"/><path d="M406 351l3 8 3-8zM412 153l-3-8-3 8z"/></g><text transform="translate(455.586 252.5)"><tspan x="-34.586" y="-11.5" font-family="ArialMT" font-size="14" fill="currentColor">You set </tspan> <tspan x="-34.586" y="4.5" font-family="ArialMT" font-size="14" fill="currentColor">this height </tspan> <tspan x="-34.586" y="20.5" font-family="ArialMT" font-size="14" fill="currentColor">constraint*</tspan></text><path d="M397 144h108M397 360h108" stroke="currentColor" stroke-dasharray="3,3" fill="none"/><text transform="translate(571 414)"><tspan x="-138" y="-5" font-family="ArialMT" font-size="14" fill="currentColor">* Best practice is to make this set height</tspan> <tspan x="-138" y="11" font-family="ArialMT" font-size="14" fill="currentColor">responsive, or smaller for smaller viewports.</tspan></text><text transform="translate(193 252.5)"><tspan x="-34.487" y="-11.5" font-family="ArialMT" font-size="14" fill="currentColor">Visitors will </tspan> <tspan x="-38.91" y="4.5" font-family="ArialMT" font-size="14" fill="currentColor">only see this </tspan> <tspan x="-46.3" y="20.5" font-family="ArialMT" font-size="14" fill="currentColor">horizontal slice</tspan></text></svg>
 </div>
 </div>
@@ -609,7 +610,7 @@ x-data="docsOcState()"
 
     </section><!-- /#docs-mainbody -->
 
-    <footer class="container container-lg mb-responsive t-center">
+    <footer class="container-grid container-grid-lg mb-responsive t-center">
       <div class="clearfix bt-thin bb-thin py-2">
         
         <a class="my-1 float-left btn btn-primary" href="/codebase-4/docs/6-decoration-utilities/colors">&larr; Colors</a>
@@ -623,14 +624,14 @@ x-data="docsOcState()"
   </article>
 </main>
 
-<footer class="container container-sm bt-thin pt-6 pb-3 bg-color-background-alt t-center">
+<footer class="container-grid container-grid-sm bt-thin pt-6 pb-3 bg-color-background-alt t-center">
   <p>
     <a class="codebase-docs h3 t-decoration-none" href="/codebase-4/">
       <span class="inline-flex flex-column flex-middle flex-center">
       <!-- Codebase logo-->
       <svg  style="height: 4rem; margin-bottom: 1rem;" viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2"><path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"/></svg>
       <span>
-        Codebase <span class="t-thin">4.0.1</span>
+        Codebase <span class="t-thin">4.0.2</span>
       </span>
 
       </span>
