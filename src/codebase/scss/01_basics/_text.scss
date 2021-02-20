@@ -141,7 +141,7 @@ hr {
   margin-bottom: $horizontal-rule-spacing;
   border: 0;
   border-top: $horizontal-rule-thickness solid $color-fineline;
-  .container > & {
+  .container-grid > & {
     margin-top: 0;
   }
 }

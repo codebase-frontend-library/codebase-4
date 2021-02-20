@@ -216,40 +216,40 @@ With `.flex.flex-column`:
 
 ## Flex Pseudo Grids
 
-There is a really simple 12-column pseudo grid system built into Codebase. All you need to do is add a suffix from `-1` to `-12` to the `.flex-item` prefix.
+There is a really simple 12-column pseudo grid system built into Codebase. All you need to do is use prefix `.flex-cols-` with a suffix from `1` to `12`
 
 <div class="flex mb-3">
-  <div class="flex-item-4 b-thick b-color-success rounded p-1 t-heavy t-color-success">One third</div>
-  <div class="flex-item-4 b-thick b-color-success rounded p-1 t-heavy t-color-success">One third</div>
-  <div class="flex-item-4 b-thick b-color-success rounded p-1 t-heavy t-color-success">One third</div>
+  <div class="flex-cols-4 b-thick b-color-success rounded p-1 t-heavy t-color-success">One third</div>
+  <div class="flex-cols-4 b-thick b-color-success rounded p-1 t-heavy t-color-success">One third</div>
+  <div class="flex-cols-4 b-thick b-color-success rounded p-1 t-heavy t-color-success">One third</div>
 </div>
 
 ```html
 <div class="flex">
-  <div class="flex-item-4">One third</div>
-  <div class="flex-item-4">One third</div>
-  <div class="flex-item-4">One third</div>
+  <div class="flex-cols-4">One third</div>
+  <div class="flex-cols-4">One third</div>
+  <div class="flex-cols-4">One third</div>
 </div>
 ```
 
-If the wrapper is `.flex`, the pseudo grid happens on all viewport widths. Alternatively, use wrappers `.flex-sm`, `.flex-md`, or `.flex-lg` to make this flexbox columnar pseudo-grid to take effect only above the `sm` (768px default), `md` (1024px default) or `lg` (1280px default) viewport breakpoint widths.
+If the wrapper is `.flex`, the pseudo grid happens on all viewport widths. But you may not want that for screens too narrow to make your columnar content look good. So, alternatively, you can use wrappers `.flex-sm`, `.flex-md`, or `.flex-lg` to make this flexbox columnar pseudo-grid to take effect only above the `sm` (768px default), `md` (1024px default) or `lg` (1280px default) viewport breakpoint widths.
 
 You can also use the flex wrapper modifiers `.flex-gap` and/or `.flex-row-reverse` on these pseudo grids.
 
 <div class="flex-md flex-gap flex-row-reverse">
-  <div class="flex-item-3 b-thick b-color-success rounded p-1 t-heavy t-color-success">One quarter</div>
-  <div class="flex-item-9 b-thick b-color-success rounded p-1 t-heavy t-color-success">Three quarters</div>
+  <div class="flex-cols-3 b-thick b-color-success rounded p-1 t-heavy t-color-success">One quarter</div>
+  <div class="flex-cols-9 b-thick b-color-success rounded p-1 t-heavy t-color-success">Three quarters</div>
 </div>
 
 ```html
 <div class="flex-md flex-gap flex-row-reverse">
-  <div class="flex-item-3">One quarter</div>
-  <div class="flex-item-9">Three quarters</div>
+  <div class="flex-cols-3">One quarter</div>
+  <div class="flex-cols-9">Three quarters</div>
 </div>
 ```
 
 Notes:
 
 1. Since the responsive viewport-width control is on the wrapper, you can’t _combine_ these pseudo grids on the same HTML elements.
-2. The Codebase flex pseudo grid only works on _widths_, therefore do not use it with `.flex-column`.
+2. The Codebase flex pseudo grid only works on _widths_. Therefore, do not use `.flex-cols-` in a `.flex-column`.
 3. If you want a more versatile (and true) columnar grid, then you need the Codebase [grid system](/codebase-4/docs/3-responsive-layouts/grid).

@@ -29,9 +29,11 @@ All the `xxs` to `xl` max widths above can be adjusted or overridden, because th
 
 Codebase has three kinds of height utilities:
 
-* `.height-half-vh` / `.height-full-vh` / `.height-full`
+* `.h-half-vh` / `.h-full-vh` / `.h-full`
 
-The `.height-*-vh` utilities will make a block have a _minimum_ of `50vh` or `100vh` (at whatever specified breakpoint). The `.height-full` utility will vertically stretch a block to 100% height of its containing block.
+The `.h-*-vh` utilities will make a block have a _minimum_ of `50vh` or `100vh` (at whatever specified breakpoint). The `.h-full` utility will vertically stretch a block to 100% height of its containing block.
+
+(There is also `.max-height-0`, that you may beed for some AlpineJS components. See [AlpineJS Showhides](/codebase-4/docs/8-alpinejs-components/alpinejs-showhides).)
 
 ## Squares
 

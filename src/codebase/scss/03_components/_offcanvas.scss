@@ -3,7 +3,7 @@
 
 @mixin offcanvas-panel-setup {
   position: fixed;
-  min-height: 100vh;
+  min-height: 100%;
   top: 0;
   bottom: 0;
   z-index: $z-index-offcanvas;

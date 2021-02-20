@@ -1,10 +1,13 @@
-// CODEBASE v.4 ACTIVATOR
-// (An improvement over the Codebase 3 activator. Not backwards compatible.)
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/*!
+ * CODEBASE v.4 ACTIVATOR
+ * MIT Licence
+ * v4.0.2
+ */
 
 document.addEventListener('DOMContentLoaded', () => {
   const clickAways = Array.from(document.querySelectorAll('[data-click-away="true"]'));
   const controls = Array.from(document.querySelectorAll('[class*=-control]'));
+  const panels = Array.from(document.querySelectorAll('[class*=-panel]'));
   const closure = Array.from(document.querySelectorAll('[class*=-close]'));
 
   // Find and decorate the click-away dismissers
@@ -67,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
       clickAway();
 
       const documentClickAway = () => {
-        document.body.addEventListener('click', function (e) {
+        document.body.addEventListener('click', () => {
           if (dataClickAway) {
             clickAway();
           }
@@ -85,8 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.remove('body-scroll-lock');
       }
 
-      // Deactivate siblings
-      // e.g. used in tabs, slideshows
+      // Deactivate siblings e.g. used in tabs, slideshows
       const deactivateSiblings = () => {
         let activeSiblings = activeComponent.querySelectorAll('.active')
         for (let i = 0; i < activeSiblings.length; i++) {
@@ -95,10 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      // Deactivate click-aways on window width resize
-      // -- because e.g. sometimes used on navicon menus 
-      // that you don’t want activated above a particular 
-      // breakpoint width
+      // Deactivate click-aways on window width resize -- because e.g. sometimes used on 
+      // navicon menus that you don’t want activated above a particular breakpoint width
       const deactivateResize = () => {
         let windowWidth = window.innerWidth;
         window.addEventListener('resize', function () {
@@ -120,8 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // ~~~~~~~~~~~~~~
       // Must be EITHER a toggle OR a tab
 
-      // Toggle has no siblings
-      // (but can have optional click-away)
+      // Toggle has no siblings (but can have optional click-away)
       if (dataControl === 'toggle') {
         if (activeControlActive) {
           element.classList.remove('active');
@@ -138,23 +137,22 @@ document.addEventListener('DOMContentLoaded', () => {
             activeComponent.classList.add('active');
           }
 
-          document.onkeydown = function(ev) {
-            ev = ev || window.event;
-            if ((ev.key === "Escape" || evt.key === "Esc")) {
+          document.onkeydown = event => {
+            event = event || window.event;
+            if ((event.key === "Escape" || event.key === "Esc")) {
               deactivateToggle();
             }
           };
 
-          // Stop propagation when clicking activator panel
-          // (so that `click away` is not triggered)
-          [].forEach.call(document.querySelectorAll('[class*="-panel"]'), function(element) {
+          // Stop propagation when clicking activator panel (so that `click away` is not triggered)
+          panels.forEach(element => {
             element.addEventListener('click', function(event) {
               event.stopPropagation();
             });
           });
 
           // Deactivate on close (internal dismiss)
-          closure.forEach((element) => {
+          closure.forEach(element => {
             element.addEventListener('click', () => {
               deactivateToggle();
             });            
@@ -163,8 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
       
-      // Tab only works if there is more than one tab
-      // (and assumes that one will start as `.active`)
+      // Tab only works if there is more than one tab (and assumes that one will start as `.active`)
       if (dataControl === 'tab') {
         if ( ! this.classList.contains('active')) {
           clickAway();

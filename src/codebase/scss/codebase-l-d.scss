@@ -1,5 +1,6 @@
-/** 
- * CODEBASE 4.0.2 WITH LIGHT & DARK THEMES | MIT Licence 
+/*!
+ * CODEBASE 4.0.2 WITH LIGHT & DARK THEMES
+ * MIT Licence 
  * http://simonpadbury.github.io/Codebase/ 
  */
 
@@ -47,10 +48,10 @@
 @import "04_utilities/_cursor";
 @import "04_utilities/_transitions";
 
-// “Utility first” means that utility classes have priority from the point of view of the HTML/template creator -- therefore most come _after_ component classes in the stylesheet.
+// “Utility first” means that utility classes have priority from the point of view of the HTML/template creator -- therefore they most come _after_ component classes in the stylesheet.
 
 // THEMES
-// Want dark the theme but won’t be using a theme-switcher? Comment out the last two imports below.
 @import "05_themes/__theme-dark"; // uses `prefers-color-scheme: dark`
+// Want dark the theme but won’t be using a theme-switcher? Comment out the last two imports below.
 @import "05_themes/_theme-dark-classes";
 @import "05_themes/_theme-light-classes";

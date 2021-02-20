@@ -91,6 +91,7 @@
 
 .t-columns {
   column-width: $text-columns-width;
+  column-gap: 1.5rem; // fallback
   column-gap: $text-columns-gap-width;
 }
 

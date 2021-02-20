@@ -9,13 +9,13 @@
   overflow: auto;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 0;
   z-index: $z-index-modal;
   transition: height 0s ease-out 1s;
 
   &.active {
-    height: 100vh;
+    height: 100%;
     transition: height 0s ease-in 0s;
     .backdrop {
       visibility: visible;
@@ -54,9 +54,8 @@
     display: block;
     width: 100%;
     top: 0;
-    min-height: 100%;
-    height: 100vh;
-    max-height: 100vh;
+    height: 100%;
+    max-height: 100%;
     margin: 0;
     overflow: auto;
   }

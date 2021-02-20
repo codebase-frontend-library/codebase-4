@@ -277,9 +277,11 @@
 }
 
 .h-half-vh {
+  min-height: 400px; // fallback for old browsers
   min-height: 50vh;
 }
 .h-full-vh {
+  min-height: 800px; // fallback for old browsers
   min-height: 100vh;
 }
 

@@ -8,24 +8,28 @@ prevButton: "AlpineJS or activator"
 nextButton: "Light and dark themes"
 ---
 
-<p class="t-lg t-thin">Responsive design in Codebase is accomplished by containers and max-width wrappers, flexbox and CSS grid systems, media query breakpoint widths, and CSS clamp controlled prose typography.</p>
+<p class="t-lg t-thin">Responsive design in Codebase is accomplished by containers, flexbox, and grid systems controlled by media query breakpoint widths, and various utility classes breakpoints and/or CSS clamp.</p>
+
+## Responsive Layouts
 
 Layouts in Codebase follow the familiar responsive “from small screens up” design methodology. For controlling layouts on increasingly wider viewports, all the following are available:
 
-* A series of _CSS grid_ based [containers](/codebase-4/docs/3-responsive-layouts/containers) are available for centered layouts with max-width constraints
-* [bleed](/codebase-4/docs/3-responsive-layouts/bleeds) inserts to enable to content to extend wider than container columns
-* [Flexbox](/codebase-4/docs/3-responsive-layouts/flex) and [CSS grid](/codebase-4/docs/3-responsive-layouts/grid) systems have three breakpoint width variants
-* [max-width wrappers](/codebase-4/docs/4-layout-utilities/dimensions/#max-width-wrappers) and [heights](/codebase-4/docs/4-layout-utilities/dimensions/#heights) utilities
-* Responsive [floats](/codebase-4/docs/4-layout-utilities/floats) and [positions](/codebase-4/docs/4-layout-utilities/positions) utilities
-* Responsive [y-axis spacing](/codebase-4/docs/6-decoration-utilities/spacing#responsive-y-axis-spacing) (margins and paddings) using [CSS clamp](https://chipcullen.com/css-min-max-clamp-functions/).
+* A series of [containers](/codebase-4/docs/3-responsive-layouts/containers) are available for centered layouts with max-width constraints
+* [bleed](/codebase-4/docs/3-responsive-layouts/bleeds) inserts to enable to content to “burst out” wider than container columns
+* [Flexbox](/codebase-4/docs/3-responsive-layouts/flex) and [CSS grid](/codebase-4/docs/3-responsive-layouts/grid) systems have three breakpoint width variants: `sm` (768px default), `md` (1024px default) and `lg` (1280px default)
+* A seried of [max-width wrappers](/codebase-4/docs/4-layout-utilities/dimensions/#max-width-wrappers) and viewport-height based [heights](/codebase-4/docs/4-layout-utilities/dimensions/#heights) utilities
+* Responsive [floats](/codebase-4/docs/4-layout-utilities/floats) and [block positioning](/codebase-4/docs/4-layout-utilities/positions) utilities
+* Responsive [y-axis spacing](/codebase-4/docs/6-decoration-utilities/spacing#responsive-y-axis-spacing) (margins and paddings) using [CSS clamp()](https://chipcullen.com/css-min-max-clamp-functions/)
 * Responsive [invisibility](/codebase-4/docs/4-layout-utilities/invisibility) utilities
 * Responsive offcanvas side panel components (powered by [AlpineJS](/codebase-4/docs/8-alpinejs-components/alpinejs-offcanvas) or the Codebase [Activator](/codebase-4/docs/9-activator-components/activator-offcanvas))
 
+## Responsive Typography
+
 Codebase typography is also responsive to viewport width (device size):
 
-* [Headings](/codebase-4/docs/2-codebase-basics/headings) `<h1>` to `<h6>` have a slight downsize for phones. Below 768px (default), headings become 0.875em (87.5%) their base size.
-* [Large display text](/codebase-4/docs/5-typographic-utilities/large-display-text) (using the `.t-lg` wrapper) is 1.25em (125%) the size of base headings for medium screens, and 1.5em (150%) for large screens up.
-* [Prose text](/codebase-4/docs/5-typographic-utilities/long-read-text) starts as the normal size for small screens, and then base text and headings grow proportionately using [CSS clamp](https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/) to a comfortable maximum. Use the `.t-long-read` wrapper for long read articles and blog posts.
+* [Headings](/codebase-4/docs/2-codebase-basics/headings) `<h1>` to `<h6>` have a slight downsize for phones. Below 768px (default), headings become 0.875em (87.5%) their base size
+* [Large display text](/codebase-4/docs/5-typographic-utilities/large-display-text) (using the `.t-lg` wrapper) is 1.25em (125%) the size of base headings for medium screens, and 1.5em (150%) for large screens up
+* [Long read text](/codebase-4/docs/5-typographic-utilities/long-read-text) starts as the normal size for small screens, and then base text and headings grow proportionately using [CSS clamp()](https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/) to a comfortable maximum. Use the `.t-long-read` wrapper for long read articles and blog posts
 * Responsive [text alignment](/codebase-4/docs/5-typographic-utilities/text-alignment) utilities
 
 ## Codebase Media Query Breakpoint Widths

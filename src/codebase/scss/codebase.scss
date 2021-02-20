@@ -1,10 +1,11 @@
-/** 
- * CODEBASE 4.0.2 | MIT Licence 
+/*! 
+ * CODEBASE 4.0.2
+ * MIT Licence 
  * http://simonpadbury.github.io/Codebase/ 
  */
 
-// Note: This is the Codebase Core master SCSS file. It doesn’t have the dark theme supplement.
-// (`codebase-dark.scss` has the same Codebase Core plus supplements for `prefers-color-scheme: dark`, plus dark and light theme CSS classes.)
+// Note: This is the Codebase core master SCSS file. It doesn’t have the dark theme supplement.
+// (`codebase-l-d.scss` has the same Codebase core plus supplements for `prefers-color-scheme: dark`, and dark and light theme CSS descendant combinator selector classes.)
 
 // SETUP
 @import "00_setup/__default-colors";
@@ -51,4 +52,4 @@
 @import "04_utilities/_cursor";
 @import "04_utilities/_transitions";
 
-// “Utility first” means that utility classes have priority from the point of view of the HTML/template creator -- therefore most come _after_ component classes in the stylesheet.
+// “Utility first” means that utility classes have priority from the point of view of the HTML/template creator -- therefore they most come _after_ component classes in the stylesheet.

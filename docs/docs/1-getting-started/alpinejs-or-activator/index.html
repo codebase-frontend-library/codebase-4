@@ -578,16 +578,16 @@ x-data="docsOcState()"
     </header>
 
     <section id="docs-mainbody" class="container-grid container-grid-sm mb-6">
-      <p class="t-lg t-thin">Codebase plays well with <a href="https://github.com/alpinejs/alpine">AlpineJS</a>. Actually, Alpine is recommended with Codebase in most circumstances. But if you only need really simple functionality, Codebase also has its own miniscule script called <em>Activator</em>.</p>
+      <p class="t-lg t-thin">Codebase plays well with <a href="https://github.com/alpinejs/alpine">AlpineJS</a>. Alpine is recommended with Codebase in most circumstances.</p>
+<p>But if you only need really simple functionality, Codebase also has its own miniscule script called <a href="/codebase-4/docs/8-alpinejs-components/about-alpinejs-components">Activator</a>.</p>
 <p>The JavaScript powered components of earlier versions of Codebase required jQuery, until Codebase 3 went totally “vanilla JavaScript” in 2019. While working on Codebase 4, I discovered the AlpineJS frontend JavaScript framework. I soon saw that it could do all that I wanted and much more.</p>
-<p>For a while I considered not having an accompanying JavaScipt for Codebase 4, and just demonstrating how Codebase plays well with Alpine JS. Then I found a situation where Alpine couldn’t be used. For a CMS project where we needed to add a simple tab system directly into a page <em>via the editor</em> (it happened to be the HubSpot editor, but the same thing happens in other CMS editors), the unrecognised Alpine declarations (<code>x-show</code>, <code>x-bind</code>, <code>x-model</code>, etc.) were stripped out, removing the functionality that I needed. So, Codebase 4 comes with a tiny JavaScript called <code>activator.js</code> – only 3 KB, minified.</p>
-<p>Actually, some older web designers may still prefer the way <code>activator.js</code> does things. But do try to discover for yourself that AlpineJS is more powerful, because of its declarative approach to DOM manipulation. I Alpine  over <code>activator.js</code> for most use cases. It really is worth you taking time to learn something new.</p>
+<p>For a while I considered not having any accompanying JavaScipt for Codebase 4, and just demonstrating how Codebase plays well with Alpine JS. Then I found a situation where Alpine couldn’t be used. For a CMS project where we needed to add a simple tab system directly into a page <em>via the editor</em> (it happened to be the HubSpot editor, but the same thing happens in other CMS editors), the unrecognised Alpine declarations (<code>x-show</code>, <code>x-bind</code>, <code>x-model</code>, etc.) were stripped out, removing the functionality that I needed. So, Codebase 4 comes with a tiny JavaScript called <code>activator.js</code> – only 3 KB, minified.</p>
+<p>Veteran web designers may still prefer the way <code>activator.js</code> does things. But do try to discover for yourself that AlpineJS is more powerful, because of its declarative approach to DOM manipulation. I recommend Alpine over <code>activator.js</code> for most use cases. It really is worth you taking time to learn something new.</p>
 <p>Besides the Codebase-based AlpineJS demos in these docs, there are plenty of tutorials and videos out there showing you how to use Alpine.</p>
 <div class="grid-sm-2-cols grid-gap my-6 t-center">
   <a class="mb-3 btn btn-primary rounded-pill" href="/codebase-4/docs/8-alpinejs-components/about-alpinejs-components">Codebase with AlpineJS</a>
   <a class="mb-3 btn btn-secondary rounded-pill" href="/codebase-4/docs/9-activator-components/about-activator-components">Codebase with Activator</a>
 </div>
-<hr>
 <p><strong>Note:</strong> Converting Codebase components from Activator to AlpineJS, or <em>vise versa</em>, involves more than simply swapping out one script for the other. The HTML also needs to be reconfigured. AlpineJS uses its own <em>declarations</em> as HTML attributes. The way that the Codebase <code>activator.js</code> works is completely different – it uses <code>id</code>, <code>aria</code> attributes, <code>data</code> attributes.</p>
 
     </section><!-- /#docs-mainbody -->

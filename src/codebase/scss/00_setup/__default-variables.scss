@@ -171,12 +171,12 @@ $mq-md:                       $width-md !default;
 $mq-lg:                       $width-lg !default;
 
 // Flexbox System
-$flex-gap-width:              1.5rem !default; //clamp(12px, 1.25vw, 18px) !default;
+$flex-gap-width:              1.5rem !default;
 $use-flex-pseudo-grid:        true !default;
 
 // CSS Grid System
 $grid-max-cols:               4 !default;
-$grid-gap-width:              1.5rem !default; //clamp(24px, 2.5vw, 36px) !default;
+$grid-gap-width:              1.5rem !default;
 
 // Layout utilities
 $sticky-gap:                  1.5rem !default;

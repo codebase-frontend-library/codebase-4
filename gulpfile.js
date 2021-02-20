@@ -41,10 +41,16 @@ function jsTask() {
     .pipe(dest('./src/dist'))
 }
 
+function jsTask2() {
+  return src('./src/codebase/js/activator.jquery.js', { allowEmpty: true })
+    .pipe(dest('./src/dist'))
+}
+
 function watchFiles() {
   watch('./**/*.scss', parallel(cssTask));
   watch('./**/*.scss', parallel(cssTask2));
   watch('./**/*.js', parallel(jsTask));
+  watch('./**/*.js', parallel(jsTask2));
 };
 
-exports.default = parallel(cssTask, cssTask2, jsTask, watchFiles);
+exports.default = parallel(cssTask, cssTask2, jsTask, jsTask, watchFiles);
