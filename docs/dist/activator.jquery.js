@@ -1,7 +1,7 @@
 /*!
  * CODEBASE v.4 ACTIVATOR  (jQuery version)
  * Use only if you want to support Internet Explorer 11
- * Use with =< jQuery 2.2.4
+ * Use with =< jQuery 2.2.4 (do not use with jQuery 3.x)
  * MIT Licence
  * v4.0.2
  */
@@ -13,7 +13,7 @@
     var clickAways = $('[data-click-away="true"]');
     var controls = $('[class*=-control]');
     var panels = $('[class*=-panel]');
-    var closure = $('[class*=-close]');
+    var closes = $('[class*=-close]');
 
     // Find and decorate the click-away dismissers
     clickAways.each(function () {
@@ -56,7 +56,7 @@
         var clickAway = function () {
           var clickAwayActive = $('.click-away.active');
           
-          $(clickAwayActive).each(function () {
+          clickAwayActive.each(function () {
             $(this).removeClass('active');
             $(this).attr("aria-expanded", "false"); // if it has aria-expanded
           });
@@ -77,9 +77,9 @@
         var deactivateToggle = function () {
           $(this).removeClass('active');
           $(this).attr('aria-expanded', 'false');
-          $(activePanel).removeClass('active');
-          if ($(activeComponent) !== null) {
-            $(activeComponent).removeClass('active');
+          activePanel.removeClass('active');
+          if (activeComponent !== null) {
+            activeComponent.removeClass('active');
           }
           $('body').removeClass('body-scroll-lock');
         }
@@ -88,16 +88,16 @@
         // e.g. used in tabs, slideshows
         var deactivateSiblings = function () {
           var activeSiblings = $(activeComponent).find('.active')
-          $(activeSiblings).removeClass('active');
-          $(activeSiblings).attr("aria-expanded", "false");
+          activeSiblings.removeClass('active');
+          activeSiblings.attr("aria-expanded", "false");
         }
 
         // Deactivate click-aways on window width resize -- because e.g. sometimes used on 
         // navicon menus that you don’t want activated above a particular breakpoint width
         var deactivateResize = function () {
-          var windowWidth = window.innerWidth;
-          window.addEventListener('resize', function () {
-            if ( window.innerWidth !== windowWidth && dataClickAway === 'true') {
+          var windowWidth = $(window).width();
+          $(window).on('resize', function () {
+            if ( $(window).width() !== windowWidth && dataClickAway === 'true') {
               clickAway();
             }
           });
@@ -147,7 +147,7 @@
             });
 
             // Deactivate on close (internal dismiss)
-            $(closure).each(function (element) {
+            $(closes).each(function (element) {
               $(this).on('click', function () {
                 deactivateToggle();
               });            
