@@ -20,11 +20,11 @@ There are a few things will not work on IE11 – because they were added to the 
 * The real _CSS grid_ system will not – use Codebase flexbox pseudo grids instead.
 * Utility classes using responsive units `vw` (e.g. `.mt-responsive` and `vh` (e.g. `.h-full-vh`) now have older unit fallbacks (px and rem) built in - so, you can still use these utility classes. IE11 will get the non-responsive fallback values.
 
-Also, the Codebase Activator JavaScript `activator.js` does not have backwards compatibility that reaches as far back as IE11. However, as of Codebase v.4.0.2, a jQuery-depedant alternative version has been added, named `acivator.jquery.js` – you ill find this in the `dist/` folder.
+Also, the Codebase Activator JavaScript `activator.js` does not have backwards compatibility that reaches as far back as IE11. However, as of Codebase v.4.0.2, a jQuery-depedant alternative version has been added, named `acivator.jquery.js` – you will find this in the `dist/` folder.
 
 So, to support IE11 using Codebase, you must also switch to `activator.jquery.js` and add an old version of jQuery to your project. (jQuery is not included in the Codebase project repository.)
 
-You need to use jQuery 1.x or 2.x — I recommend the last version available: jQuery 2.2.4. This is because from version 3.x jQuery is fully asynchronous, so it doesn’t trigger code inside a `$(document).ready(function(){});`
+**Note:** you need to use jQuery 1.x or 2.x — I recommend the last version available: jQuery 2.2.4. This is because from version 3.x jQuery is fully asynchronous, so it doesn’t trigger code inside a `$(document).ready(function(){});`
 
 Add a source link to your jQuery before you link to `activator.jquery.js`, just before the close of your `</body>` tag.
 
