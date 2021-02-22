@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
           // Stop propagation when clicking activator panel (so that `click away` is not triggered)
           panels.forEach(element => {
-            element.addEventListener('click', function(event) {
+            element.addEventListener('click', event => {
               event.stopPropagation();
             });
           });

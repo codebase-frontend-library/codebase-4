@@ -12,6 +12,7 @@
   $(document).ready(function () {
     var clickAways = $('[data-click-away="true"]');
     var controls = $('[class*=-control]');
+    var panels = $('[class*=-panel]');
     var closes = $('[class*=-close]');
 
     // Find and decorate the click-away dismissers
@@ -139,7 +140,7 @@
             };
 
             // Stop propagation when clicking activator panel (so that `click away` is not triggered)
-            $(clickAways).each(function (element) {
+            $(panels).each(function (element) {
               $(this).on('click', function(event) {
                 event.stopPropagation();
               });
