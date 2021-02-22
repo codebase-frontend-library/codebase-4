@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const clickAways = Array.from(document.querySelectorAll('[data-click-away="true"]'));
   const controls = Array.from(document.querySelectorAll('[class*=-control]'));
   const panels = Array.from(document.querySelectorAll('[class*=-panel]'));
-  const closure = Array.from(document.querySelectorAll('[class*=-close]'));
+  const closes = Array.from(document.querySelectorAll('[class*=-close]'));
 
   // Find and decorate the click-away dismissers
   clickAways.forEach(element => {
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
           });
 
           // Deactivate on close (internal dismiss)
-          closure.forEach(element => {
+          closes.forEach(element => {
             element.addEventListener('click', () => {
               deactivateToggle();
             });            

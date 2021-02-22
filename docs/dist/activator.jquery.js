@@ -12,8 +12,7 @@
   $(document).ready(function () {
     var clickAways = $('[data-click-away="true"]');
     var controls = $('[class*=-control]');
-    var panels = $('[class*=-panel]');
-    var closure = $('[class*=-close]');
+    var closes = $('[class*=-close]');
 
     // Find and decorate the click-away dismissers
     clickAways.each(function () {
@@ -147,7 +146,7 @@
             });
 
             // Deactivate on close (internal dismiss)
-            $(closure).each(function (element) {
+            $(closes).each(function (element) {
               $(this).on('click', function () {
                 deactivateToggle();
               });            
