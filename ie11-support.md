@@ -1,6 +1,6 @@
 # Codebase and  Internet Explorer 11
 
-Most designers will not have to support Internet Explorer 11 (2013), because it is already down to ~0.6% browser share (as of February 2021). Microsoft stopped supporting IE11 on PCs on 30 Nov 2021, and will stop supporting it Microsoft 365 on 17 August 2021.
+Most designers will not have to support Internet Explorer 11 (2013), because it is already down to ~0.6% browser share (as of February 2021). Microsoft stopped supporting IE11 on PCs on 30 Nov 2020, and will stop supporting it Microsoft 365 on 17 August 2021.
 
 References:
 
