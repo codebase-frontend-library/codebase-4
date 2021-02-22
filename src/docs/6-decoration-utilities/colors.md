@@ -19,90 +19,83 @@ These colors are deployed on utility classes for:
 
 These are the Codebase color defaults. All colors can be changed in the default variables.
 
-<div class="grid grid-4-cols mb-2 bs rounded">
-  <div class="mb-0 py-3 t-center">color-primary</div>
-  <div class="mb-0 col-2-thru-4 bg-color-primary"></div>
+<div class="flex flex-space-around flex-gap flex-wrap t-center">
+  <div class="mb-3 flex flex-column flex-middle">
+    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-primary"></div>
+    <code>color-primary</code>
+  </div>
+  <div class="mb-3 flex flex-column flex-middle">
+    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-secondary"></div>
+    <code>color-secondary</code>
+  </div>
+  <div class="mb-3 flex flex-column flex-middle">
+    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-success"></div>
+    <code>color-success</code>
+  </div>
+  <div class="flex flex-column flex-middle">
+    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-warning"></div>
+    <code>color-warning</code>
+  </div>
+  <div class="mb-3 flex flex-column flex-middle">
+    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-danger"></div>
+    <code>color-danger</code>
+  </div>
 </div>
 
-<div class="grid grid-4-cols mb-2 bs rounded">
-  <div class="mb-0 py-3 t-center">color-secondary</div>
-  <div class="mb-0 col-2-thru-4 bg-color-secondary"></div>
-</div>
+`-alt` versions of the UI colors are also available as utility classes. These are much paler than the regular UI colors in light mode, or much darker in dark mode. Use the `-alt` colors for creating call-to-action panels, notifications, highlights, highlighted table rows, etc.
 
-<div class="grid grid-4-cols mb-2 bs rounded">
-  <div class="mb-0 py-3 t-center">color-success</div>
-  <div class="mb-0 col-2-thru-4 bg-color-success"></div>
-</div>
-
-<div class="grid grid-4-cols mb-2 bs rounded">
-  <div class="mb-0 py-3 t-center">color-warning</div>
-  <div class="mb-0 col-2-thru-4 bg-color-warning"></div>
-</div>
-
-<div class="grid grid-4-cols mb-3 bs rounded">
-  <div class="mb-0 py-3 t-center">color-danger</div>
-  <div class="mb-0 col-2-thru-4 bg-color-danger"></div>
-</div>
-
-`-alt` versions of the UI colors are also available as utility classes. These are much paler than the regular UI colors in light mode, or much darker in dark mode. Use the `-alt` colors for creating alert panels, notifications, etc.
-
-<div class="grid grid-4-cols mb-2 bs rounded">
-  <div class="mb-0 py-3 t-center">color-primary-alt</div>
-  <div class="mb-0 col-2-thru-4 bg-color-primary-alt"></div>
-</div>
-
-<div class="grid grid-4-cols mb-2 bs rounded">
-  <div class="mb-0 py-3 t-center">color-secondary-alt</div>
-  <div class="mb-0 col-2-thru-4 bg-color-secondary-alt"></div>
-</div>
-
-<div class="grid grid-4-cols mb-2 bs rounded">
-  <div class="mb-0 py-3 t-center">color-success-alt</div>
-  <div class="mb-0 col-2-thru-4 bg-color-success-alt"></div>
-</div>
-
-<div class="grid grid-4-cols mb-2 bs rounded">
-  <div class="mb-0 py-3 t-center">color-warning-alt</div>
-  <div class="mb-0 col-2-thru-4 bg-color-warning-alt"></div>
-</div>
-
-<div class="grid grid-4-cols mb-3 bs rounded">
-  <div class="mb-0 py-3 t-center">color-danger-alt</div>
-  <div class="mb-0 col-2-thru-4 bg-color-danger-alt"></div>
+<div class="flex flex-space-around flex-gap flex-wrap t-center">
+  <div class="mb-3 flex flex-column flex-middle">
+    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-primary-alt"></div>
+    <code>color-primary-alt</code>
+  </div>
+  <div class="mb-3 flex flex-column flex-middle">
+    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-secondary-alt"></div>
+    <code>color-secondary-alt</code>
+  </div>
+  <div class="mb-3 flex flex-column flex-middle">
+    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-success-alt"></div>
+    <code>color-success-alt</code>
+  </div>
+  <div class="flex flex-column flex-middle">
+    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-warning-alt"></div>
+    <code>color-warning-alt</code>
+  </div>
+  <div class="mb-3 flex flex-column flex-middle">
+    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-danger-alt"></div>
+    <code>color-danger-alt</code>
+  </div>
 </div>
 
 ## Detail Color Utilities
 
 Besides the UI colors, Codebase has a set of grays used for text, lines, etc. You can change these in the default variables.
 
-<div class="grid grid-4-cols mb-2 bs rounded">
-  <div class="mb-0 py-3 t-center">color-background</div>
-  <div class="mb-0 col-2-thru-4 bg-color-background"></div>
-</div>
-
-<div class="grid grid-4-cols mb-2 bs rounded">
-  <div class="mb-0 py-3 t-center">color-background-alt</div>
-  <div class="mb-0 col-2-thru-4 bg-color-background-alt"></div>
-</div>
-
-<div class="grid grid-4-cols mb-2 bs rounded">
-  <div class="mb-0 py-3 t-center">color-fineline</div>
-  <div class="mb-0 col-2-thru-4 bg-color-fineline"></div>
-</div>
-
-<div class="grid grid-4-cols mb-2 bs rounded">
-  <div class="mb-0 py-3 t-center">color-default</div>
-  <div class="mb-0 col-2-thru-4 bg-color-default"></div>
-</div>
-
-<div class="grid grid-4-cols mb-2 bs rounded">
-  <div class="mb-0 py-3 t-center">color-text</div>
-  <div class="mb-0 col-2-thru-4 bg-color-text"></div>
-</div>
-
-<div class="grid grid-4-cols mb-3 bs rounded">
-  <div class="mb-0 py-3 t-center">color-text-alt</div>
-  <div class="mb-0 col-2-thru-4 bg-color-text-alt"></div>
+<div class="flex flex-space-around flex-gap flex-wrap t-center">
+  <div class="mb-3 flex flex-column flex-middle">
+    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-background"></div>
+    <code>color-background</code>
+  </div>
+  <div class="mb-3 flex flex-column flex-middle">
+    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-background-alt"></div>
+    <code>color-background-alt</code>
+  </div>
+  <div class="mb-3 flex flex-column flex-middle">
+    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-fineline"></div>
+    <code>color-fineline</code>
+  </div>
+  <div class="flex flex-column flex-middle">
+    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-default"></div>
+    <code>color-default</code>
+  </div>
+  <div class="mb-3 flex flex-column flex-middle">
+    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-text"></div>
+    <code>color-text</code>
+  </div>
+  <div class="mb-3 flex flex-column flex-middle">
+    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-text-alt"></div>
+    <code>color-text-alt</code>
+  </div>
 </div>
 
 (**Note:** in the light theme (default), these color detail utilities above are listed in their grayscale order. But in the dark theme, the fineline clor needed to be slightly lighter than the UI default color.)

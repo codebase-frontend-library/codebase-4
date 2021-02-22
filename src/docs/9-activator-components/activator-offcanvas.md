@@ -25,11 +25,11 @@ This first example has an offcanvas panel at all viewport widths.
 </button> — clicking this button will open a demo offcanvas panel to the left.
 
 <div class="offcanvas-wrapper">
-  <div class="offcanvas-panel offcanvas-panel-all offcanvas-panel-left bg-color-secondary-alt bs p-3" id="offcanvas-1">
+  <div class="offcanvas-panel offcanvas-panel-all offcanvas-panel-left bg-color-primary t-color-ui-text bs p-3" id="offcanvas-1">
     <div class="mb-3 t-right clearfix">
       <button
-        class="offcanvas-close btn btn-secondary float-right">
-        Close
+        class="offcanvas-close btn btn-primary b-color-ui-text float-right">
+        Close <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
       </button>
     </div>
     <p>Here is some text on the offcanvas panel.</p>
@@ -72,7 +72,7 @@ Let’s add two more things:
 **Note:** Codebase responsive offcanvas panels also have a _box-shadow removal override_ that kicks in when the panel is being displayed like a normal on-canvas panel. So, `.bs` utility classes won’t work on a responsive offcanvas panels _above_ its breakpoint.
 
 <button
-  class="btn btn-primary offcanvas-control hide-md-up"
+  class="btn btn-secondary offcanvas-control hide-md-up"
   aria-controls="offcanvas-2"
   aria-expanded="false"
   data-control="toggle"
@@ -82,11 +82,11 @@ Let’s add two more things:
 </button> <span class="hide-md-up">– offcanvas panel will slide in from the right</span>
 
 <div class="offcanvas-wrapper mb-3">
-  <div class="offcanvas-panel offcanvas-panel-below-md offcanvas-panel-right bg-color-success-alt p-3 bs" id="offcanvas-2">
+  <div class="offcanvas-panel offcanvas-panel-below-md offcanvas-panel-right bg-color-secondary t-color-ui-text p-3 bs" id="offcanvas-2">
     <div class="mb-3 hide-md-up">
       <button
-        class="offcanvas-close btn btn-success">
-        Close
+        class="offcanvas-close btn btn-secondary b-color-ui-text">
+        Close <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
       </button>
     </div>
     <p>This is an offcanvas panel that becomes a normal panel above the breakpoint for medium viewports (default 1024px).</p>
@@ -107,10 +107,10 @@ Let’s add two more things:
 </button>
 
 <div class="offcanvas-wrapper">
-  <div class="offcanvas-panel offcanvas-panel-below-md offcanvas-panel-right bg-color-success-alt p-3 bs" id="offcanvas-2">
+  <div class="offcanvas-panel offcanvas-panel-below-md offcanvas-panel-right bg-color-secondary t-color-ui-text p-3 bs" id="offcanvas-2">
     <div class="mb-3 hide-md-up">
       <button
-        class="offcanvas-close btn btn-success">
+        class="offcanvas-close btn btn-secondary b-color-ui-text">
         Close
       </button>
     </div>

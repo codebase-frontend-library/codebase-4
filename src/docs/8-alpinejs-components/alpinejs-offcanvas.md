@@ -40,10 +40,10 @@ The state is managed by an additional tiny JavaScript function that you will nee
 >
   <div class="backdrop" x-show="isOpen" @click="isOpen = false, $dispatch('offcanvasclose')"></div>
 
-  <div class="offcanvas-panel offcanvas-panel-all offcanvas-panel-left bg-color-primary-alt bs p-2" :class="{ 'active': isOpen }" x-on:offcanvastoggler.window="isOpen = !isOpen">
+  <div class="offcanvas-panel offcanvas-panel-all offcanvas-panel-left bg-color-primary t-color-ui-text bs p-2" :class="{ 'active': isOpen }" x-on:offcanvastoggler.window="isOpen = !isOpen">
     <div class="flex flex-end mb-3">
-      <button class="btn btn-primary" @click="isOpen = false, $dispatch('offcanvasclose')">
-        Close &times;
+      <button class="btn btn-primary b-color-ui-text" @click="isOpen = false, $dispatch('offcanvasclose')">
+        Close <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
       </button>
     </div>
     <p>This offcanvas panel is toggled from a separate button component outside. It is also closed by the closure button and the invisible dismisser backdrop.</p>
@@ -144,10 +144,10 @@ Let’s add two more things:
     :class="{ 'active': isOpen }"
   >
     <div class="backdrop hide-md-up" x-show="isOpen" @click="isOpen = false, $dispatch('offcanvas2mdclose')"></div>
-    <div class="offcanvas-panel offcanvas-panel-right offcanvas-panel-below-md bg-color-secondary-alt p-2" :class="{ 'active bs': isOpen }" x-on:offcanvas2mdtoggler.window="isOpen = !isOpen">
+    <div class="offcanvas-panel offcanvas-panel-right offcanvas-panel-below-md bg-color-secondary p-2 t-color-ui" :class="{ 'active bs': isOpen }" x-on:offcanvas2mdtoggler.window="isOpen = !isOpen">
       <div class="hide-md-up mb-3">
-        <button class="btn btn-secondary" @click="isOpen = false, $dispatch('offcanvas2mdclose')">
-          Close &times;
+        <button class="btn btn-secondary b-color-ui-text" @click="isOpen = false, $dispatch('offcanvas2mdclose')">
+          Close <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
         </button>
       </div>
       <p>This is an offcanvas panel that becomes a normal panel above the breakpoint for medium viewports (default 1024px).</p>
