@@ -42,39 +42,6 @@ body {
   background: $color-selection;
 }
 
-abbr[title] {
-  text-decoration: underline dotted;
-}
-
-b,
-strong {
-  font-weight: bold;
-}
-
-small {
-  font-size: 80%;
-}
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
-}
-
-mark {
-  background: rgba(255, 255, 0, 0.8);
-}
-
 [role="button"],
 a,
 area,

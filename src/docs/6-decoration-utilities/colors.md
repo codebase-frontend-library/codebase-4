@@ -98,7 +98,7 @@ Besides the UI colors, Codebase has a set of grays used for text, lines, etc. Yo
   </div>
 </div>
 
-(**Note:** in the light theme (default), these color detail utilities above are listed in their grayscale order. But in the dark theme, the fineline clor needed to be slightly lighter than the UI default color.)
+**Note:** in the light theme (default), these color detail utilities above are listed in their grayscale order. But in the dark theme, the fineline color needs to be slightly lighter than the UI default color.
 
 The color utility classes are all suffix named after the places where you would usually see and use them:
 

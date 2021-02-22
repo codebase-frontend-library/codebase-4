@@ -113,6 +113,13 @@ small,
   line-height: inherit;
 }
 
+mark,
+.mark,
+.t-mark {
+  color: currentColor;
+  background: $color-highlight;
+}
+
 .t-nowrap {
   white-space: nowrap;
 }

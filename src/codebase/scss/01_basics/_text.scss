@@ -83,6 +83,11 @@ h6,
   }
 }
 
+abbr[title] {
+  text-decoration: underline dotted;
+}
+
+
 blockquote, p, li, dt, dd, th, td {
   font-size: 1em;
 }
@@ -120,6 +125,22 @@ dt {
 
 dd {
   margin-left: 2em;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
 }
 
 details {
@@ -187,11 +208,6 @@ samp {
   @if $code-background==true {
     background: $color-background-alt;
   }
-}
-
-mark {
-  color: currentColor;
-  background: $color-highlight;
 }
 
 pre {
