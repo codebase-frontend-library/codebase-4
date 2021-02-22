@@ -132,12 +132,12 @@
               $(activeComponent).addClass('active');
             }
 
-            document.onkeydown = event => {
+            $(document).keydown(function(event) {
               event = event || window.event;
               if ((event.key === "Escape" || event.key === "Esc")) {
                 deactivateToggle();
               }
-            };
+            });
 
             // Stop propagation when clicking activator panel (so that `click away` is not triggered)
             $(panels).each(function (element) {
