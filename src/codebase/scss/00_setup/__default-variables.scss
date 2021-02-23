@@ -39,6 +39,7 @@ $color-danger-alt:               $base-color-danger-100 !default;
 
 $color-background:               #ffffff !default;
 $color-background-alt:           $base-color-detail-50 !default;
+$color-ui-default-alt:           $color-background-alt !default;
 $color-fineline:                 $base-color-detail-200 !default;
 $color-muted:                    $base-color-detail-400 !default;
 $color-ui-default:               $base-color-detail-500 !default;
@@ -92,6 +93,7 @@ $color-scheme: () !default;
 $color-scheme: map-merge((
   "background":             $color-background,
   "background-alt":         $color-background-alt,
+  "default-alt":            $color-ui-default-alt,
   "fineline":               $color-fineline,
   "default":                $color-ui-default,
   "text":                   $color-text,

@@ -22,6 +22,7 @@ $color-danger-alt-dark:          $base-color-danger-900 !default;
 
 $color-background-dark:          $base-color-detail-850 !default;
 $color-background-alt-dark:      $base-color-detail-800 !default;
+$color-ui-default-alt-dark:      $color-background-alt-dark !default;
 $color-fineline-dark:            $base-color-detail-650 !default;
 $color-ui-default-dark:          $base-color-detail-700 !default;
 $color-button-default-hover-dark:$base-color-detail-750 !default;
@@ -77,6 +78,7 @@ $color-scheme-dark: () !default;
 $color-scheme-dark: map-merge((
   "background":      $color-background-dark,
   "background-alt":  $color-background-alt-dark,
+  "default-alt":     $color-ui-default-alt-dark,
   "fineline":        $color-fineline-dark,
   "default":         $color-ui-default-dark,
   "text":            $color-text-dark,
