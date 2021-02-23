@@ -51,14 +51,14 @@ Example from the _cover_ of the [Codebase docs](/):
 
 <div class="py-6 t-lg">
   <p class="h1 mb-1">Codebase is a super tiny website frontend library.</p>
-      <p class="mb-2 t-thin t-loose">Developed for content management systems and static site generators, Codebase is a small but powerful package of lessons learned from semantic CSS/JS component frameworks (e.g. Bootstrap, Foundation) and utility libraries (Tachyons, Tailwind), plus some shiny new techniques.</p>
+      <p class="mb-2 t-thin t-loose">Developed for content management systems and static site generators, Codebase is a small but powerful package of lessons learned from semantic CSS/JS component frameworks (e.g. Bootstrap, Foundation) and utility libraries (Tachyons, Tailwind) – plus some shiny new techniques.</p>
       <p class="mb-2 t-thin t-loose">Codebase pairs well with AlpineJS.</p>
 </div>
 
 ```html
 <div class="t-lg">
   <p class="h1 mb-1">Codebase is a super tiny website frontend library.</p>
-      <p class="mb-2 t-thin t-loose">Developed for content management systems and static site generators, Codebase is a small but powerful package of lessons learned from semantic CSS/JS component frameworks (e.g. Bootstrap, Foundation) and utility libraries (Tachyons, Tailwind), plus some shiny new techniques.</p>
-      <p class="mb-2 t-thin t-loose">Codebase pairs well with AlpineJS.</p>
+    <p class="mb-2 t-thin t-loose">Developed for content management systems and static site generators, Codebase is a small but powerful package of lessons learned from semantic CSS/JS component frameworks (e.g. Bootstrap, Foundation) and utility libraries (Tachyons, Tailwind) – plus some shiny new techniques.</p>
+    <p class="mb-2 t-thin t-loose">Codebase pairs well with AlpineJS.</p>
 </div>
 ```
