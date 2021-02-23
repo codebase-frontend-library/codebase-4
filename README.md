@@ -38,7 +38,7 @@ Codebase SCSS and Activator JS ES6 are in the Source `codebase/` folder - see ht
 
 ***
 
-If you still need to support Internet Explorer 11 – Codebase can so that, although it is not officially supported. There are some things with IE11 that you can’t do; and if you want to use Activator then you need to switch to using jQuery v.2.x and `alpine.jquery.js`. See [Codebase and Internet Explorer 11](https://github.com/codebase-frontend-library/codebase-4/blob/master/ie11-support.md).
+If you still need to support Internet Explorer 11 – Codebase can do that, although it is not officially supported. There are some things with IE11 that you can’t do; and if you want to use Activator then you need to switch to using jQuery v.2.x and `alpine.jquery.js`. See [Codebase and Internet Explorer 11](https://github.com/codebase-frontend-library/codebase-4/blob/master/ie11-support.md).
 
 ***
 
