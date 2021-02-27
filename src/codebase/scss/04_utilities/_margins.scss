@@ -55,6 +55,15 @@
   margin-left: auto;
 }
 
+// Responsive panels (negative 2vw x-axis margins, and positive 2vw padding (all))
+.panel-responsive {
+  position: relative;
+  width: calc(100% + 4vw);
+  margin-right: -2vw;
+  margin-left: -2vw;
+  padding: 2vw;
+}
+
 // Responsive vertical margins
 .my-responsive {
   margin-top: 48px;

@@ -1,5 +1,11 @@
 # Log
 
+## 27 February 2021 - Codebase 4.0.3
+
+* Added the `.panel-responsive component.
+* Minor snagging.
+* Improvements to the docs.
+
 ## 20 February 2021 - Codebase 4.0.2
 
 See: [ie11-support.md](ie11-support.md)
@@ -16,4 +22,4 @@ See: [ie11-support.md](ie11-support.md)
 
 ## 13 February 2021 – Codebase 4.0.0
 
-Codebase 4’s first sync with Github.
+* Codebase 4’s first sync with Github.

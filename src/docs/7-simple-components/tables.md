@@ -2,13 +2,13 @@
 title: "Tables"
 headerTitle: "Table Components"
 layout: layout.njk
-prevPage: "/codebase-4/docs/7-simple-components/heros"
+prevPage: "/codebase-4/docs/7-simple-components/panels"
 nextPage: "/codebase-4/docs/7-simple-components/buttons"
-prevButton: "Heros"
+prevButton: "Panels"
 nextButton: "Buttons"
 ---
 
-<p class="t-lg t-thin">The Codebase <code>.table</code> combonent class expands tables to 100% width, aligns everything to the left, and adds some padding and a fine-line border around every table cell.</p>
+<p class="t-lg t-thin">The Codebase <code>.table</code> component class expands tables to 100% width, aligns everything to the left, and adds some padding and a fine-line border around every table cell.</p>
 
 <table class="table">
   <thead>

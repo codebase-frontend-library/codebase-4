@@ -9,7 +9,7 @@ nextButton: "Activator classes and attributes"
 ---
 
 <p class="t-lg t-thin">
-  <a href="https://github.com/alpinejs/alpine" target="_blank">AlpineJS</a> does all that you need for Codebase – and much more. I would recommend you learn and <a href="/codebase-4/docs/6-alpinejs-components/alpinejs-components-intro">use Alpine with Codebase</a> in most circumstances.
+  <a href="https://github.com/alpinejs/alpine" target="_blank">AlpineJS</a> does all that you need for Codebase – and much more. I recommend you learn and <a href="/codebase-4/docs/6-alpinejs-components/alpinejs-components-intro">use Alpine with Codebase</a> in most circumstances.
 </p>
 
 However, Codebase 4 does have its own tiny script `activator.js` (3 KB, minified).
@@ -28,7 +28,7 @@ Also, Activator can be useful if you are using Codebase on a CMS frontend projec
 
 There are no JS based animations in `codebase.js` (e.g. no slide-down and slide-up). In Codebase, all animations are done using CSS3 transitions and transforms.
 
-<p class="bl-heavy b-color-secondary p-2 bg-color-secondary-alt">As with <a href="/codebase-4/docs/7-simple-components/about-simple-components">simple Codebase components</a>, Codebase Activator components are mostly built from utility classes with minimal or no special CSS classes of their own. Usually the unique component CSS has only to do with the transitions between the inactive and active states.</p>
+<p class="panel-responsive bl-heavy b-color-secondary bg-color-secondary-alt">As with <a href="/codebase-4/docs/7-simple-components/about-simple-components">simple Codebase components</a>, Codebase Activator components are mostly built from utility classes with minimal or no special CSS classes of their own. Usually the unique component CSS has only to do with the transitions between the inactive and active states.</p>
 
 Besides the several Activator components shown in these docs, feel free to roll your own too, if there’s anything else you need. Follow the concepts outlined in the [Activator classes and attributes](/codebase-4/docs/9-activator-components/activator-classes-and-attributes).
 

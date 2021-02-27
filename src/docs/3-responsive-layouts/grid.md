@@ -1,22 +1,31 @@
 ---
 title: "Grid"
-headerTitle: "Grid System"
+headerTitle: "Real Grid System"
 layout: layout.njk
-prevPage: "/codebase-4/docs/3-responsive-layouts/flex"
+prevPage: "/codebase-4/docs/3-responsive-layouts/flex-pseudo-grids"
 nextPage: "/codebase-4/docs/4-layout-utilities/blocks"
-prevButton: "Flex system"
+prevButton: "Flex pseudo grids"
 nextButton: "Blocks"
 ---
 
 <p class="t-lg t-thin">Codebase’s simple columnar grid system <em>actually uses CSS grid</em>.</p>
 
-_CSS grid_ has been designed to replace older pseudo grid systems that use table cells, floats or flexbox. Respected web developers such as Rachel Andrew have said that [a CSS grid-based grid system is unnecessary](https://rachelandrew.co.uk/archives/2017/07/01/you-do-not-need-a-css-grid-based-grid-system/)) – and that’s true: you can learn CSS grid (e.g. from [CSS Tricks](https://css-tricks.com/snippets/css/complete-guide-grid/) or from [Learn CSS Grid](https://learncssgrid.com/)) and then weave your own.
+_CSS grid_ has been designed to replace older pseudo grid systems that use table cells, floats or flexbox.
 
-However I have found myself repeatedy using a simple set of CSS grid layout classes for a quick “two up”, “three up” layout. With a few extras, this has become a simple actual grid system. I have refined it over the years to its present form, and what you have here in Codebase is simple and robust enough for most of not all traditional layouts.
+Respected web developers such as Rachel Andrew have said that [a CSS grid-based grid system is unnecessary](https://rachelandrew.co.uk/archives/2017/07/01/you-do-not-need-a-css-grid-based-grid-system/)) – and that’s true: you can learn CSS grid (e.g. from [CSS Tricks](https://css-tricks.com/snippets/css/complete-guide-grid/) or from [Learn CSS Grid](https://learncssgrid.com/)) and then weave your own. However I have found myself repeatedy using a simple set of CSS grid layout classes for a quick “two up”, “three up” layout. With a few extras, this has become a simple actual grid system in Codebase. I have refined it over the years to its present form, and what you have here is simple and robust enough for most of not all traditional layouts.
 
-The Codebase grid is also good for situations where you are working within a CMS editor (where you have access to the content source code), and you want some ready-made responsive grid layout CSS classes for a local layout.
+The Codebase grid is also good for situations where you are working _within a CMS editor_ (and you have access to the content source code), and you want some ready-made responsive grid layout CSS classes for a local layout.
 
-<p class="bl-heavy b-color-secondary bg-color-secondary-alt p-2">Codebase’s real <a href="https://caniuse.com/css-grid">CSS grid</a> grid system is designed for modern browsers. Don’t use it if you must support Internet Explorer =&lt; 11 (2013), or any other old browser. Codebase contains no browser specific prefixes on this grid system, or on its <a href="/codebase-4/docs/3-responsive-layouts/containers/#modern-container-grids">modern container grid</a> classes.<br><br>Codebase also has a responsive <a href="/codebase-4/docs/3-responsive-layouts/flex/#flex-pseudo-grids">12-column flexbox pseudo grid</a>, if you need it.</p>
+<div class="mb-3 panel-responsive bl-heavy b-color-success bg-color-success-alt">
+  <div class="flex mb-3">
+    <div class="h1 mb-0 mr-1">😢</div>
+    <div>Codebase’s real <a href="https://caniuse.com/css-grid">CSS grid</a> grid system is designed for modern browsers. Sorry, you can’t use it if you must support Internet Explorer =&lt; 11 (2013), or any other old browser.</div>  
+  </div>
+  <div class="flex">
+    <div class="h1 mb-0 mr-1">🙄</div>
+    <div>If you need to support such old browsers, Codebase also has a responsive <a href="/codebase-4/docs/3-responsive-layouts/flex/#flex-pseudo-grids">12-column flexbox pseudo grid</a>.</div>  
+  </div>
+</div>
 
 Here are three important features of the Codebase grid system:
 
@@ -24,11 +33,15 @@ Here are three important features of the Codebase grid system:
 2. You get to choose how many column tracks: (2, 3, 4 or 5) at the various Codebase breakpoint widths
 3. You also get to control the columns on a per-breakpoint basis
 
-***
+There is, of course, a lot more that _CSS grid_ can do than this simple columnar (i.e. one dimensional) grid. The Codebase grid system just covers the most common webpage layouts. CSS grid is really two dimensional – or even three dimensional, because grid items can even be overlapped and/or stacked, for creating highly interesting and versatile webpage layouts.
 
-<blockquote>There is, of course, a lot more that <em>CSS grid</em> can do than this simple columnar (i.e. one dimensional) grid. The Codebase grid system just covers the most common webpage layouts. CSS grid is really two dimensional – or even three dimensional, because grid items can even be overlapped and/or stacked, for creating highly interesting and versatile webpage layouts.</blockquote>
+Here are a few resources and examples:
 
-***
+* [https://css-tricks.com/snippets/css/complete-guide-grid/](https://css-tricks.com/snippets/css/complete-guide-grid/)
+* [https://www.smashingmagazine.com/2017/06/building-production-ready-css-grid-layout/](https://www.smashingmagazine.com/2017/06/building-production-ready-css-grid-layout/)
+* [https://learncssgrid.com/](https://learncssgrid.com/)
+* [https://gridbyexample.com/](https://gridbyexample.com/)
+* Grids by Stacy on Codepen [https://codepen.io/collection/XRRJGq/](https://codepen.io/collection/XRRJGq/)
 
 ## Setting Up the Codebase Grid
 

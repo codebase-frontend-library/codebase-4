@@ -44,7 +44,7 @@ The backdrop element is only there for the purpose of adding a “click-away” 
 
 By default, the `.backdrop` has no background color assigned (it is invisible), but you can add the modifier `.backdrop-shaded` to get the semi-transparent blurred back backdrop that most of these examples are using, or you can add `.backdrop-black` for a full black backdrop, as you can see in the “lightbox” examples.
 
-<p class="bl-heavy b-color-primary p-2 bg-color-primary-alt">The “darkened frosted glass” backdrop, <code>&lt;div class="backdrop backdrop-shaded"&gt;&lt;/div&gt;</code> becomes visible when the modal-wrapper receives its <code>.active</code> class.</p>
+<p class="panel-responsive bl-heavy b-color-primary bg-color-primary-alt">The “darkened frosted glass” backdrop, <code>&lt;div class="backdrop backdrop-shaded"&gt;&lt;/div&gt;</code> becomes visible when the modal-wrapper receives its <code>.active</code> class.</p>
 
 <button aria-controls="modal-1b" aria-expanded="false" data-control="toggle" data-click-away="true" data-scroll-lock="true" class="modal-control btn btn-primary">Modal example 1b</button> – with “click-away”
 
@@ -74,7 +74,7 @@ By default, the `.backdrop` has no background color assigned (it is invisible), 
 
 Modals can be made into a lightbox by placing the “close” button within the backdrop instead of within the panel. In these examples I have also used `.backdrop-black` so that the visitor’ more is more drawn to the image. (And I have removed the click-outside.)
 
-<p class="bl-heavy b-color-secondary p-2 bg-color-secondary-alt">Codebase modals have their content width and height and constrained to fit within the viewport (with the max-height further constrained, to account for the iOS Safari browser bar). Therefore, oversized images will be scaled down if necessary.</p>
+<p class="panel-responsive bl-heavy b-color-secondary bg-color-secondary-alt">Codebase modals have their content width and height and constrained to fit within the viewport (with the max-height further constrained, to account for the iOS Safari browser bar). Therefore, oversized images will be scaled down if necessary.</p>
 
 (The _dismiss_ button is in the top-right corner of the black backdrop.)
 

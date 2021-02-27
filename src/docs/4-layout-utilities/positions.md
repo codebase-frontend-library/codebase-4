@@ -71,7 +71,7 @@ The demo also uses [full-bleed](/codebase-4/docs/3-responsive-layouts/bleeds) fr
 
 (Interested in those colors? See [color utilities](/codebase-4/docs/6-decoration-utilities/colors).)
 
-## Getting `.sticky` to Stick
+## Position `.sticky`
 
 <div class="grid grid-gap grid-md-3-cols mb-3 b-dashed">
 <div class="col-md-1-thru-2 mb-0">

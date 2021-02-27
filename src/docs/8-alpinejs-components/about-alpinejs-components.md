@@ -20,6 +20,6 @@ The following are several examples of Codebase components that can be powered by
 * [Accordions](/codebase-4/docs/8-alpinejs-components/alpinejs-accordions)
 * [Slideshows](/codebase-4/docs/8-alpinejs-components/alpinejs-slideshows)
 
-<div class="mb-3 bl-heavy b-color-primary p-2 bg-color-primary-alt">
+<div class="mb-3 panel-responsive bl-heavy b-color-primary bg-color-primary-alt">
 <strong>Note:</strong> Neither Codebase nor these docs include AlpineJS. You will need to source the latest version for yourself from <a href="https://github.com/alpinejs/alpine">https://github.com/alpinejs/alpine</a>, or link to it from a CDN (e.g. <a href="https://cdnjs.com/libraries/alpinejs/2.8.0">https://cdnjs.com/libraries/alpinejs/2.8.0</a>).
 </div>

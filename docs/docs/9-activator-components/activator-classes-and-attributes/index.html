@@ -364,7 +364,8 @@ x-data="docsOcState()"
           <li><a href="/codebase-4/docs/3-responsive-layouts/containers">Containers</a></li>
           <li><a href="/codebase-4/docs/3-responsive-layouts/bleeds">Bleeds</a></li>
           <li><a href="/codebase-4/docs/3-responsive-layouts/flex">Flex system (flexbox)</a></li>
-          <li><a href="/codebase-4/docs/3-responsive-layouts/grid">Grid system</a></li>
+          <li><a href="/codebase-4/docs/3-responsive-layouts/flex-pseudo-grids">Flex pseudo grids</a></li>
+          <li><a href="/codebase-4/docs/3-responsive-layouts/grid">Real grid system</a></li>
         </ul>
 
         <div class="mt-1 p-block t-loose t-uppercase t-small">Utilities</div>
@@ -483,6 +484,7 @@ x-data="docsOcState()"
                 <li><a href="/codebase-4/docs/7-simple-components/about-simple-components">About simple components</a></li>
                 <li><a href="/codebase-4/docs/7-simple-components/menus">Menus</a></li>
                 <li><a href="/codebase-4/docs/7-simple-components/heros">Heros</a></li>
+                <li><a href="/codebase-4/docs/7-simple-components/panels">Panels</a></li>
                 <li><a href="/codebase-4/docs/7-simple-components/tables">Tables</a></li>
                 <li><a href="/codebase-4/docs/7-simple-components/buttons">Buttons</a></li>
                 <li><a href="/codebase-4/docs/7-simple-components/badges">Badges</a></li>
@@ -599,7 +601,7 @@ x-data="docsOcState()"
 <li>
 <p><code>data-control=&quot;toggle&quot;</code> or <code>data-control=&quot;tab&quot;</code></p>
 <p>Activator components are of two types: either <strong>toggle</strong> (e.g. showhide, dropdown, modal, offcanvas) or <strong>tab</strong> (e.g. for tab systems, accordions, simple slideshows). <code>data-control</code> attributes must be placed on <strong>control</strong> elements.</p>
-  <p class="bl-heavy b-color-secondary p-2 bg-color-secondary-alt">Toggle components can also be dismissed with the Escape key.</p>
+  <p class="panel-responsive bl-heavy b-color-secondary bg-color-secondary-alt">Toggle components can also be dismissed with the Escape key.</p>
 </li>
 </ul>
 <h2 id="activator-hookups">Activator Hookups</h2>
@@ -607,7 +609,7 @@ x-data="docsOcState()"
 <li>
 <p><strong>Control:</strong> <code>aria-controls=&quot;unique-name&quot;</code> / <strong>panel:</strong> <code>id=&quot;unique-name&quot;</code></p>
 <p>Every control element must have an <code>aria-controls</code> attribute that identifies its accociated panel element <code>id</code>.</p>
-  <p class="bl-heavy b-color-secondary p-2 bg-color-secondary-alt">Toggle components (showhide, dropdown, modal, offcanvas) can only have one control and one panel. Tab components (tabs, accordions, slideshows) can, and should, have more than one control/panel pair. But in either type or component, each control associates with only its respective panel, via the <code>aria-controls</code>/<code>id</code> hookup.</p>
+  <p class="panel-responsive bl-heavy b-color-secondary bg-color-secondary-alt">Toggle components (showhide, dropdown, modal, offcanvas) can only have one control and one panel. Tab components (tabs, accordions, slideshows) can, and should, have more than one control/panel pair. But in either type or component, each control associates with only its respective panel, via the <code>aria-controls</code>/<code>id</code> hookup.</p>
 </li>
 </ul>
 <h2 id="activation-class-(for-the-active-state)">Activation Class (for the Active State)</h2>
@@ -615,7 +617,7 @@ x-data="docsOcState()"
 <li>
 <p><code>.active</code></p>
 <p>Clicking a control element will sometimes toggle or sometimes add an <code>active</code> CSS class on <strong>both the control and its panel</strong>. (Toggles can be toggled, whereas tabs can only add the active class.)</p>
-  <p class="bl-heavy b-color-warning p-2 bg-color-warning-alt">In tab sets, you must also set up (your chosen) first tab’s control/panel pair with the <code>.active</code> state in your HTML.</p>
+  <p class="panel-responsive bl-heavy b-color-warning bg-color-warning-alt">In tab sets, you must also set up (your chosen) first tab’s control/panel pair with the <code>.active</code> state in your HTML.</p>
 </li>
 </ul>
 <h2 id="aria-expanded">ARIA Expanded</h2>
@@ -623,7 +625,7 @@ x-data="docsOcState()"
 <li>
 <p><code>aria-expanded=&quot;false&quot;</code> or <code>aria-expanded=&quot;true&quot;</code></p>
 <p>Clicking a control element will also toggle its state between <code>aria-expanded=&quot;false&quot;</code> and <code>aria-expanded=&quot;true&quot;</code>, for indicating to visualy impaired people whether the associate panel is expanded or not.</p>
-  <p class="bl-heavy b-color-warning p-2 bg-color-warning-alt">In tab sets, you must also set up (your chosen) first tab’s control/panel pair with the <code>aria-expanded="true"</code> state in your HTML.</p>
+  <p class="panel-responsive bl-heavy b-color-warning bg-color-warning-alt">In tab sets, you must also set up (your chosen) first tab’s control/panel pair with the <code>aria-expanded="true"</code> state in your HTML.</p>
 </li>
 </ul>
 <h2 id="control-state-indicators">Control State Indicators</h2>
@@ -673,7 +675,7 @@ x-data="docsOcState()"
       <!-- Codebase logo-->
       <svg  style="height: 4rem; margin-bottom: 1rem;" viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2"><path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"/></svg>
       <span>
-        Codebase <span class="t-thin">4.0.2</span>
+        Codebase <span class="t-thin">4.0.3</span>
       </span>
 
       </span>

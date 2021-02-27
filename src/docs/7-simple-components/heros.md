@@ -2,9 +2,9 @@
 title: "Heros"
 layout: layout.njk
 prevPage: "/codebase-4/docs/7-simple-components/menus"
-nextPage: "/codebase-4/docs/7-simple-components/tables"
+nextPage: "/codebase-4/docs/7-simple-components/panels"
 prevButton: "Menus"
-nextButton: "Tables"
+nextButton: "Panels"
 ---
 
 <p class="t-lg t-thin">Creating a hero image with a text overlay is simple using Codebase utilities.</p>

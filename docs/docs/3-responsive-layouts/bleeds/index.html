@@ -364,7 +364,8 @@ x-data="docsOcState()"
           <li><a href="/codebase-4/docs/3-responsive-layouts/containers">Containers</a></li>
           <li><a href="/codebase-4/docs/3-responsive-layouts/bleeds">Bleeds</a></li>
           <li><a href="/codebase-4/docs/3-responsive-layouts/flex">Flex system (flexbox)</a></li>
-          <li><a href="/codebase-4/docs/3-responsive-layouts/grid">Grid system</a></li>
+          <li><a href="/codebase-4/docs/3-responsive-layouts/flex-pseudo-grids">Flex pseudo grids</a></li>
+          <li><a href="/codebase-4/docs/3-responsive-layouts/grid">Real grid system</a></li>
         </ul>
 
         <div class="mt-1 p-block t-loose t-uppercase t-small">Utilities</div>
@@ -483,6 +484,7 @@ x-data="docsOcState()"
                 <li><a href="/codebase-4/docs/7-simple-components/about-simple-components">About simple components</a></li>
                 <li><a href="/codebase-4/docs/7-simple-components/menus">Menus</a></li>
                 <li><a href="/codebase-4/docs/7-simple-components/heros">Heros</a></li>
+                <li><a href="/codebase-4/docs/7-simple-components/panels">Panels</a></li>
                 <li><a href="/codebase-4/docs/7-simple-components/tables">Tables</a></li>
                 <li><a href="/codebase-4/docs/7-simple-components/buttons">Buttons</a></li>
                 <li><a href="/codebase-4/docs/7-simple-components/badges">Badges</a></li>
@@ -578,23 +580,30 @@ x-data="docsOcState()"
     </header>
 
     <section id="docs-mainbody" class="container-grid container-grid-sm mb-6">
-      <p class="t-lg t-thin">Codebase utilises two full-bleed layout techniques, depending on what kind of responsive <a href="/codebase-4/docs/3-responsive-layouts/containers">container</a> you’re using.<p>
+      <p class="t-lg t-thin">Codebase has two full-bleed layout techniques, depending on what kind of responsive <a href="/codebase-4/docs/3-responsive-layouts/containers">container</a> you’re using.<p>
 <h2 id="full-bleed-using-css-transform">Full Bleed Using CSS Transform</h2>
-<p>Andy Bell’s <a href="https://hankchizljaw.com/wrote/creating-a-full-bleed-css-utility/">full bleed utility</a> us useful, but as it is based on CSS transforms, it only works on <em>centered layouts</em> – e.g. the traditional container that uses x-axis margin auto centering.</p>
+<p>This uses Andy Bell’s <a href="https://hankchizljaw.com/wrote/creating-a-full-bleed-css-utility/">full bleed utility</a>. This is a useful technique, but it has its limitations. Since it is based on CSS transforms, it only works on <em>centered layouts</em> – such as the traditional container that uses x-axis margin auto centering.</p>
 <p>Codebase contains this utility in the <code>.full-bleed</code> CSS class. It <em>must</em> be cented for this technique to work properly, because its technique busts out of a centered column using CSS negative margins and x-axis transforms.</p>
-<p><code>.full-bleed</code> can’t be demonstrated here, because this documentation uses a <a href="/codebase-4/docs/3-responsive-layouts/containers/#modern-container-grids">modern container system using <em>CSS grid</em></a>.</p>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>full-bleed<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  Full bleed content...<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
-<p>Whereas Codebase’s CSS grid based bleeds still work on off-centered layouts. For example, these docs have an off-center layout when viewed at 1024px width and above, since the sidebar is displayed as part of the page layout.</p>
+<p class="panel-responsive bl-heavy b-color-warning bg-color-warning-alt">Below is a demo of the <code>.full-bleed</code> utility. However, the layout of this documentation is off-center on wider screens, to accommodate the sidebar. Therefore, the demo will look wrong on wider screens. To make it look right, simply dismiss the sidebar.</p>
+<div class="container-grid-full-bleed my-6">
+  <div class="container container-md">
+    <div class="full-bleed py-6 bg-color-warning-alt">
+      <em>CSS transform</em> full bleed content...
+    </div>
+  </div>
+</div>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>full-bleed<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>em</span><span class="token punctuation">></span></span>CSS transform<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>em</span><span class="token punctuation">></span></span> full bleed content...<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
 <h2 id="container-grid-full-bleed">Container Grid Full Bleed</h2>
 <p>The Codebase <code>.container-grid-full-bleed</code> class uses <em>CSS grid</em>, following <a href="https://joshwcomeau.com/css/full-bleed/">Josh W Comeau’s technique</a>).</p>
-<p class="bl-heavy b-color-primary bg-color-primary-alt p-2">Codebase layout bleeds only work as <em>immediate child</em> elements inside Codebase <a href="/codebase-4/docs/3-responsive-layouts/containers">containers</a>.</p>
-<div class="container-grid-full-bleed mb-3 p-6 bg-color-background-alt">Container grid full bleed content...</div>
+<p class="panel-responsive bl-heavy b-color-primary bg-color-primary-alt">Codebase layout bleeds only work as <em>immediate child</em> elements inside Codebase <a href="/codebase-4/docs/3-responsive-layouts/containers">containers</a>.</p>
+<div class="container-grid-full-bleed mb-3 py-6 bg-color-primary-alt">Container grid full bleed content...</div>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container-grid-full-bleed<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  Container grid full bleed content...<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
 <p>Codebase also has <code>.container-grid-partial-bleed-left</code> and <code>.container-grid-partial-bleed-right</code>.</p>
-<div class="container-grid-partial-bleed-left mb-3 p-6 bg-color-background-alt">Container grid partial bleed (left) content...</div>
+<div class="container-grid-partial-bleed-left mb-3 py-6 bg-color-primary-alt">Container grid partial bleed (left) content...</div>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container-grid-partial-bleed-left<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  Container grid partial bleed (left) content...<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
-<div class="container-grid-partial-bleed-right mb-3 p-6 bg-color-background-alt">Container grid partial bleed (right) content...</div>
+<div class="container-grid-partial-bleed-right mb-3 py-6 bg-color-primary-alt">Container grid partial bleed (right) content...</div>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container-grid-partial-bleed-right<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  Container grid partial bleed (right) content...<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>So, what could you use partial bleeds for?</p>
 <p>You can combine partial bleeds, (max) widths (and floats) for displaying images that deserve more space on wide screens:</p>
 <div class="container-grid-partial-bleed-left mb-3">
   <div class="w-md float-right">
@@ -602,6 +611,7 @@ x-data="docsOcState()"
   </div>
 </div>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container-grid-partial-bleed-left<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>w-lg float-right<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>A partial bleed is great for having your main text in a centered column, with a sidebar alongside it (perhaps a <a href="/codebase-4/docs/4-layout-utilities/positions/#position-.sticky">sticky</a>, e.g. for ads or social sharing buttons. The partial bleed can then be used to protrude oversized images to the opposite side, so that it doesn’t interfere with the sidebar.</p>
 
     </section><!-- /#docs-mainbody -->
 
@@ -626,7 +636,7 @@ x-data="docsOcState()"
       <!-- Codebase logo-->
       <svg  style="height: 4rem; margin-bottom: 1rem;" viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2"><path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"/></svg>
       <span>
-        Codebase <span class="t-thin">4.0.2</span>
+        Codebase <span class="t-thin">4.0.3</span>
       </span>
 
       </span>

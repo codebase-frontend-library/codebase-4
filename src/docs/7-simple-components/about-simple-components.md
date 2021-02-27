@@ -10,7 +10,9 @@ nextButton: "Menus"
 
 <p class="t-lg t-thin">Codebase has several simple component examples, that are mostly assembled from utility classes.</p>
 
-(I’m calling a Codebase component _simple_ if it doesn’t require  JavaScript for functionality.)
+(I’m calling a Codebase component “simple” if it _doesn’t require  JavaScript_ for functionality.)
+
+All Codebase components have been designed and built using a “utility first” approach. This means that first, utility classes (and sometimes, flex layout classes) have been used to scaffold the component. For many components, nothing else is required. Only when a little more is required does Codebase add in some bespoke component CSS.
 
 There are two occasions when Codebase uses bespoke component CSS classes:
 

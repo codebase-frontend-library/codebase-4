@@ -364,7 +364,8 @@ x-data="docsOcState()"
           <li><a href="/codebase-4/docs/3-responsive-layouts/containers">Containers</a></li>
           <li><a href="/codebase-4/docs/3-responsive-layouts/bleeds">Bleeds</a></li>
           <li><a href="/codebase-4/docs/3-responsive-layouts/flex">Flex system (flexbox)</a></li>
-          <li><a href="/codebase-4/docs/3-responsive-layouts/grid">Grid system</a></li>
+          <li><a href="/codebase-4/docs/3-responsive-layouts/flex-pseudo-grids">Flex pseudo grids</a></li>
+          <li><a href="/codebase-4/docs/3-responsive-layouts/grid">Real grid system</a></li>
         </ul>
 
         <div class="mt-1 p-block t-loose t-uppercase t-small">Utilities</div>
@@ -483,6 +484,7 @@ x-data="docsOcState()"
                 <li><a href="/codebase-4/docs/7-simple-components/about-simple-components">About simple components</a></li>
                 <li><a href="/codebase-4/docs/7-simple-components/menus">Menus</a></li>
                 <li><a href="/codebase-4/docs/7-simple-components/heros">Heros</a></li>
+                <li><a href="/codebase-4/docs/7-simple-components/panels">Panels</a></li>
                 <li><a href="/codebase-4/docs/7-simple-components/tables">Tables</a></li>
                 <li><a href="/codebase-4/docs/7-simple-components/buttons">Buttons</a></li>
                 <li><a href="/codebase-4/docs/7-simple-components/badges">Badges</a></li>
@@ -572,7 +574,7 @@ x-data="docsOcState()"
             
             <div class="mb-1 bb-thin pb-2 t-uppercase t-thin t-loose">Responsive Layouts</div>
             
-            <h1 class="mb-0">Flex System (Flexbox)</h1>    
+            <h1 class="mb-0">Flex System</h1>    
           </div>
         </div>
     </header>
@@ -609,7 +611,7 @@ x-data="docsOcState()"
 <p><strong>Notes:</strong></p>
 <ol>
 <li>All flexbox system wrappers affect their immediate child elements.</li>
-<li>The Codebase flexbox systems don’t constrain the immediate child elements to proportional widths (in a row) or heights (in a column). So, if you need something like “25% with sidebar with 75% main content”, then you need the Codebase <a href="/codebase-4/docs/3-responsive-layouts/grid">grid system</a>.</li>
+<li>The Codebase flexbox systems don’t constrain the immediate child elements to proportional widths (in a row) or heights (in a column). So, if you need something like “25% with sidebar with 75% main content”, then you need the Codebase <a href="/codebase-4/docs/3-responsive-layouts/flex-pseudo-grids">flex pseudo grid</a> – or, better – the Codebase <a href="/codebase-4/docs/3-responsive-layouts/grid">real grid system</a>.</li>
 </ol>
 <p><code>.flex</code>:</p>
 <div class="flex mb-3">
@@ -629,7 +631,7 @@ x-data="docsOcState()"
 </div>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex flex-grow-equal<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>One<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>Two<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>Three<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>Four<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
 <p><code>.flex-grow-equal</code> may be all you need if you want a number of equal width columns (e.g. for a “two up” or “three up”). You can easily combine it with  a flex system wrapper with built-in breakpoint width (e.g. <code>.flex-md</code>) instead of <code>.flex</code>, so that your mini “pseudo grid” takes effect only above that device width (or window width).</p>
-<p class="bl-heavy b-color-secondary bg-color-secondary-alt p-2">Codebase also contains a simple 12-column flexbox <a href="#flex-pseudo-grids">pseudo grid</a> if you need it – e.g. if you need a (pseudo) grid system that supports ancient web browsers. But for more power, go for Codebase’s real <em>CSS grid</em> [grid system](/codebase-4/docs/3-responsive-layouts/grid).</p>
+<p class="panel-responsive bl-heavy b-color-secondary bg-color-secondary-alt">Codebase also contains a simple 12-column flexbox <a href="#flex-pseudo-grids">pseudo grid</a> if you need it – e.g. if you need a (pseudo) grid system that supports ancient web browsers. But for more power, go for Codebase’s real <em>CSS grid</em> [grid system](/codebase-4/docs/3-responsive-layouts/grid).</p>
 <p><code>.flex.flex-grow-auto</code> :</p>
 <div class="flex flex-grow-auto mb-3">
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">First flex-item</div>
@@ -730,28 +732,6 @@ x-data="docsOcState()"
   <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">other</div>
   <div class="flex-item-grow-1 b-thick b-color-success rounded p-1 t-heavy t-color-success"><code>.flex-item-grow-1</code></div>
 </div>
-<h2 id="flex-pseudo-grids">Flex Pseudo Grids</h2>
-<p>There is a really simple 12-column pseudo grid system built into Codebase. All you need to do is use prefix <code>.flex-cols-</code> with a suffix from <code>1</code> to <code>12</code></p>
-<div class="flex mb-3">
-  <div class="flex-cols-4 b-thick b-color-success rounded p-1 t-heavy t-color-success">One third</div>
-  <div class="flex-cols-4 b-thick b-color-success rounded p-1 t-heavy t-color-success">One third</div>
-  <div class="flex-cols-4 b-thick b-color-success rounded p-1 t-heavy t-color-success">One third</div>
-</div>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-cols-4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>One third<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-cols-4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>One third<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-cols-4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>One third<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
-<p>If the wrapper is <code>.flex</code>, the pseudo grid happens on all viewport widths. But you may not want that for screens too narrow to make your columnar content look good. So, alternatively, you can use wrappers <code>.flex-sm</code>, <code>.flex-md</code>, or <code>.flex-lg</code> to make this flexbox columnar pseudo-grid to take effect only above the <code>sm</code> (768px default), <code>md</code> (1024px default) or <code>lg</code> (1280px default) viewport breakpoint widths.</p>
-<p>You can also use the flex wrapper modifiers <code>.flex-gap</code> and/or <code>.flex-row-reverse</code> on these pseudo grids.</p>
-<div class="flex-md flex-gap flex-row-reverse">
-  <div class="flex-cols-3 b-thick b-color-success rounded p-1 t-heavy t-color-success">One quarter</div>
-  <div class="flex-cols-9 b-thick b-color-success rounded p-1 t-heavy t-color-success">Three quarters</div>
-</div>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-md flex-gap flex-row-reverse<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-cols-3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>One quarter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-cols-9<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Three quarters<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
-<p>Notes:</p>
-<ol>
-<li>Since the responsive viewport-width control is on the wrapper, you can’t <em>combine</em> these pseudo grids on the same HTML elements.</li>
-<li>The Codebase flex pseudo grid only works on <em>widths</em>. Therefore, do not use <code>.flex-cols-</code> in a <code>.flex-column</code>.</li>
-<li>If you want a more versatile (and true) columnar grid, then you need the Codebase <a href="/codebase-4/docs/3-responsive-layouts/grid">grid system</a>.</li>
-</ol>
-
     </section><!-- /#docs-mainbody -->
 
     <footer class="container-grid container-grid-lg mb-responsive t-center">
@@ -760,7 +740,7 @@ x-data="docsOcState()"
         <a class="my-1 float-left btn btn-primary" href="/codebase-4/docs/3-responsive-layouts/bleeds">&larr; Bleeds</a>
           
         
-        <a class="my-1 float-right btn btn-primary" href="/codebase-4/docs/3-responsive-layouts/grid">Grid system &rarr;</a>
+        <a class="my-1 float-right btn btn-primary" href="/codebase-4/docs/3-responsive-layouts/flex-pseudo-grids">Flex pseudo grids &rarr;</a>
           
       </div>
     </footer>
@@ -775,7 +755,7 @@ x-data="docsOcState()"
       <!-- Codebase logo-->
       <svg  style="height: 4rem; margin-bottom: 1rem;" viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2"><path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"/></svg>
       <span>
-        Codebase <span class="t-thin">4.0.2</span>
+        Codebase <span class="t-thin">4.0.3</span>
       </span>
 
       </span>

@@ -146,12 +146,11 @@ Example:
 </div>
 ```
 
-
 ## Block Padding
 
-Table cells (`th` and `td`), menu-item hyperlinks and tab labels already have built into them the same “block padding” – `padding: 0.5rem 1rem;`.
+Table cells (`th` and `td`), menu-item hyperlinks and tab labels all have the same “block padding” built into them: `padding: 0.5rem 1rem;`.
 
-This same block padding is available as the utility class `.p-block`:
+This same block padding is available in the utility class `.p-block`:
 
 <div class="mb-3 b-dashed p-block">This has block padding supplied by the utility class <code>.p-block</code>.</div>
 
@@ -210,8 +209,14 @@ Useful e.g. for designing homepages and landing pages.
 
 Examples:
 
+<div class="mt-3 mb-6">
+<div class="b-dashed b-color-text-alt">
 <div class="mb-responsive p-1 bg-color-background-alt">This is in a DIV that has margin-bottom <code class="b-thin">.mb-responsive</code></div>
+</div>
 <div class="px-1 py-responsive bg-color-background-alt"><div>This is in a DIV that has y-axis paddings <code class="b-thin">.py-responsive</code></div></div>
-<div class="mt-responsive mb-3 p-1 bg-color-background-alt">This is in a DIV that has margin-top <code class="b-thin">.mt-responsive</code></div>
+<div class="b-dashed b-color-text-alt">
+<div class="mt-responsive p-1 bg-color-background-alt">This is in a DIV that has margin-top <code class="b-thin">.mt-responsive</code></div>
+</div>
+</div>
 
 If you are on a large device, you see the examples above “work” by making the browser window narrower.

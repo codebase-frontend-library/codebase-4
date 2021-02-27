@@ -7,31 +7,37 @@ prevButton: "Containers"
 nextButton: "Flex system"
 ---
 
-<p class="t-lg t-thin">Codebase utilises two full-bleed layout techniques, depending on what kind of responsive <a href="/codebase-4/docs/3-responsive-layouts/containers">container</a> you’re using.<p>
+<p class="t-lg t-thin">Codebase has two full-bleed layout techniques, depending on what kind of responsive <a href="/codebase-4/docs/3-responsive-layouts/containers">container</a> you’re using.<p>
 
 ## Full Bleed Using CSS Transform
 
-Andy Bell’s [full bleed utility](https://hankchizljaw.com/wrote/creating-a-full-bleed-css-utility/) us useful, but as it is based on CSS transforms, it only works on _centered layouts_ – e.g. the traditional container that uses x-axis margin auto centering.
+This uses Andy Bell’s [full bleed utility](https://hankchizljaw.com/wrote/creating-a-full-bleed-css-utility/). This is a useful technique, but it has its limitations. Since it is based on CSS transforms, it only works on _centered layouts_ – such as the traditional container that uses x-axis margin auto centering.
 
 Codebase contains this utility in the `.full-bleed` CSS class. It _must_ be cented for this technique to work properly, because its technique busts out of a centered column using CSS negative margins and x-axis transforms.
 
-`.full-bleed` can’t be demonstrated here, because this documentation uses a [modern container system using _CSS grid_](/codebase-4/docs/3-responsive-layouts/containers/#modern-container-grids).
+<p class="panel-responsive bl-heavy b-color-warning bg-color-warning-alt">Below is a demo of the <code>.full-bleed</code> utility. However, the layout of this documentation is off-center on wider screens, to accommodate the sidebar. Therefore, the demo will look wrong on wider screens. To make it look right, simply dismiss the sidebar.</p>
+
+<div class="container-grid-full-bleed my-6">
+  <div class="container container-md">
+    <div class="full-bleed py-6 bg-color-warning-alt">
+      <em>CSS transform</em> full bleed content...
+    </div>
+  </div>
+</div>
 
 ```html
 <div class="full-bleed">
-  Full bleed content...
+  <em>CSS transform</em> full bleed content...
 </div>
 ```
-
-Whereas Codebase’s CSS grid based bleeds still work on off-centered layouts. For example, these docs have an off-center layout when viewed at 1024px width and above, since the sidebar is displayed as part of the page layout.
 
 ## Container Grid Full Bleed
 
 The Codebase `.container-grid-full-bleed` class uses _CSS grid_, following [Josh W Comeau’s technique](https://joshwcomeau.com/css/full-bleed/)).
 
-<p class="bl-heavy b-color-primary bg-color-primary-alt p-2">Codebase layout bleeds only work as <em>immediate child</em> elements inside Codebase <a href="/codebase-4/docs/3-responsive-layouts/containers">containers</a>.</p>
+<p class="panel-responsive bl-heavy b-color-primary bg-color-primary-alt">Codebase layout bleeds only work as <em>immediate child</em> elements inside Codebase <a href="/codebase-4/docs/3-responsive-layouts/containers">containers</a>.</p>
 
-<div class="container-grid-full-bleed mb-3 p-6 bg-color-background-alt">Container grid full bleed content...</div>
+<div class="container-grid-full-bleed mb-3 py-6 bg-color-primary-alt">Container grid full bleed content...</div>
 
 ```html
 <div class="container-grid-full-bleed">
@@ -41,7 +47,7 @@ The Codebase `.container-grid-full-bleed` class uses _CSS grid_, following [Josh
 
 Codebase also has `.container-grid-partial-bleed-left` and `.container-grid-partial-bleed-right`.
 
-<div class="container-grid-partial-bleed-left mb-3 p-6 bg-color-background-alt">Container grid partial bleed (left) content...</div>
+<div class="container-grid-partial-bleed-left mb-3 py-6 bg-color-primary-alt">Container grid partial bleed (left) content...</div>
 
 ```html
 <div class="container-grid-partial-bleed-left">
@@ -49,13 +55,15 @@ Codebase also has `.container-grid-partial-bleed-left` and `.container-grid-part
 </div>
 ```
 
-<div class="container-grid-partial-bleed-right mb-3 p-6 bg-color-background-alt">Container grid partial bleed (right) content...</div>
+<div class="container-grid-partial-bleed-right mb-3 py-6 bg-color-primary-alt">Container grid partial bleed (right) content...</div>
 
 ```html
 <div class="container-grid-partial-bleed-right">
   Container grid partial bleed (right) content...
 </div>
 ```
+
+So, what could you use partial bleeds for?
 
 You can combine partial bleeds, (max) widths (and floats) for displaying images that deserve more space on wide screens:
 
@@ -72,3 +80,5 @@ You can combine partial bleeds, (max) widths (and floats) for displaying images 
   </div>
 </div>
 ```
+
+A partial bleed is great for having your main text in a centered column, with a sidebar alongside it (perhaps a [sticky](/codebase-4/docs/4-layout-utilities/positions/#position-.sticky), e.g. for ads or social sharing buttons. The partial bleed can then be used to protrude oversized images to the opposite side, so that it doesn’t interfere with the sidebar.

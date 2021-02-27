@@ -54,7 +54,7 @@ The Codebase `.tab-control` and `.tab-panel` CSS classes add some minimal stylin
 
 2. The tab controls need to be placed within their own `.flex` block element, so that they appear in a row.
 
-<p class="bl-heavy b-color-secondary p-2 bg-color-secondary-alt">If you have a lot of labels or label text, so that there’s not enough width to show them all on small screens, you can use <code>.flex.overflow-x</code> so that the labels can scroll horizontally.</p>
+<p class="panel-responsive bl-heavy b-color-secondary bg-color-secondary-alt">If you have a lot of labels or label text, so that there’s not enough width to show them all on small screens, you can use <code>.flex.overflow-x</code> so that the labels can scroll horizontally.</p>
 
 3. Tabs require `data-control="tab"` on the controls (i.e. tab labels), and they _must not have_ `data-click-away="true"` or `data-scroll-lock="true"`.
 
@@ -64,4 +64,4 @@ The Codebase `.tab-control` and `.tab-panel` CSS classes add some minimal stylin
 
 6. Your tab controls each need to be paired to their respective panels using `aria-controls="panelID"` on the control and `id="panelID"` on its panel. Choose appropriate ID names for your design. (In my example, I have just named them “tab-panel-1” etc.)
 
-<p class="bl-heavy b-color-secondary p-2 bg-color-secondary-alt">If you don’t want the tabs styling above, but do want the tabs functionality (e.g. for vertical tabs, accordions, or an image-gallery/slideshow), then don’t use the <code>.tab-</code> prefix. Choose your own prefix for the required <code>-wrapper</code> , <code>-control</code>(s) and <code>-panel</code>(s), create your own CSS styles, and add the other HTML attributes as for tabs in this example.</p>
+<p class="panel-responsive bl-heavy b-color-secondary bg-color-secondary-alt">If you don’t want the tabs styling above, but do want the tabs functionality (e.g. for vertical tabs, accordions, or an image-gallery/slideshow), then don’t use the <code>.tab-</code> prefix. Choose your own prefix for the required <code>-wrapper</code> , <code>-control</code>(s) and <code>-panel</code>(s), create your own CSS styles, and add the other HTML attributes as for tabs in this example.</p>

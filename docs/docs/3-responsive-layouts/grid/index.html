@@ -364,7 +364,8 @@ x-data="docsOcState()"
           <li><a href="/codebase-4/docs/3-responsive-layouts/containers">Containers</a></li>
           <li><a href="/codebase-4/docs/3-responsive-layouts/bleeds">Bleeds</a></li>
           <li><a href="/codebase-4/docs/3-responsive-layouts/flex">Flex system (flexbox)</a></li>
-          <li><a href="/codebase-4/docs/3-responsive-layouts/grid">Grid system</a></li>
+          <li><a href="/codebase-4/docs/3-responsive-layouts/flex-pseudo-grids">Flex pseudo grids</a></li>
+          <li><a href="/codebase-4/docs/3-responsive-layouts/grid">Real grid system</a></li>
         </ul>
 
         <div class="mt-1 p-block t-loose t-uppercase t-small">Utilities</div>
@@ -483,6 +484,7 @@ x-data="docsOcState()"
                 <li><a href="/codebase-4/docs/7-simple-components/about-simple-components">About simple components</a></li>
                 <li><a href="/codebase-4/docs/7-simple-components/menus">Menus</a></li>
                 <li><a href="/codebase-4/docs/7-simple-components/heros">Heros</a></li>
+                <li><a href="/codebase-4/docs/7-simple-components/panels">Panels</a></li>
                 <li><a href="/codebase-4/docs/7-simple-components/tables">Tables</a></li>
                 <li><a href="/codebase-4/docs/7-simple-components/buttons">Buttons</a></li>
                 <li><a href="/codebase-4/docs/7-simple-components/badges">Badges</a></li>
@@ -572,26 +574,41 @@ x-data="docsOcState()"
             
             <div class="mb-1 bb-thin pb-2 t-uppercase t-thin t-loose">Responsive Layouts</div>
             
-            <h1 class="mb-0">Grid System</h1>    
+            <h1 class="mb-0">Real Grid System</h1>    
           </div>
         </div>
     </header>
 
     <section id="docs-mainbody" class="container-grid container-grid-sm mb-6">
       <p class="t-lg t-thin">Codebase’s simple columnar grid system <em>actually uses CSS grid</em>.</p>
-<p><em>CSS grid</em> has been designed to replace older pseudo grid systems that use table cells, floats or flexbox. Respected web developers such as Rachel Andrew have said that <a href="https://rachelandrew.co.uk/archives/2017/07/01/you-do-not-need-a-css-grid-based-grid-system/">a CSS grid-based grid system is unnecessary</a>) – and that’s true: you can learn CSS grid (e.g. from <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">CSS Tricks</a> or from <a href="https://learncssgrid.com/">Learn CSS Grid</a>) and then weave your own.</p>
-<p>However I have found myself repeatedy using a simple set of CSS grid layout classes for a quick “two up”, “three up” layout. With a few extras, this has become a simple actual grid system. I have refined it over the years to its present form, and what you have here in Codebase is simple and robust enough for most of not all traditional layouts.</p>
-<p>The Codebase grid is also good for situations where you are working within a CMS editor (where you have access to the content source code), and you want some ready-made responsive grid layout CSS classes for a local layout.</p>
-<p class="bl-heavy b-color-secondary bg-color-secondary-alt p-2">Codebase’s real <a href="https://caniuse.com/css-grid">CSS grid</a> grid system is designed for modern browsers. Don’t use it if you must support Internet Explorer =&lt; 11 (2013), or any other old browser. Codebase contains no browser specific prefixes on this grid system, or on its <a href="/codebase-4/docs/3-responsive-layouts/containers/#modern-container-grids">modern container grid</a> classes.<br><br>Codebase also has a responsive <a href="/codebase-4/docs/3-responsive-layouts/flex/#flex-pseudo-grids">12-column flexbox pseudo grid</a>, if you need it.</p>
+<p><em>CSS grid</em> has been designed to replace older pseudo grid systems that use table cells, floats or flexbox.</p>
+<p>Respected web developers such as Rachel Andrew have said that <a href="https://rachelandrew.co.uk/archives/2017/07/01/you-do-not-need-a-css-grid-based-grid-system/">a CSS grid-based grid system is unnecessary</a>) – and that’s true: you can learn CSS grid (e.g. from <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">CSS Tricks</a> or from <a href="https://learncssgrid.com/">Learn CSS Grid</a>) and then weave your own. However I have found myself repeatedy using a simple set of CSS grid layout classes for a quick “two up”, “three up” layout. With a few extras, this has become a simple actual grid system in Codebase. I have refined it over the years to its present form, and what you have here is simple and robust enough for most of not all traditional layouts.</p>
+<p>The Codebase grid is also good for situations where you are working <em>within a CMS editor</em> (and you have access to the content source code), and you want some ready-made responsive grid layout CSS classes for a local layout.</p>
+<div class="mb-3 panel-responsive bl-heavy b-color-success bg-color-success-alt">
+  <div class="flex mb-3">
+    <div class="h1 mb-0 mr-1">😢</div>
+    <div>Codebase’s real <a href="https://caniuse.com/css-grid">CSS grid</a> grid system is designed for modern browsers. Sorry, you can’t use it if you must support Internet Explorer =&lt; 11 (2013), or any other old browser.</div>  
+  </div>
+  <div class="flex">
+    <div class="h1 mb-0 mr-1">🙄</div>
+    <div>If you need to support such old browsers, Codebase also has a responsive <a href="/codebase-4/docs/3-responsive-layouts/flex/#flex-pseudo-grids">12-column flexbox pseudo grid</a>.</div>  
+  </div>
+</div>
 <p>Here are three important features of the Codebase grid system:</p>
 <ol>
 <li>The Codebase grid uses <em>CSS grid</em>. It doesn’t work the same way as a flexbox pseudo grid.</li>
 <li>You get to choose how many column tracks: (2, 3, 4 or 5) at the various Codebase breakpoint widths</li>
 <li>You also get to control the columns on a per-breakpoint basis</li>
 </ol>
-<hr>
-<blockquote>There is, of course, a lot more that <em>CSS grid</em> can do than this simple columnar (i.e. one dimensional) grid. The Codebase grid system just covers the most common webpage layouts. CSS grid is really two dimensional – or even three dimensional, because grid items can even be overlapped and/or stacked, for creating highly interesting and versatile webpage layouts.</blockquote>
-<hr>
+<p>There is, of course, a lot more that <em>CSS grid</em> can do than this simple columnar (i.e. one dimensional) grid. The Codebase grid system just covers the most common webpage layouts. CSS grid is really two dimensional – or even three dimensional, because grid items can even be overlapped and/or stacked, for creating highly interesting and versatile webpage layouts.</p>
+<p>Here are a few resources and examples:</p>
+<ul>
+<li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/">https://css-tricks.com/snippets/css/complete-guide-grid/</a></li>
+<li><a href="https://www.smashingmagazine.com/2017/06/building-production-ready-css-grid-layout/">https://www.smashingmagazine.com/2017/06/building-production-ready-css-grid-layout/</a></li>
+<li><a href="https://learncssgrid.com/">https://learncssgrid.com/</a></li>
+<li><a href="https://gridbyexample.com/">https://gridbyexample.com/</a></li>
+<li>Grids by Stacy on Codepen <a href="https://codepen.io/collection/XRRJGq/">https://codepen.io/collection/XRRJGq/</a></li>
+</ul>
 <h2 id="setting-up-the-codebase-grid">Setting Up the Codebase Grid</h2>
 <p>The Codebase grid consists of two parts: the wrapper and the columns. In the <code>.grid-*</code> wrapper classes, you can set up a grid with <em>up to five columns</em>, that takes effect either always or from one of three breakpint widths (<code>sm</code>, <code>md</code> or <code>md</code>) You can also use more than one breakoint at the same time (e.g. if you wanted a single column on phones, three columns on tablets and four columns on laptops up).</p>
 <table class="table">
@@ -740,7 +757,7 @@ x-data="docsOcState()"
     <footer class="container-grid container-grid-lg mb-responsive t-center">
       <div class="clearfix bt-thin bb-thin py-2">
         
-        <a class="my-1 float-left btn btn-primary" href="/codebase-4/docs/3-responsive-layouts/flex">&larr; Flex system</a>
+        <a class="my-1 float-left btn btn-primary" href="/codebase-4/docs/3-responsive-layouts/flex-pseudo-grids">&larr; Flex pseudo grids</a>
           
         
         <a class="my-1 float-right btn btn-primary" href="/codebase-4/docs/4-layout-utilities/blocks">Blocks &rarr;</a>
@@ -758,7 +775,7 @@ x-data="docsOcState()"
       <!-- Codebase logo-->
       <svg  style="height: 4rem; margin-bottom: 1rem;" viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2"><path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"/></svg>
       <span>
-        Codebase <span class="t-thin">4.0.2</span>
+        Codebase <span class="t-thin">4.0.3</span>
       </span>
 
       </span>

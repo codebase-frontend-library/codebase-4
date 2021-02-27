@@ -69,7 +69,7 @@
 }
 
 @mixin flex-cols {
-  @if $use-flex-pseudo-grid == true {
+  @if $include-flex-pseudo-grid == true {
     & > .flex-cols {
       &-1 {width: (1 / 12) * 100%}
       &-2 {width: (2 / 12) * 100%}
@@ -93,7 +93,9 @@
 
 .flex {
   @include flex;
-  @include flex-cols;
+  @if $include-flex-pseudo-grid == true {
+    @include flex-cols;
+  }
 }
 .flex-sm {
   @include break-min($mq-sm) {
@@ -104,13 +106,17 @@
 .flex-md {
   @include break-min($mq-md) {
     @include flex;
-    @include flex-cols;
+    @if $include-flex-pseudo-grid == true {
+      @include flex-cols;
+    }
   }
 }
 .flex-lg {
   @include break-min($mq-lg) {
     @include flex;
-    @include flex-cols;
+    @if $include-flex-pseudo-grid == true {
+      @include flex-cols;
+    }
   }
 }
 

@@ -22,4 +22,4 @@ nextButton: "Floats"
 <div class="inline-block bg-color-background-alt p-2">This is a <code class="b-thin">&lt;div&gt;</code> element (normally a block element).</div>
 </div>
 
-<p class="bl-heavy b-color-primary bg-color-primary-alt p-2">Remember that CSS flexbox and CSS grid control the behavior of their immediate child elements. So, if you are trying to use <code>.block</code> or <code>.inline-block</code> on an immediate child of <code>.container</code>, <code>.flex</code> or <code>.grid</code>, it won’t work.</p>
+<p class="panel-responsive bl-heavy b-color-primary bg-color-primary-alt">Remember that CSS flexbox and CSS grid control the behavior of their immediate child elements. So, if you are trying to use <code>.block</code> or <code>.inline-block</code> on an immediate child of <code>.container</code>, <code>.flex</code> or <code>.grid</code>, it won’t work.</p>

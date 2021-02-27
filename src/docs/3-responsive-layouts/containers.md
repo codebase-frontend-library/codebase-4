@@ -12,11 +12,9 @@ nextButton: "Bleeds"
 
 ## Traditional Containers
 
-The Codebase `.container` class works the same way as you may be used to from other CSS frameworks (e.g. Bootstrap).
+The Codebase `.container` class works the same way as in other CSS frameworks (e.g. Bootstrap).
 
-<p class="bl-heavy b-color-secondary bg-color-secondary-alt p-2">Tranitional containers are here for you if you still prefer to use them, or if you must support Internet Explorer =&lt; 11 (2013), or any old browser that doesn’t support <a href="https://caniuse.com/css-grid">CSS grid</a>. Codebase contains no browser specific prefixes on container-grid or <a href="/codebase-4/docs/3-responsive-layouts/grid">grid system</a> classes.</p>
-
-The following demo shows you the max-width extent of the _content_ within traditional Codebase containers. Notice that to either side there is some padding – this is there so that your text content has some “white space” to the right and left – for readability on small screens.
+The following demo shows you the max-width extent of the _content_ within traditional Codebase containers. Notice that to either side there is some padding – this is there so that your text content has some “white space” to the right and left – improving readability on small screens.
 
 <div class="container-grid-full-bleed bg-color-background-alt mt-3 mb-6 py-6">
   <div class="container">
@@ -33,13 +31,13 @@ The following demo shows you the max-width extent of the _content_ within tradit
   </div>
 </div>
 
-Visitors using large screens can dismiss the sidebar so that they can see these containers expand to their fullest extent – or, as far as their screen width allows.
+_Visitors using large screens can dismiss the sidebar so that they can see these containers expand to their fullest extent – or, as far as their screen width allows._
 
 <table class="table">
 <thead>
 <tr>
 <th>Traditional Containers</th>
-<th>Traditional Container Max-Width of Content</th>
+<th>Max-Width of Content</th>
 </tr>
 </thead>
 <tbody>
@@ -64,9 +62,16 @@ Visitors using large screens can dismiss the sidebar so that they can see these 
 
 That’s all you need to know about containers.
 
+<div class="mb-3 panel-responsive bl-heavy b-color-secondary bg-color-secondary-alt">
+  <p>Codebase traditional containers are here for you if you still prefer to use them, or if you must support Internet Explorer =&lt; 11 (2013), or any ancient browser that doesn’t support <a href="https://caniuse.com/css-grid">CSS grid</a>.</p>
+  <p class="mb-0">Codebase contains no browser specific prefixes on container-grid or <a href="/codebase-4/docs/3-responsive-layouts/grid">grid system</a> classes.</p>
+</div>
+
+***
+
 ## Modern Container Grids
 
-<div class="container-grid-full-bleed bg-color-background-alt mt-3 mb-6 py-6">
+<div class="container-grid-full-bleed bg-color-background-alt mb-6 py-6">
   <div class="container-grid">
     <div class="mb-1 b-thin bg-color-background py-1"><code>.container-grid</code></div>
   </div>
@@ -81,15 +86,15 @@ That’s all you need to know about containers.
   </div>
 </div>
 
-_Direct child_ elements in container-grids are placed in the middle column using the style rule `> * {grid-column: 3;}`. The maximum width of column 3 is constrained using `min()`. Columns 2 and 4 are used to add some controlled “white space” on the right and left sides, whereas columns 1 and 5 expand equally to take up the remaining viewport width each using `1fr`, thereby pushing columns 2-4 toward the center.
+_Visitors using large screens can dismiss the sidebar so that they can see these containers expand to their fullest extent – or, as far as their screen width allows._
 
-<p class="bl-heavy b-color-primary bg-color-primary-alt p-2">As Codebase containers use CSS grid, your content within a Codebase container must be <em>within another tag</em>. (You would normally want to do this anyhow.)</p>
-
-<div class="container-grid-full-bleed my-6">
-<div class="container-grid container-grid-md">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 638 147.173"><path d="M1 38.173h636v108H1z" stroke="currentColor" stroke-width=".781" stroke-dasharray="2.342,2.342" stroke-miterlimit="1.5" fill="none"/><path d="M61 38.173v108M97 38.173v108M565 38.173v108M529 38.173v108" stroke="currentColor" stroke-width=".781" stroke-dasharray="2.342,2.342" fill="none"/><path d="M637 74.173H1M637 110.173H1" stroke="currentColor" stroke-width=".751" stroke-dasharray="2.254,2.254" fill="none"/><text transform="translate(264.208 45.26) scale(2.835)"><tspan x="-58.987" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">&lt;div&gt; Your content blocks will be placed in column 3</tspan></text><text transform="translate(116.545 81.26) scale(2.835)"><tspan x="-6.895" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">&lt;div&gt;</tspan></text><text transform="translate(116.545 117.26) scale(2.835)"><tspan x="-6.895" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">&lt;div&gt;</tspan></text><text transform="translate(55 20.173) scale(2.835)"><tspan x="-19.05" y=".883" font-family="ArialMT" font-size="3.528" fill="currentColor">&lt;div class=&quot;container-grid&quot;&gt;</tspan></text><text transform="translate(79 45.26) scale(2.835)"><tspan x="-2.549" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">3%</tspan></text><text transform="translate(31 45.26) scale(2.835)"><tspan x="-2.058" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">1fr</tspan></text><text transform="translate(547 45.26) scale(2.835)"><tspan x="-2.549" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">3%</tspan></text><text transform="translate(601 45.26) scale(2.835)"><tspan x="-2.058" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">1fr</tspan></text><text transform="translate(319 7.086) scale(2.835)"><tspan x="-29.961" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">`.container-grid` Class Using CSS Grid</tspan></text></svg>
+<div class="container-grid-full-bleed mt-3 mb-6 py-6">
+<div class="container-grid container-grid-lg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 638 147.173"><path d="M1 38.173h636v108H1z" stroke="currentColor" stroke-width=".781" stroke-dasharray="2.342,2.342" stroke-miterlimit="1.5" fill="none"/><path d="M61 38.173v108M97 38.173v108M565 38.173v108M529 38.173v108" stroke="currentColor" stroke-width=".781" stroke-dasharray="2.342,2.342" fill="none"/><path d="M637 74.173H1M637 110.173H1" stroke="currentColor" stroke-width=".751" stroke-dasharray="2.254,2.254" fill="none"/><text transform="translate(264.208 45.26) scale(2.835)"><tspan x="-58.987" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">&lt;div&gt; Your content blocks will be placed in column 3</tspan></text><text transform="translate(116.545 81.26) scale(2.835)"><tspan x="-6.895" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">&lt;div&gt;</tspan></text><text transform="translate(116.545 117.26) scale(2.835)"><tspan x="-6.895" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">&lt;div&gt;</tspan></text><text transform="translate(55 20.173) scale(2.835)"><tspan x="-19.05" y=".883" font-family="ArialMT" font-size="3.528" fill="currentColor">&lt;div class=&quot;container-grid&quot;&gt;</tspan></text><text transform="translate(79 45.26) scale(2.835)"><tspan x="-2.549" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">3%</tspan></text><text transform="translate(31 45.26) scale(2.835)"><tspan x="-2.058" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">1fr</tspan></text><text transform="translate(547 45.26) scale(2.835)"><tspan x="-2.549" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">3%</tspan></text><text transform="translate(601 45.26) scale(2.835)"><tspan x="-2.058" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">1fr</tspan></text><text transform="translate(319 7.086) scale(2.835)"><tspan x="-30.961" y=".5" font-family="ArialMT" font-size="3.528" fill="currentColor">The Codebase Container-Grid Class</tspan></text></svg>
 </div>
 </div>
+
+_Direct child_ elements in container-grids are placed in the middle column using a direct child combinator selector: `> * {grid-column: 3;}`. The maximum width of column 3 is constrained using `min()`. Columns 2 and 4 are used to add 3% width “white space” on the right and left sides, whereas columns 1 and 5 expand equally to take up the remaining viewport width each using `1fr`, thereby pushing columns 2-4 toward the center.
 
 <table class="table">
 <thead>
@@ -118,43 +123,11 @@ _Direct child_ elements in container-grids are placed in the middle column using
 </tbody>
 </table>
 
-Visitors using large screens can dismiss the sidebar so that they can see these containers expand to their fullest extent – or, as far as their screen width allows.
-
-<!-- <div class="full-bleed bg-color-background-alt mt-3 mb-6 py-6">
-  <div class="container">
-    <div class="mb-1 b-thin bg-color-background py-1"><code>.container</code></div>
-  </div>
-  <div class="container container-lg">
-    <div class="mb-1 b-thin bg-color-background py-1"><code>.container.container-lg</code></div>
-  </div>
-  <div class="container container-md">
-    <div class="mb-1 b-thin bg-color-background py-1"><code>.container.container-md</code></div>
-  </div>
-  <div class="container container-sm">
-    <div class="mb-1 b-thin bg-color-background py-1"><code>.container.container-sm</code></div>
-  </div>
-</div> -->
-
-<!-- <div class="container-grid-full-bleed bg-color-background-alt mt-3 mb-6 py-6">
-  <div class="container">
-    <div class="mb-1 b-thin bg-color-background py-1"><code>.container</code></div>
-  </div>
-  <div class="container container-lg">
-    <div class="mb-1 b-thin bg-color-background py-1"><code>.container.container-lg</code></div>
-  </div>
-  <div class="container container-md">
-    <div class="mb-1 b-thin bg-color-background py-1"><code>.container.container-md</code></div>
-  </div>
-  <div class="container container-sm">
-    <div class="mb-1 b-thin bg-color-background py-1"><code>.container.container-sm</code></div>
-  </div>
-</div> -->
-
 See also Codebase [bleeds](/codebase-4/docs/3-responsive-layouts/bleeds).
 
 **Notes:**
 
-1. The modifier container classes `.container-xl` ... `.container-sm` only constrain the width of column 3. You ned to pair these modifiers with `.container` on the same HTML element.
+1. The modifier container classes `.container-sm`, `.container-md` and `.container-lg` only constrain the width of column 3. (You need to pair these modifiers with `.container` on the same HTML element.)
 
 2. Codebase `.flex` and `.grid` layouts cannot be used on _the same element_ as the Codebase `.container` class, because `.container` uses CSS grid, and this affects its _immediate child_ elements.
 
@@ -178,11 +151,9 @@ See also Codebase [bleeds](/codebase-4/docs/3-responsive-layouts/bleeds).
     </div>
     ```
 
-    (If you’re coming from Bootstrap, you’ll already be familiar with puttin a _row_ inside a container. You’re doing the same kind of thing here in Codebase, though the reason why is different.)
+## Width Utilities
 
-***
-
-Codebase has another way of controlling the width of elements, by using [width utilities](/codebase-4/docs/4-layout-utilities/dimensions#widths). This may be useful to you, in some situations.
+Codebase has another way of controlling the width of elements, by using [width utilities](/codebase-4/docs/4-layout-utilities/dimensions#widths). These may also may be useful to you in some situations.
 
 You can also push a width-constrained element horizontally to the center of its wrapper, using the `.mx-auto` margin-utility. You will also want to set side paddings using padding utilities, so that any text in your element is moved in from the edges of smaller device screens.
 
@@ -190,7 +161,14 @@ Here’s how you would set up a `md` i.e. medium width wrapper (default width of
 
 ```html
 <div class="w-md mx-auto px-3">
-  Lorem ipsum dolor sit amet ...
+  Lorem ipsum dolor sit amet...
+</div>
+
+<!-- This above will render the same as the md container, below -->
+
+<div class="container container-md">
+  Lorem ipsum dolor sit amet...
 </div>
 ```
+
 For more information margins and paddings, see [spacing utilities](/codebase-4/docs/6-decoration-utilities/spacing).

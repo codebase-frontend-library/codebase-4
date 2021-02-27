@@ -29,4 +29,4 @@ nextButton: "Positions"
 
 There’s also a `.clearfix` utility if you need it. This [This w3schools article](https://www.w3schools.com/howto/howto_css_clearfix.asp) explains why you may need the “clearfix hack” sometmes.
 
-<p class="bl-heavy b-color-primary bg-color-primary-alt p-2">Remember that CSS flexbox and CSS grid control the behavior of their immediate child elements. So, if you are trying to use <code>.float-left</code> or <code>.float-right</code> on an immediate child of <code>.container</code>, <code>.flex</code> or <code>.grid</code>, it won’t work.</p>
+<p class="panel-responsive bl-heavy b-color-primary bg-color-primary-alt">Remember that CSS flexbox and CSS grid control the behavior of their immediate child elements. So, if you are trying to use <code>.float-left</code> or <code>.float-right</code> on an immediate child of <code>.container</code>, <code>.flex</code> or <code>.grid</code>, it won’t work.</p>

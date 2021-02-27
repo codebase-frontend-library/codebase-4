@@ -29,7 +29,7 @@ nextButton: "Activator showhides"
 
     Activator components are of two types: either **toggle** (e.g. showhide, dropdown, modal, offcanvas) or **tab** (e.g. for tab systems, accordions, simple slideshows). `data-control` attributes must be placed on **control** elements.
 
-    <p class="bl-heavy b-color-secondary p-2 bg-color-secondary-alt">Toggle components can also be dismissed with the Escape key.</p>
+    <p class="panel-responsive bl-heavy b-color-secondary bg-color-secondary-alt">Toggle components can also be dismissed with the Escape key.</p>
 
 ## Activator Hookups
 
@@ -37,7 +37,7 @@ nextButton: "Activator showhides"
 
     Every control element must have an `aria-controls` attribute that identifies its accociated panel element `id`.
 
-    <p class="bl-heavy b-color-secondary p-2 bg-color-secondary-alt">Toggle components (showhide, dropdown, modal, offcanvas) can only have one control and one panel. Tab components (tabs, accordions, slideshows) can, and should, have more than one control/panel pair. But in either type or component, each control associates with only its respective panel, via the <code>aria-controls</code>/<code>id</code> hookup.</p>
+    <p class="panel-responsive bl-heavy b-color-secondary bg-color-secondary-alt">Toggle components (showhide, dropdown, modal, offcanvas) can only have one control and one panel. Tab components (tabs, accordions, slideshows) can, and should, have more than one control/panel pair. But in either type or component, each control associates with only its respective panel, via the <code>aria-controls</code>/<code>id</code> hookup.</p>
 
 ## Activation Class (for the Active State)
 
@@ -45,7 +45,7 @@ nextButton: "Activator showhides"
 
     Clicking a control element will sometimes toggle or sometimes add an `active` CSS class on **both the control and its panel**. (Toggles can be toggled, whereas tabs can only add the active class.)
     
-    <p class="bl-heavy b-color-warning p-2 bg-color-warning-alt">In tab sets, you must also set up (your chosen) first tab’s control/panel pair with the <code>.active</code> state in your HTML.</p>
+    <p class="panel-responsive bl-heavy b-color-warning bg-color-warning-alt">In tab sets, you must also set up (your chosen) first tab’s control/panel pair with the <code>.active</code> state in your HTML.</p>
     
 
 ## ARIA Expanded
@@ -54,7 +54,7 @@ nextButton: "Activator showhides"
 
     Clicking a control element will also toggle its state between `aria-expanded="false"` and `aria-expanded="true"`, for indicating to visualy impaired people whether the associate panel is expanded or not.
 
-    <p class="bl-heavy b-color-warning p-2 bg-color-warning-alt">In tab sets, you must also set up (your chosen) first tab’s control/panel pair with the <code>aria-expanded="true"</code> state in your HTML.</p>
+    <p class="panel-responsive bl-heavy b-color-warning bg-color-warning-alt">In tab sets, you must also set up (your chosen) first tab’s control/panel pair with the <code>aria-expanded="true"</code> state in your HTML.</p>
 
 ## Control State Indicators
 

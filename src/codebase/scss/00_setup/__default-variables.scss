@@ -174,7 +174,8 @@ $mq-lg:                       $width-lg !default;
 
 // Flexbox System
 $flex-gap-width:              1.5rem !default;
-$use-flex-pseudo-grid:        true !default;
+$include-flex-pseudo-grid:    true !default;
+            // Toggling this to false will save you 2 KB in the minified CSS.
 
 // CSS Grid System
 $grid-max-cols:               4 !default;
