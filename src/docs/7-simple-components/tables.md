@@ -2,8 +2,8 @@
 title: "Tables"
 headerTitle: "Table Components"
 layout: layout.njk
-prevPage: "/codebase-4/docs/7-simple-components/panels"
-nextPage: "/codebase-4/docs/7-simple-components/buttons"
+prevPage: "/docs/7-simple-components/panels"
+nextPage: "/docs/7-simple-components/buttons"
 prevButton: "Panels"
 nextButton: "Buttons"
 ---

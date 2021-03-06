@@ -2,8 +2,8 @@
 title: "Accordions (AlpineJS)"
 headerTitle: "Accordions"
 layout: layout.njk
-prevPage: "/codebase-4/docs/8-alpinejs-components/alpinejs-tabs"
-nextPage: "/codebase-4/docs/8-alpinejs-components/alpinejs-slideshows"
+prevPage: "/docs/8-alpinejs-components/alpinejs-tabs"
+nextPage: "/docs/8-alpinejs-components/alpinejs-slideshows"
 prevButton: "AlpineJS tabs"
 nextButton: "AlpineJS slideshows"
 ---

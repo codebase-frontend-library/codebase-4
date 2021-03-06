@@ -1,8 +1,8 @@
 ---
 title: "Light and Dark Themes"
 layout: layout.njk
-prevPage: "/codebase-4/docs/1-getting-started/responsive-design"
-nextPage: "/codebase-4/docs/2-codebase-basics/element-grid"
+prevPage: "/docs/1-getting-started/responsive-design"
+nextPage: "/docs/2-codebase-basics/element-grid"
 prevButton: "Responsive design"
 nextButton: "Element grid"
 ---
@@ -170,7 +170,7 @@ The first SCSS partial `__theme-dark.scss` overrides the default light theme in 
 }
 ```
 
-The final two partials contain the `body.theme-dark` and `body.theme-light` _descendant combinator selector classes_ that override all of the colors of text, borders and backgrounds throughout the default [Codebase SCSS library](/codebase-4/docs/1-getting-started/codebase-scss-library).
+The final two partials contain the `body.theme-dark` and `body.theme-light` _descendant combinator selector classes_ that override all of the colors of text, borders and backgrounds throughout the default [Codebase SCSS library]({{ '/docs/1-getting-started/codebase-scss-library' | url }}).
 
 ***
 

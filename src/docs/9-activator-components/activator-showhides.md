@@ -2,8 +2,8 @@
 title: "Showhides (Activator Component)"
 headerTitle: "Showhides (a.k.a. Slide-Reveals)"
 layout: layout.njk
-prevPage: "/codebase-4/docs/9-activator-components/activator-classes-and-attributes"
-nextPage: "/codebase-4/docs/9-activator-components/activator-dropdowns"
+prevPage: "/docs/9-activator-components/activator-classes-and-attributes"
+nextPage: "/docs/9-activator-components/activator-dropdowns"
 prevButton: "Activator classes and attributes"
 nextButton: "Activator dropdowns"
 ---

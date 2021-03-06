@@ -1,7 +1,7 @@
 /*!
- * CODEBASE v.4 ACTIVATOR
+ * CODEBASE ACTIVATOR
  * MIT Licence
- * v4.0.2
+ * Unchanged since v4.0.2
  */
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -178,10 +178,10 @@
       <a href="/codebase-4/">Home</a>
     </li>
     <li class="hide-below-md">
-      <a href="/codebase-4/docs/1-getting-started/simple-html-setup/">Documentation</a>
+      <a href="/codebase-4/docs/1-getting-started/introduction/">Documentation</a>
     </li>
     <li class="hide-below-md">
-      <a href="https://github.com/codebase-frontend-library/codebase-4/archive/master.zip">Download</a>
+      <a href="/codebase-4/dist.zip">Download</a>
     </li>
     <li class="hide-below-md">
       <a href="https://github.com/codebase-frontend-library/codebase-4">GitHub</a>
@@ -263,7 +263,7 @@ x-data="docsOcState()"
               <a href="/codebase-4/">Home</a>
             </li>
             <li>
-              <a href="https://github.com/codebase-frontend-library/codebase-4/archive/master.zip">Download</a>
+              <a href="/codebase-4/dist.zip">Download</a>
             </li>
             <li>
               <a href="https://github.com/codebase-frontend-library/codebase-4">GitHub</a>
@@ -293,7 +293,7 @@ x-data="docsOcState()"
             x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
             <div class="px-2">
               <ul class="menu">
-                <li><a href="/codebase-4/docs/1-getting-started/simple-html-setup">Simple HTML setup</a></li>
+                <li><a href="/codebase-4/docs/1-getting-started/introduction/">Introduction</a></li>
                 <li><a href="/codebase-4/docs/1-getting-started/codebase-scss-library">The Codebase SCSS library</a></li>
                 <li><a href="/codebase-4/docs/1-getting-started/alpinejs-or-activator">AlpineJS or Activator components</a></li>
                 <li><a href="/codebase-4/docs/1-getting-started/responsive-design">Responsive design</a></li>
@@ -566,17 +566,17 @@ x-data="docsOcState()"
   </div>
 </div>
 
-  <article class="flex-item-grow-1">
+  <article class="w-full">
 
     <header class="mb-3 pt-responsive pb-3">
-        <div class="container-grid container-grid-sm py-3">
-          <div class="t-lg">
-            
-            <div class="mb-1 bb-thin pb-2 t-uppercase t-thin t-loose">Getting Started</div>
-            
-            <h1 class="mb-0">Responsive Design</h1>    
-          </div>
+      <div class="container-grid container-grid-sm py-3">
+        <div class="t-lg">
+          
+          <div class="mb-1 bb-thin pb-2 t-uppercase t-thin t-loose">Getting Started</div>
+          
+          <h1 class="mb-0">Responsive Design</h1>    
         </div>
+      </div>
     </header>
 
     <section id="docs-mainbody" class="container-grid container-grid-sm mb-6">
@@ -586,19 +586,19 @@ x-data="docsOcState()"
 <ul>
 <li>A series of <a href="/codebase-4/docs/3-responsive-layouts/containers">containers</a> are available for centered layouts with max-width constraints</li>
 <li><a href="/codebase-4/docs/3-responsive-layouts/bleeds">bleed</a> inserts to enable to content to “burst out” wider than container columns</li>
-<li><a href="/codebase-4/docs/3-responsive-layouts/flex">Flexbox</a> and <a href="/codebase-4/docs/3-responsive-layouts/grid">CSS grid</a> systems have three breakpoint width variants: <code>sm</code> (768px default), <code>md</code> (1024px default) and <code>lg</code> (1280px default)</li>
+<li><a href="/codebase-4/docs/3-responsive-layouts/flex">Flexbox</a> and <a href="/codebase-4/docs/3-responsive-layouts/grid">CSS grid</a> systems have three breakpoint width variants: <code>sm</code> (768px default' | url }}), <code>md</code> (1024px default' | url }}) and <code>lg</code> (1280px default' | url }})</li>
 <li>A seried of <a href="/codebase-4/docs/4-layout-utilities/dimensions/#max-width-wrappers">max-width wrappers</a> and viewport-height based <a href="/codebase-4/docs/4-layout-utilities/dimensions/#heights">heights</a> utilities</li>
 <li>Responsive <a href="/codebase-4/docs/4-layout-utilities/floats">floats</a> and <a href="/codebase-4/docs/4-layout-utilities/positions">block positioning</a> utilities</li>
-<li>Responsive <a href="/codebase-4/docs/6-decoration-utilities/spacing#responsive-y-axis-spacing">y-axis spacing</a> (margins and paddings) using <a href="https://chipcullen.com/css-min-max-clamp-functions/">CSS clamp()</a></li>
+<li>Responsive <a href="/codebase-4/docs/6-decoration-utilities/spacing#responsive-y-axis-spacing">y-axis spacing</a> (margins and paddings' | url }}) using [CSS clamp(' | url }})](https://chipcullen.com/css-min-max-clamp-functions/' | url }})</li>
 <li>Responsive <a href="/codebase-4/docs/4-layout-utilities/invisibility">invisibility</a> utilities</li>
-<li>Responsive offcanvas side panel components (powered by <a href="/codebase-4/docs/8-alpinejs-components/alpinejs-offcanvas">AlpineJS</a> or the Codebase <a href="/codebase-4/docs/9-activator-components/activator-offcanvas">Activator</a>)</li>
+<li>Responsive offcanvas side panel components (powered by <a href="/codebase-4/docs/8-alpinejs-components/alpinejs-offcanvas">AlpineJS</a> or the Codebase <a href="/codebase-4/docs/9-activator-components/activator-offcanvas">Activator</a>' | url }})</li>
 </ul>
 <h2 id="responsive-typography">Responsive Typography</h2>
-<p>Codebase typography is also responsive to viewport width (device size):</p>
+<p>Codebase typography is also responsive to viewport width (device size' | url }}):</p>
 <ul>
-<li><a href="/codebase-4/docs/2-codebase-basics/headings">Headings</a> <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> have a slight downsize for phones. Below 768px (default), headings become 0.875em (87.5%) their base size</li>
-<li><a href="/codebase-4/docs/5-typographic-utilities/large-display-text">Large display text</a> (using the <code>.t-lg</code> wrapper) is 1.25em (125%) the size of base headings for medium screens, and 1.5em (150%) for large screens up</li>
-<li><a href="/codebase-4/docs/5-typographic-utilities/long-read-text">Long read text</a> starts as the normal size for small screens, and then base text and headings grow proportionately using <a href="https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/">CSS clamp()</a> to a comfortable maximum. Use the <code>.t-long-read</code> wrapper for long read articles and blog posts</li>
+<li><a href="/codebase-4/docs/2-codebase-basics/headings">Headings</a> <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> have a slight downsize for phones. Below 768px (default' | url }}), headings become 0.875em (87.5%' | url }}) their base size</li>
+<li><a href="/codebase-4/docs/5-typographic-utilities/large-display-text">Large display text</a> (using the <code>.t-lg</code> wrapper' | url }}) is 1.25em (125%' | url }}) the size of base headings for medium screens, and 1.5em (150%' | url }}) for large screens up</li>
+<li><a href="/codebase-4/docs/5-typographic-utilities/long-read-text">Long read text</a> starts as the normal size for small screens, and then base text and headings grow proportionately using [CSS clamp(' | url }})](https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/' | url }}) to a comfortable maximum. Use the <code>.t-long-read</code> wrapper for long read articles and blog posts</li>
 <li>Responsive <a href="/codebase-4/docs/5-typographic-utilities/text-alignment">text alignment</a> utilities</li>
 </ul>
 <h2 id="codebase-media-query-breakpoint-widths">Codebase Media Query Breakpoint Widths</h2>
@@ -632,7 +632,7 @@ x-data="docsOcState()"
       <!-- Codebase logo-->
       <svg  style="height: 4rem; margin-bottom: 1rem;" viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2"><path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"/></svg>
       <span>
-        Codebase <span class="t-thin">4.0.3</span>
+        Codebase <span class="t-thin">4.0.4</span>
       </span>
 
       </span>

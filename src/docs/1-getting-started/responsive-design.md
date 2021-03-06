@@ -2,8 +2,8 @@
 title: "Responsive Design"
 headerTitle: "Responsive Design"
 layout: layout.njk
-prevPage: "/codebase-4/docs/1-getting-started/alpinejs-or-activator"
-nextPage: "/codebase-4/docs/1-getting-started/light-and-dark-themes"
+prevPage: "/docs/1-getting-started/alpinejs-or-activator"
+nextPage: "/docs/1-getting-started/light-and-dark-themes"
 prevButton: "AlpineJS or activator"
 nextButton: "Light and dark themes"
 ---
@@ -14,23 +14,23 @@ nextButton: "Light and dark themes"
 
 Layouts in Codebase follow the familiar responsive “from small screens up” design methodology. For controlling layouts on increasingly wider viewports, all the following are available:
 
-* A series of [containers](/codebase-4/docs/3-responsive-layouts/containers) are available for centered layouts with max-width constraints
-* [bleed](/codebase-4/docs/3-responsive-layouts/bleeds) inserts to enable to content to “burst out” wider than container columns
-* [Flexbox](/codebase-4/docs/3-responsive-layouts/flex) and [CSS grid](/codebase-4/docs/3-responsive-layouts/grid) systems have three breakpoint width variants: `sm` (768px default), `md` (1024px default) and `lg` (1280px default)
-* A seried of [max-width wrappers](/codebase-4/docs/4-layout-utilities/dimensions/#max-width-wrappers) and viewport-height based [heights](/codebase-4/docs/4-layout-utilities/dimensions/#heights) utilities
-* Responsive [floats](/codebase-4/docs/4-layout-utilities/floats) and [block positioning](/codebase-4/docs/4-layout-utilities/positions) utilities
-* Responsive [y-axis spacing](/codebase-4/docs/6-decoration-utilities/spacing#responsive-y-axis-spacing) (margins and paddings) using [CSS clamp()](https://chipcullen.com/css-min-max-clamp-functions/)
-* Responsive [invisibility](/codebase-4/docs/4-layout-utilities/invisibility) utilities
-* Responsive offcanvas side panel components (powered by [AlpineJS](/codebase-4/docs/8-alpinejs-components/alpinejs-offcanvas) or the Codebase [Activator](/codebase-4/docs/9-activator-components/activator-offcanvas))
+* A series of [containers]({{ '/docs/3-responsive-layouts/containers' | url }}) are available for centered layouts with max-width constraints
+* [bleed]({{ '/docs/3-responsive-layouts/bleeds' | url }}) inserts to enable to content to “burst out” wider than container columns
+* [Flexbox]({{ '/docs/3-responsive-layouts/flex' | url }}) and [CSS grid]({{ '/docs/3-responsive-layouts/grid' | url }}) systems have three breakpoint width variants: `sm` (768px default' | url }}), `md` (1024px default' | url }}) and `lg` (1280px default' | url }})
+* A seried of [max-width wrappers]({{ '/docs/4-layout-utilities/dimensions/#max-width-wrappers' | url }}) and viewport-height based [heights]({{ '/docs/4-layout-utilities/dimensions/#heights' | url }}) utilities
+* Responsive [floats]({{ '/docs/4-layout-utilities/floats' | url }}) and [block positioning]({{ '/docs/4-layout-utilities/positions' | url }}) utilities
+* Responsive [y-axis spacing]({{ '/docs/6-decoration-utilities/spacing#responsive-y-axis-spacing' | url }}) (margins and paddings' | url }}) using [CSS clamp(' | url }})](https://chipcullen.com/css-min-max-clamp-functions/' | url }})
+* Responsive [invisibility]({{ '/docs/4-layout-utilities/invisibility' | url }}) utilities
+* Responsive offcanvas side panel components (powered by [AlpineJS]({{ '/docs/8-alpinejs-components/alpinejs-offcanvas' | url }}) or the Codebase [Activator]({{ '/docs/9-activator-components/activator-offcanvas' | url }})' | url }})
 
 ## Responsive Typography
 
-Codebase typography is also responsive to viewport width (device size):
+Codebase typography is also responsive to viewport width (device size' | url }}):
 
-* [Headings](/codebase-4/docs/2-codebase-basics/headings) `<h1>` to `<h6>` have a slight downsize for phones. Below 768px (default), headings become 0.875em (87.5%) their base size
-* [Large display text](/codebase-4/docs/5-typographic-utilities/large-display-text) (using the `.t-lg` wrapper) is 1.25em (125%) the size of base headings for medium screens, and 1.5em (150%) for large screens up
-* [Long read text](/codebase-4/docs/5-typographic-utilities/long-read-text) starts as the normal size for small screens, and then base text and headings grow proportionately using [CSS clamp()](https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/) to a comfortable maximum. Use the `.t-long-read` wrapper for long read articles and blog posts
-* Responsive [text alignment](/codebase-4/docs/5-typographic-utilities/text-alignment) utilities
+* [Headings]({{ '/docs/2-codebase-basics/headings' | url }}) `<h1>` to `<h6>` have a slight downsize for phones. Below 768px (default' | url }}), headings become 0.875em (87.5%' | url }}) their base size
+* [Large display text]({{ '/docs/5-typographic-utilities/large-display-text' | url }}) (using the `.t-lg` wrapper' | url }}) is 1.25em (125%' | url }}) the size of base headings for medium screens, and 1.5em (150%' | url }}) for large screens up
+* [Long read text]({{ '/docs/5-typographic-utilities/long-read-text' | url }}) starts as the normal size for small screens, and then base text and headings grow proportionately using [CSS clamp(' | url }})](https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/' | url }}) to a comfortable maximum. Use the `.t-long-read` wrapper for long read articles and blog posts
+* Responsive [text alignment]({{ '/docs/5-typographic-utilities/text-alignment' | url }}) utilities
 
 ## Codebase Media Query Breakpoint Widths
 

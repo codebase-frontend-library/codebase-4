@@ -2,8 +2,8 @@
 title: "Rounded Corners"
 headerTitle: "Rounded Corners (using Border Radius)"
 layout: layout.njk
-prevPage: "/codebase-4/docs/6-decoration-utilities/borders"
-nextPage: "/codebase-4/docs/6-decoration-utilities/box-shadows"
+prevPage: "/docs/6-decoration-utilities/borders"
+nextPage: "/docs/6-decoration-utilities/box-shadows"
 prevButton: "Borders"
 nextButton: "Box shadows"
 ---

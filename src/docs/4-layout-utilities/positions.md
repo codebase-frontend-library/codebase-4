@@ -1,8 +1,8 @@
 ---
 title: "Positions"
 layout: layout.njk
-prevPage: "/codebase-4/docs/4-layout-utilities/floats"
-nextPage: "/codebase-4/docs/4-layout-utilities/dimensions"
+prevPage: "/docs/4-layout-utilities/floats"
+nextPage: "/docs/4-layout-utilities/dimensions"
 prevButton: "Floats"
 nextButton: "Dimensions"
 ---
@@ -25,7 +25,7 @@ Codebase has utility classes for 4 kinds of positions:
 
 Following is a demo of some of these position utilities. In the demo, the “always” versions of these layout utilities are demonstrated. The `*-md` and `*-lg` variants work in a similar way, except that they only take effect above their respective breakpoint widths.
 
-The demo also uses [full-bleed](/codebase-4/docs/3-responsive-layouts/bleeds) from the Codebase layout system, and some height and width [dimension](/codebase-4/docs/4-layout-utilities/dimensions) utilities.
+The demo also uses [full-bleed]({{ '/docs/3-responsive-layouts/bleeds' | url }}) from the Codebase layout system, and some height and width [dimension]({{ '/docs/4-layout-utilities/dimensions' | url }}) utilities.
 
 <div class="container-grid-full-bleed my-responsive bg-color-background-alt">
   <div class="relative h-half-vh">
@@ -69,7 +69,7 @@ The demo also uses [full-bleed](/codebase-4/docs/3-responsive-layouts/bleeds) fr
 </div>
 ```
 
-(Interested in those colors? See [color utilities](/codebase-4/docs/6-decoration-utilities/colors).)
+(Interested in those colors? See [color utilities]({{ '/docs/6-decoration-utilities/colors' | url }}).)
 
 ## Position `.sticky`
 
@@ -103,12 +103,12 @@ Look, I’m sticky on medium screens up!
 **Notes:**
 
 1. the example HTML code snippet above has some added height to the main column, so that if you copy-paste it, this will prove that it’s working. Delete the `style="height: 500px"` when you no longer need it.)
-2. There are optional modifier classes for adding 1 line-leight (i.e. 3 <a href="/codebase-4/docs/6-decoration-utilities/element-grid">element grid</a> units) gap above and/or below the “stuck” positions (these are not used in the demo above):
+2. There are optional modifier classes for adding 1 line-leight (i.e. 3 <a href="{{ '/docs/2-codebase-basics/element-grid' | url }}">element grid</a> units) gap above and/or below the “stuck” positions (these are not used in the demo above):
     * `.sticky.sticky-gap-top`
     * `.sticky.sticky-gap-bottom`
 3. You may also need to add extra `top` distance in your CSS, to compensate if you have a `position: fixed;` element above the sticky element in your own design. (This has been necessary in the demo above, so that the sticky element isn’t tucked under the docs top-bar.)
 
 There are two other `.sticky` demos in the Codebase documentation: 
 
-1. The main navbar on the [Codebase docs homepage](/) is wrapped in `.sticky`.
+1. The main navbar on the [Codebase docs homepage]({{ '/' | url }}) is wrapped in `.sticky`.
 2. The sidebar on all pages in these docs is wrapped in a `.sticky` that takes effect on large screens up (i.e. when the viewport width is wide enough for displaying the sidebar in “sidebar mode”, not “offcanvas mode”). That’s the reason why, when you have scrolled to the bottom of these pages, you will notice the sidebar has reached the end of its sticky travel zone, and it will scroll up with the page.

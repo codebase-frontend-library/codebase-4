@@ -1,8 +1,8 @@
 ---
 title: "Badges"
 layout: layout.njk
-prevPage: "/codebase-4/docs/7-simple-components/buttons"
-nextPage: "/codebase-4/docs/7-simple-components/labels"
+prevPage: "/docs/7-simple-components/buttons"
+nextPage: "/docs/7-simple-components/labels"
 prevButton: "Buttons"
 nextButton: "Labels"
 ---

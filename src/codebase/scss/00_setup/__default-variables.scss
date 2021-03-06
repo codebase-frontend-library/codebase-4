@@ -214,9 +214,9 @@ $heading-size-scale: () !default;
 $heading-size-scale: map-merge((
   "h1":         2.625em,
   "h2":         2em,
-  "h3":         1.625em,
-  "h4":         1.325em,
-  "h5":         1.125em,
+  "h3":         1.5em,
+  "h4":         1.225em,
+  "h5":         1.1em,
   "h6":         1em
 ), $heading-size-scale);
     
@@ -224,7 +224,7 @@ $heading-weight: () !default;
 $heading-weight: map-merge((
   "h1":         700,
   "h2":         500,
-  "h3":         500,
+  "h3":         400,
   "h4":         400,
   "h5":         400,
   "h6":         400

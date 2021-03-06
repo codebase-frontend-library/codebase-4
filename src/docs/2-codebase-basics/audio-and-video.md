@@ -1,8 +1,8 @@
 ---
 title: "Audio and Video Controls"
 layout: layout.njk
-prevPage: "/codebase-4/docs/2-codebase-basics/images"
-nextPage: "/codebase-4/docs/3-responsive-layouts/containers"
+prevPage: "/docs/2-codebase-basics/images"
+nextPage: "/docs/3-responsive-layouts/containers"
 prevButton: "Images"
 nextButton: "Containers"
 ---

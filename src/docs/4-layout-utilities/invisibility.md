@@ -2,8 +2,8 @@
 title: "Invisibility"
 headerTitle: "Invisibility (Hiding Stuff)"
 layout: layout.njk
-prevPage: "/codebase-4/docs/4-layout-utilities/overflows"
-nextPage: "/codebase-4/docs/5-typographic-utilities/inline-text"
+prevPage: "/docs/4-layout-utilities/overflows"
+nextPage: "/docs/5-typographic-utilities/inline-text"
 prevButton: "Overflows"
 nextButton: "Inline text"
 ---

@@ -2,8 +2,8 @@
 title: "Element Grid"
 headerTitle: "The Codebase “Soft” Element Grid"
 layout: layout.njk
-prevPage: "/codebase-4/docs/1-getting-started/light-and-dark-themes"
-nextPage: "/codebase-4/docs/2-codebase-basics/headings"
+prevPage: "/docs/1-getting-started/light-and-dark-themes"
+nextPage: "/docs/2-codebase-basics/headings"
 prevButton: "Light and dark themes"
 nextButton: "Headings"
 ---
@@ -38,7 +38,7 @@ The Codebase element grid has been deployed a follows:
 <strong>Note:</strong> this <code>padding: 0.5rem 1rem;</code> in the illustration above is also available as the padding utility class <code>.p-block</code>. See <a href="/codebase-4/docs/6-decoration-utilities/spacing">spacing</a>.
 </div>
 
-The element grid has been used throughout Codebase’s classless (basic) styling. Where element grid units have been used in <a href="/codebase-4/docs/6-decoration-utilities/spacing">spacing</a> utility classes (i.e. margins and paddings), these are provided as follows:
+The element grid has been used throughout Codebase’s classless (basic) styling. Where element grid units have been used in [spacing]({{ '/docs/6-decoration-utilities/spacing' | url }}) utility classes (i.e. margins and paddings), these are provided as follows:
 
 <table class="table">
   <thead>

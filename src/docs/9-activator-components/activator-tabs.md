@@ -2,8 +2,8 @@
 title: "Tabs (Activator Component)"
 headerTitle: "Tabs"
 layout: layout.njk
-prevPage: "/codebase-4/docs/9-activator-components/activator-offcanvas"
-nextPage: "/codebase-4/docs/9-activator-components/activator-accordions"
+prevPage: "/docs/9-activator-components/activator-offcanvas"
+nextPage: "/docs/9-activator-components/activator-accordions"
 prevButton: "Activator offcanvas"
 nextButton: "Activator accordions"
 ---

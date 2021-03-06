@@ -1,15 +1,15 @@
 ---
 title: "Long-Read Text"
 layout: layout.njk
-prevPage: "/codebase-4/docs/5-typographic-utilities/large-display-text"
-nextPage: "/codebase-4/docs/5-typographic-utilities/text-columns"
+prevPage: "/docs/5-typographic-utilities/large-display-text"
+nextPage: "/docs/5-typographic-utilities/text-columns"
 prevButton: "Large display text"
 nextButton: "Text columns"
 ---
 
 <p class="t-lg t-thin">Use the <code>.t-long-read</code> block wrapper utility class around text that you want to be larger on large screens, for ease of reading. For example, use on the <code>&lt;article&gt;</code> tag for blog post templates.</p>
 
-On narrow viewports (small devices), the text within the example `.t-long-read` wrapper below will be the Codebase default size (1rem, i.e. 16px). On wider viewports, the text is scaled up using CSS clamp to a comfortable maximum.
+On narrow viewports (small devices), the text within the example `.t-long-read` wrapper below will be the Codebase default size (1rem, i.e. 16px). On wider viewports, the text is scaled up using a [CSS clamp](https://levelup.gitconnected.com/fluid-typography-with-css-clamp-is-my-new-favorite-thing-573d0b8d7bfc) to a comfortable maximum.
 
 <div class="container-grid-full-bleed mb-6">
 <div class="container-grid">

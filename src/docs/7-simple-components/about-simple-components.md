@@ -2,8 +2,8 @@
 title: "Simple Components"
 headerTitle: "Simple Components in Codebase"
 layout: layout.njk
-prevPage: "/codebase-4/docs/6-decoration-utilities/images"
-nextPage: "/codebase-4/docs/7-simple-components/menus"
+prevPage: "/docs/6-decoration-utilities/images"
+nextPage: "/docs/7-simple-components/menus"
 prevButton: "Images"
 nextButton: "Menus"
 ---
@@ -21,11 +21,11 @@ There are two occasions when Codebase uses bespoke component CSS classes:
 
 Simple Codebase components:
 
-* [Menus](/codebase-4/docs/7-simple-components/menus)
-* [Heros](/codebase-4/docs/7-simple-components/heros)
-* [Tables](/codebase-4/docs/7-simple-components/tables)
-* [Buttons](/codebase-4/docs/7-simple-components/buttons)
-* [Badges](/codebase-4/docs/7-simple-components/badges)
-* [Labels](/codebase-4/docs/7-simple-components/labels)
-* [Media objects](/codebase-4/docs/7-simple-components/media-objects)
-* [Cards](/codebase-4/docs/7-simple-components/cards)
+* [Menus]({{ '/docs/7-simple-components/menus' | url }})
+* [Heros]({{ '/docs/7-simple-components/heros' | url }})
+* [Tables]({{ '/docs/7-simple-components/tables' | url }})
+* [Buttons]({{ '/docs/7-simple-components/buttons' | url }})
+* [Badges]({{ '/docs/7-simple-components/badges' | url }})
+* [Labels]({{ '/docs/7-simple-components/labels' | url }})
+* [Media objects]({{ '/docs/7-simple-components/media-objects' | url }})
+* [Cards]({{ '/docs/7-simple-components/cards' | url }})

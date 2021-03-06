@@ -2,8 +2,8 @@
 title: "Panels"
 headerTitle: "Responsive Panels"
 layout: layout.njk
-prevPage: "/codebase-4/docs/7-simple-components/heros"
-nextPage: "/codebase-4/docs/7-simple-components/tables"
+prevPage: "/docs/7-simple-components/heros"
+nextPage: "/docs/7-simple-components/tables"
 prevButton: "Heros"
 nextButton: "Tables"
 ---

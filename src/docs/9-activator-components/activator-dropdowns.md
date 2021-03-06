@@ -2,8 +2,8 @@
 title: "Dropdowns (Activator Component)"
 headerTitle: "Dropdowns"
 layout: layout.njk
-prevPage: "/codebase-4/docs/9-activator-components/activator-showhides"
-nextPage: "/codebase-4/docs/9-activator-components/activator-modals"
+prevPage: "/docs/9-activator-components/activator-showhides"
+nextPage: "/docs/9-activator-components/activator-modals"
 prevButton: "Activator showhides"
 nextButton: "Activator modals"
 ---

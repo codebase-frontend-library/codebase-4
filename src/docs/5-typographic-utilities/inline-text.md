@@ -1,8 +1,8 @@
 ---
 title: "Inline Text"
 layout: layout.njk
-prevPage: "/codebase-4/docs/4-layout-utilities/invisibility"
-nextPage: "/codebase-4/docs/5-typographic-utilities/headings"
+prevPage: "/docs/4-layout-utilities/invisibility"
+nextPage: "/docs/5-typographic-utilities/headings"
 prevButton: "Invisibility"
 nextButton: "Headings"
 ---
@@ -55,7 +55,7 @@ Codebase has several simple text utility classes.
 
 * <code>.t-lg</code> (aliases: `.big` / `.t-big` / `.t-large`)
 
-    Big text for making <span class="t-lg">something</span> stand out. (This class works for both inline and block elements – see [large display text](/codebase-4/docs/5-typographic-utilities/large-display-text).)
+    Big text for making <span class="t-lg">something</span> stand out. (This class works for both inline and block elements – see [large display text]({{ '/docs/5-typographic-utilities/large-display-text' | url }}).)
 
     `.t-lg` enlarges text by 1.25em (125%) on small to medium screens and then 1.5em (150%) on medium screens up, to make the enlargement more obvious when viewed at a distance.
 

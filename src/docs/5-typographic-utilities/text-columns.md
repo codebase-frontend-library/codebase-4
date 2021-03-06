@@ -1,8 +1,8 @@
 ---
 title: "Text Columns"
 layout: layout.njk
-prevPage: "/codebase-4/docs/5-typographic-utilities/long-read-text"
-nextPage: "/codebase-4/docs/6-decoration-utilities/spacing"
+prevPage: "/docs/5-typographic-utilities/long-read-text"
+nextPage: "/docs/6-decoration-utilities/spacing"
 prevButton: "Long read text"
 nextButton: "Spacing"
 ---

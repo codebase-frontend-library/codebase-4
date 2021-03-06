@@ -1,8 +1,8 @@
 ---
 title: "Dimensions"
 layout: layout.njk
-prevPage: "/codebase-4/docs/4-layout-utilities/positions"
-nextPage: "/codebase-4/docs/4-layout-utilities/overflows"
+prevPage: "/docs/4-layout-utilities/positions"
+nextPage: "/docs/4-layout-utilities/overflows"
 prevButton: "Positions"
 nextButton: "Overflows"
 ---
@@ -33,7 +33,7 @@ Codebase has three kinds of height utilities:
 
 The `.h-*-vh` utilities will make a block have a _minimum_ of `50vh` or `100vh` (at whatever specified breakpoint). The `.h-full` utility will vertically stretch a block to 100% height of its containing block.
 
-(There is also `.max-height-0`, that you may beed for some AlpineJS components. See [AlpineJS Showhides](/codebase-4/docs/8-alpinejs-components/alpinejs-showhides).)
+(There is also `.max-height-0`, that you may beed for some AlpineJS components. See [AlpineJS Showhides]({{ '/docs/8-alpinejs-components/alpinejs-showhides' | url }}).)
 
 ## Squares
 
@@ -45,15 +45,15 @@ The `.square-*` sizes are equal to  `sm` 3rem<sup>2</sup> (24px devault), `md` 6
 
 <div class="flex flex-wrap flex-middle flex-gap mb-3">
   <div class="square-sm">
-    <img src="/codebase-4/img/placeholder250x250.svg" alt="A square image">
+    <img src="{{ '/img/placeholder250x250.svg' | url }}" alt="A square image">
   </div>
 
   <div class="square">
-    <img src="/codebase-4/img/placeholder250x250.svg" alt="A square image">
+    <img src="{{ '/img/placeholder250x250.svg' | url }}" alt="A square image">
   </div>
 
   <div class="square-lg">
-    <img src="/codebase-4/img/placeholder250x250.svg" alt="A square image">
+    <img src="{{ '/img/placeholder250x250.svg' | url }}" alt="A square image">
   </div>
 </div>
 
@@ -71,22 +71,22 @@ The `.square-*` sizes are equal to  `sm` 3rem<sup>2</sup> (24px devault), `md` 6
 </div>
 ```
 
-That `.square-lg` is a good e.g. size for author photos in traditional two-column blog layouts. It is also good for pairing with `.rounded-full` – making it easy to create the popular three-up gallery, that’s used for showing a team, or product features, or featured products. Here’s a whole demo of this in a [full-bleed](/codebase-4/docs/3-responsive-layouts/bleeds) and [container](/codebase-4/docs/3-responsive-layouts/containers) pairing (required here because we’re busting out of this narrow documentation column), a 3 column [small grid](/codebase-4/docs/3-responsive-layouts/grid), and various other decoration utilities:
+That `.square-lg` is a good e.g. size for author photos in traditional two-column blog layouts. It is also good for pairing with `.rounded-full` – making it easy to create the popular three-up gallery, that’s used for showing a team, or product features, or featured products. Here’s a whole demo of this in a [full-bleed]({{ '/docs/3-responsive-layouts/bleeds' | url }}) and [container]({{ '/docs/3-responsive-layouts/containers' | url }}) pairing (required here because we’re busting out of this narrow documentation column, a 3 column [small grid]({{ '/docs/3-responsive-layouts/grid' | url }}), and various other decoration utilities:
 
 <div class="container-grid-full-bleed container-grid container-grid-lg my-responsive py-responsive bg-color-background-alt">
   <div class="grid-sm-3-cols grid-gap t-center">
     <div>
-      <img class="square-lg mx-auto b-thick rounded-full" src="/codebase-4/img/placeholder250x250.svg" alt="A square image">
+      <img class="square-lg mx-auto b-thick rounded-full" src="{{ '/img/placeholder250x250.svg' | url }}" alt="A square image">
       <h3 class="my-2">A Short Title</h3>
       <p class="w-xxs mx-auto mb-0">A little bit of descriptive text that will wrap on to multiple lines.</p>
     </div>
     <div>
-      <img class="square-lg mx-auto b-thick rounded-full" src="/codebase-4/img/placeholder250x250.svg" alt="A square image">
+      <img class="square-lg mx-auto b-thick rounded-full" src="{{ '/img/placeholder250x250.svg' | url }}" alt="A square image">
       <h3 class="my-2">Another Short Title</h3>
       <p class="w-xxs mx-auto mb-0">A little bit of descriptive text that will wrap on to multiple lines.</p>
     </div>
     <div>
-      <img class="square-lg mx-auto b-thick rounded-full" src="/codebase-4/img/placeholder250x250.svg" alt="A square image">
+      <img class="square-lg mx-auto b-thick rounded-full" src="{{ '/img/placeholder250x250.svg' | url }}" alt="A square image">
       <h3 class="my-2">A Third Short Title</h3>
       <p class="w-xxs mx-auto mb-0">A little bit of descriptive text that will wrap on to multiple lines.</p>
     </div>
@@ -97,17 +97,17 @@ That `.square-lg` is a good e.g. size for author photos in traditional two-colum
 <div class="container-grid-full-bleed container-grid container-grid-lg my-responsive py-responsive bg-color-background-alt">
   <div class="grid-sm-3-cols grid-gap t-center">
     <div>
-      <img class="square-lg mx-auto b-thick rounded-full" src="/codebase-4/img/placeholder250x250.svg" alt="A square image">
+      <img class="square-lg mx-auto b-thick rounded-full" src="" alt="A square image">
       <h3 class="my-2">A Short Title</h3>
       <p class="w-xxs mx-auto mb-0">A little bit of descriptive text that will wrap on to multiple lines.</p>
     </div>
     <div>
-      <img class="square-lg mx-auto b-thick rounded-full" src="/codebase-4/img/placeholder250x250.svg" alt="A square image">
+      <img class="square-lg mx-auto b-thick rounded-full" src="" alt="A square image">
       <h3 class="my-2">Another Short Title</h3>
       <p class="w-xxs mx-auto mb-0">A little bit of descriptive text that will wrap on to multiple lines.</p>
     </div>
     <div>
-      <img class="square-lg mx-auto b-thick rounded-full" src="/codebase-4/img/placeholder250x250.svg" alt="A square image">
+      <img class="square-lg mx-auto b-thick rounded-full" src="" alt="A square image">
       <h3 class="my-2">A Third Short Title</h3>
       <p class="w-xxs mx-auto mb-0">A little bit of descriptive text that will wrap on to multiple lines.</p>
     </div>
@@ -133,7 +133,7 @@ The `.box` utility expands a block to the full width and height of its containin
 
 See `.box` demonstrated in the _positions demo_ below. The centered/middled label is inside a `.box`.
 
-`.box` is used to overlay text over an image in the Codebase [hero component](/codebase-4/docs/7-simple-components/heros).
+`.box` is used to overlay text over an image in the Codebase [hero component]({{ '/docs/7-simple-components/heros' | url }}).
 
 <div class="container-grid-full-bleed mb-3 bg-color-background-alt">
   <div class="relative h-half-vh">
@@ -177,4 +177,4 @@ See `.box` demonstrated in the _positions demo_ below. The centered/middled labe
 </div>
 ```
 
-(Interested in those colors? See [color utilities](/codebase-4/docs/6-decoration-utilities/colors).)
+(Interested in those colors? See [color utilities]({{ '/docs/6-decoration-utilities/colors' | url }}).)

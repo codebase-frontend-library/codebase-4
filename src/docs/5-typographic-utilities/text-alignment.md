@@ -1,8 +1,8 @@
 ---
 title: "Text Alignment"
 layout: layout.njk
-prevPage: "/codebase-4/docs/5-typographic-utilities/headings"
-nextPage: "/codebase-4/docs/5-typographic-utilities/large-display-text"
+prevPage: "/docs/5-typographic-utilities/headings"
+nextPage: "/docs/5-typographic-utilities/large-display-text"
 prevButton: "Headings"
 nextButton: "Large display text"
 ---

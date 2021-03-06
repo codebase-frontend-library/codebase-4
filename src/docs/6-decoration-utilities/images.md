@@ -1,8 +1,8 @@
 ---
 title: "Image Utilities"
 layout: layout.njk
-prevPage: "/codebase-4/docs/6-decoration-utilities/colors"
-nextPage: "/codebase-4/docs/7-simple-components/about-simple-components"
+prevPage: "/docs/6-decoration-utilities/colors"
+nextPage: "/docs/7-simple-components/about-simple-components"
 prevButton: "Colors"
 nextButton: "About simple components"
 ---
@@ -16,7 +16,7 @@ nextButton: "About simple components"
 _You will need to narrow and widen your browser window to see the effect of this utility class._
 
 <div class="mb-3 overflow-hidden" style="height: 460px">
-  <img class="img-cover" src="/codebase-4/img/placeholder1000x1000.svg">
+  <img class="img-cover" src="{{ '/img/placeholder1000x1000.svg' | url }}">
 </div>
 
 ```html

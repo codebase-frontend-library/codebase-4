@@ -1,9 +1,9 @@
 /*!
- * CODEBASE v.4 ACTIVATOR  (jQuery version)
+ * CODEBASE ACTIVATOR  (jQuery version)
  * Use only if you want to support Internet Explorer 11
  * Use with =< jQuery 2.2.4 (do not use with jQuery 3.x)
  * MIT Licence
- * v4.0.2
+ * Unchanged since v.4.0.2
  */
 
 (function ($) {

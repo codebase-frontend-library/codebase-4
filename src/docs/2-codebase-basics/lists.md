@@ -1,8 +1,8 @@
 ---
 title: "Lists"
 layout: layout.njk
-prevPage: "/codebase-4/docs/2-codebase-basics/simple-text-elements"
-nextPage: "/codebase-4/docs/2-codebase-basics/details"
+prevPage: "/docs/2-codebase-basics/simple-text-elements"
+nextPage: "/docs/2-codebase-basics/details"
 prevButton: "Simple text elements"
 nextButton: "Collapsible details"
 ---

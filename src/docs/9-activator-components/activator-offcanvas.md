@@ -2,8 +2,8 @@
 title: "Offcanvas (Activator Component)"
 headerTitle: "Offcanvas Side Panels"
 layout: layout.njk
-prevPage: "/codebase-4/docs/9-activator-components/activator-modals"
-nextPage: "/codebase-4/docs/9-activator-components/activator-tabs"
+prevPage: "/docs/9-activator-components/activator-modals"
+nextPage: "/docs/9-activator-components/activator-tabs"
 prevButton: "Activator modals"
 nextButton: "Activator tabs"
 ---

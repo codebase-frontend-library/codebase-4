@@ -1,8 +1,8 @@
 ---
 title: "Simple Text Elements"
 layout: layout.njk
-prevPage: "/codebase-4/docs/2-codebase-basics/paragraphs"
-nextPage: "/codebase-4/docs/2-codebase-basics/lists"
+prevPage: "/docs/2-codebase-basics/paragraphs"
+nextPage: "/docs/2-codebase-basics/lists"
 prevButton: "Paragraphs"
 nextButton: "Lists"
 ---

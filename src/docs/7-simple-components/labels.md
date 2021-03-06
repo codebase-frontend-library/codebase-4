@@ -1,8 +1,8 @@
 ---
 title: "Labels"
 layout: layout.njk
-prevPage: "/codebase-4/docs/7-simple-components/badges"
-nextPage: "/codebase-4/docs/7-simple-components/media-objects"
+prevPage: "/docs/7-simple-components/badges"
+nextPage: "/docs/7-simple-components/media-objects"
 prevButton: "Badges"
 nextButton: "Media objects"
 ---

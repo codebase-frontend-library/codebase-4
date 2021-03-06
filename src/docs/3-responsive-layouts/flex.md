@@ -2,8 +2,8 @@
 title: "Flex"
 headerTitle: "Flex System"
 layout: layout.njk
-prevPage: "/codebase-4/docs/3-responsive-layouts/bleeds"
-nextPage: "/codebase-4/docs/3-responsive-layouts/flex-pseudo-grids"
+prevPage: "/docs/3-responsive-layouts/bleeds"
+nextPage: "/docs/3-responsive-layouts/flex-pseudo-grids"
 prevButton: "Bleeds"
 nextButton: "Flex pseudo grids"
 ---
@@ -42,7 +42,7 @@ All the following examples below use `.flex` as-is, so that the demos can be see
 **Notes:**
 
 1. All flexbox system wrappers affect their immediate child elements.
-2. The Codebase flexbox systems don’t constrain the immediate child elements to proportional widths (in a row) or heights (in a column). So, if you need something like “25% with sidebar with 75% main content”, then you need the Codebase [flex pseudo grid](/codebase-4/docs/3-responsive-layouts/flex-pseudo-grids) – or, better – the Codebase [real grid system](/codebase-4/docs/3-responsive-layouts/grid).
+2. The Codebase flexbox systems don’t constrain the immediate child elements to proportional widths (in a row) or heights (in a column). So, if you need something like “25% with sidebar with 75% main content”, then you need the Codebase [flex pseudo grid]({{ '/docs/3-responsive-layouts/flex-pseudo-grids' | url }}) – or, better – the Codebase [real grid system]({{ '/docs/3-responsive-layouts/grid' | url }}).
 
 `.flex`:
 
@@ -62,7 +62,7 @@ All the following examples below use `.flex` as-is, so that the demos can be see
 </div>
 ```
 
-The `.flex` wrapper, and its breakpoint width variants (see above), is great for making [menubars](/codebase-4/docs/7-simple-components/menus/#menubars).
+The `.flex` wrapper, and its breakpoint width variants (see above), is great for making [menubars]({{ '/docs/7-simple-components/menus/#menubars' | url }}).
 
 `.flex.flex-grow-equal` :
 
@@ -84,7 +84,7 @@ The `.flex` wrapper, and its breakpoint width variants (see above), is great for
 
 `.flex-grow-equal` may be all you need if you want a number of equal width columns (e.g. for a “two up” or “three up”). You can easily combine it with  a flex system wrapper with built-in breakpoint width (e.g. `.flex-md`) instead of `.flex`, so that your mini “pseudo grid” takes effect only above that device width (or window width).
 
-<p class="panel-responsive bl-heavy b-color-secondary bg-color-secondary-alt">Codebase also contains a simple 12-column flexbox <a href="#flex-pseudo-grids">pseudo grid</a> if you need it – e.g. if you need a (pseudo) grid system that supports ancient web browsers. But for more power, go for Codebase’s real <em>CSS grid</em> [grid system](/codebase-4/docs/3-responsive-layouts/grid).</p>
+<p class="panel-responsive bl-heavy b-color-secondary bg-color-secondary-alt">Codebase also contains a simple 12-column flexbox <a href="#flex-pseudo-grids">pseudo grid</a> if you need it – e.g. if you need a (pseudo) grid system that supports ancient web browsers. But for more power, go for Codebase’s real <em>CSS grid</em> <a href="{{ '/docs/3-responsive-layouts/grid' | url }}">grid system</a>.</p>
 
 
 `.flex.flex-grow-auto` :

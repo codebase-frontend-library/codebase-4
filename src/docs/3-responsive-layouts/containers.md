@@ -2,8 +2,8 @@
 title: "Containers"
 headerTitle: "Responsive Containers"
 layout: layout.njk
-prevPage: "/codebase-4/docs/2-codebase-basics/audio-and-video"
-nextPage: "/codebase-4/docs/3-responsive-layouts/bleeds"
+prevPage: "/docs/2-codebase-basics/audio-and-video"
+nextPage: "/docs/3-responsive-layouts/bleeds"
 prevButton: "Audio and video"
 nextButton: "Bleeds"
 ---
@@ -64,7 +64,7 @@ That’s all you need to know about containers.
 
 <div class="mb-3 panel-responsive bl-heavy b-color-secondary bg-color-secondary-alt">
   <p>Codebase traditional containers are here for you if you still prefer to use them, or if you must support Internet Explorer =&lt; 11 (2013), or any ancient browser that doesn’t support <a href="https://caniuse.com/css-grid">CSS grid</a>.</p>
-  <p class="mb-0">Codebase contains no browser specific prefixes on container-grid or <a href="/codebase-4/docs/3-responsive-layouts/grid">grid system</a> classes.</p>
+  <p class="mb-0">Codebase contains no browser specific prefixes on container-grid or <a href="{{ '/docs/3-responsive-layouts/grid' | url }}">grid system</a> classes.</p>
 </div>
 
 ***
@@ -123,7 +123,7 @@ _Direct child_ elements in container-grids are placed in the middle column using
 </tbody>
 </table>
 
-See also Codebase [bleeds](/codebase-4/docs/3-responsive-layouts/bleeds).
+See also Codebase [bleeds]({{ '/docs/3-responsive-layouts/bleeds' | url }}).
 
 **Notes:**
 
@@ -153,7 +153,7 @@ See also Codebase [bleeds](/codebase-4/docs/3-responsive-layouts/bleeds).
 
 ## Width Utilities
 
-Codebase has another way of controlling the width of elements, by using [width utilities](/codebase-4/docs/4-layout-utilities/dimensions#widths). These may also may be useful to you in some situations.
+Codebase has another way of controlling the width of elements, by using [width utilities]({{ '/docs/4-layout-utilities/dimensions#widths' | url }}). These may also may be useful to you in some situations.
 
 You can also push a width-constrained element horizontally to the center of its wrapper, using the `.mx-auto` margin-utility. You will also want to set side paddings using padding utilities, so that any text in your element is moved in from the edges of smaller device screens.
 
@@ -171,4 +171,4 @@ Here’s how you would set up a `md` i.e. medium width wrapper (default width of
 </div>
 ```
 
-For more information margins and paddings, see [spacing utilities](/codebase-4/docs/6-decoration-utilities/spacing).
+For more information margins and paddings, see [spacing utilities]({{ '/docs/6-decoration-utilities/spacing' | url }}).

@@ -2,8 +2,8 @@
 title: "Prose Text"
 headerTitle: "The Prose Text Wrapper"
 layout: layout.njk
-prevPage: "/codebase-4/docs/5-simple-components/heros"
-nextPage: "/codebase-4/docs/5-simple-components/tables"
+prevPage: "/docs/5-simple-components/heros"
+nextPage: "/docs/5-simple-components/tables"
 ---
 
 Use the `.t-long-read` block wrapper component class around text that you want to be rendered larger on large screens, for ease of reading. For example, use on `.t-long-read` on the `<article>` tag for long-read blog post layout templates.

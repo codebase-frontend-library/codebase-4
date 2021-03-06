@@ -1,8 +1,8 @@
 ---
 title: "Buttons"
 layout: layout.njk
-prevPage: "/codebase-4/docs/7-simple-components/tables"
-nextPage: "/codebase-4/docs/7-simple-components/badges"
+prevPage: "/docs/7-simple-components/tables"
+nextPage: "/docs/7-simple-components/badges"
 prevButton: "Tables"
 nextButton: "Badges"
 ---
@@ -194,7 +194,7 @@ Since `.btn-icon` renders a square, you can also use `.rounded-full` to make it 
 <button class="btn btn-lg btn-icon rounded-full">C</button>
 ```
 
-Do you want larger text and/or icon on `.btn-lg` too? Then add the `.t-lg` [text utility](/codebase-4/docs/4-utilities/text):
+Do you want larger text and/or icon on `.btn-lg` too? Then add the `.t-lg` [text utility]({{ '/docs/4-utilities/text' | url }}):
 
 <a class="btn btn-primary btn-lg" href="">Normal text</a> – large button
 

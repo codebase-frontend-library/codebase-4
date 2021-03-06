@@ -2,8 +2,8 @@
 title: "Offcanvas (AlpineJS)"
 headerTitle: "Offcanvas Side Panels"
 layout: layout.njk
-prevPage: "/codebase-4/docs/8-alpinejs-components/alpinejs-modals"
-nextPage: "/codebase-4/docs/8-alpinejs-components/alpinejs-tabs"
+prevPage: "/docs/8-alpinejs-components/alpinejs-modals"
+nextPage: "/docs/8-alpinejs-components/alpinejs-tabs"
 prevButton: "AlpineJS modals"
 nextButton: "AlpineJS tabs"
 ---

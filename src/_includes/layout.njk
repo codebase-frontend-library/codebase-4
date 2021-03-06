@@ -8,33 +8,33 @@
 
   {% include "side-nav.njk" %}
 
-  <article class="flex-item-grow-1">
+  <article class="w-full">
 
     <header class="mb-3 pt-responsive pb-3">
-        <div class="container-grid container-grid-sm py-3">
-          <div class="t-lg">
-            {% if '1-getting-started' in page.url %}
-            <div class="mb-1 bb-thin pb-2 t-uppercase t-thin t-loose">Getting Started</div>
-            {% elif '2-codebase-basics' in page.url %}
-            <div class="mb-1 bb-thin pb-2 t-uppercase t-thin t-loose">Codebase Basics</div>
-            {% elif '3-responsive-layouts' in page.url %}
-            <div class="mb-1 bb-thin pb-2 t-uppercase t-thin t-loose">Responsive Layouts</div>
-            {% elif '4-layout-utilities' in page.url %}
-            <div class="mb-1 bb-thin pb-2 t-uppercase t-thin t-loose">Layout Utilities</div>
-            {% elif '5-typographic-utilities' in page.url %}
-            <div class="mb-1 bb-thin pb-2 t-uppercase t-thin t-loose">Typographic Utilities</div>
-            {% elif '6-decoration-utilities' in page.url %}
-            <div class="mb-1 bb-thin pb-2 t-uppercase t-thin t-loose">Decoration Utilities</div>
-            {% elif '7-simple-components' in page.url %}
-            <div class="mb-1 bb-thin pb-2 t-uppercase t-thin t-loose">Simple Components</div>
-            {% elif '8-alpinejs-components' in page.url %}
-            <div class="mb-1 bb-thin pb-2 t-uppercase t-thin t-loose">AlpineJS Components</div>
-            {% elif '9-activator-components' in page.url %}
-            <div class="mb-1 bb-thin pb-2 t-uppercase t-thin t-loose">Activator Components</div>
-            {% endif %}
-            <h1 class="mb-0">{{ headerTitle if headerTitle else title }}</h1>    
-          </div>
+      <div class="container-grid container-grid-sm py-3">
+        <div class="t-lg">
+          {% if '1-getting-started' in page.url %}
+          <div class="mb-1 bb-thin pb-2 t-uppercase t-thin t-loose">Getting Started</div>
+          {% elif '2-codebase-basics' in page.url %}
+          <div class="mb-1 bb-thin pb-2 t-uppercase t-thin t-loose">Codebase Basics</div>
+          {% elif '3-responsive-layouts' in page.url %}
+          <div class="mb-1 bb-thin pb-2 t-uppercase t-thin t-loose">Responsive Layouts</div>
+          {% elif '4-layout-utilities' in page.url %}
+          <div class="mb-1 bb-thin pb-2 t-uppercase t-thin t-loose">Layout Utilities</div>
+          {% elif '5-typographic-utilities' in page.url %}
+          <div class="mb-1 bb-thin pb-2 t-uppercase t-thin t-loose">Typographic Utilities</div>
+          {% elif '6-decoration-utilities' in page.url %}
+          <div class="mb-1 bb-thin pb-2 t-uppercase t-thin t-loose">Decoration Utilities</div>
+          {% elif '7-simple-components' in page.url %}
+          <div class="mb-1 bb-thin pb-2 t-uppercase t-thin t-loose">Simple Components</div>
+          {% elif '8-alpinejs-components' in page.url %}
+          <div class="mb-1 bb-thin pb-2 t-uppercase t-thin t-loose">AlpineJS Components</div>
+          {% elif '9-activator-components' in page.url %}
+          <div class="mb-1 bb-thin pb-2 t-uppercase t-thin t-loose">Activator Components</div>
+          {% endif %}
+          <h1 class="mb-0">{{ headerTitle if headerTitle else title }}</h1>    
         </div>
+      </div>
     </header>
 
     <section id="docs-mainbody" class="container-grid container-grid-sm mb-6">
@@ -44,10 +44,10 @@
     <footer class="container-grid container-grid-lg mb-responsive t-center">
       <div class="clearfix bt-thin bb-thin py-2">
         {% if prevPage %}
-        <a class="my-1 float-left btn btn-primary" href="{{prevPage}}">&larr; {{ prevButton if prevButton else "Previous page" }}</a>
+        <a class="my-1 float-left btn btn-primary" href="{{ prevPage | url }}">&larr; {{ prevButton if prevButton else "Previous page" }}</a>
           {% endif %}
         {% if nextPage %}
-        <a class="my-1 float-right btn btn-primary" href="{{nextPage}}">{{ nextButton if nextButton else "Next page" }} &rarr;</a>
+        <a class="my-1 float-right btn btn-primary" href="{{ nextPage | url }}">{{ nextButton if nextButton else "Next page" }} &rarr;</a>
         {% endif %}  
       </div>
     </footer>

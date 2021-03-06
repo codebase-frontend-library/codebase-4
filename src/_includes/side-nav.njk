@@ -48,7 +48,7 @@ x-data="docsOcState()"
               <a href="{{ '/' | url }}">Home</a>
             </li>
             <li>
-              <a href="https://github.com/codebase-frontend-library/codebase-4/archive/master.zip">Download</a>
+              <a href="{{ '/dist.zip' | url }}">Download</a>
             </li>
             <li>
               <a href="https://github.com/codebase-frontend-library/codebase-4">GitHub</a>
@@ -80,7 +80,7 @@ x-data="docsOcState()"
             x-bind:style="revealed == true ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : ''">
             <div class="px-2">
               <ul class="menu">
-                <li><a href="{{ '/docs/1-getting-started/simple-html-setup' | url }}">Simple HTML setup</a></li>
+                <li><a href="{{ '/docs/1-getting-started/introduction/' | url }}">Introduction</a></li>
                 <li><a href="{{ '/docs/1-getting-started/codebase-scss-library' | url }}">The Codebase SCSS library</a></li>
                 <li><a href="{{ '/docs/1-getting-started/alpinejs-or-activator' | url }}">AlpineJS or Activator components</a></li>
                 <li><a href="{{ '/docs/1-getting-started/responsive-design' | url }}">Responsive design</a></li>

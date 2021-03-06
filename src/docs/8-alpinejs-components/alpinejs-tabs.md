@@ -2,8 +2,8 @@
 title: "Tabs (AlpineJS)"
 headerTitle: "Tabs"
 layout: layout.njk
-prevPage: "/codebase-4/docs/8-alpinejs-components/alpinejs-offcanvas"
-nextPage: "/codebase-4/docs/8-alpinejs-components/alpinejs-accordions"
+prevPage: "/docs/8-alpinejs-components/alpinejs-offcanvas"
+nextPage: "/docs/8-alpinejs-components/alpinejs-accordions"
 prevButton: "AlpineJS offcanvas"
 nextButton: "AlpineJS accordions"
 ---

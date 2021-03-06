@@ -102,7 +102,7 @@ dl {
 ol,
 ul {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: $text-base-line-height * 1rem;
   padding-left: $text-base-line-height * 1rem;
 }
 

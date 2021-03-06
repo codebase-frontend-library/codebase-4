@@ -1,8 +1,8 @@
 ---
 title: "Tables"
 layout: layout.njk
-prevPage: "/codebase-4/docs/2-codebase-basics/blockquotes"
-nextPage: "/codebase-4/docs/2-codebase-basics/form-elements"
+prevPage: "/docs/2-codebase-basics/blockquotes"
+nextPage: "/docs/2-codebase-basics/form-elements"
 prevButton: "Blockquotes"
 nextButton: "Form elements"
 ---
@@ -69,4 +69,4 @@ This is what a classless table looks like:
 </table>
 ```
 
-For special table styling, see the Codebase [table component](/codebase-4/docs/7-simple-components/tables).
+For special table styling, see the Codebase [table component]({{ '/docs/7-simple-components/tables/' | url }}).

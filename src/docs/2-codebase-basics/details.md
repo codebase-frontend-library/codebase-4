@@ -2,8 +2,8 @@
 title: "Details"
 headerTitle: "Collapsible Details"
 layout: layout.njk
-prevPage: "/codebase-4/docs/2-codebase-basics/lists"
-nextPage: "/codebase-4/docs/2-codebase-basics/horizontal-rules"
+prevPage: "/docs/2-codebase-basics/lists"
+nextPage: "/docs/2-codebase-basics/horizontal-rules"
 prevButton: "Lists"
 nextButton: "Horizontal rules"
 ---

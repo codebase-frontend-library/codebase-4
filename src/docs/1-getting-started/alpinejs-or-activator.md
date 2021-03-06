@@ -2,15 +2,15 @@
 title: "AlpineJS or Activator"
 headerTitle: "Using AlpineJS or Activator in Codebase"
 layout: layout.njk
-prevPage: "/codebase-4/docs/1-getting-started/codebase-scss"
-nextPage: "/codebase-4/docs/1-getting-started/responsive-design"
+prevPage: "/docs/1-getting-started/codebase-scss"
+nextPage: "/docs/1-getting-started/responsive-design"
 prevButton: "Codebase SCSS"
 nextButton: "Responsive design"
 ---
 
 <p class="t-lg t-thin">Codebase plays well with <a href="https://github.com/alpinejs/alpine">AlpineJS</a>. Alpine is recommended with Codebase in most circumstances.</p>
 
-But if you only need really simple functionality, Codebase also has its own miniscule script called [Activator](/codebase-4/docs/8-alpinejs-components/about-alpinejs-components).
+But if you only need really simple functionality, Codebase also has its own miniscule script called [Activator]({{ '/docs/8-alpinejs-components/about-alpinejs-components' | url }}).
 
 The JavaScript powered components of earlier versions of Codebase required jQuery, until Codebase 3 went totally “vanilla JavaScript” in 2019. While working on Codebase 4, I discovered the AlpineJS frontend JavaScript framework. I soon saw that it could do all that I wanted and much more.
 
@@ -21,8 +21,8 @@ Veteran web designers may still prefer the way `activator.js` does things. But d
 Besides the Codebase-based AlpineJS demos in these docs, there are plenty of tutorials and videos out there showing you how to use Alpine.
 
 <div class="grid-sm-2-cols grid-gap my-6 t-center">
-  <a class="mb-3 btn btn-primary rounded-pill" href="/codebase-4/docs/8-alpinejs-components/about-alpinejs-components">Codebase with AlpineJS</a>
-  <a class="mb-3 btn btn-secondary rounded-pill" href="/codebase-4/docs/9-activator-components/about-activator-components">Codebase with Activator</a>
+  <a class="mb-3 btn btn-primary btn-lg rounded-pill" href="{{ '/docs/8-alpinejs-components/about-alpinejs-components' | url }}">Codebase with AlpineJS</a>
+  <a class="mb-3 btn btn-secondary btn-lg rounded-pill" href="{{ '/docs/9-activator-components/about-activator-components' | url }}">Codebase with Activator</a>
 </div>
 
 **Note:** Converting Codebase components from Activator to AlpineJS, or _vise versa_, involves more than simply swapping out one script for the other. The HTML also needs to be reconfigured. AlpineJS uses its own _declarations_ as HTML attributes. The way that the Codebase `activator.js` works is completely different – it uses `id`, `aria` attributes, `data` attributes.

@@ -1,8 +1,8 @@
 ---
 title: "Slideshows (AlpineJS Component)"
 layout: layout.njk
-prevPage: "/codebase-4/docs/8-alpinejs-components/alpinejs-accordions"
-nextPage: "/codebase-4/docs/9-activator-components/about-activator-components"
+prevPage: "/docs/8-alpinejs-components/alpinejs-accordions"
+nextPage: "/docs/9-activator-components/about-activator-components"
 prevButton: "AlpineJS tabs"
 nextButton: "About Activator components"
 ---

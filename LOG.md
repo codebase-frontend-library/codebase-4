@@ -1,5 +1,13 @@
 # Log
 
+## 6 March 2021 – Codebase 4.0.4
+
+* Minor improvements to typography: 
+    * slightly reducing H3 and H4 heading sizes, so that there is more difference between couplets of H2/H3 and H3/H4;
+    * Adding margin below OL and UL, so that it is the same as for paragraphs and headings (instead of the space between each LI).
+* Downloadable zipped `dist` folder, prepared using `gulp-zip`.
+* Improvements to the docs.
+
 ## 27 February 2021 - Codebase 4.0.3
 
 * Added the `.panel-responsive component.

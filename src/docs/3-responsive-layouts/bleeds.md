@@ -1,8 +1,8 @@
 ---
 title: "Bleeds"
 layout: layout.njk
-prevPage: "/codebase-4/docs/3-responsive-layouts/containers"
-nextPage: "/codebase-4/docs/3-responsive-layouts/flex"
+prevPage: "/docs/3-responsive-layouts/containers"
+nextPage: "/docs/3-responsive-layouts/flex"
 prevButton: "Containers"
 nextButton: "Flex system"
 ---
@@ -35,7 +35,7 @@ Codebase contains this utility in the `.full-bleed` CSS class. It _must_ be cent
 
 The Codebase `.container-grid-full-bleed` class uses _CSS grid_, following [Josh W Comeau’s technique](https://joshwcomeau.com/css/full-bleed/)).
 
-<p class="panel-responsive bl-heavy b-color-primary bg-color-primary-alt">Codebase layout bleeds only work as <em>immediate child</em> elements inside Codebase <a href="/codebase-4/docs/3-responsive-layouts/containers">containers</a>.</p>
+<p class="panel-responsive bl-heavy b-color-primary bg-color-primary-alt">Codebase layout bleeds only work as <em>immediate child</em> elements inside Codebase <a href="{{ '/docs/3-responsive-layouts/containers' | url }}">containers</a>.</p>
 
 <div class="container-grid-full-bleed mb-3 py-6 bg-color-primary-alt">Container grid full bleed content...</div>
 
@@ -81,4 +81,4 @@ You can combine partial bleeds, (max) widths (and floats) for displaying images 
 </div>
 ```
 
-A partial bleed is great for having your main text in a centered column, with a sidebar alongside it (perhaps a [sticky](/codebase-4/docs/4-layout-utilities/positions/#position-.sticky), e.g. for ads or social sharing buttons. The partial bleed can then be used to protrude oversized images to the opposite side, so that it doesn’t interfere with the sidebar.
+A partial bleed is great for having your main text in a centered column, with a sidebar alongside it (perhaps a [sticky]({{ '/docs/4-layout-utilities/positions/#position-.sticky' | url }}), e.g. for ads or social sharing buttons. The partial bleed can then be used to protrude oversized images to the opposite side, so that it doesn’t interfere with the sidebar.
