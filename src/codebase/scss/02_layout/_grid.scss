@@ -44,14 +44,9 @@
 }
 
 .grid-gap {
-  margin-right: $grid-gap-width;
+  grid-column-gap: $grid-gap-width;
   > * {
     margin-bottom: $grid-gap-width;
-  }
-}
-@supports (grid-column-gap: $grid-gap-width) {
-  .grid-gap {
-    grid-column-gap: $grid-gap-width;
   }
 }
 
