@@ -155,7 +155,7 @@
   </ul>
 </div>
 
-<header class="h-full-vh flex flex-column flex-center docs-wallpaper" style="padding-top: 57px;">
+<header class="h-full-vh flex flex-column flex-center docs-wallpaper bb-thin" style="padding-top: 57px;">
   
   <div class="container container-sm">
     <div class="t-lg">
@@ -189,7 +189,7 @@
 
 </header>
 
-<div class="sticky w-full bt-thin" style="z-index: 990;">
+<div class="sticky w-full" style="z-index: 990;">
   <div id="top-nav" class="w-full flex flex-space-between bb-thin p-1 bg-color-background">
   <div class="flex flex-row-reverse flex-middle">
     <div>
@@ -219,8 +219,11 @@
 
       let resizeResetHeader = () => {
         window.addEventListener('resize', () => {
-          let xData = document.querySelector('[x-data]');
-          return xData.__x.$data.headerOffcanvas = false;
+          let windowWidth = window.innerWidth;
+          if (windowWidth < 1024) {
+            let xData = document.querySelector('[x-data]');
+            return xData.__x.$data.headerOffcanvas = false;
+          }
         });
       }
       resizeResetHeader();

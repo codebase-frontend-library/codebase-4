@@ -141,8 +141,11 @@
 
       let resizeResetHeader = () => {
         window.addEventListener('resize', () => {
-          let xData = document.querySelector('[x-data]');
-          return xData.__x.$data.headerOffcanvas = false;
+          let windowWidth = window.innerWidth;
+          if (windowWidth < 1024) {
+            let xData = document.querySelector('[x-data]');
+            return xData.__x.$data.headerOffcanvas = false;
+          }
         });
       }
       resizeResetHeader();
