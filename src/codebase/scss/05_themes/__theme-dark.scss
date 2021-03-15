@@ -299,7 +299,10 @@ $color-scheme-dark: map-merge((
   .b-color-ui {
     border-color: $color-ui-text-dark !important;
   }
-  
+  .t-color-hyperlink {
+    color: $color-hyperlink-dark;
+  }
+
   @each $key, $value in $color-ui-dark {
     .bg-color-#{$key} {
       background: $value;

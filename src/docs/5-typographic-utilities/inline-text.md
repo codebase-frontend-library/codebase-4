@@ -55,9 +55,11 @@ Codebase has several simple text utility classes.
 
 * <code>.t-lg</code> (aliases: `.big` / `.t-big` / `.t-large`)
 
-    Big text for making <span class="t-lg">something</span> stand out. (This class works for both inline and block elements – see [large display text]({{ '/docs/5-typographic-utilities/large-display-text' | url }}).)
+    Big text for making <span class="t-lg">something</span> stand out.
 
     `.t-lg` enlarges text by 1.25em (125%) on small to medium screens and then 1.5em (150%) on medium screens up, to make the enlargement more obvious when viewed at a distance.
+
+    **Note:** `.t-lg` doesn’t work on [headings]({{ '/docs/2-codebase-basics/headings' | url }}) or [heading utilities]({{ '/docs/5-typographic-utilities/headings' | url }}). If you want a heading to be bigger, then use `.t-lg` on a _wrapper_ around the heading. See [large display text]({{ '/docs/5-typographic-utilities/large-display-text' | url }}).
 
 * <code>.t-sm</code> (aliases: `.small`, `.t-small` – or use the `<small>` HTML tag)
 

@@ -185,7 +185,19 @@ Text `.t-color-{colorname}`:
   </tbody>
 </table>
 
-## The Special `.t-color-ui-text` and `.b-color-ui-text` Utility Classes
+## Color Utility Class Extras
+
+### `.t-color-hyperlink`
+
+For use in situations where you need to _restore_ the color of a hyperlink. E.g. when using a heading utility that overrides the normal hyperlink color.
+
+<a class="h1 t-color-hyperlink" href="#/">A hyperlink</a>
+
+```html
+<a class="h1 t-color-hyperlink" href="">A hyperlink</a>
+```
+
+### `.t-color-ui-text` and `.b-color-ui-text`
 
 Seeing that sometimes you may want to use the UI colors (primary, secondary, success, warning, danger) as background colors for e.g. cards or panels, you will also want to control the text color on those elements. This is done by the special `.t-color-ui-text` utility. This will set text color to be the same as that of buttons, badges and labels – overriding the default light theme and dark theme text and border colors.
 

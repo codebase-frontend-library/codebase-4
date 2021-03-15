@@ -214,6 +214,10 @@
     border-color: $color-ui-text !important;
   }  
 
+  .t-color-hyperlink {
+    color: $color-hyperlink;
+  }
+
   @each $key, $value in $color-ui {
     .bg-color-#{$key} {
       background: $value;

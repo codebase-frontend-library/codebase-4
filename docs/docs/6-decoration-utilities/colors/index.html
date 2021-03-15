@@ -740,7 +740,12 @@ x-data="docsOcState()"
     </tr>
   </tbody>
 </table>
-<h2 id="the-special-.t-color-ui-text-and-.b-color-ui-text-utility-classes">The Special <code>.t-color-ui-text</code> and <code>.b-color-ui-text</code> Utility Classes</h2>
+<h2 id="color-utility-class-extras">Color Utility Class Extras</h2>
+<h3 id=".t-color-hyperlink"><code>.t-color-hyperlink</code></h3>
+<p>For use in situations where you need to <em>restore</em> the color of a hyperlink. E.g. when using a heading utility that overrides the normal hyperlink color.</p>
+<p><a class="h1 t-color-hyperlink" href="#/">A hyperlink</a></p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h1 t-color-hyperlink<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>A hyperlink<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+<h3 id=".t-color-ui-text-and-.b-color-ui-text"><code>.t-color-ui-text</code> and <code>.b-color-ui-text</code></h3>
 <p>Seeing that sometimes you may want to use the UI colors (primary, secondary, success, warning, danger) as background colors for e.g. cards or panels, you will also want to control the text color on those elements. This is done by the special <code>.t-color-ui-text</code> utility. This will set text color to be the same as that of buttons, badges and labels – overriding the default light theme and dark theme text and border colors.</p>
 <p>And if you place a button, label or badge into an element with a UI color background, you may also want to set the border in the same way – use <code>.b-color-ui-text</code> of the UI element to be <em>the same UI text color</em>.</p>
 <p>Example:</p>
@@ -772,7 +777,7 @@ x-data="docsOcState()"
       <!-- Codebase logo-->
       <svg  style="height: 4rem; margin-bottom: 1rem;" viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2"><path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"/></svg>
       <span>
-        Codebase <span class="t-thin">4.0.4</span>
+        Codebase <span class="t-thin">4.0.5</span>
       </span>
 
       </span>

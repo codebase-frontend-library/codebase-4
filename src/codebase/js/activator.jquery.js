@@ -1,9 +1,9 @@
 /*!
  * CODEBASE ACTIVATOR  (jQuery version)
- * Use only if you want to support Internet Explorer 11
- * Use with =< jQuery 2.2.4 (do not use with jQuery 3.x)
+ * Use only if you want to support Internet Explorer 11 and other old browsers
+ * Use with =< jQuery 2.2.4 (do not use with jQuery 3.x and up)
  * MIT Licence
- * Unchanged since v.4.0.2
+ * v.4.0.5
  */
 
 (function ($) {
@@ -118,12 +118,7 @@
         // Toggle has no siblings (but can have optional click-away)
         if (dataControl === 'toggle') {
           if (activeControlActive) {
-            $(this).removeClass('active');
-            $(this).attr('aria-expanded', 'false');
-            $(activePanel).removeClass('active');
-            if ($(activeComponent) !== null) {
-              $(activeComponent).removeClass('active');
-            }
+            deactivateToggle();
           } else {
             $(this).addClass('active');
             $(this).attr('aria-expanded', 'true');

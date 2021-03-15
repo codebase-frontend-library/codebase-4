@@ -9,16 +9,16 @@
   > * { // usually `<li>`
     list-style-type: none;
     margin: 0;
-  }
-  a {
-    display: block;
-    padding-top: .5rem;
-    padding-bottom: .5rem;
-    text-decoration: none;
+    > * { // usually `<a>` but sometimes `<span>`
+      display: block;
+      padding-top: .5rem;
+      padding-bottom: .5rem;
+      text-decoration: none;
+    }
   }
   .menu {
     margin-bottom: 0;
-    a:not(.btn) {
+    > * > *:not(.btn) {
       color: $color-hyperlink;
       &:hover {
         color: $color-hyperlink-hover;
@@ -27,6 +27,6 @@
   }
 }
 
-.menu:not(.menu-flush) a {
+.menu:not(.menu-flush) > * > * {
   padding: $spacing-block;
 }

@@ -1,7 +1,7 @@
 /*!
  * CODEBASE ACTIVATOR
  * MIT Licence
- * Unchanged since v4.0.2
+ * v4.0.5
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -123,12 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Toggle has no siblings (but can have optional click-away)
       if (dataControl === 'toggle') {
         if (activeControlActive) {
-          element.classList.remove('active');
-          element.setAttribute('aria-expanded', 'false');
-          activePanel.classList.remove('active');
-          if (activeComponent !== null) {
-            activeComponent.classList.remove('active');
-          }
+          deactivateToggle();
         } else {
           element.classList.add('active');
           element.setAttribute('aria-expanded', 'true');

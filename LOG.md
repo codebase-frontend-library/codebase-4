@@ -1,5 +1,10 @@
 # Log
 
+## - Codebase 4.0.5
+
+* Improvements to `.menu`
+* Bug fix in `activator.js` (& `activator.jquery.js`) to that a second click on a control also releases the (optional) scroll-lock.
+
 ## 6 March 2021 – Codebase 4.0.4
 
 * Minor improvements to typography: 

@@ -1,5 +1,6 @@
 // BASICS: BASE (resets and other stuff)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Based on https://github.com/sindresorhus/modern-normalize v.1.0
 
 html {
   box-sizing: border-box;
@@ -15,7 +16,7 @@ body {
   min-height: 100vh;
   margin: 0;
   scroll-behavior: smooth;
-  -ms-overflow-style: scrollbar;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
   font-size: $text-base-font-size;
   font-family: $text-base-font-family; // sets 1rem
   -webkit-text-size-adjust: 100%;
@@ -34,24 +35,79 @@ body {
   tab-size: 4;
 }
 
+abbr[title] {
+	text-decoration: underline dotted;
+}
+
+b, strong {
+  font-weight: $text-bold-font-weight;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
 *:focus:not(.focus-visible) {
   outline: none;
+}
+
+small {
+  font-size: 85%;
 }
 
 *::selection {
   background: $color-selection;
 }
 
-[role="button"],
-a,
-area,
-button,
-input,
-label,
-select,
-summary,
-textarea {
-  touch-action: manipulation;
+::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}
+
+:-moz-focusring {
+	outline: 1px dotted currentColor;
+}
+
+:-moz-ui-invalid {
+	box-shadow: none;
+}
+
+legend {
+	padding: 0;
+}
+
+progress {
+	vertical-align: baseline;
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+	height: auto;
+}
+
+[type='search'] {
+	-webkit-appearance: textfield;
+	outline-offset: -2px;
+}
+
+::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+	-webkit-appearance: button;
+	font: inherit;
 }
 
 button,

@@ -192,23 +192,27 @@ $square-size-lg:              12rem !default;
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 $text-base-font-family:
+  system-ui,
   -apple-system,
   BlinkMacSystemFont,
   "Segoe UI",
   Roboto,
-  Oxygen-Sans,
-  Ubuntu,
-  Cantarell,
   "Helvetica Neue",
-  sans-serif !default;
+  Arial,
+  sans-serif,
+  'Apple Color Emoji',
+  'Segoe UI Emoji'
+  !default;
 
 $code-font-family:
+  ui-monospace,
   SFMono-Regular,
-  Menlo,
   Consolas,
-  Lucida Console,
+  Menlo,
+  "Lucida Console",
   Courier,
-  monospace !default;
+  monospace
+  !default;
 
 $heading-size-scale: () !default;
 $heading-size-scale: map-merge((
