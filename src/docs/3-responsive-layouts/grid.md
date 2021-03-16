@@ -81,9 +81,9 @@ The Codebase grid doesn’t work like that. The Codebase grid wrapper allows you
 A quick example before we go any further: suppose you want a layout zone within your page design, that has 3 identical width columns, and with a gap between each, that works on all screen sizes (including tiny phones).
 
 <div class="grid-3-cols grid-gap my-6">
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">One</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Two</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Three</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">One</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Two</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Three</div>
 </div>
 
 ```html
@@ -138,16 +138,16 @@ Following are all the grid child element (i.e. column) classes available in Code
 Three examples with `.grid-md-4-cols` (`md` works on iPad landscape up):
 
 <div class="grid-md-4-cols my-3">
-  <div class="col-md-1-thru-3 b-dashed p-1">.col-md-1-thru-3</div>
-  <div class="col-md-4 b-dashed p-1">.col-md-4</div>
+  <div class="col-md-1-thru-3 rounded p-2 bg-color-secondary t-color-ui-text">.col-md-1-thru-3</div>
+  <div class="col-md-4 rounded p-2 bg-color-secondary t-color-ui-text">.col-md-4</div>
 </div>
 <div class="grid-md-4-cols mb-3">
-  <div class="col-md-1-thru-2 b-dashed p-1">.col-md-1-thru-2</div>
-  <div class="col-md-3-thru-4 b-dashed p-1">.col-md-3-thru-4</div>
+  <div class="col-md-1-thru-2 rounded p-2 bg-color-secondary t-color-ui-text">.col-md-1-thru-2</div>
+  <div class="col-md-3-thru-4 rounded p-2 bg-color-secondary t-color-ui-text">.col-md-3-thru-4</div>
 </div>
 <div class="grid-md-4-cols mb-6">
-  <div class="col-md-1 b-dashed p-1">.col-md-1</div>
-  <div class="col-md-2-thru-4 b-dashed p-1">.col-md-2-thru-4</div>
+  <div class="col-md-1 rounded p-2 bg-color-secondary t-color-ui-text">.col-md-1</div>
+  <div class="col-md-2-thru-4 rounded p-2 bg-color-secondary t-color-ui-text">.col-md-2-thru-4</div>
 </div>
 
 ```html
@@ -170,9 +170,9 @@ Three examples with `.grid-md-4-cols` (`md` works on iPad landscape up):
 Example with `.grid-md-5-cols`, and offsetting (`sm` works on iPad landscape up):
 
 <div class="grid-sm-5-cols my-6 pb-3">
-  <div class="col-sm-1  b-thick b-color-success rounded p-1 t-heavy t-color-success">.col-md-1</div>
-  <div class="col-sm-3  b-thick b-color-success rounded p-1 t-heavy t-color-success">.col-md-3</div>
-  <div class="col-sm-5  b-thick b-color-success rounded p-1 t-heavy t-color-success">.col-md-5</div>
+  <div class="col-sm-1  rounded p-2 bg-color-secondary t-color-ui-text">.col-md-1</div>
+  <div class="col-sm-3  rounded p-2 bg-color-secondary t-color-ui-text">.col-md-3</div>
+  <div class="col-sm-5  rounded p-2 bg-color-secondary t-color-ui-text">.col-md-5</div>
 </div>
 
 ```html
@@ -192,10 +192,10 @@ Notes:
 3. Each grid child element (i.e. column) get constrained to `grid-row: 1`. Therefore, you can _reorder_ grid items without CSS grid wanting to place disorderly items on a new row. So, for example, this kind of thing just works:
 
     <div class="grid-sm-4-cols grid-gap my-6">
-      <div class="col-sm-4  b-thick b-color-success rounded p-1 t-heavy t-color-success">One</div>
-      <div class="col-sm-1  b-thick b-color-success rounded p-1 t-heavy t-color-success">Two</div>
-      <div class="col-sm-3  b-thick b-color-success rounded p-1 t-heavy t-color-success">Three</div>
-      <div class="col-sm-2  b-thick b-color-success rounded p-1 t-heavy t-color-success">Four</div>
+      <div class="col-sm-4  rounded p-2 bg-color-secondary t-color-ui-text">One</div>
+      <div class="col-sm-1  rounded p-2 bg-color-secondary t-color-ui-text">Two</div>
+      <div class="col-sm-3  rounded p-2 bg-color-secondary t-color-ui-text">Three</div>
+      <div class="col-sm-2  rounded p-2 bg-color-secondary t-color-ui-text">Four</div>
     </div>
 
     ```html
@@ -216,8 +216,8 @@ You can combine two or more grids on the same set of elements. Here's an example
 <div class="container-grid-full-bleed my-6">
 <div class="container container-lg">
   <div class="grid-sm-5-cols grid-lg-4-cols grid-gap">
-    <div class="col-sm-1-thru-3 col-lg-1-thru-3 b-thick b-color-success rounded p-1 t-heavy t-color-success">Main</div>
-    <div class="col-sm-4-thru-5 col-lg-4 b-thick b-color-success rounded p-1 t-heavy t-color-success">Sidebar</div>
+    <div class="col-sm-1-thru-3 col-lg-1-thru-3 rounded p-2 bg-color-secondary t-color-ui-text">Main</div>
+    <div class="col-sm-4-thru-5 col-lg-4 rounded p-2 bg-color-secondary t-color-ui-text">Sidebar</div>
   </div>
 </div>
 </div>

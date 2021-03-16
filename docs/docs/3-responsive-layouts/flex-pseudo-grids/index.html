@@ -16,8 +16,8 @@
   <meta name="theme-color" content="#262626">
 
   <link href="/codebase-4/prism/prism.css" rel="stylesheet">
-  <!-- <link href="/codebase-4/dist/codebase.css" rel="stylesheet"> -->
-  <link href="/codebase-4/dist/codebase-l-d.css" rel="stylesheet">
+  <!-- <link href="/codebase-4/dist/codebase.css?v=4.0.5" rel="stylesheet"> -->
+  <link href="/codebase-4/dist/codebase-l-d.css?v=4.0.5" rel="stylesheet">
   <style>
     html {
       scroll-behavior: smooth;
@@ -587,9 +587,9 @@ x-data="docsOcState()"
 <p>While Codebase’s <a href="/codebase-4/docs/3-responsive-layouts/grid">real grid system</a> works on modern (2017 and up) browsers that support <a href="https://caniuse.com/css-grid">CSS grid</a> (that’s <a href="https://www.stetic.com/market-share/browser/">vast the vast majoity of internet users in 2021</a>), some people prefer the old way of setting up a page layout. And if they must support Internet Explorer 11 or other ancient browsers, then they have to go with the flex pseudo grid.</p>
 <p>To use Codebase’s 12-column pseudo grid system, all you need to do is use prefix <code>.flex-cols-</code> with a suffix from <code>1</code> to <code>12</code>:</p>
 <div class="flex mt-3 mb-6">
-  <div class="flex-cols-4 b-thick b-color-success rounded p-1 t-heavy t-color-success">cols-4</div>
-  <div class="flex-cols-6 b-thick b-color-success rounded p-1 t-heavy t-color-success">cols-6</div>
-  <div class="flex-cols-2 b-thick b-color-success rounded p-1 t-heavy t-color-success">cols-2</div>
+  <div class="flex-cols-4 rounded p-2 bg-color-secondary t-color-ui-text">cols-4</div>
+  <div class="flex-cols-6 rounded p-2 bg-color-secondary t-color-ui-text">cols-6</div>
+  <div class="flex-cols-2 rounded p-2 bg-color-secondary t-color-ui-text">cols-2</div>
 </div>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-cols-4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>cols-4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-cols-6<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>cols-6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-cols-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>cols-2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
 <p><strong>Notes:</strong></p>
@@ -637,8 +637,8 @@ x-data="docsOcState()"
 </li>
 </ol>
 <div class="flex-md flex-gap flex-row-reverse my-6">
-  <div class="flex-cols-3 b-thick b-color-success rounded p-1 t-heavy t-color-success">One quarter</div>
-  <div class="flex-cols-9 b-thick b-color-success rounded p-1 t-heavy t-color-success">Three quarters</div>
+  <div class="flex-cols-3 rounded p-2 bg-color-secondary t-color-ui-text">One quarter</div>
+  <div class="flex-cols-9 rounded p-2 bg-color-secondary t-color-ui-text">Three quarters</div>
 </div>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-md flex-gap flex-row-reverse<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-cols-3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>One quarter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-cols-9<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Three quarters<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
 <ol start="6">

@@ -16,8 +16,8 @@
   <meta name="theme-color" content="#262626">
 
   <link href="/codebase-4/prism/prism.css" rel="stylesheet">
-  <!-- <link href="/codebase-4/dist/codebase.css" rel="stylesheet"> -->
-  <link href="/codebase-4/dist/codebase-l-d.css" rel="stylesheet">
+  <!-- <link href="/codebase-4/dist/codebase.css?v=4.0.5" rel="stylesheet"> -->
+  <link href="/codebase-4/dist/codebase-l-d.css?v=4.0.5" rel="stylesheet">
   <style>
     html {
       scroll-behavior: smooth;
@@ -618,97 +618,97 @@ x-data="docsOcState()"
 </ol>
 <p><code>.flex</code>:</p>
 <div class="flex mb-3">
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">One</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Two</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Three</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Four</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">One</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Two</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Three</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Four</div>
 </div>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>One<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>Two<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>Three<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>Four<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
 <p>The <code>.flex</code> wrapper, and its breakpoint width variants (see above), is great for making <a href="/codebase-4/docs/7-simple-components/menus/#menubars">menubars</a>.</p>
 <p><code>.flex.flex-grow-equal</code> :</p>
 <div class="flex flex-grow-equal mb-3">
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">One</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Two</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Three</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Four</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">One</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Two</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Three</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Four</div>
 </div>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex flex-grow-equal<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>One<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>Two<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>Three<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>Four<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
 <p><code>.flex-grow-equal</code> may be all you need if you want a number of equal width columns (e.g. for a “two up” or “three up”). You can easily combine it with  a flex system wrapper with built-in breakpoint width (e.g. <code>.flex-md</code>) instead of <code>.flex</code>, so that your mini “pseudo grid” takes effect only above that device width (or window width).</p>
 <p class="panel-responsive bl-heavy b-color-secondary bg-color-secondary-alt">Codebase also contains a simple 12-column flexbox <a href="#flex-pseudo-grids">pseudo grid</a> if you need it – e.g. if you need a (pseudo) grid system that supports ancient web browsers. But for more power, go for Codebase’s real <em>CSS grid</em> <a href="/codebase-4/docs/3-responsive-layouts/grid">grid system</a>.</p>
 <p><code>.flex.flex-grow-auto</code> :</p>
 <div class="flex flex-grow-auto mb-3">
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">First flex-item</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Another flex-item</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Third</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Last flex-item in this flexbox set</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">First flex-item</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Another flex-item</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Third</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Last flex-item in this flexbox set</div>
 </div>
 <p><code>.flex.flex-gap.flex-grow-auto.flex-wrap</code> :</p>
 <div class="flex flex-gap flex-grow-auto flex-wrap mb-3">
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">First flex-item</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Another flex-item</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Third</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Last flex-item in this flexbox set.</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">First flex-item</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Another flex-item</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Third</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Last flex-item in this flexbox set.</div>
 </div>
-<p><code>.flex.flex-space-between</code> :</p>
+<p><code>.flex.flex-space-between</code>:</p>
 <div class="flex flex-space-between mb-3">
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Item</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Item</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Item</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Item</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Item</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Item</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Item</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Item</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Item</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Item</div>
 </div>
-<p><code>.flex.flex-space-around</code> :</p>
+<p><code>.flex.flex-space-around</code>:</p>
 <div class="flex flex-space-around mb-3">
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Item</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Item</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Item</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Item</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Item</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Item</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Item</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Item</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Item</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Item</div>
 </div>
-<p><code>.flex.flex-start</code> / <code>.flex.flex-center</code> / <code>.flex.flex-end</code> :</p>
+<p><code>.flex.flex-start</code> / <code>.flex.flex-center</code> / <code>.flex.flex-end</code>:</p>
 <div class="flex flex-start mb-3 b-thick">
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">One</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Two</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Three</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">One</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Two</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Three</div>
 </div>
 <div class="flex flex-center mb-3 b-thick">
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">One</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Two</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Three</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">One</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Two</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Three</div>
 </div>
 <div class="flex flex-end mb-3 b-thick">
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">One</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Two</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Three</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">One</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Two</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Three</div>
 </div>
-<p><code>.flex.flex-top</code> / <code>.flex.flex-middle</code> / <code>.flex.flex-bottom</code> :</p>
+<p><code>.flex.flex-top</code> / <code>.flex.flex-middle</code> / <code>.flex.flex-bottom</code>:</p>
 <div class="flex flex-top b-thick mb-3" style="height: 150px">
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">One</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Two</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Three</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">One</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Two</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Three</div>
 </div>
 <div class="flex flex-middle mb-3 b-thick" style="height: 150px">
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">One</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Two</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Three</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">One</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Two</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Three</div>
 </div>
 <div class="flex flex-bottom mb-3 b-thick" style="height: 150px">
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">One</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Two</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Three</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">One</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Two</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Three</div>
 </div>
-<p><code>.flex.flex-center.flex-middle</code> :</p>
+<p><code>.flex.flex-center.flex-middle</code>:</p>
 <div class="flex flex-center flex-middle b-thick mb-3" style="height: 150px">
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">One</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Two</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Three</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">One</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Two</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Three</div>
 </div>
 <p>Same as above but with <code>.flex-column</code>:</p>
-<p><code>.flex.flex-column.flex-center.flex-middle</code> :</p>
+<p><code>.flex.flex-column.flex-center.flex-middle</code>:</p>
 <div class="flex flex-column flex-center flex-middle b-thick mb-3" style="height: 150px">
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">One</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Two</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Three</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">One</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Two</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Three</div>
 </div>
 <h2 id="flex-items">Flex items</h2>
 <ul>
@@ -718,22 +718,22 @@ x-data="docsOcState()"
 </ul>
 <p>Note that these flex item will only take effect inside of a <code>.flex</code> wrapper (and only then if above your specified breakpoint width, whether <code>sm</code>, <code>md</code> or <code>lg</code>).</p>
 <p>Examples of <code>.flex-item-grow-1</code>:</p>
-<div class="flex b-dashed mb-3">
-  <div class="flex-item-grow-1 b-thick b-color-success rounded p-1 t-heavy t-color-success"><code>.flex-item-grow-1</code></div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">Other</div>
+<div class="flex b-thick mb-3">
+  <div class="flex-item-grow-1 rounded p-2 bg-color-secondary t-color-ui-text"><code>.flex-item-grow-1</code></div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Other</div>
 </div>
-<div class="flex b-dashed mb-3">
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">other</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">other</div>
-  <div class="flex-item-grow-1 b-thick b-color-success rounded p-1 t-heavy t-color-success"><code>.flex-item-grow-1</code></div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">other</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">other</div>
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">other</div>
+<div class="flex b-thick mb-3">
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">other</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">other</div>
+  <div class="flex-item-grow-1 rounded p-2 bg-color-secondary t-color-ui-text"><code>.flex-item-grow-1</code></div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">other</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">other</div>
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">other</div>
 </div>
 <p>With <code>.flex.flex-column</code>:</p>
-<div class="flex flex-column b-thin mb-3" style="height: 250px">
-  <div class="b-thick b-color-success rounded p-1 t-heavy t-color-success">other</div>
-  <div class="flex-item-grow-1 b-thick b-color-success rounded p-1 t-heavy t-color-success"><code>.flex-item-grow-1</code></div>
+<div class="flex flex-column b-thick mb-3" style="height: 250px">
+  <div class="rounded p-2 bg-color-secondary t-color-ui-text">other</div>
+  <div class="flex-item-grow-1 rounded p-2 bg-color-secondary t-color-ui-text"><code>.flex-item-grow-1</code></div>
 </div>
     </section><!-- /#docs-mainbody -->
 

@@ -14,9 +14,9 @@ While Codebase’s [real grid system]({{ '/docs/3-responsive-layouts/grid' | url
 To use Codebase’s 12-column pseudo grid system, all you need to do is use prefix `.flex-cols-` with a suffix from `1` to `12`:
 
 <div class="flex mt-3 mb-6">
-  <div class="flex-cols-4 b-thick b-color-success rounded p-1 t-heavy t-color-success">cols-4</div>
-  <div class="flex-cols-6 b-thick b-color-success rounded p-1 t-heavy t-color-success">cols-6</div>
-  <div class="flex-cols-2 b-thick b-color-success rounded p-1 t-heavy t-color-success">cols-2</div>
+  <div class="flex-cols-4 rounded p-2 bg-color-secondary t-color-ui-text">cols-4</div>
+  <div class="flex-cols-6 rounded p-2 bg-color-secondary t-color-ui-text">cols-6</div>
+  <div class="flex-cols-2 rounded p-2 bg-color-secondary t-color-ui-text">cols-2</div>
 </div>
 
 ```html
@@ -69,8 +69,8 @@ To use Codebase’s 12-column pseudo grid system, all you need to do is use pref
     * `.flex-item-order-end`
 
 <div class="flex-md flex-gap flex-row-reverse my-6">
-  <div class="flex-cols-3 b-thick b-color-success rounded p-1 t-heavy t-color-success">One quarter</div>
-  <div class="flex-cols-9 b-thick b-color-success rounded p-1 t-heavy t-color-success">Three quarters</div>
+  <div class="flex-cols-3 rounded p-2 bg-color-secondary t-color-ui-text">One quarter</div>
+  <div class="flex-cols-9 rounded p-2 bg-color-secondary t-color-ui-text">Three quarters</div>
 </div>
 
 ```html
