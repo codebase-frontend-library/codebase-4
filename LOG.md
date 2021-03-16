@@ -1,9 +1,10 @@
 # Log
 
-## - Codebase 4.0.5
+## 16 March 2021 – Codebase 4.0.5
 
 * Improvements to `.menu`
 * Bug fix in `activator.js` (& `activator.jquery.js`) to that a second click on a control also releases the (optional) scroll-lock.
+* Added `.table-fixed`.
 
 ## 6 March 2021 – Codebase 4.0.4
 
@@ -15,7 +16,7 @@
 
 ## 27 February 2021 - Codebase 4.0.3
 
-* Added the `.panel-responsive component.
+* Added the `.panel-responsive` component.
 * Minor snagging.
 * Improvements to the docs.
 

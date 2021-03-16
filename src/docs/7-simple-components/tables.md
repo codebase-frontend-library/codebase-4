@@ -136,6 +136,40 @@ nextButton: "Buttons"
   </tbody>
 </table>
 
+`.table.table-fixed` - applies a _fixed width_ to each table cell using `table-layout: fixed;`, so that column widths are equalized :
+
+<table class="table table-fixed">
+  <thead>
+    <tr>
+      <th>Table Header Number One</th>
+      <th>Table Header 2</th>
+      <th>Table Header 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Table content 1.1</td>
+      <td>Table content 2.1 has a more content than other cells</td>
+      <td>Table content 3.1</td>
+    </tr>
+    <tr>
+      <td>Table content 1.2</td>
+      <td>Table content 2.2</td>
+      <td>Table content 3.2</td>
+    </tr>
+    <tr>
+      <td>Table content 1.3</td>
+      <td>Table content 2.3</td>
+      <td>Table content 3.3</td>
+    </tr>
+    <tr>
+      <td>Table content 1.4</td>
+      <td>Table content 2.4</td>
+      <td>Table content 3.4 - you really can have any amount of content, and the columns will still have a fixed equal width.</td>
+    </tr>
+  </tbody>
+</table>
+
 `.table.table-striped` – applies a _transparent white tint_ and a _transparent black tint_ to alterating rows:
 
 <table class="table table-striped">

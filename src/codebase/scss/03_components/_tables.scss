@@ -12,7 +12,6 @@
     }
   }
   th, td {
-    //border: 1px solid $color-fineline;
     padding: $table-padding;
     vertical-align: top;
     text-align: left;
@@ -33,5 +32,8 @@
     th, td {
       padding: 0.25rem 0.5rem;
     }
+  }
+  &-fixed {
+    table-layout: fixed;
   }
 }
