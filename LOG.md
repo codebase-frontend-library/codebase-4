@@ -1,9 +1,17 @@
 # Log
 
+## 23 March 2021 - Codebase 4.0.6
+
+* Bug fixes to `activator.js` and `activator.jquery.js`, to reset the _control_ button after clicking a _close_ button.
+* Refactored the _modal as lightbox_ examples for Activator.
+* Removed some redundant inline utility classes (large and small sizes).
+* Improved `t-long-read`.
+* In the docs, moved AlpineJS (CDN source) and `activator.js` to the HTML `<head>` and added the `defer` attribute to the script tag.
+
 ## 16 March 2021 – Codebase 4.0.5
 
 * Improvements to `.menu`
-* Bug fix in `activator.js` (& `activator.jquery.js`) to that a second click on a control also releases the (optional) scroll-lock.
+* Bug fix in `activator.js` (& `activator.jquery.js`), so that a second click on a control also releases the (optional) scroll-lock.
 * Added `.table-fixed`.
 
 ## 6 March 2021 – Codebase 4.0.4

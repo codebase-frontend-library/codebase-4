@@ -16,8 +16,9 @@
   <meta name="theme-color" content="#262626">
 
   <link href="/codebase-4/prism/prism.css" rel="stylesheet">
-  <!-- <link href="/codebase-4/dist/codebase.css?v=4.0.5" rel="stylesheet"> -->
-  <link href="/codebase-4/dist/codebase-l-d.css?v=4.0.5" rel="stylesheet">
+  <!-- <link href="/codebase-4/dist/codebase.css?v=4.0.6" rel="stylesheet"> -->
+  <link href="/codebase-4/dist/codebase-l-d.css?v=4.0.6" rel="stylesheet">
+  
   <style>
     html {
       scroll-behavior: smooth;
@@ -108,6 +109,10 @@
       color: #f8f8f2;
     }
   </style>
+
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.1/dist/alpine.min.js" defer></script>
+  <script src="/codebase-4/dist/activator.js?v=4.0.6" defer></script>
+  <script src="/codebase-4/js/theme-switcher.js" defer></script>
 </head>
 <body>
 
@@ -584,6 +589,12 @@ x-data="docsOcState()"
 
     <section id="docs-mainbody" class="container-grid container-grid-sm mb-6">
       <p class="t-lg t-thin">Codebase has several component examples such as dropdowns, tabs and modals, that require JavaScript for their functionality. This functionality can by supplied by <a href="https://github.com/alpinejs/alpine">AlpineJS</a>.</p>
+<div class="mb-3 panel-responsive bl-heavy b-color-primary bg-color-primary-alt">
+<strong>Note:</strong> Neither Codebase nor these docs include AlpineJS. You will need to source the latest version for yourself from <a href="https://github.com/alpinejs/alpine">https://github.com/alpinejs/alpine</a>, or link to it from a CDN (e.g. <a href="https://www.jsdelivr.com/package/npm/alpinejs">https://www.jsdelivr.com/package/npm/alpinejs</a>).
+</div>
+<p>Simple HTML setup:</p>
+<pre class="language-html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Codebase<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dist/codebase.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.1/dist/alpine.min.js<span class="token punctuation">"</span></span> <span class="token attr-name">defer</span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span><br>  <br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>Hello world<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<p>The example above links to the default <code>codebase.css</code>. If you want to use <a href="/codebase-4/docs/1-getting-started/light-and-dark-themes">Codebase with light and dark styles</a>, you will need to link to <code>codebase-l-d.css</code> instead, and use a theme switcher JavaScript to toggle <code>.theme-dark</code> / <code>.theme-light</code> in your HTML <code>&lt;body&gt;</code> tag.</p>
 <p>The following are several examples of Codebase components that can be powered by Alpine:</p>
 <ul>
 <li><a href="/codebase-4/docs/8-alpinejs-components/alpinejs-showhides">Showhides</a></li>
@@ -594,9 +605,6 @@ x-data="docsOcState()"
 <li><a href="/codebase-4/docs/8-alpinejs-components/alpinejs-accordions">Accordions</a></li>
 <li><a href="/codebase-4/docs/8-alpinejs-components/alpinejs-slideshows">Slideshows</a></li>
 </ul>
-<div class="mb-3 panel-responsive bl-heavy b-color-primary bg-color-primary-alt">
-<strong>Note:</strong> Neither Codebase nor these docs include AlpineJS. You will need to source the latest version for yourself from <a href="https://github.com/alpinejs/alpine">https://github.com/alpinejs/alpine</a>, or link to it from a CDN (e.g. <a href="https://cdnjs.com/libraries/alpinejs/2.8.0">https://cdnjs.com/libraries/alpinejs/2.8.0</a>).
-</div>
 
     </section><!-- /#docs-mainbody -->
 
@@ -621,7 +629,7 @@ x-data="docsOcState()"
       <!-- Codebase logo-->
       <svg  style="height: 4rem; margin-bottom: 1rem;" viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2"><path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"/></svg>
       <span>
-        Codebase <span class="t-thin">4.0.5</span>
+        Codebase <span class="t-thin">4.0.6</span>
       </span>
 
       </span>
@@ -634,12 +642,7 @@ x-data="docsOcState()"
 </footer>
 
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha512-DUC8yqWf7ez3JD1jszxCWSVB0DMP78eOyBpMa5aJki1bIRARykviOuImIczkxlj1KhVSyS16w2FSQetkD4UU2w==" crossorigin="anonymous"></script>
-<script src="/codebase-4/dist/activator.jquery.js"></script> -->
-
-<script src="/codebase-4/dist/activator.js"></script>
-<script src="/codebase-4/js/theme-switcher.js" defer></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.0/alpine.js" integrity="sha512-H/czL7oaLIK//KA+gobIejOMDjfHlfoPbM4QKJLvy1hxN18xdhXiaXPek6r5Q4KwcSZkKwlyQmLO8FvPRLl0FA==" crossorigin="anonymous"></script>
+<script src="/codebase-4/dist/activator.jquery.js?v=4.0.6"></script> -->
 
 <script>
   // Used only on the docs sidebar (below 1024px width)

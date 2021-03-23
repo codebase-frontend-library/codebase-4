@@ -96,9 +96,7 @@
 }
 
 big,
-.t-big,
-.t-lg,
-.t-large {
+.t-lg {
   font-size: 1.25em;
   @include break-min($mq-md) {
     font-size: 1.5em;
@@ -107,14 +105,12 @@ big,
 }
 
 small,
-.t-small,
 .t-sm {
   font-size: .85em;
   line-height: inherit;
 }
 
-mark,
-.mark,
+mark
 .t-mark {
   color: currentColor;
   background: $color-highlight;
@@ -127,5 +123,6 @@ mark,
 // Viewport width responsive text size e.g. for long reads
 
 .t-long-read {
-  font-size: clamp(1rem, calc(0.3rem + 1vw), 1.3rem);
+  //font-size: clamp(1rem, calc(0.3rem + 1vw), 1.3rem);
+  font-size: clamp(1em, calc(0.625em + 1vw), 1.35em);
 }

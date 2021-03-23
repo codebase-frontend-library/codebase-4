@@ -10,6 +10,8 @@ nextButton: "Activator offcanvas"
 
 <p class="t-lg t-thin">Codebase modals are toggle-type Activator components, that you can use for all sorts of things.</p>
 
+## The Simplest Modal
+
 <button aria-controls="modal-1a" aria-expanded="false" data-control="toggle" data-scroll-lock="true" class="modal-control btn btn-primary">Modal example 1a</button> – without “click-away”
 
 <div class="modal-wrapper">
@@ -40,12 +42,6 @@ User can only dismiss the modal by clicking the “Close” button.
 </div>
 ```
 
-The backdrop element is only there for the purpose of adding a “click-away” to dismiss functionality. Think of the backdrop as a massive, full-screen button behind the modal panel, that a visitor can click on to dismiss the modal.
-
-By default, the `.backdrop` has no background color assigned (it is invisible), but you can add the modifier `.backdrop-shaded` to get the semi-transparent blurred back backdrop that most of these examples are using, or you can add `.backdrop-black` for a full black backdrop, as you can see in the “lightbox” examples.
-
-<p class="panel-responsive bl-heavy b-color-primary bg-color-primary-alt">The “darkened frosted glass” backdrop, <code>&lt;div class="backdrop backdrop-shaded"&gt;&lt;/div&gt;</code> becomes visible when the modal-wrapper receives its <code>.active</code> class.</p>
-
 <button aria-controls="modal-1b" aria-expanded="false" data-control="toggle" data-click-away="true" data-scroll-lock="true" class="modal-control btn btn-primary">Modal example 1b</button> – with “click-away”
 
 <div class="modal-wrapper">
@@ -70,98 +66,21 @@ By default, the `.backdrop` has no background color assigned (it is invisible), 
 <!-- Modal panel 1b -->
 ```
 
-## A Modal as a Lightbox
+The simplest Activator modal consists of five units:
 
-Modals can be made into a lightbox by placing the “close” button within the backdrop instead of within the panel. In these examples I have also used `.backdrop-black` so that the visitor’ more is more drawn to the image. (And I have removed the click-outside.)
+* The `.modal-control` button (separate, anywhere on the webpage)
+* The `.modal-wrapper` element, containing three units:
+  * The `.backdrop`
+  * The `.modal-panel` element, containing:
+    * The `.modal-close` button
 
-<p class="panel-responsive bl-heavy b-color-secondary bg-color-secondary-alt">Codebase modals have their content width and height and constrained to fit within the viewport (with the max-height further constrained, to account for the iOS Safari browser bar). Therefore, oversized images will be scaled down if necessary.</p>
+The above elements have minimal styling – just enough to make the modal work. The `.modal-control` and `.modal-close` classes need to be applied to HTML `<button>` elements. Put no other styling on the `.modal-wrapper` – it is used as a hidden “pocket” for your modal backdrop and panel when not activated. Style the `.modal-panel` how you like, e.g. using decoration utilities and/or layouts.
 
-(The _dismiss_ button is in the top-right corner of the black backdrop.)
+The backdrop element is there to prevent user interaction with anything elsefor the purpose of adding a “click-away” to dismiss functionality. Think of the backdrop as a massive, full-screen button behind the modal panel, that a visitor can click on to dismiss the modal.
 
-<div>
-  <button
-    aria-controls="modal-2a"
-    aria-expanded="false"
-    data-control="toggle"
-    data-scroll-lock="true"
-    class="modal-control btn btn-primary mb-3"
-  >Modal example 2a</button> – modal with a tall narrow image
-  <div class="modal-wrapper">
-    <div class="backdrop backdrop-black flex flex-top flex-end p-2">
-      <button class="modal-close btn btn-icon bg-transparent b-0">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
-      </button>
-    </div>
-    <div class="modal-panel m-3 t-center" id="modal-2a">
-      <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" width="500" height="1000" style="max-width: 100%; height: auto;"><defs><linearGradient id="gradient1" gradientTransform="rotate(45)"><stop offset="5%" stop-color="rgba(255,255,0,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(255,0,0,.5)" /></linearGradient><linearGradient id="gradient2" gradientTransform="rotate(135)"><stop offset="5%" stop-color="rgba(0,0,255,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(0,255,0,.5)" /></linearGradient></defs><rect width="100%" height="100%" fill="url('#gradient1')" /><rect width="100%" height="100%" fill="url('#gradient2')" /></svg>
-      <p class="t-color-ui-text t-center">A tall narrow image (500px &times; 1000px)</p>
-    </div>
-  </div>
-</div>
+By default, the `.backdrop` has no background color assigned (it is invisible), but you can add the modifier `.backdrop-shaded` to get the semi-transparent blurred black backdrop that most of these examples are using, or you can add `.backdrop-black` for a fully black backdrop, as you can see in the “lightbox” examples below.
 
-<div>
-  <button
-    aria-controls="modal-2b"
-    aria-expanded="false"
-    data-control="toggle"
-    data-scroll-lock="true"
-    class="modal-control btn btn-primary mb-3"
-  >Modal example 2b</button> – modal with a short wide image
-  <div class="modal-wrapper">
-    <div class="backdrop backdrop-black flex flex-top flex-end p-2">
-      <button class="modal-close btn btn-icon bg-transparent b-0">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
-      </button>
-    </div>
-    <div class="modal-panel m-3" id="modal-2b">
-      <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" width="2000" height="500" style="max-width: 100%; height: auto;"><defs><linearGradient id="gradient1" gradientTransform="rotate(45)"><stop offset="5%" stop-color="rgba(255,255,0,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(255,0,0,.5)" /></linearGradient><linearGradient id="gradient2" gradientTransform="rotate(135)"><stop offset="5%" stop-color="rgba(0,0,255,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(0,255,0,.5)" /></linearGradient></defs><rect width="100%" height="100%" fill="url('#gradient1')" /><rect width="100%" height="100%" fill="url('#gradient2')" /></svg>
-      <p class="t-color-ui-text t-center">A short wide image (2000px &times; 500px)</p>
-    </div>
-  </div>
-</div>
-
-<div>
-  <button
-    aria-controls="modal-2c"
-    aria-expanded="false"
-    data-control="toggle"
-    data-scroll-lock="true"
-    class="modal-control btn btn-primary mb-3"
-  >Modal example 2c</button> – modal with a short wide image
-  <div class="modal-wrapper">
-    <div class="backdrop backdrop-black flex flex-top flex-end p-2">
-      <button class="modal-close btn btn-icon bg-transparent b-0">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
-      </button>
-    </div>
-    <div class="modal-panel m-3" id="modal-2c">
-      <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" width="2000" height="2000" style="max-width: 100%; height: auto;"><defs><linearGradient id="gradient1" gradientTransform="rotate(45)"><stop offset="5%" stop-color="rgba(255,255,0,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(255,0,0,.5)" /></linearGradient><linearGradient id="gradient2" gradientTransform="rotate(135)"><stop offset="5%" stop-color="rgba(0,0,255,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(0,255,0,.5)" /></linearGradient></defs><rect width="100%" height="100%" fill="url('#gradient1')" /><rect width="100%" height="100%" fill="url('#gradient2')" /></svg>
-      <p class="t-color-ui-text t-center">A tall wide image (2000px &times; 2000px)</p>
-    </div>
-  </div>
-</div>
-
-```html
-<div>
-  <button
-    aria-controls="modal-2a"
-    aria-expanded="false"
-    data-control="toggle"
-    data-scroll-lock="true"
-    class="modal-control btn btn-primary mb-3"
-  >Modal example</button>
-  <div class="modal-wrapper">
-    <div class="backdrop backdrop-black flex flex-top flex-end p-2">
-      <button class="modal-close btn-icon b-0 t-color-secondary t-lg">
-        &times;
-      </button>
-    </div>
-    <div class="modal-panel m-3" id="modal-2a">
-      <img src="" alt="">
-    </div>
-  </div>
-</div>
-```
+The backdrop is placed inside the modal wrapper, _before_ the modal panel (so that it appears _behind_ the modal panel).
 
 ## Styling Modal Panels
 
@@ -169,17 +88,17 @@ Codebase modal panels have no styling of their own – you can use utility class
 
 <div>
   <button
-    aria-controls="modal-3a"
+    aria-controls="modal-2a"
     aria-expanded="false"
     data-control="toggle"
     data-click-away="true"
     data-scroll-lock="true"
     class="modal-control btn btn-primary mb-3"
-  >Modal example 3a</button>  – dressed as a card, with “click-away”
+  >Modal example 2a</button>  – dressed as a card, with “click-away”
   <div class="modal-wrapper">
     <div class="backdrop backdrop-shaded">
     </div>
-    <div class="modal-panel w-xs m-3 p-0 b-thin rounded bg-color-background" id="modal-3a">
+    <div class="modal-panel w-xs m-3 p-0 b-thin rounded bg-color-background" id="modal-2a">
       <div class="p-block bt-heavy b-color-success bg-color-success-alt">
         <h4 class="m-0">Modal header</h4>
       </div>
@@ -195,24 +114,24 @@ Codebase modal panels have no styling of their own – you can use utility class
 
 <div>
   <button
-    aria-controls="modal-3b"
+    aria-controls="modal-2b"
     aria-expanded="false"
     data-control="toggle"
     data-click-away="true"
     data-scroll-lock="true"
     class="modal-control btn btn-primary mb-3"
-  >Modal example 3b</button> – with a grid system, and “click-away”
+  >Modal example 2b</button> – with a grid system, and “click-away”
   <div class="modal-wrapper">
     <div class="backdrop backdrop-shaded">
     </div>
-    <div class="modal-panel w-lg m-3 p-0 b-thin rounded bg-color-background" id="modal-3b">
+    <div class="modal-panel w-lg m-3 b-thin rounded p-0 flex flex-column bg-color-background" id="modal-2b">
       <div class="bb-thin p-block">
         <button class="modal-close btn-icon btn-sm float-right mt-1 t-lg">
           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
         </button>
         <h4 class="my-1">Modal Header</h4>
       </div>
-      <div class="p-2 grid grid-md-2-cols grid-gap">
+      <div class="flex-item-grow-1 overflow-y p-2 grid grid-md-2-cols grid-gap">
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" width="800" height="600" style="max-width: 100%; height: auto;"><defs><linearGradient id="gradient1" gradientTransform="rotate(45)"><stop offset="5%" stop-color="rgba(255,255,0,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(255,0,0,.5)" /></linearGradient><linearGradient id="gradient2" gradientTransform="rotate(135)"><stop offset="5%" stop-color="rgba(0,0,255,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(0,255,0,.5)" /></linearGradient></defs><rect width="100%" height="100%" fill="url('#gradient1')" /><rect width="100%" height="100%" fill="url('#gradient2')" /></svg>
         </div>
@@ -236,16 +155,16 @@ Codebase modal panels have no styling of their own – you can use utility class
 
 <div>
   <button
-    aria-controls="modal-3c"
+    aria-controls="modal-2c"
     aria-expanded="false"
     data-control="toggle"
     data-scroll-lock="true"
     class="modal-control btn btn-primary mb-3"
-  >Modal example 3c</button> – with scrollable content, and no “click away”
+  >Modal example 2c</button> – with scrollable content, and no “click away”
   <div class="modal-wrapper">
     <div class="backdrop backdrop-shaded">
     </div>
-    <div class="modal-panel w-xs height-full-vh flex flex-column m-3 p-0 rounded bg-color-background" id="modal-3c">
+    <div class="modal-panel w-xs flex flex-column m-3 p-0 rounded bg-color-background" id="modal-2c">
       <div class="bb-thin p-block">
         <button class="modal-close btn-sm float-right mt-1">Dismiss</button>
         <h4 class="my-1">Header</h4>
@@ -472,17 +391,19 @@ Codebase modal panels have no styling of their own – you can use utility class
   </div>
 </div>
 
+Use `.modal-panel.modal-panel-cover` for a full cover modal:
+
 <div>
   <button
-    aria-controls="modal-3d"
+    aria-controls="modal-2d"
     aria-expanded="false"
     data-control="toggle"
     data-scroll-lock="true"
     class="modal-control btn btn-primary mb-3"
-  >Modal example 3d</button> – with <em>full cover</em> content, no need for a backdrop, and no “click-away”
+  >Modal example 2d</button> – with <em>full cover</em> content, no need for a backdrop, and no “click-away”
   <div class="modal-wrapper">
-    <div class="modal-panel modal-panel-cover bg-color-background" id="modal-3d">
-      <div class="container py-3">
+    <div class="modal-panel modal-panel-cover bg-color-background" id="modal-2d">
+      <div class="container-grid py-3">
         <div>
           <button class="modal-close btn-icon btn-sm float-right mt-1 t-lg">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
@@ -490,7 +411,7 @@ Codebase modal panels have no styling of their own – you can use utility class
           <h2>Full-Cover Modal</h2>
         </div>
         <hr>
-        <div class="grid-md-3-cols grid-gap">
+        <div class="grid-sm-3-cols grid-gap">
           <div>
             <h4>Department 1
             </h4>
@@ -525,7 +446,7 @@ Codebase modal panels have no styling of their own – you can use utility class
             </ul>
           </div>
         </div>
-        <div class="grid-md-3-cols grid-gap">
+        <div class="grid-sm-3-cols grid-gap">
           <div>
             <h4>Department 4
             </h4>
@@ -570,15 +491,116 @@ Codebase modal panels have no styling of their own – you can use utility class
 Design the modal panels any way you want. But you will want to control the width, and control the height for scrollable panels (example 3c). Use `.modal-panel-cover` for full cover modals.
 
 ```html
-<!-- 3a -->
-<div class="modal-panel w-xs m-3 rounded bg-color-background" :class="{ 'active': modal }">...</div>
+<!-- Example 2a -->
+<div class="modal-panel w-xs">...</div>
 
-<!-- 3b -->
-<div class="modal-panel w-lg m-3 b-thin rounded bg-color-background" :class="{ 'active': modal }">...</div>
+<!-- Example 2b -->
+<div class="modal-panel w-lg flex flex-column">...</div>
 
-<!-- 3c -->
-<div class="modal-panel w-xs height-full-vh flex flex-column rounded bg-color-background" :class="{ 'active': modal }">...</div>
+<!-- Example 2c -->
+<div class="modal-panel w-xs flex flex-column">...</div>
 
-<!-- 3d -->
-<div class="modal-panel modal-panel-cover bg-color-background" :class="{ 'active': modal }">...</div>
+<!-- Example 2d -->
+<div class="modal-panel modal-panel-cover">...</div>
+```
+
+(In addition the the modal and layout classes in the example code above, you will need decorative utility classes for borders, box shadows, background colors, etc.)
+
+## A Modal as a Lightbox
+
+For a modal to operate as a lightbox, the modal panel needs expand to fully cover the viewport using `.modal-panel.modal-panel-cover`. Keep the full cover panel itself unstyled (colorless) and then totally blacken the backdrop using `.backdrop.backdrop-black` – so that the visitor’s eye is  drawn to the image.
+
+In the following examples the `.modal-close` has been absolutely positioned top right using [position utilities]({{ '/docs/4-layout-utilities/positions' | url }}). (**Tip:** putting the `.box` position utility on the modal wrapper enables you to absolutely position the _close_ button in the panel top right.)
+
+Meanwhile, the image and caption have been centered and middled using [flex layout]({{ '/codebase-4/docs/3-responsive-layouts/flex' | url}}).
+
+<p class="panel-responsive bl-heavy b-color-secondary bg-color-secondary-alt">Codebase modals have their content images (<code>&lt;img&gt;</code> and <code>&lt;svg&gt;</code>) width and height constrained to fit within the viewport (with the height further constrained, to accommodate for the iOS Safari browser bar). Therefore, oversized images will be scaled down if necessary.</p>
+
+<div>
+  <button
+    aria-controls="modal-3a"
+    aria-expanded="false"
+    data-control="toggle"
+    data-scroll-lock="true"
+    class="modal-control btn btn-primary mb-3"
+  >Modal example 3a</button> – modal with a tall narrow image
+  <div class="modal-wrapper">
+    <div class="backdrop backdrop-black"></div>
+    <div class="modal-panel modal-panel-cover relative t-center" id="modal-3a">
+      <div class="m-2 box flex flex-column flex-center flex-middle">
+        <button class="modal-close absolute top right btn btn-icon bg-transparent b-0">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+        </button>
+        <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" width="500" height="1000" style="max-width: 100%; height: auto;"><defs><linearGradient id="gradient1" gradientTransform="rotate(45)"><stop offset="5%" stop-color="rgba(255,255,0,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(255,0,0,.5)" /></linearGradient><linearGradient id="gradient2" gradientTransform="rotate(135)"><stop offset="5%" stop-color="rgba(0,0,255,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(0,255,0,.5)" /></linearGradient></defs><rect width="100%" height="100%" fill="url('#gradient1')" /><rect width="100%" height="100%" fill="url('#gradient2')" /></svg>
+        <p class="p-block t-color-ui-text t-center">A tall narrow image (500px &times; 1000px)</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <button
+    aria-controls="modal-3b"
+    aria-expanded="false"
+    data-control="toggle"
+    data-scroll-lock="true"
+    class="modal-control btn btn-primary mb-3"
+  >Modal example 3b</button> – modal with a short wide image
+  <div class="modal-wrapper">
+    <div class="backdrop backdrop-black"></div>
+    <div class="modal-panel modal-panel-cover relative t-center" id="modal-3b">
+      <div class="m-2 box flex flex-column flex-center flex-middle">
+        <button class="modal-close absolute top right btn btn-icon bg-transparent b-0">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+        </button>
+        <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" width="2000" height="500" style="max-width: 100%; height: auto;"><defs><linearGradient id="gradient1" gradientTransform="rotate(45)"><stop offset="5%" stop-color="rgba(255,255,0,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(255,0,0,.5)" /></linearGradient><linearGradient id="gradient2" gradientTransform="rotate(135)"><stop offset="5%" stop-color="rgba(0,0,255,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(0,255,0,.5)" /></linearGradient></defs><rect width="100%" height="100%" fill="url('#gradient1')" /><rect width="100%" height="100%" fill="url('#gradient2')" /></svg>
+        <p class="p-block t-color-ui-text t-center">A short wide image (2000px &times; 500px)</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <button
+    aria-controls="modal-3c"
+    aria-expanded="false"
+    data-control="toggle"
+    data-scroll-lock="true"
+    class="modal-control btn btn-primary mb-3"
+  >Modal example 3c</button> – modal with a tall wide image
+  <div class="modal-wrapper">
+    <div class="backdrop backdrop-black"></div>
+    <div class="modal-panel modal-panel-cover relative t-center" id="modal-3c">
+      <div class="m-2 box flex flex-column flex-center flex-middle">
+        <button class="modal-close absolute top right btn btn-icon bg-transparent b-0">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+        </button>
+        <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" width="2000" height="2000" style="max-width: 100%; height: auto;"><defs><linearGradient id="gradient1" gradientTransform="rotate(45)"><stop offset="5%" stop-color="rgba(255,255,0,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(255,0,0,.5)" /></linearGradient><linearGradient id="gradient2" gradientTransform="rotate(135)"><stop offset="5%" stop-color="rgba(0,0,255,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(0,255,0,.5)" /></linearGradient></defs><rect width="100%" height="100%" fill="url('#gradient1')" /><rect width="100%" height="100%" fill="url('#gradient2')" /></svg>
+        <p class="p-block t-color-ui-text t-center">A tall wide image (2000px &times; 2000px)</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+```html
+<button
+  aria-controls="modal-3a"
+  aria-expanded="false"
+  data-control="toggle"
+  data-scroll-lock="true"
+  class="modal-control btn btn-primary mb-3"
+>Modal example 3a</button> – modal with a tall narrow image
+
+<div class="modal-wrapper">
+  <div class="backdrop backdrop-black"></div>
+  <div class="modal-panel modal-panel-cover relative t-center" id="modal-3a">
+    <div class="box flex flex-column flex-center flex-middle">
+      <button class="modal-close absolute top right btn btn-icon bg-transparent b-0">
+        ×
+      </button>
+      <img src="" alt="">
+      <p class="p-block t-color-ui-text t-center">Figure legend</p>
+    </div>
+  </div>
+</div>
 ```

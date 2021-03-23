@@ -59,7 +59,7 @@ If you want more power, and if you are famililar with the modern _declarative_ a
 
 For more information see [Using AlpineJS or Activator in Codebase]({{ '/docs/1-getting-started/alpinejs-or-activator/' | url}}).
 
-<p class="panel-responsive bl-heavy b-color-secondary bg-color-secondary-alt">Alpine components are built differently to Activator components – it’s not simply about swapping the JS.If you want to use AlpineJS instead of Activator, then you will want the <a href="{{ '/docs/8-alpinejs-components/about-alpinejs-components/' | url}}">AlpineJS Components</a> section of these docs.</p>
+<p class="panel-responsive bl-heavy b-color-warning bg-color-warning-alt">Alpine components are built differently to Activator components – it’s not simply about swapping the JS. If you want to use AlpineJS instead of Activator, then you will want the <a href="{{ '/docs/8-alpinejs-components/about-alpinejs-components/' | url}}">AlpineJS Components</a> section of these docs.</p>
 
 ## Simple HTML Setup
 
@@ -77,13 +77,13 @@ For more information see [Using AlpineJS or Activator in Codebase]({{ '/docs/1-g
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Codebase</title>
   <link rel="stylesheet" href="dist/codebase.css">
+  <script src="dist/activator.js" defer></script>
+  <!-- Or <script src="link/to/alpine.js" defer></script> -->
 </head>
 <body>
   
   <h1>Hello world</h1>
 
-  <script src="dist/activator.js"></script>
-  <!-- Or link to alpine.js -->
 </body>
 </html>
 ```
@@ -108,15 +108,14 @@ You could just stay with this arrangement: letting the visitor’s OS determine 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Codebase</title>
   <link rel="stylesheet" href="dist/codebase-l-d.css">
+  <script src="link/to/alpine.js" defer></script>
+  <!-- Or <script src="dist/activator.js" defer></script> -->
+  <script src="link/to/your/theme-switcher.js" defer></script>
 </head>
 <body>
   
   <h1>Hello world</h1>
 
-  <script src="dist/activator.js"></script>
-  <!-- Or link to alpine.js -->
-  
-  <!-- Add your theme-switcher script here. -->
 </body>
 </html>
 ```

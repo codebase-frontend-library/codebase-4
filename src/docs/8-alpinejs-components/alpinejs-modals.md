@@ -8,6 +8,10 @@ prevButton: "AlpineJS dropdowns"
 nextButton: "AlpineJS offcanvas"
 ---
 
+<p class="t-lg t-thin">Codebase Alpine modals can be used for all sorts of things.</p>
+
+## The Simplest Modal
+
 <div x-data="{modal: false}">
 <button class="btn btn-primary mb-3 scroll-lock" @click="modal = !modal" :aria-expanded="modal ? 'true' : 'false'">Modal example 1a</button> – without “click-away”
   <div class="modal-wrapper" :class="{ 'active': modal }">
@@ -34,15 +38,6 @@ The user can only dismiss the modal above by clicking the “Close” button.
 </div>
 ```
 
-(Best practice is to include a “Close” button, but in this example I want you to try the click-away function.)
-
-The backdrop element is only there for the purpose of adding a “click-away” to dismiss functionality. Think of the backdrop as a massive, full-screen button behind the modal panel, that a visitor can click on to dismiss the modal.
-
-By default, the `.backdrop` has no background color assigned (it is invisible). But you can add the modifier `.backdrop-shaded` to get the semi-transparent blurred back backdrop that most of these examples are demonstrating, or you can add `.backdrop-black` for a fully black backdrop, as you can see in the “lightbox” examples.
-
-<p class="panel-responsive bl-heavy b-color-primary bg-color-primary-alt">The CSS classes <code>.scroll-lock</code> and <code>.scroll-unlock</code> have to do with a small JavaScript that adds or removes a CSS scroll lock to the <code>&lt;body&gt;</code> body tag – see <a class="t-color-text-alt" href="#scroll-lock">scroll-lock</a> below.</p>
-
-
 <div x-data="{modal: false}">
   <button class="btn btn-primary mb-3 scroll-lock" @click="modal = !modal" :aria-expanded="modal ? 'true' : 'false'">Modal example 1b</button> – with “click away”
   <div class="modal-wrapper" :class="{ 'active': modal }">
@@ -53,11 +48,23 @@ By default, the `.backdrop` has no background color assigned (it is invisible). 
   </div>
 </div>
 
-“Click away to dismiss” capability is here accomplished by adding an invisible an Alpine click on the backdrop inside the modal (simply a DIV with class `.backdrop backdrop-shaded`) – but add it _before_ the modal content, so that the modal content appears on a layer above the backdrop.
+(Best practice is to include a “Close” button, but in this example I want you to try the click-away function.)
 
-(Best practice is to include a “Close” button in the modal content, but in this example 1b I want you to test the click-away function.)
+The simplest Alpine modal consists of five units:
 
-The backgdrop is placed inside the modal wrapper, _before the modal panel_ (so that it appears hehind the modal panel):
+* The Alpine modal control button (can be part of the same Alpine component, or in a separate component – see [example 1c](#modal-control-button-as-a-separate-component) below)
+* The `.modal-wrapper` element, containing three units:
+  * The `.backdrop`
+  * The `.modal-panel` element, containing:
+    * The Alpine modal-close button
+
+The above elements have minimal styling – just enough to make the modal work. The `.modal-control` and `.modal-close` classes need to be applied to HTML `<button>` elements. Put no other styling on the `.modal-wrapper` – it is used as a hidden “pocket” for your modal backdrop and panel when not activated. Style the `.modal-panel` how you like, e.g. using decoration utilities and/or layouts.
+
+The backdrop element is there to prevent user interaction with anything elsefor the purpose of adding a “click-away” to dismiss functionality. Think of the backdrop as a massive, full-screen button behind the modal panel, that a visitor can click on to dismiss the modal.
+
+By default, the `.backdrop` has no background color assigned (it is invisible), but you can add the modifier `.backdrop-shaded` to get the semi-transparent blurred black backdrop that most of these examples are using, or you can add `.backdrop-black` for a fully black backdrop, as you can see in the “lightbox” examples below.
+
+The backdrop is placed inside the modal wrapper, _before_ the modal panel (so that it appears _behind_ the modal panel):
 
 ```html
 <div class="backdrop backdrop-shaded scroll-unlock" x-show.transition.opacity.duration.600ms="modal" @click="modal = false"></div>
@@ -77,6 +84,8 @@ As follows:
   </div>
 </div>
 ```
+
+### Modal Control Button as a Separate Component
 
 <div x-data="{}" class="mb-3">
   <button class="btn btn-primary scroll-lock" @click="$dispatch('modal-1c')">Modal example 1c</button> – with a button in a separate Alpine component.
@@ -101,7 +110,7 @@ Idea copied from: [https://codewithhugo.com/alpinejs-component-communication-eve
 </div>
 
 ```html
-<!-- The button component -->
+<!-- The button component (separate) -->
 <div x-data="{}" class="mb-3">
   <button class="btn btn-primary scroll-lock" @click="$dispatch('modal-ex')">Modal example</button>
 </div>
@@ -122,80 +131,10 @@ Idea copied from: [https://codewithhugo.com/alpinejs-component-communication-eve
 </div>
 ```
 
-## A Modal as a Lightbox
-
-Modals can be made into a lightbox by placing the “close” button within the backdrop instead of within the panel. In these examples I have also used .backdrop-black so that the visitor’ more is more drawn to the image. (And I have removed the click-outside.)
-
-<p class="panel-responsive bl-heavy b-color-secondary bg-color-secondary-alt">Codebase modals have their content width and height and constrained to fit within the viewport (with the max-height further constrained, to account for the iOS Safari browser bar). Therefore, oversized images will be scaled down if necessary.</p>
-
-The _close_ (dismiss) button is within the top-right corner of the black backdrop.
-
-<div x-data="{modal: false}">
-  <button class="btn btn-primary mb-3 scroll-lock" @click="modal = !modal" :aria-expanded="modal ? 'true' : 'false'">Modal example 2a</button> – modal with a tall narrow image
-  <div class="modal-wrapper" :class="{ 'active': modal }">
-    <div class="backdrop backdrop-black scroll-unlock flex flex-top flex-end p-2">
-      <button class="modal-close btn btn-icon bg-transparent b-0" @click="modal = false">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
-      </button>
-    </div>
-    <div class="modal-panel" :class="{ 'active': modal }">
-      <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" width="500" height="1000" style="max-width: 100%; height: auto;"><defs><linearGradient id="gradient1" gradientTransform="rotate(45)"><stop offset="5%" stop-color="rgba(255,255,0,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(255,0,0,.5)" /></linearGradient><linearGradient id="gradient2" gradientTransform="rotate(135)"><stop offset="5%" stop-color="rgba(0,0,255,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(0,255,0,.5)" /></linearGradient></defs><rect width="100%" height="100%" fill="url('#gradient1')" /><rect width="100%" height="100%" fill="url('#gradient2')" /></svg>
-      <p class="t-color-ui-text t-center">A tall narrow image (500px &times; 1000px)</p>
-    </div>
-  </div>
-</div>
-
-<div x-data="{modal: false}">
-  <button class="btn btn-primary mb-3 scroll-lock" @click="modal = !modal" :aria-expanded="modal ? 'true' : 'false'">Modal example 2b</button> – modal with a short wide image
-  <div class="modal-wrapper" :class="{ 'active': modal }">
-    <div class="backdrop backdrop-black scroll-unlock flex flex-top flex-end p-2">
-      <button class="modal-close btn btn-icon bg-transparent b-0" @click="modal = false">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
-      </button>
-    </div>
-    <div class="modal-panel p-3" :class="{ 'active': modal }">
-      <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" width="2000" height="500" style="max-width: 100%; height: auto;"><defs><linearGradient id="gradient1" gradientTransform="rotate(45)"><stop offset="5%" stop-color="rgba(255,255,0,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(255,0,0,.5)" /></linearGradient><linearGradient id="gradient2" gradientTransform="rotate(135)"><stop offset="5%" stop-color="rgba(0,0,255,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(0,255,0,.5)" /></linearGradient></defs><rect width="100%" height="100%" fill="url('#gradient1')" /><rect width="100%" height="100%" fill="url('#gradient2')" /></svg>
-      <p class="t-color-ui-text t-center">A short wide image (2000px &times; 500px)</p>
-    </div>
-  </div>
-</div>
-
-<div x-data="{modal: false}">
-  <button class="btn btn-primary mb-3 scroll-lock" @click="modal = !modal" :aria-expanded="modal ? 'true' : 'false'">Modal example 2c</button> – modal with a gigantic image
-  <div class="modal-wrapper" :class="{ 'active': modal }">
-    <div class="backdrop backdrop-black scroll-unlock flex flex-top flex-end p-2">
-      <button class="modal-close btn btn-icon bg-transparent b-0" @click="modal = false">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
-      </button>
-    </div>
-    <div class="modal-panel p-3" :class="{ 'active': modal }">
-      <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" width="2000" height="2000" style="max-width: 100%; height: auto;"><defs><linearGradient id="gradient1" gradientTransform="rotate(45)"><stop offset="5%" stop-color="rgba(255,255,0,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(255,0,0,.5)" /></linearGradient><linearGradient id="gradient2" gradientTransform="rotate(135)"><stop offset="5%" stop-color="rgba(0,0,255,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(0,255,0,.5)" /></linearGradient></defs><rect width="100%" height="100%" fill="url('#gradient1')" /><rect width="100%" height="100%" fill="url('#gradient2')" /></svg>
-      <p class="t-color-ui-text t-center">A tall wide image (2000px &times; 2000px)</p>
-    </div>
-  </div>
-</div>
-
-```html
-<div x-data="{modal: false}">
-  <button class="btn btn-primary mb-3 scroll-lock" @click="modal = !modal" :aria-expanded="modal ? 'true' : 'false'">Modal example</button>
-  <div class="modal-wrapper" :class="{ 'active': modal }">
-    <div class="backdrop backdrop-black scroll-unlock flex flex-top flex-end p-2">
-      <button class="modal-close btn btn-transparent btn-icon b-0" @click="modal = false">
-        &times;
-      </button>
-    </div>
-    <div class="modal-panel p-3" :class="{ 'active': modal }">
-      <img src="" alt="">
-      <p class="t-color-ui-text t-center">Figure legend</p>
-    </div>
-  </div>
-</div>
-```
-
 ## Styling Modal Panels
 
 <div x-data="{modal: false}">
-  <button class="btn btn-primary mb-3 scroll-lock" @click="modal = !modal" :aria-expanded="modal ? 'true' : 'false'">Modal example 3a</button> – panel is dressed as a card, with “click-away”
+  <button class="btn btn-primary mb-3 scroll-lock" @click="modal = !modal" :aria-expanded="modal ? 'true' : 'false'">Modal example 2a</button> – panel is dressed as a card, with “click-away”
   <div class="modal-wrapper" :class="{ 'active': modal }">
     <div class="backdrop backdrop-shaded scroll-unlock" x-show.transition.opacity.duration.600ms="modal" @click="modal = false"></div>
     <div class="modal-panel w-xs m-3 b-thin rounded bg-color-background" :class="{ 'active': modal }">
@@ -213,15 +152,15 @@ The _close_ (dismiss) button is within the top-right corner of the black backdro
 </div>
 
 <div x-data="{modal: false}">
-  <button class="btn btn-primary mb-3 scroll-lock" @click="modal = !modal" :aria-expanded="modal ? 'true' : 'false'">Modal example 3b</button> – with a grid system, with “click-away”
+  <button class="btn btn-primary mb-3 scroll-lock" @click="modal = !modal" :aria-expanded="modal ? 'true' : 'false'">Modal example 2b</button> – with a grid system, with “click-away”
   <div class="modal-wrapper" :class="{ 'active': modal }">
     <div class="backdrop backdrop-shaded scroll-unlock" x-show.transition.opacity.duration.600ms="modal" @click="modal = false"></div>
-    <div class="modal-panel w-lg m-3 b-thin rounded bg-color-background" :class="{ 'active': modal }">
+    <div class="modal-panel w-lg m-3 b-thin rounded flex flex-column bg-color-background" :class="{ 'active': modal }">
       <div class="bb-thin p-block">
-        <button class="btn-icon float-right mt-1 scroll-unlock" @click="modal = false"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg></button>
+        <button class="btn-icon btn-sm float-right mt-1 scroll-unlock" @click="modal = false"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg></button>
         <h4 class="my-1">Modal Header</h4>
       </div>
-      <div class="p-2 grid grid-md-2-cols grid-gap">
+      <div class="flex-item-grow-1 overflow-y p-2 grid grid-md-2-cols grid-gap">
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" width="800" height="600" style="max-width: 100%; height: auto;"><defs><linearGradient id="gradient1" gradientTransform="rotate(45)"><stop offset="5%" stop-color="rgba(255,255,0,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(255,0,0,.5)" /></linearGradient><linearGradient id="gradient2" gradientTransform="rotate(135)"><stop offset="5%" stop-color="rgba(0,0,255,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(0,255,0,.5)" /></linearGradient></defs><rect width="100%" height="100%" fill="url('#gradient1')" /><rect width="100%" height="100%" fill="url('#gradient2')" /></svg>
         </div>
@@ -244,12 +183,12 @@ The _close_ (dismiss) button is within the top-right corner of the black backdro
 </div>
 
 <div x-data="{ modal: false, rows: [1,2,3,4,5,6,7,8,9,10,11,12] }">
-  <button class="btn btn-primary mb-3 scroll-lock" @click="modal = !modal" :aria-expanded="modal ? 'true' : 'false'">Modal example 3c</button> – with scrollable content, and no “click away”
+  <button class="btn btn-primary mb-3 scroll-lock" @click="modal = !modal" :aria-expanded="modal ? 'true' : 'false'">Modal example 2c</button> – with scrollable content, and no “click away”
   <div class="backdrop backdrop-shaded scroll-unlock" x-show.transition.opacity.duration.600ms="modal"></div>
   <div class="modal-wrapper" :class="{ 'active': modal }">
     <div class="modal-panel w-xs height-full-vh flex flex-column rounded bg-color-background" :class="{ 'active': modal }">
       <div class="bb-thin p-block">
-        <button class="float-right mt-1 scroll-unlock" @click="modal = false">Dismiss</button>
+        <button class="float-right mt-1 btn-sm scroll-unlock" @click="modal = false">Dismiss</button>
         <h4 class="my-1">Header</h4>
       </div>
       <div class="grow-1 overflow-y">
@@ -301,19 +240,21 @@ The _close_ (dismiss) button is within the top-right corner of the black backdro
   </div>
 </div>
 
+Use `.modal-panel.modal-panel-cover` for a full cover modal:
+
 <div x-data="{modal: false}">
-  <button class="btn btn-primary mb-3 scroll-lock" @click="modal = !modal" :aria-expanded="modal ? 'true' : 'false'">Modal example 3d</button> – with <em>full cover</em> content, no need for a backdrop, and no “click-away”
+  <button class="btn btn-primary mb-3 scroll-lock" @click="modal = !modal" :aria-expanded="modal ? 'true' : 'false'">Modal example 2d</button> – with <em>full cover</em> content, no need for a backdrop, and no “click-away”
   <div class="modal-wrapper" :class="{ 'active': modal }">
     <div class="modal-panel modal-panel-cover bg-color-background" :class="{ 'active': modal }">
-      <div class="container py-3">
+      <div class="container-grid py-3">
         <div>
-          <button class="float-right btn-icon scroll-unlock" @click="modal = false">
+          <button class="float-right btn-icon btn-sm scroll-unlock" @click="modal = false">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
           </button>
         </div>
         <h2>Full-Cover Modal</h2>
         <hr>
-        <div class="grid-md-3-cols grid-gap">
+        <div class="grid-sm-3-cols grid-gap">
           <div>
             <h4>Department 1
             </h4>
@@ -348,7 +289,7 @@ The _close_ (dismiss) button is within the top-right corner of the black backdro
             </ul>
           </div>
         </div>
-        <div class="grid-md-3-cols grid-gap">
+        <div class="grid-sm-3-cols grid-gap">
           <div>
             <h4>Department 4
             </h4>
@@ -393,20 +334,92 @@ The _close_ (dismiss) button is within the top-right corner of the black backdro
 Design the modal panels any way you want. But you will want to control the width, and control the height for scrollable panels (example 3c). Use `.modal-panel-cover` for full cover modals.
 
 ```html
-<!-- 3a -->
-<div class="modal-panel w-xs m-3 rounded bg-color-background" :class="{ 'active': modal }">...</div>
+<!-- Example 2a -->
+<div class="modal-panel w-xs" :class="{ 'active': modal }">...</div>
 
-<!-- 3b -->
-<div class="modal-panel w-lg m-3 b-thin rounded bg-color-background" :class="{ 'active': modal }">...</div>
+<!-- Example 2b -->
+<div class="modal-panel w-lg flex flex-column" :class="{ 'active': modal }">...</div>
 
-<!-- 3c -->
-<div class="modal-panel w-xs height-full-vh flex flex-column rounded bg-color-background" :class="{ 'active': modal }">...</div>
+<!-- Example 2c -->
+<div class="modal-panel w-xs flex flex-column" :class="{ 'active': modal }">...</div>
 
-<!-- 3d -->
-<div class="modal-panel modal-panel-cover bg-color-background" :class="{ 'active': modal }">...</div>
+<!-- Example 2d -->
+<div class="modal-panel modal-panel-cover" :class="{ 'active': modal }">...</div>
 ```
 
-## Scroll-lock
+(In addition the the modal and layout classes in the example code above, you will need decorative utility classes for borders, box shadows, background colors, etc.)
+
+## A Modal as a Lightbox
+
+Modals can be made into a lightbox by placing the “close” button within the backdrop instead of within the panel. In these examples I have also used .backdrop-black so that the visitor’ more is more drawn to the image. (And I have removed the click-outside.)
+
+<p class="panel-responsive bl-heavy b-color-secondary bg-color-secondary-alt">Codebase modals have their content width and height and constrained to fit within the viewport (with the max-height further constrained, to account for the iOS Safari browser bar). Therefore, oversized images will be scaled down if necessary.</p>
+
+In these examples, the _close_ (dismiss) button is within the black backdrop’s top-right corner using flex layout.
+
+<div x-data="{modal: false}">
+  <button class="btn btn-primary mb-3 scroll-lock" @click="modal = !modal" :aria-expanded="modal ? 'true' : 'false'">Modal example 3a</button> – modal with a tall narrow image
+  <div class="modal-wrapper" :class="{ 'active': modal }">
+    <div class="backdrop backdrop-black scroll-unlock flex flex-top flex-end p-2">
+      <button class="modal-close btn btn-icon bg-transparent b-0" @click="modal = false">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+      </button>
+    </div>
+    <div class="modal-panel" :class="{ 'active': modal }">
+      <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" width="500" height="1000" style="max-width: 100%; height: auto;"><defs><linearGradient id="gradient1" gradientTransform="rotate(45)"><stop offset="5%" stop-color="rgba(255,255,0,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(255,0,0,.5)" /></linearGradient><linearGradient id="gradient2" gradientTransform="rotate(135)"><stop offset="5%" stop-color="rgba(0,0,255,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(0,255,0,.5)" /></linearGradient></defs><rect width="100%" height="100%" fill="url('#gradient1')" /><rect width="100%" height="100%" fill="url('#gradient2')" /></svg>
+      <p class="p-block t-color-ui-text t-center">A tall narrow image (500px &times; 1000px)</p>
+    </div>
+  </div>
+</div>
+
+<div x-data="{modal: false}">
+  <button class="btn btn-primary mb-3 scroll-lock" @click="modal = !modal" :aria-expanded="modal ? 'true' : 'false'">Modal example 3b</button> – modal with a short wide image
+  <div class="modal-wrapper" :class="{ 'active': modal }">
+    <div class="backdrop backdrop-black scroll-unlock flex flex-top flex-end p-2">
+      <button class="modal-close btn btn-icon bg-transparent b-0" @click="modal = false">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+      </button>
+    </div>
+    <div class="modal-panel p-3" :class="{ 'active': modal }">
+      <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" width="2000" height="500" style="max-width: 100%; height: auto;"><defs><linearGradient id="gradient1" gradientTransform="rotate(45)"><stop offset="5%" stop-color="rgba(255,255,0,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(255,0,0,.5)" /></linearGradient><linearGradient id="gradient2" gradientTransform="rotate(135)"><stop offset="5%" stop-color="rgba(0,0,255,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(0,255,0,.5)" /></linearGradient></defs><rect width="100%" height="100%" fill="url('#gradient1')" /><rect width="100%" height="100%" fill="url('#gradient2')" /></svg>
+      <p class="p-block t-color-ui-text t-center">A short wide image (2000px &times; 500px)</p>
+    </div>
+  </div>
+</div>
+
+<div x-data="{modal: false}">
+  <button class="btn btn-primary mb-3 scroll-lock" @click="modal = !modal" :aria-expanded="modal ? 'true' : 'false'">Modal example 3c</button> – modal with a gigantic image
+  <div class="modal-wrapper" :class="{ 'active': modal }">
+    <div class="backdrop backdrop-black scroll-unlock flex flex-top flex-end p-2">
+      <button class="modal-close btn btn-icon bg-transparent b-0" @click="modal = false">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+      </button>
+    </div>
+    <div class="modal-panel p-3" :class="{ 'active': modal }">
+      <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" width="2000" height="2000" style="max-width: 100%; height: auto;"><defs><linearGradient id="gradient1" gradientTransform="rotate(45)"><stop offset="5%" stop-color="rgba(255,255,0,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(255,0,0,.5)" /></linearGradient><linearGradient id="gradient2" gradientTransform="rotate(135)"><stop offset="5%" stop-color="rgba(0,0,255,.5)" /><stop offset="50%" stop-color="rgba(255,255,255,0)" /><stop offset="95%" stop-color="rgba(0,255,0,.5)" /></linearGradient></defs><rect width="100%" height="100%" fill="url('#gradient1')" /><rect width="100%" height="100%" fill="url('#gradient2')" /></svg>
+      <p class="p-block t-color-ui-text t-center">A tall wide image (2000px &times; 2000px)</p>
+    </div>
+  </div>
+</div>
+
+```html
+<div x-data="{modal: false}">
+  <button class="btn btn-primary mb-3 scroll-lock" @click="modal = !modal" :aria-expanded="modal ? 'true' : 'false'">Modal example</button>
+  <div class="modal-wrapper" :class="{ 'active': modal }">
+    <div class="backdrop backdrop-black scroll-unlock flex flex-top flex-end p-2">
+      <button class="modal-close btn btn-transparent btn-icon b-0" @click="modal = false">
+        ×
+      </button>
+    </div>
+    <div class="modal-panel p-3" :class="{ 'active': modal }">
+      <img src="" alt="">
+      <p class="p-block -color-ui-text t-center">Figure legend</p>
+    </div>
+  </div>
+</div>
+```
+
+## Scroll-Lock
 
 You can improve the user experience of modals by adding a “scroll lock” – to prevent the page scrolling behind the opened modal.
 
@@ -431,7 +444,7 @@ scrUnlock.forEach(el => {
 })
 ```
 
-The script just adds or removes the CSS class `.body-scroll-lock` to/from your `<body>` tag.
+The script above just adds or removes the CSS class `.body-scroll-lock` to/from your `<body>` tag.
 
 The Codebase CSS class `.body-scroll-lock` is what actually performs the scroll lock:
 

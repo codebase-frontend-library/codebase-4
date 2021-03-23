@@ -53,19 +53,19 @@ Codebase has several simple text utility classes.
 
     <span class="t-uppercase">Text in uppercase</span> (all capitals)
 
-* <code>.t-lg</code> (aliases: `.big` / `.t-big` / `.t-large`)
+* <code>.t-lg</code>
 
     Big text for making <span class="t-lg">something</span> stand out.
 
     `.t-lg` enlarges text by 1.25em (125%) on small to medium screens and then 1.5em (150%) on medium screens up, to make the enlargement more obvious when viewed at a distance.
 
-    **Note:** `.t-lg` doesn’t work on [headings]({{ '/docs/2-codebase-basics/headings' | url }}) or [heading utilities]({{ '/docs/5-typographic-utilities/headings' | url }}). If you want a heading to be bigger, then use `.t-lg` on a _wrapper_ around the heading. See [large display text]({{ '/docs/5-typographic-utilities/large-display-text' | url }}).
+    **Note:** `.t-lg` doesn’t work as an _inline class_ on [headings]({{ '/docs/2-codebase-basics/headings' | url }}) or [heading utilities]({{ '/docs/5-typographic-utilities/headings' | url }}). If you want a heading to be bigger, then use `.t-lg` on a block _wrapper_ around the heading. See [large display text]({{ '/docs/5-typographic-utilities/large-display-text' | url }}).
 
-* <code>.t-sm</code> (aliases: `.small`, `.t-small` – or use the `<small>` HTML tag)
+* <code>.t-sm</code> (alias: the `<small>` HTML tag)
 
     Small text for <span class="t-sm">small print</span>.
 
-    `.t-sm` shrinks text to 0.85em (85%) of it’s size.
+    `.t-sm` shrinks text to 0.85em (85%) of its base size.
 
 * <code>.t-loose</code>
 

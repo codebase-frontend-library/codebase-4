@@ -13,7 +13,6 @@
     var clickAways = $('[data-click-away="true"]');
     var controls = $('[class*=-control]');
     var panels = $('[class*=-panel]');
-    var closes = $('[class*=-close]');
 
     // Find and decorate the click-away dismissers
     clickAways.each(function () {
@@ -44,9 +43,11 @@
         }
         myClasses = [].concat.apply([], myClasses);
 
-        var activeControlActive = $(this).hasClass('active');
+        var activeControlActive = $(this).hasClass('active');  // true or false
+
         var activeAriaControls = $(this).attr('aria-controls');
         var activePanel = $('#' + activeAriaControls);
+        var activePanelClose = $(activePanel).find('[class*=-close]');
         var activeComponentClass = '.' + myClasses[myClasses.indexOf('control') - 1] + '-wrapper';
         var activeComponent = activePanel.closest(activeComponentClass);
         var dataControl = $(this).attr('data-control');
@@ -75,8 +76,8 @@
         documentClickAway();
 
         var deactivateToggle = function () {
-          $(this).removeClass('active');
-          $(this).attr('aria-expanded', 'false');
+          $('[class*=-control].active').removeClass('active');
+          $('[class*=-control].active').attr('aria-expanded', 'false');
           activePanel.removeClass('active');
           if (activeComponent !== null) {
             activeComponent.removeClass('active');
@@ -142,10 +143,8 @@
             });
 
             // Deactivate on close (internal dismiss)
-            $(closes).each(function (element) {
-              $(this).on('click', function () {
-                deactivateToggle();
-              });            
+            $(activePanelClose).on('click', function () {
+              deactivateToggle();
             });
 
           }

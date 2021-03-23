@@ -2,11 +2,13 @@
  * CODEBASE
  * MIT Licence 
  * http://simonpadbury.github.io/Codebase/
- * v.4.0.5
+ * v.4.0.6
  */
 
-// Note: This is the Codebase core master SCSS file. It doesn’t have the dark theme supplement.
-// (`codebase-l-d.scss` has the same Codebase core plus supplements for `prefers-color-scheme: dark`, and dark and light theme CSS descendant combinator selector classes.)
+// This is the Codebase core master SCSS file. It doesn’t have the dark theme supplement.
+// (`codebase-l-d.scss` has this same Codebase core plus supplements for 
+// `prefers-color-scheme: dark`, and dark and light theme CSS descendant combinator 
+// selector classes.)
 
 // SETUP
 @import "00_setup/__default-colors";
