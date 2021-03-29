@@ -9,10 +9,10 @@ _Version 4.0.6_
 * Designed as a frontend CSS/JS codebase for content management system themes and static site generator projects
 * Just use it in your HTML: no NPM or other installation required – no config – no need to purge unused CSS
 * Small but powerful CSS:
-  * Base (default light theme only): `codebase.css` (37 KB)
-  * With dark and light theme CSS classes: `codebase-l-d.css` (62 KB)
+  * Base (default light theme only): `codebase.css` (38 KB)
+  * With dark and light theme CSS classes: `codebase-l-d.css` (64 KB)
 * JS options:
-  * Use Codebase’s own `activator.js` (3 KB) for dropdowns, modals, tabs etc.
+  * Use Codebase’s own vanilla JavaScript `activator.js` (3 KB) for dropdowns, modals, tabs etc. (jQuery version also available for older browsers)
   * Alternatively, use [AlpineJS](https://github.com/alpinejs/alpine) for more component functionality
 * Sass (SCSS) library
 * Responsive layouts and typography
