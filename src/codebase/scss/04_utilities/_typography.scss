@@ -23,13 +23,19 @@
   @include text-alignment;
 }
 
+@include break-min($mq-sm) {
+  .t-sm {
+    @include text-alignment;
+  }
+}
+
 @include break-min($mq-md) {
   .t-md {
     @include text-alignment;
   }
 }
 
-@include break-min($mq-md) {
+@include break-min($mq-lg) {
   .t-lg {
     @include text-alignment;
   }
