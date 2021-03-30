@@ -1,7 +1,7 @@
 /*!
  * CODEBASE ACTIVATOR
  * MIT Licence
- * v4.0.5
+ * Unchanged since v4.0.5
  */
 
 const clickAways = Array.from(document.querySelectorAll('[data-click-away="true"]'));

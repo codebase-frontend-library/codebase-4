@@ -8,17 +8,17 @@ $color-success-dark:             $base-color-success-600 !default;
 $color-warning-dark:             $base-color-warning-600 !default;
 $color-danger-dark:              $base-color-danger-600 !default;
 
-$color-primary-hover-dark:       $base-color-primary-700 !default;
-$color-secondary-hover-dark:     $base-color-secondary-700 !default;
-$color-success-hover-dark:       $base-color-success-700 !default;
-$color-warning-hover-dark:       $base-color-warning-700 !default;
-$color-danger-hover-dark:        $base-color-danger-700 !default;
+$color-primary-hover-dark:       $base-color-primary-500 !default;
+$color-secondary-hover-dark:     $base-color-secondary-500 !default;
+$color-success-hover-dark:       $base-color-success-500 !default;
+$color-warning-hover-dark:       $base-color-warning-500 !default;
+$color-danger-hover-dark:        $base-color-danger-500 !default;
 
-$color-primary-alt-dark:         $base-color-primary-900 !default;
-$color-secondary-alt-dark:       $base-color-secondary-900 !default;
-$color-success-alt-dark:         $base-color-success-900 !default;
-$color-warning-alt-dark:         $base-color-warning-900 !default;
-$color-danger-alt-dark:          $base-color-danger-900 !default;
+$color-primary-alt-dark:         $base-color-primary-800 !default;
+$color-secondary-alt-dark:       $base-color-secondary-800 !default;
+$color-success-alt-dark:         $base-color-success-800 !default;
+$color-warning-alt-dark:         $base-color-warning-800 !default;
+$color-danger-alt-dark:          $base-color-danger-800 !default;
 
 $color-background-dark:          $base-color-detail-850 !default;
 $color-background-alt-dark:      $base-color-detail-800 !default;
@@ -31,11 +31,11 @@ $color-text-alt-dark:            $base-color-detail-100 !default;
 
 $color-ui-text-dark:             $color-ui-text !default; // button text, etc.
 $color-ui-text-hover-dark:       $color-ui-text-dark !default;
-$color-ui-focus-glow-dark:       lighten($color-primary-dark, 10%) !default;
-$color-hyperlink-dark:           lighten($color-primary-dark, 20%) !default; // because $color-primary-dark is too dark for hyperlink text
-$color-hyperlink-hover-dark:     lighten($color-primary-dark, 10%) !default;
-$color-selection-dark:           rgba(51,204,51,0.35) !default;
-$color-highlight-dark:           rgba(255,255,0,.25) !default;
+$color-ui-focus-glow-dark:     rgba(106, 120, 209, 0.48) !default;
+$color-hyperlink-dark:           $base-color-primary-500 !default;
+$color-hyperlink-hover-dark:     $base-color-primary-400 !default;
+$color-highlight-dark:         rgba(255, 122, 89, 0.40) !default;
+$color-selection-dark:         rgba(0, 189, 165, 0.32) !default;
 $color-form-element-dark:        $base-color-detail-800 !default;
 
 // UI focus glow (used for forms and buttons)

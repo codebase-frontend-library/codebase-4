@@ -31,11 +31,11 @@ $color-success-hover:            $base-color-success-600 !default;
 $color-warning-hover:            $base-color-warning-600 !default;
 $color-danger-hover:             $base-color-danger-600 !default;
 
-$color-primary-alt:              $base-color-primary-100 !default;
-$color-secondary-alt:            $base-color-secondary-100 !default;
-$color-success-alt:              $base-color-success-100 !default;
-$color-warning-alt:              $base-color-warning-100 !default;
-$color-danger-alt:               $base-color-danger-100 !default;
+$color-primary-alt:              $base-color-primary-200 !default;
+$color-secondary-alt:            $base-color-secondary-200 !default;
+$color-success-alt:              $base-color-success-200 !default;
+$color-warning-alt:              $base-color-warning-200 !default;
+$color-danger-alt:               $base-color-danger-200 !default;
 
 $color-background:               #ffffff !default;
 $color-background-alt:           $base-color-detail-50 !default;
@@ -49,13 +49,13 @@ $color-text-alt:                 $base-color-detail-950 !default;
 
 $color-ui-text:                  #ffffff !default; // button text, etc.
 $color-ui-text-hover:            $color-ui-text !default;
-$color-ui-focus-glow:            rgba(51, 102, 225,.5) !default;
+$color-ui-focus-glow:            rgba(106, 120, 209, 0.48) !default;
 $color-backdrop:                 rgba(0,0,0,.5) !default;
-$color-hyperlink:                lighten($color-primary, 10%) !default;
-$color-hyperlink-hover:          darken($color-primary, 5%) !default;
+$color-hyperlink:                $base-color-primary-500 !default;
+$color-hyperlink-hover:          $base-color-primary-700 !default;
 $color-form-element:             $base-color-detail-50 !default;
-$color-highlight:                rgba(255,204,0,.8) !default;
-$color-selection:                rgba(51,204,51,0.5) !default;
+$color-highlight:                rgba(255, 122, 89, 0.32) !default;
+$color-selection:                rgba(0, 189, 165, 0.4) !default;
 
 // Default Theme UI Color Map
 // Used for buttons, badges, labels and utility classes
@@ -226,7 +226,7 @@ $heading-size-scale: map-merge((
 $heading-weight: () !default;
 $heading-weight: map-merge((
   "h1":         700,
-  "h2":         500,
+  "h2":         600,
   "h3":         400,
   "h4":         400,
   "h5":         400,
@@ -248,7 +248,7 @@ $text-base-line-height:             1.5 !default;
 
 $text-thin-font-weight:             200 !default;
 $text-base-font-weight:             400 !default;
-$text-semibold-font-weight:         500 !default;
+$text-semibold-font-weight:         600 !default;
 $text-bold-font-weight:             700 !default;
 $text-bolder-font-weight:           900 !default;
 

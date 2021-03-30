@@ -1,5 +1,11 @@
 # Log
 
+## 30 March 2021 - Codebase 4.0.7
+
+* Improved the UI colors (including form element focus, highlight/mark and select colors).
+* Made hover states to lighten in dark theme.
+* Increased H2, .h2 and .t-semibold font weight to 600.
+
 ## 23 March 2021 - Codebase 4.0.6
 
 * Bug fixes to `activator.js` and `activator.jquery.js`, to reset the _control_ button after clicking a _close_ button.

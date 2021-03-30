@@ -21,27 +21,27 @@ These are the Codebase colors. (All colors can be changed in the SCSS default va
 
 <div class="flex flex-space-around flex-gap flex-wrap t-center">
   <div class="mb-3 flex flex-column flex-middle">
-    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-primary"></div>
+    <div class="mb-1 square-lg rounded-full bg-color-primary"></div>
     <code>-color-primary</code>
   </div>
   <div class="mb-3 flex flex-column flex-middle">
-    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-secondary"></div>
+    <div class="mb-1 square-lg rounded-full bg-color-secondary"></div>
     <code>-color-secondary</code>
   </div>
   <div class="mb-3 flex flex-column flex-middle">
-    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-success"></div>
+    <div class="mb-1 square-lg rounded-full bg-color-success"></div>
     <code>-color-success</code>
   </div>
   <div class="flex flex-column flex-middle">
-    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-warning"></div>
+    <div class="mb-1 square-lg rounded-full bg-color-warning"></div>
     <code>-color-warning</code>
   </div>
   <div class="mb-3 flex flex-column flex-middle">
-    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-danger"></div>
+    <div class="mb-1 square-lg rounded-full bg-color-danger"></div>
     <code>-color-danger</code>
   </div>
   <div class="mb-3 flex flex-column flex-middle">
-    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-default"></div>
+    <div class="mb-1 square-lg rounded-full bg-color-default"></div>
     <code>-color-default</code>
   </div>
 </div>
@@ -52,27 +52,27 @@ As with the alternative background color (`color-background-alt`, see below), th
 
 <div class="flex flex-space-around flex-gap flex-wrap t-center">
   <div class="mb-3 flex flex-column flex-middle">
-    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-primary-alt"></div>
+    <div class="mb-1 square-lg rounded-full bg-color-primary-alt"></div>
     <code>-color-primary-alt</code>
   </div>
   <div class="mb-3 flex flex-column flex-middle">
-    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-secondary-alt"></div>
+    <div class="mb-1 square-lg rounded-full bg-color-secondary-alt"></div>
     <code>-color-secondary-alt</code>
   </div>
   <div class="mb-3 flex flex-column flex-middle">
-    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-success-alt"></div>
+    <div class="mb-1 square-lg rounded-full bg-color-success-alt"></div>
     <code>-color-success-alt</code>
   </div>
   <div class="flex flex-column flex-middle">
-    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-warning-alt"></div>
+    <div class="mb-1 square-lg rounded-full bg-color-warning-alt"></div>
     <code>-color-warning-alt</code>
   </div>
   <div class="mb-3 flex flex-column flex-middle">
-    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-danger-alt"></div>
+    <div class="mb-1 square-lg rounded-full bg-color-danger-alt"></div>
     <code>-color-danger-alt</code>
   </div>
   <div class="mb-3 flex flex-column flex-middle">
-    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-default-alt"></div>
+    <div class="mb-1 square-lg rounded-full bg-color-default-alt"></div>
     <code>-color-default-alt</code>
   </div>
 </div>
