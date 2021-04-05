@@ -290,6 +290,6 @@ offcanvas-panel offcanvas-panel-right offcanvas-panel-below-md
 
 ## Example 3: Super-Complex Offcanvas
 
-As a further development of example 2, you may want the trigger button to do a double duty, so that it is not hidden for large screens up but has a different operation: to slide the (now on-canvas) sidebar away so that your main content can take up the full width of the viewport. E.g. as per these docs, and as you’ve no doubt seen on Google News, and YouTube.
+As a further development of example 2, you may want the trigger button to do a _double duty_, so that it is not hidden for large screens up but has a different operation: to slide the (now on-canvas) sidebar away so that your main content can take up the full width of the viewport. E.g. as per these docs, and as you’ve no doubt seen on Google News, and YouTube.
 
 Examine the code for the sidebar/offcanvas sidebar of these docs, to see how I did it here using Alpine.

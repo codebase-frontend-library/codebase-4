@@ -45,7 +45,7 @@ Another example, with a header and a footer:
   <div class="bb-thin p-block">Header</div>
   <div class="flex flex-column">
     <a href="">
-      <img class="img-cover" src="{{ '/img/placeholder1000x600.svg">
+      <img class="img-cover" src="{{ '/img/placeholder1000x600.svg' | url }}">
     </a>
     <div class="p-2">
       <h4 class="mb-0">Card Title</h4>

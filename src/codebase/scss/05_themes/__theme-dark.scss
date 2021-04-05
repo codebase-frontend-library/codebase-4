@@ -14,15 +14,15 @@ $color-success-hover-dark:       $base-color-success-500 !default;
 $color-warning-hover-dark:       $base-color-warning-500 !default;
 $color-danger-hover-dark:        $base-color-danger-500 !default;
 
-$color-primary-alt-dark:         $base-color-primary-800 !default;
-$color-secondary-alt-dark:       $base-color-secondary-800 !default;
-$color-success-alt-dark:         $base-color-success-800 !default;
-$color-warning-alt-dark:         $base-color-warning-800 !default;
-$color-danger-alt-dark:          $base-color-danger-800 !default;
+$color-primary-alt-dark:         $base-color-primary-900 !default;
+$color-secondary-alt-dark:       $base-color-secondary-900 !default;
+$color-success-alt-dark:         $base-color-success-900 !default;
+$color-warning-alt-dark:         $base-color-warning-900 !default;
+$color-danger-alt-dark:          $base-color-danger-900 !default;
 
 $color-background-dark:          $base-color-detail-850 !default;
 $color-background-alt-dark:      $base-color-detail-800 !default;
-$color-ui-default-alt-dark:      $color-background-alt-dark !default;
+$color-ui-default-alt-dark:      $color-background-alt-dark !default; // alias
 $color-fineline-dark:            $base-color-detail-650 !default;
 $color-ui-default-dark:          $base-color-detail-700 !default;
 $color-button-default-hover-dark:$base-color-detail-750 !default;
@@ -102,7 +102,7 @@ $color-scheme-dark: map-merge((
   }
 
   a {
-    color: $color-hyperlink;
+    color: $color-hyperlink-dark;
     @if $text-hyperlink-hover==true {
       &:hover,
       &:active {

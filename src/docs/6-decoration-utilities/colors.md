@@ -91,32 +91,32 @@ Besides the UI colors, Codebase has a set of grays used for text, lines, etc. Yo
 
 <div class="flex flex-space-around flex-gap flex-wrap t-center">
   <div class="mb-3 flex flex-column flex-middle">
-    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-background"></div>
+    <div class="mb-1 square-lg bs rounded-full bg-color-background"></div>
     <code>-color-background</code>
   </div>
   <div class="mb-3 flex flex-column flex-middle">
-    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-background-alt"></div>
+    <div class="mb-1 square-lg rounded-full bg-color-background-alt"></div>
     <code>-color-background-alt</code>
   </div>
   <div class="mb-3 flex flex-column flex-middle">
-    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-fineline"></div>
+    <div class="mb-1 square-lg rounded-full bg-color-fineline"></div>
     <code>-color-fineline</code>
   </div>
   <div class="flex flex-column flex-middle">
-    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-default"></div>
+    <div class="mb-1 square-lg rounded-full bg-color-default"></div>
     <code>-color-default</code>
   </div>
   <div class="mb-3 flex flex-column flex-middle">
-    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-text"></div>
+    <div class="mb-1 square-lg rounded-full bg-color-text"></div>
     <code>-color-text</code>
   </div>
   <div class="mb-3 flex flex-column flex-middle">
-    <div class="mb-1 square-lg b-thick bs rounded-full bg-color-text-alt"></div>
+    <div class="mb-1 square-lg rounded-full bg-color-text-alt"></div>
     <code>-color-text-alt</code>
   </div>
 </div>
 
-## Notes on Color Usage
+## Detail Color Usage
 
 1. In the light theme (default), these color detail utilities above are listed in their grayscale order. But in the dark theme, the fineline color needs to be slightly lighter than the UI default color.
 2. The color utility classes are all suffix named after the places where you would usually see and use them:
@@ -187,7 +187,7 @@ Text `.t-color-{colorname}`:
 
 ## Color Utility Class Extras
 
-### `.t-color-hyperlink`
+`.t-color-hyperlink`:
 
 For use in situations where you need to _restore_ the color of a hyperlink. E.g. when using a heading utility that overrides the normal hyperlink color.
 
@@ -197,7 +197,7 @@ For use in situations where you need to _restore_ the color of a hyperlink. E.g.
 <a class="h1 t-color-hyperlink" href="">A hyperlink</a>
 ```
 
-### `.t-color-ui-text` and `.b-color-ui-text`
+`.t-color-ui-text` and `.b-color-ui-text`:
 
 Seeing that sometimes you may want to use the UI colors (primary, secondary, success, warning, danger) as background colors for e.g. cards or panels, you will also want to control the text color on those elements. This is done by the special `.t-color-ui-text` utility. This will set text color to be the same as that of buttons, badges and labels – overriding the default light theme and dark theme text and border colors.
 
