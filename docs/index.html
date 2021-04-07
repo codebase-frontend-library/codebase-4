@@ -224,6 +224,7 @@
 
       let resizeResetHeader = () => {
         window.addEventListener('resize', () => {
+          document.querySelector('body').classList.remove('body-scroll-lock');
           let windowWidth = window.innerWidth;
           if (windowWidth < 1024) {
             let xData = document.querySelector('[x-data]');
