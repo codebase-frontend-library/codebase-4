@@ -1,5 +1,10 @@
 # Log
 
+## 19 May 2021 - Codebase 4.0.8
+
+* Moved `scroll-behavior: smooth` from body{} to html{}.
+* Minor snagging since 4.0.7.
+
 ## 30 March 2021 - Codebase 4.0.7
 
 * Improved the UI colors (including form element focus, highlight/mark and select colors).

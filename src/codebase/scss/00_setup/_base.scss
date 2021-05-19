@@ -4,6 +4,7 @@
 
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -15,7 +16,6 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
-  scroll-behavior: smooth;
   -ms-overflow-style: -ms-autohiding-scrollbar;
   font-size: $text-base-font-size;
   font-family: $text-base-font-family; // sets 1rem
