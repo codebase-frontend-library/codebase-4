@@ -1,6 +1,6 @@
 {
   "name": "codebase-4",
-  "version": "4.0.4",
+  "version": "4.0.9",
   "description": "Codebase is a super tiny website frontend library. Feature rich CSS (from SCSS) with a miniscule vanilla JS activator script. Alternatively, use with AlpineJS for more powerful HTML components.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

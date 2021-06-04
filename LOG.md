@@ -1,5 +1,9 @@
 # Log
 
+## 4 June 2021 - Codebase 4.0.9
+
+* Reduced the heading sizes a little.
+
 ## 19 May 2021 - Codebase 4.0.8
 
 * Moved `scroll-behavior: smooth` from body{} to html{}.
