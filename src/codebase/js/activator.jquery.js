@@ -76,8 +76,8 @@
         documentClickAway();
 
         var deactivateToggle = function () {
-          $('[class*=-control].active').removeClass('active');
           $('[class*=-control].active').attr('aria-expanded', 'false');
+          $('[class*=-control].active').removeClass('active');
           activePanel.removeClass('active');
           if (activeComponent !== null) {
             activeComponent.removeClass('active');
@@ -119,12 +119,18 @@
         // Toggle has no siblings (but can have optional click-away)
         if (dataControl === 'toggle') {
           if (activeControlActive) {
-            deactivateToggle();
+            // deactivateToggle();
+            $(this).removeClass('active');
+            $(this).attr('aria-expanded', 'false');
+            $(activePanel).removeClass('active');
+            if ($(activeComponent) !== null) {
+              $(activeComponent).removeClass('active');
+            }
           } else {
             $(this).addClass('active');
             $(this).attr('aria-expanded', 'true');
             $(activePanel).addClass('active');
-            if ($($(activeComponent)) !== null) {
+            if ($(activeComponent) !== null) {
               $(activeComponent).addClass('active');
             }
 

@@ -47,7 +47,7 @@ controls.forEach(element => {
     }
     myClasses = [].concat.apply([], myClasses);
 
-    let activeControlActive = this.classList.contains('active');
+    let activeControlActive = this.classList.contains('active');  // true or false
     let activeAriaControls = this.getAttribute('aria-controls');
     let activePanel = document.querySelector('#' + activeAriaControls);
     let activePanelCloses = activePanel.querySelectorAll('[class*=-close]');
@@ -88,7 +88,8 @@ controls.forEach(element => {
       document.body.classList.remove('body-scroll-lock');
     }
 
-    // Deactivate siblings e.g. used in tabs, slideshows
+    // Deactivate siblings 
+    // e.g. used in tabs, slideshows
     const deactivateSiblings = () => {
       let activeSiblings = activeComponent.querySelectorAll('.active')
       for (let i = 0; i < activeSiblings.length; i++) {
