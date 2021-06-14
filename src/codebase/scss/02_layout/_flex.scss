@@ -26,19 +26,7 @@
       flex: auto;
     }
   }
-  // Spacing
-  &-gap {
-    //gap: $flex-gap-width;       // bleeding edge; check CanIuse
-    position: relative;
-    width: calc(100% + #{$flex-gap-width});
-    margin-right: -$flex-gap-width / 2;
-    margin-left: -$flex-gap-width / 2;
-    > * {
-      margin-right: $flex-gap-width / 2;
-      margin-bottom: $flex-gap-width;
-      margin-left: $flex-gap-width / 2;
-    }
-  }
+  // Spacing (for gap see below)
   &-space-around {
     justify-content: space-around;
   }
@@ -67,6 +55,41 @@
     align-items: flex-end;
   }
 }
+
+@mixin flex-gap {
+  //gap: $flex-gap-width;       // bleeding edge; check CanIuse
+  position: relative;
+  width: calc(100% + #{$flex-gap-width});
+  margin-right: -$flex-gap-width / 2;
+  margin-left: -$flex-gap-width / 2;
+  > * {
+    margin-right: $flex-gap-width / 2;
+    margin-bottom: $flex-gap-width;
+    margin-left: $flex-gap-width / 2;
+  }
+}
+
+.flex-gap {
+  &.flex {
+    @include flex-gap;
+  }
+  &.flex-sm {
+    @include break-min($mq-sm) {
+      @include flex-gap;
+    }
+  }
+  &.flex-md {
+    @include break-min($mq-md) {
+      @include flex-gap;
+    }
+  }
+  &.flex-lg {
+    @include break-min($mq-lg) {
+      @include flex-gap;
+    }
+  }
+}
+
 
 @mixin flex-cols {
   @if $include-flex-pseudo-grid == true {
