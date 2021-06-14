@@ -115,7 +115,7 @@ With some other simple components inside for proof of concept.
 </ul>
 ```
 
-Example with an [AplineJS powered dropdown]({{ '/docs/8-alpinejs-components/alpinejs-dropdowns' | url }):
+Example with an [AplineJS powered dropdown]({{ '/docs/8-alpinejs-components/alpinejs-dropdowns' | url }}):
 
 <div class="flex-sm flex-wrap flex-space-between bg-color-background-alt mb-3">
   <div class="p-2">
