@@ -115,7 +115,7 @@ With some other simple components inside for proof of concept.
 </ul>
 ```
 
-Example with an AplineJS powered dropdown
+Example with an [AplineJS powered dropdown]({{ '/docs/8-alpinejs-components/alpinejs-dropdowns' | url }):
 
 <div class="flex-sm flex-wrap flex-space-between bg-color-background-alt mb-3">
   <div class="p-2">
@@ -168,7 +168,8 @@ Example with an AplineJS powered dropdown
           class="t-decoration-none flex flex-middle cursor-pointer"
           @click="open = !open"
           :aria-expanded="open ? 'true' : 'false'"
-        >About <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><polyline points="6 9 12 15 18 9"></polyline></svg>
+        >About 
+        <!-- Down chevron icon -->
         </a>
         <div
           class="absolute right-sm bs b-thin rounded-sm bg-color-background"
