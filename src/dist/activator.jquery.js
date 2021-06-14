@@ -3,7 +3,7 @@
  * Use only if you want to support Internet Explorer 11 and other old browsers
  * Use with =< jQuery 2.2.4 (do not use with jQuery 3.x and up)
  * MIT Licence
- * Unchanged since v.4.0.5
+ * v.4.0.9
  */
 
 (function ($) {
