@@ -4,6 +4,7 @@
 
 * Fixed a bug in `activator.jquery.js` that interfered with resetting Activator components after moving focus off and back on to them (now they close with a single click).
 * Added media query breakpoint widths to `.flex-gap` (which is handled by margins not flexbox gap, for backwards compatibility). Now the `.flex-gap` only take effect above the `.flex` (all), or `.flex-sm`/ `.flex-md`/ `.flex-lg` breakpoint (and therefore smaller layouts are not messed up by unwanted margins).
+* Combined several media queries in the layout utilities.
 
 ## 4 June 2021 - Codebase 4.0.9
 

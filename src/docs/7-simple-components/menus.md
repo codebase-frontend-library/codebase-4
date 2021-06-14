@@ -115,6 +115,8 @@ With some other simple components inside for proof of concept.
 </ul>
 ```
 
+Example with an AplineJS powered dropdown
+
 <div class="flex-sm flex-wrap flex-space-between bg-color-background-alt mb-3">
   <div class="p-2">
     <a class="t-lg t-bold t-decoration-none" href="#/">Brand</a>
@@ -127,7 +129,7 @@ With some other simple components inside for proof of concept.
         x-data="{ open: false }"
       >
         <a
-          class="t-decoration-none flex flex-middle"
+          class="t-decoration-none flex flex-middle cursor-pointer"
           @click="open = !open"
           :aria-expanded="open ? 'true' : 'false'"
         >About <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><polyline points="6 9 12 15 18 9"></polyline></svg>
@@ -149,3 +151,40 @@ With some other simple components inside for proof of concept.
     <li><a href="">Contact</a></li>
   </ul>
 </div>
+
+```html
+<div class="flex-sm flex-wrap flex-space-between bg-color-background-alt mb-3">
+  <div class="p-2">
+    <a class="t-lg t-bold t-decoration-none" href="#/">Brand</a>
+  </div>
+  <ul class="menu flex-sm flex-middle flex-end flex-wrap">
+    <li><a href="#/">Home</a></li>
+    <li class="flex-sm flex-end">
+      <div
+        class="relative"
+        x-data="{ open: false }"
+      >
+        <a
+          class="t-decoration-none flex flex-middle cursor-pointer"
+          @click="open = !open"
+          :aria-expanded="open ? 'true' : 'false'"
+        >About <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+        <div
+          class="absolute right-sm bs b-thin rounded-sm bg-color-background"
+          x-show="open"
+          @click.away="open = false"
+          style="min-width: 10rem"
+        >
+          <ul class="menu">
+            <li><a href="">Company info</a></li>
+            <li><a href="">Management</a></li>
+            <li><a href="">Careers</a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li><a href="">Contact</a></li>
+  </ul>
+</div>
+```

@@ -9,36 +9,6 @@
     float: right;
   }
 }
-.float-sm {
-  @include break-min($mq-sm) {
-    &-left {
-      float: left;
-    }
-    &-right {
-      float: right;
-    }
-  }
-}
-.float-md {
-  @include break-min($mq-md) {
-    &-left {
-      float: left;
-    }
-    &-right {
-      float: right;
-    }
-  }
-}
-.float-lg {
-  @include break-min($mq-md) {
-    &-left {
-      float: left;
-    }
-    &-right {
-      float: right;
-    }
-  }
-}
 
 .clearfix {
   &:before,
@@ -85,61 +55,14 @@
 .relative {
   position: relative;
 }
-.relative-sm {
-  @include break-min($mq-sm) {
-    position: relative;
-  }
-}
-.relative-md {
-  @include break-min($mq-md) {
-    position: relative;
-  }
-}
-.relative-lg {
-  @include break-min($mq-md) {
-    position: relative;
-  }
-}
-
 .absolute {
   position: absolute;
 }
-.absolute-sm {
-  @include break-min($mq-sm) {
-    position: absolute;
-  }
-}
-.absolute-md {
-  @include break-min($mq-md) {
-    position: absolute;
-  }
-}
-.absolute-lg {
-  @include break-min($mq-md) {
-    position: absolute;
-  }
-}
-
 .fixed {
   position: fixed;
 }
-.fixed-sm {
-  @include break-min($mq-sm) {
-    position: fixed;
-  }
-}
-.fixed-md {
-  @include break-min($mq-md) {
-    position: fixed;
-  }
-}
-.fixed-lg {
-  @include break-min($mq-md) {
-    position: fixed;
-  }
-}
 
-.sticky {
+@mixin sticky {
   position: sticky;
   top: 0;
   &-gap-top {
@@ -149,73 +72,123 @@
     bottom: $sticky-gap;
   }
 }
-.sticky-sm {
-  @include break-min($mq-sm) {
-    position: sticky;
-    top: 0;
-    &-gap-top {
-      top: $sticky-gap;
-    }
-    &-gap-bottom {
-      bottom: $sticky-gap;
-    }
-  }
-}
-.sticky-md {
-  @include break-min($mq-md) {
-    position: sticky;
-    top: 0;
-    &-gap-top {
-      top: $sticky-gap;
-    }
-    &-gap-bottom {
-      bottom: $sticky-gap;
-    }
-  }
-}
-.sticky-lg {
-  @include break-min($mq-md) {
-    position: sticky;
-    top: 0;
-    &-gap-top {
-      top: $sticky-gap;
-    }
-    &-gap-bottom {
-      bottom: $sticky-gap;
-    }
-  }
+.sticky {
+  @include sticky;
 }
 
 .top {
   top: 0;
-  &-sm,
-  &-md,
-  &-lg {
-    top: 0
-  }
 }
 .right {
   right: 0;
-  &-sm,
-  &-md,
-  &-lg {
-    right: 0
-  }
 }
 .bottom {
   bottom: 0;
-  &-sm,
-  &-md,
-  &-lg {
-    bottom: 0
-  }
 }
 .left {
   left: 0;
-  &-sm,
-  &-md,
-  &-lg {
-    left: 0
+}
+
+@include break-min($mq-sm) {
+  .float-sm {
+    &-left {
+      float: left;
+    }
+    &-right {
+      float: right;
+    }
+  }  
+  .sticky-sm {
+    @include sticky;
+  }
+  .fixed-sm {
+    position: fixed;
+  }
+  .absolute-sm {
+    position: absolute;
+  }
+  .relative-sm {
+    position: relative;
+  }
+  .top-sm {
+    top: 0
+  }
+  .right-sm {
+    right: 0;
+  }
+  .bottom-sm {
+    bottom: 0;
+  }
+  .left-sm {
+    left: 0;
+  }
+}
+@include break-min($mq-md) {
+  .float-md {
+    &-left {
+      float: left;
+    }
+    &-right {
+      float: right;
+    }
+  }  
+  .sticky-md {
+    @include sticky;
+  }
+  .fixed-md {
+    position: fixed;
+  }
+  .absolute-md {
+    position: absolute;
+  }
+  .relative-md {
+    position: relative;
+  }
+  .top-md {
+    top: 0
+  }
+  .right-md {
+    right: 0;
+  }
+  .bottom-md {
+    bottom: 0;
+  }
+  .left-md {
+    left: 0;
+  }
+}
+@include break-min($mq-lg) {
+  .float-md {
+    &-left {
+      float: left;
+    }
+    &-right {
+      float: right;
+    }
+  }  
+  .sticky-lg {
+    @include sticky;
+  }
+  .fixed-md {
+    position: fixed;
+  }
+  .absolute-md {
+    position: absolute;
+  }
+  .relative-lg {
+    position: relative;
+  }
+  .top-lg {
+    top: 0
+  }
+  .right-lg {
+    right: 0;
+  }
+  .bottom-lg {
+    bottom: 0;
+  }
+  .left-lg {
+    left: 0;
   }
 }
 
