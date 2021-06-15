@@ -67,16 +67,16 @@ For a right-aligned dropdown:
 ```html
 <div class="flex flex-end">
   <div class="relative">
-  <button
-    aria-controls="dropdown-2"
-    aria-expanded="false"
-    data-control="toggle"
-    data-click-away="true"
-    class="dropdown-control btn btn-primary"
-  >Click me ▾</button>
-  <div id="dropdown-2" style="width: 12em;" class="dropdown-panel absolute position-right bs b-thin rounded-sm p-block bg-color-background">
-    Dropdown content
-  </div>
+    <button
+      aria-controls="dropdown-2"
+      aria-expanded="false"
+      data-control="toggle"
+      data-click-away="true"
+      class="dropdown-control btn btn-primary"
+    >Click me ▾</button>
+    <div id="dropdown-2" style="width: 12em;" class="dropdown-panel absolute right bs b-thin rounded-sm p-block bg-color-background">
+      Dropdown content
+    </div>
   </div>
 </div>
 ```
