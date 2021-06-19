@@ -7,20 +7,20 @@ prevButton: "Flex"
 nextButton: "Real grid system"
 ---
 
-<p class="t-lg t-thin">Codebase has a simple flexbox 12-column <em>pseudo grid</em> system for traditional layouts – and for supporting ancient browsers.</p>
+<p class="t-lg t-thin">Codebase has a simple flexbox 12-column <code>.flex-grid</code> <em>pseudo grid</em> system for traditional layouts – and for supporting old browsers.</p>
 
-While Codebase’s [real grid system]({{ '/docs/3-responsive-layouts/grid' | url }}) works on modern (2017 and up) browsers that support [CSS grid](https://caniuse.com/css-grid) (that’s [vast the vast majoity of internet users in 2021](https://www.stetic.com/market-share/browser/)), some people prefer the old way of setting up a page layout. And if they must support Internet Explorer 11 or other ancient browsers, then they have to go with the flex pseudo grid.
+If you want a more versatile (and true) columnar grid, then you need the [Codebase real grid system]({{ '/docs/3-responsive-layouts/grid' | url }}). The real grid system works on modern (2017 and up) browsers that support [CSS grid](https://caniuse.com/css-grid) – that’s the [vast majority of internet users in 2021](https://www.stetic.com/market-share/browser/). However, the old way of setting up a webpage still works. And if you must support Internet Explorer 11 or other ancient browsers, then that’s what you’ll have to stick with a flexbox layout in the short term.
 
-To use Codebase’s 12-column pseudo grid system, all you need to do is use prefix `.flex-cols-` with a suffix from `1` to `12`:
+To use Codebase’s 12-column flexbox pseudo grid system, use the special `.flex-grid` wrapper and give the flex-items classes with the prefix `.flex-cols-` and a suffix from `1` to `12`:
 
-<div class="flex mt-3 mb-6">
-  <div class="flex-cols-4 rounded p-2 bg-color-secondary t-color-ui-text">cols-4</div>
-  <div class="flex-cols-6 rounded p-2 bg-color-secondary t-color-ui-text">cols-6</div>
-  <div class="flex-cols-2 rounded p-2 bg-color-secondary t-color-ui-text">cols-2</div>
+<div class="flex-grid mt-3 mb-6">
+  <div class="flex-cols-4 b-thin bg-color-background-alt">flex-cols-4</div>
+  <div class="flex-cols-6 b-thin bg-color-background-alt">flex-cols-6</div>
+  <div class="flex-cols-2 b-thin bg-color-background-alt">flex-cols-2</div>
 </div>
 
 ```html
-<div class="flex">
+<div class="flex-grid">
   <div class="flex-cols-4">cols-4</div>
   <div class="flex-cols-6">cols-6</div>
   <div class="flex-cols-2">cols-2</div>
@@ -29,57 +29,76 @@ To use Codebase’s 12-column pseudo grid system, all you need to do is use pref
 
 **Notes:**
 
-1. **Why twelve?** A 12-column grid is often used in page layout design because 12 divides without remainder into 6+6, 4+4+4, 3+3+3+3; 8+4, 9+3, etc.
-2. If you want some equal width flex columns, it’s easier too create them using `.flex.flex-grow-equal` instead of using the pseudo grid. See [flex system]({{ '/docs/3-responsive-layouts/flex/' | url }}).
-3. All Codebase `.flex` wrappers only affect their immediate child (direct descendant) elements.
-4. The same “responsiveness” is baked in to the `.flex` pseudo grid, as is in whole [flex system]({{ '/docs/3-responsive-layouts/flex' | url }}). _Use one_ of these flex wrapper classes to get your grid to take effect from your desired viewport width up:
+1. **Why twelve columns?** A [dozenal (a.k.a duodecimal)](https://www.science.org.au/curious/video/dozenal-system) columnar grid is often used in page layout design because 12 divides without remainder into 6+6, 4+4+4, 3+3+3+3, 3+6+3, 8+4, 9+3, etc.
+2. The pseudo grid flex-item widths are controlled by `max-width`, so that the layout behaves better. 
+3. The Codebase `.flex-grid` class causes flex-items to _wrap_. This means that if your flex-item (max) widths total more than 12, then they will begin on _a new row within_ the same `.flex-grid`. This can be used e.g. as a simple way of setting up a tile or image gallery.
+4. Why not name the `.flex-grid` a _row_ and the `.flex-cols` as _cols_ (same as Bootstrap, etc.)? Two reasons. First, because we can avoid some CSS code duplication by combining the pseudo grid and the simple `.flex` system (see point 5), and second, because the keywords _rows_ and _cols_ (columns) are then available to use in a real CSS grid.
+5. You can use the `.flex-grid` wrapper with the same flex wrapper modifiers as are used by the simpler `.flex` system:
+
+  * `.flex-gap` – see demo below
+  * `.flex-row-reverse`
+  * `.flex-item-order-start`
+  * `.flex-item-order-end`
+
+## Pseudo grids using `.flex-gap`
+
+For the [simple flex system]({{ '/docs/3-responsive-layouts/flex/' | url }}), `.flex-gap`</code>` creates a gutter between flex-items using _x-axis margins_. This is necessary for use in e.g. menubars. However, for the flex pseudo grid, the gutter is created using _x-axis paddings_. This is the normal for many flexbox pseudo-grid systems (e.g. Bootstrap).
 
 <table class="table">
-  <thead>
-    <tr>
-      <th>Flexbox system wrapper</th>
-      <th>Effect</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>.flex</code></td>
-      <td>Works on all viewport widths</td>
-    </tr>
-    <tr>
-      <td><code>.flex-sm</code></td>
-      <td>Works from 768px (default) up</td>
-    </tr>
-    <tr>
-      <td><code>.flex-md</code></td>
-      <td>Works from 1024px (default) up</td>
-    </tr>
-    <tr>
-      <td><code>.flex-lg</code></td>
-      <td>Works from 1280px (default) up</td>
-    </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Flex system</th>
+<th>Vertical gutter are created by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simple</td>
+<td><code>margin-right</code> and <code>margin-left</code></td>
+</tr>
+<tr>
+<td>Pseudo grid</td>
+<td><code>padding-right</code> and <code>padding-left</code></td>
+</tr>
+</tbody>
 </table>
 
-5. You can also use the flex system wrapper and flex item modifiers on flex pseudo grids:
+Example (columns are visualized by  placing another `<div>` with a dashed border inside each):
 
-    * `.flex-gap` – see demo below
-    * `.flex-row-reverse` – see demo below
-    * `.flex-item-order-start`
-    * `.flex-item-order-end`
-
-<div class="flex-md flex-gap flex-row-reverse my-6">
-  <div class="flex-cols-3 rounded p-2 bg-color-secondary t-color-ui-text">One quarter</div>
-  <div class="flex-cols-9 rounded p-2 bg-color-secondary t-color-ui-text">Three quarters</div>
+<div class="flex-grid flex-gap">
+  <div class="flex-cols-3"><div class="b-dashed">One quarter</div></div>
+  <div class="flex-cols-9"><div class="b-dashed">Three quarters</div></div>
 </div>
 
 ```html
-<div class="flex-md flex-gap flex-row-reverse">
-  <div class="flex-cols-3">One quarter</div>
-  <div class="flex-cols-9">Three quarters</div>
+<div class="flex-grid flex-gap">
+  <div class="flex-cols-3"><div class="b-dashed">One quarter</div></div>
+  <div class="flex-cols-9"><div class="b-dashed">Three quarters</div></div>
 </div>
 ```
 
-6. Since the responsive viewport-width control is on the wrapper, you can’t _combine_ these pseudo grids on the same HTML elements.
-7. The pseudo grid only works on _widths_. Therefore, do not use with the `.flex-column` wrapper modifier.
-8. If you want a more versatile (and true) columnar grid, then you need the Codebase [grid system]({{ '/docs/3-responsive-layouts/grid' | url }}).
+## Flex Pseudo-Grids and Media Query Breakpoints
+
+Instead of using the Codebase media-query breakpoint width modifiers (`-sm`, `-md` and `-lg`) on the `.flex-grid`  wrapper, you hav have more versatility and power by placing breakpoint modifiers on each flex-item individually, as in the following example:
+
+<div class="container-grid-full-bleed my-3">
+<div class="container-grid container-grid-lg">
+<div class="flex-grid flex-gap">
+<div class="flex-sm-cols-3 flex-lg-cols-4"><div class="b-dashed h-full">This column will be full width below <code>-sm</code>, then one quarter until <code>-lg</code>, then one third.</div></div>
+<div class="flex-sm-cols-9 flex-lg-cols-8"><div class="b-dashed h-full">This column will be full width below <code>-sm</code>, then three quarters until <code>-lg</code>, then two thirds.</div></div>
+</div>
+</div>
+</div>
+
+```html
+<div class="flex-grid flex-gap">
+<div class="flex-sm-cols-3 flex-lg-cols-4"><div class="b-dashed h-full">This column will be full width below <code>-sm</code>, then one quarter until <code>-lg</code> then one third.</div></div>
+<div class="flex-sm-cols-9 flex-lg-cols-8"><div class="b-dashed h-full">This column will be full width below <code>-sm</code>, then three quarters until <code>-lg</code> then two thirds.</div></div>
+</div>
+```
+
+(The dashed borders on additional `<div>`’s are there to show you where the flex-item “columns” are.)
+
+Below `-sm` the columns in the example above will be _full width, stacked_.
+
+You can easily make the _content_ elements of flex-items expand to fit the height of flex items (sometimes called “equalizing column heights”) using the [dimension utility]({{ '/docs/4-layout-utilities/dimensions' | url }}) class `.h-full`.) This has also been demonstrated in the example above.

@@ -16,8 +16,8 @@
   <meta name="theme-color" content="#262626">
 
   <link href="/codebase-4/prism/prism.css" rel="stylesheet">
-  <!-- <link href="/codebase-4/dist/codebase.css?v=4.0.10" rel="stylesheet"> -->
-  <link href="/codebase-4/dist/codebase-l-d.css?v=4.0.10" rel="stylesheet">
+  <!-- <link href="/codebase-4/dist/codebase.css?v=4.0.11" rel="stylesheet"> -->
+  <link href="/codebase-4/dist/codebase-l-d.css?v=4.0.11" rel="stylesheet">
   
   <style>
     html {
@@ -111,7 +111,7 @@
   </style>
 
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.1/dist/alpine.min.js" defer></script>
-  <script src="/codebase-4/dist/activator.js?v=4.0.10" defer></script>
+  <script src="/codebase-4/dist/activator.js?v=4.0.11" defer></script>
   <script src="/codebase-4/js/theme-switcher.js" defer></script>
 </head>
 <body>
@@ -589,69 +589,69 @@ x-data="docsOcState()"
     </header>
 
     <section id="docs-mainbody" class="container-grid container-grid-sm mb-6">
-      <p class="t-lg t-thin">Codebase has a simple flexbox 12-column <em>pseudo grid</em> system for traditional layouts – and for supporting ancient browsers.</p>
-<p>While Codebase’s <a href="/codebase-4/docs/3-responsive-layouts/grid">real grid system</a> works on modern (2017 and up) browsers that support <a href="https://caniuse.com/css-grid">CSS grid</a> (that’s <a href="https://www.stetic.com/market-share/browser/">vast the vast majoity of internet users in 2021</a>), some people prefer the old way of setting up a page layout. And if they must support Internet Explorer 11 or other ancient browsers, then they have to go with the flex pseudo grid.</p>
-<p>To use Codebase’s 12-column pseudo grid system, all you need to do is use prefix <code>.flex-cols-</code> with a suffix from <code>1</code> to <code>12</code>:</p>
-<div class="flex mt-3 mb-6">
-  <div class="flex-cols-4 rounded p-2 bg-color-secondary t-color-ui-text">cols-4</div>
-  <div class="flex-cols-6 rounded p-2 bg-color-secondary t-color-ui-text">cols-6</div>
-  <div class="flex-cols-2 rounded p-2 bg-color-secondary t-color-ui-text">cols-2</div>
+      <p class="t-lg t-thin">Codebase has a simple flexbox 12-column <code>.flex-grid</code> <em>pseudo grid</em> system for traditional layouts – and for supporting old browsers.</p>
+<p>If you want a more versatile (and true) columnar grid, then you need the <a href="/codebase-4/docs/3-responsive-layouts/grid">Codebase real grid system</a>. The real grid system works on modern (2017 and up) browsers that support <a href="https://caniuse.com/css-grid">CSS grid</a> – that’s the <a href="https://www.stetic.com/market-share/browser/">vast majority of internet users in 2021</a>. However, the old way of setting up a webpage still works. And if you must support Internet Explorer 11 or other ancient browsers, then that’s what you’ll have to stick with a flexbox layout in the short term.</p>
+<p>To use Codebase’s 12-column flexbox pseudo grid system, use the special <code>.flex-grid</code> wrapper and give the flex-items classes with the prefix <code>.flex-cols-</code> and a suffix from <code>1</code> to <code>12</code>:</p>
+<div class="flex-grid mt-3 mb-6">
+  <div class="flex-cols-4 b-thin bg-color-background-alt">flex-cols-4</div>
+  <div class="flex-cols-6 b-thin bg-color-background-alt">flex-cols-6</div>
+  <div class="flex-cols-2 b-thin bg-color-background-alt">flex-cols-2</div>
 </div>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-cols-4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>cols-4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-cols-6<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>cols-6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-cols-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>cols-2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-grid<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-cols-4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>cols-4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-cols-6<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>cols-6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-cols-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>cols-2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
 <p><strong>Notes:</strong></p>
 <ol>
-<li><strong>Why twelve?</strong> A 12-column grid is often used in page layout design because 12 divides without remainder into 6+6, 4+4+4, 3+3+3+3; 8+4, 9+3, etc.</li>
-<li>If you want some equal width flex columns, it’s easier too create them using <code>.flex.flex-grow-equal</code> instead of using the pseudo grid. See <a href="/codebase-4/docs/3-responsive-layouts/flex/">flex system</a>.</li>
-<li>All Codebase <code>.flex</code> wrappers only affect their immediate child (direct descendant) elements.</li>
-<li>The same “responsiveness” is baked in to the <code>.flex</code> pseudo grid, as is in whole <a href="/codebase-4/docs/3-responsive-layouts/flex">flex system</a>. <em>Use one</em> of these flex wrapper classes to get your grid to take effect from your desired viewport width up:</li>
+<li><strong>Why twelve columns?</strong> A <a href="https://www.science.org.au/curious/video/dozenal-system">dozenal (a.k.a duodecimal)</a> columnar grid is often used in page layout design because 12 divides without remainder into 6+6, 4+4+4, 3+3+3+3, 3+6+3, 8+4, 9+3, etc.</li>
+<li>The pseudo grid flex-item widths are controlled by <code>max-width</code>, so that the layout behaves better.</li>
+<li>The Codebase <code>.flex-grid</code> class causes flex-items to <em>wrap</em>. This means that if your flex-item (max) widths total more than 12, then they will begin on <em>a new row within</em> the same <code>.flex-grid</code>. This can be used e.g. as a simple way of setting up a tile or image gallery.</li>
+<li>Why not name the <code>.flex-grid</code> a <em>row</em> and the <code>.flex-cols</code> as <em>cols</em> (same as Bootstrap, etc.)? Two reasons. First, because we can avoid some CSS code duplication by combining the pseudo grid and the simple <code>.flex</code> system (see point 5), and second, because the keywords <em>rows</em> and <em>cols</em> (columns) are then available to use in a real CSS grid.</li>
+<li>You can use the <code>.flex-grid</code> wrapper with the same flex wrapper modifiers as are used by the simpler <code>.flex</code> system:</li>
 </ol>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Flexbox system wrapper</th>
-      <th>Effect</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>.flex</code></td>
-      <td>Works on all viewport widths</td>
-    </tr>
-    <tr>
-      <td><code>.flex-sm</code></td>
-      <td>Works from 768px (default) up</td>
-    </tr>
-    <tr>
-      <td><code>.flex-md</code></td>
-      <td>Works from 1024px (default) up</td>
-    </tr>
-    <tr>
-      <td><code>.flex-lg</code></td>
-      <td>Works from 1280px (default) up</td>
-    </tr>
-  </tbody>
-</table>
-<ol start="5">
-<li>
-<p>You can also use the flex system wrapper and flex item modifiers on flex pseudo grids:</p>
 <ul>
 <li><code>.flex-gap</code> – see demo below</li>
-<li><code>.flex-row-reverse</code> – see demo below</li>
+<li><code>.flex-row-reverse</code></li>
 <li><code>.flex-item-order-start</code></li>
 <li><code>.flex-item-order-end</code></li>
 </ul>
-</li>
-</ol>
-<div class="flex-md flex-gap flex-row-reverse my-6">
-  <div class="flex-cols-3 rounded p-2 bg-color-secondary t-color-ui-text">One quarter</div>
-  <div class="flex-cols-9 rounded p-2 bg-color-secondary t-color-ui-text">Three quarters</div>
+<h2 id="pseudo-grids-using-.flex-gap">Pseudo grids using <code>.flex-gap</code></h2>
+<p>For the <a href="/codebase-4/docs/3-responsive-layouts/flex/">simple flex system</a>, <code>.flex-gap</code></code>` creates a gutter between flex-items using <em>x-axis margins</em>. This is necessary for use in e.g. menubars. However, for the flex pseudo grid, the gutter is created using <em>x-axis paddings</em>. This is the normal for many flexbox pseudo-grid systems (e.g. Bootstrap).</p>
+<table class="table">
+<thead>
+<tr>
+<th>Flex system</th>
+<th>Vertical gutter are created by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simple</td>
+<td><code>margin-right</code> and <code>margin-left</code></td>
+</tr>
+<tr>
+<td>Pseudo grid</td>
+<td><code>padding-right</code> and <code>padding-left</code></td>
+</tr>
+</tbody>
+</table>
+<p>Example (columns are visualized by  placing another <code>&lt;div&gt;</code> with a dashed border inside each):</p>
+<div class="flex-grid flex-gap">
+  <div class="flex-cols-3"><div class="b-dashed">One quarter</div></div>
+  <div class="flex-cols-9"><div class="b-dashed">Three quarters</div></div>
 </div>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-md flex-gap flex-row-reverse<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-cols-3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>One quarter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-cols-9<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Three quarters<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
-<ol start="6">
-<li>Since the responsive viewport-width control is on the wrapper, you can’t <em>combine</em> these pseudo grids on the same HTML elements.</li>
-<li>The pseudo grid only works on <em>widths</em>. Therefore, do not use with the <code>.flex-column</code> wrapper modifier.</li>
-<li>If you want a more versatile (and true) columnar grid, then you need the Codebase <a href="/codebase-4/docs/3-responsive-layouts/grid">grid system</a>.</li>
-</ol>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-grid flex-gap<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-cols-3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>b-dashed<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>One quarter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-cols-9<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>b-dashed<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Three quarters<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="flex-pseudo-grids-and-media-query-breakpoints">Flex Pseudo-Grids and Media Query Breakpoints</h2>
+<p>Instead of using the Codebase media-query breakpoint width modifiers (<code>-sm</code>, <code>-md</code> and <code>-lg</code>) on the <code>.flex-grid</code>  wrapper, you hav have more versatility and power by placing breakpoint modifiers on each flex-item individually, as in the following example:</p>
+<div class="container-grid-full-bleed my-3">
+<div class="container-grid container-grid-lg">
+<div class="flex-grid flex-gap">
+<div class="flex-sm-cols-3 flex-lg-cols-4"><div class="b-dashed h-full">This column will be full width below <code>-sm</code>, then one quarter until <code>-lg</code>, then one third.</div></div>
+<div class="flex-sm-cols-9 flex-lg-cols-8"><div class="b-dashed h-full">This column will be full width below <code>-sm</code>, then three quarters until <code>-lg</code>, then two thirds.</div></div>
+</div>
+</div>
+</div>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-grid flex-gap<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-sm-cols-3 flex-lg-cols-4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>b-dashed h-full<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>This column will be full width below <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">></span></span>-sm<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">></span></span>, then one quarter until <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">></span></span>-lg<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">></span></span> then one third.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-sm-cols-9 flex-lg-cols-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>b-dashed h-full<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>This column will be full width below <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">></span></span>-sm<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">></span></span>, then three quarters until <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">></span></span>-lg<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">></span></span> then two thirds.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>(The dashed borders on additional <code>&lt;div&gt;</code>’s are there to show you where the flex-item “columns” are.)</p>
+<p>Below <code>-sm</code> the columns in the example above will be <em>full width, stacked</em>.</p>
+<p>You can easily make the <em>content</em> elements of flex-items expand to fit the height of flex items (sometimes called “equalizing column heights”) using the <a href="/codebase-4/docs/4-layout-utilities/dimensions">dimension utility</a> class <code>.h-full</code>.) This has also been demonstrated in the example above.</p>
 
     </section><!-- /#docs-mainbody -->
 
@@ -676,20 +676,20 @@ x-data="docsOcState()"
       <!-- Codebase logo-->
       <svg  style="height: 4rem; margin-bottom: 1rem;" viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2"><path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"/></svg>
       <span>
-        Codebase <span class="t-thin">4.0.10</span>
+        Codebase <span class="t-thin">4.0.11</span>
       </span>
 
       </span>
     </a>
   </p>
   <p><a href="https://github.com/codebase-frontend-library/codebase-4/blob/master/LICENSE">MIT licence</a> • Project developer: <a class="t-nowrap" href="https://github.com/SimonPadbury">Simon Padbury</a></p>
-  <p>All example icons in these docs are from <a href="https://tablericons.com/" target="_blank">Tabler Icons</a>. Icon size was set to 24px, stroke set to 1.5px, and stroke color edited to <code class="b-thin">stroke="currentColor"</code></p>
+  <p>All example icons in these docs are from <a href="https://tablericons.com/" target="_blank">Tabler Icons</a>.</p>
   <p>Codebase is developed on <a href="https://gulpjs.com/" target="_blank">Gulp</a> with various plugins for <a href="https://sass-lang.com/" target="_blank">Sass</a> and <a href="https://babeljs.io/" target="_blank">Babel</a>. The documentation is developed on the <a href="https://www.11ty.dev/" target="_blank">Eleventy</a> static website generator, with Gulp and the plugins added in.</p>
   
 </footer>
 
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha512-DUC8yqWf7ez3JD1jszxCWSVB0DMP78eOyBpMa5aJki1bIRARykviOuImIczkxlj1KhVSyS16w2FSQetkD4UU2w==" crossorigin="anonymous"></script>
-<script src="/codebase-4/dist/activator.jquery.js?v=4.0.10"></script> -->
+<script src="/codebase-4/dist/activator.jquery.js?v=4.0.11"></script> -->
 
 <script>
   // Used only on the docs sidebar (below 1024px width)

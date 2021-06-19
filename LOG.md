@@ -1,6 +1,10 @@
 # Log
 
-## 14 June 2011 - Codebase 4.0.10
+## 19 June 2021 - Codebase 4.0.11
+
+* Re-factored the flex pseudo grid system to use _x-axis padding_ for vertical gutters, and to add media query breakpoint modifiers to flex-items rather than relying on the breakpoint modifiers on the flex wrapper. Introduced a new `.flex-grid` wrapper class to _set up the flexbox and cause wrapping of pseudo grid flex-items_. Now the flex-items can have their columnar spanning individually controlled at multiple media query breakpoint widths. These will become 100% width below their media query breakpoints. **Backward compatibility is maintained:** `.flex-grid` is doing the same thing as `.flex.flex-wrap`.It is still possible to use the `.flex.flex-wrap`, `.flex-sm.flex-wrap` etc. on flex pseudo grids, but the new way gives you granular control of indivicual pseudo columns at more than one breakpoint.
+
+## 14 June 2021 - Codebase 4.0.10
 
 * Fixed a bug in `activator.jquery.js` that interfered with resetting Activator components after moving focus off and back on to them (now they close with a single click).
 * Added media query breakpoint widths to `.flex-gap` (which is handled by margins not flexbox gap, for backwards compatibility). Now the `.flex-gap` only take effect above the `.flex` (all), or `.flex-sm`/ `.flex-md`/ `.flex-lg` breakpoint (and therefore smaller layouts are not messed up by unwanted margins).

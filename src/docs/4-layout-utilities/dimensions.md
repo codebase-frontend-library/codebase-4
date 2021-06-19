@@ -43,7 +43,7 @@ You usually see thumbail images or avatars set in squares. That’s why Codebase
 
 The `.square-*` sizes are equal to  `sm` 3rem<sup>2</sup> (24px devault), `md` 6rem<sup>2</sup> (48px default) and `lg` 12rem<sup>2</sup> (192px default) respectively.
 
-<div class="flex flex-wrap flex-middle flex-gap mb-3">
+<div class="flex flex-middle flex-gap mb-3">
   <div class="square-sm">
     <img src="{{ '/img/placeholder250x250.svg' | url }}" alt="A square image">
   </div>

@@ -19,7 +19,7 @@ These colors are deployed on utility classes for:
 
 These are the Codebase colors. (All colors can be changed in the SCSS default variables.)
 
-<div class="flex flex-space-around flex-gap flex-wrap t-center">
+<div class="flex flex-space-around flex-gap t-center">
   <div class="mb-3 flex flex-column flex-middle">
     <div class="mb-1 square-lg rounded-full bg-color-primary"></div>
     <code>-color-primary</code>
@@ -50,7 +50,7 @@ These are the Codebase colors. (All colors can be changed in the SCSS default va
 
 As with the alternative background color (`color-background-alt`, see below), these `-alt` UI colors have been chosen so that ordinary text is still readable over these colors, whether in the light theme or the dark theme. (Hyperlinks are still readable too.)
 
-<div class="flex flex-space-around flex-gap flex-wrap t-center">
+<div class="flex flex-space-around flex-gap t-center">
   <div class="mb-3 flex flex-column flex-middle">
     <div class="mb-1 square-lg rounded-full bg-color-primary-alt"></div>
     <code>-color-primary-alt</code>
@@ -89,7 +89,7 @@ Both these grays are also part of the detail color utilities (see below).
 
 Besides the UI colors, Codebase has a set of grays used for text, lines, etc. You can change these in the default variables.
 
-<div class="flex flex-space-around flex-gap flex-wrap t-center">
+<div class="flex flex-space-around flex-gap t-center">
   <div class="mb-3 flex flex-column flex-middle">
     <div class="mb-1 square-lg bs rounded-full bg-color-background"></div>
     <code>-color-background</code>

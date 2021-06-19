@@ -3,8 +3,12 @@
 
 @mixin flex {
   display: flex;
+  &-grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
   &-wrap {
-    flex-flow: row wrap;
+    flex-wrap: wrap;
   }
   &-row-reverse {
     flex-direction: row-reverse;
@@ -63,14 +67,21 @@
   margin-right: -$flex-gap-width / 2;
   margin-left: -$flex-gap-width / 2;
   > * {
-    margin-right: $flex-gap-width / 2;
     margin-bottom: $flex-gap-width;
+  }
+  > *:not([class*="cols"]) {
+    margin-right: $flex-gap-width / 2;
     margin-left: $flex-gap-width / 2;
+  }
+  > [class*="cols"] {
+    padding-right: $flex-gap-width / 2;
+    padding-left: $flex-gap-width / 2;
   }
 }
 
 .flex-gap {
-  &.flex {
+  &.flex,
+  &.flex-grid {
     @include flex-gap;
   }
   &.flex-sm {
@@ -93,21 +104,23 @@
 
 @mixin flex-cols {
   @if $include-flex-pseudo-grid == true {
-    & > .flex-cols {
-      &-1 {width: (1 / 12) * 100%}
-      &-2 {width: (2 / 12) * 100%}
-      &-3 {width: (3 / 12) * 100%}
-      &-4 {width: (4 / 12) * 100%}
-      &-5 {width: (5 / 12) * 100%}
-      &-6 {width: (6 / 12) * 100%}
-      &-7 {width: (7 / 12) * 100%}
-      &-8 {width: (8 / 12) * 100%}
-      &-9 {width: (9 / 12) * 100%}
-      &-10 {width: (10 / 12) * 100%}
-      &-11 {width: (11 / 12) * 100%}
-      &-12 {width: (12 / 12) * 100%}
-    }
+    &-cols-1 {max-width: (1 / 12) * 100%}
+    &-cols-2 {max-width: (2 / 12) * 100%}
+    &-cols-3 {max-width: (3 / 12) * 100%}
+    &-cols-4 {max-width: (4 / 12) * 100%}
+    &-cols-5 {max-width: (5 / 12) * 100%}
+    &-cols-6 {max-width: (6 / 12) * 100%}
+    &-cols-7 {max-width: (7 / 12) * 100%}
+    &-cols-8 {max-width: (8 / 12) * 100%}
+    &-cols-9 {max-width: (9 / 12) * 100%}
+    &-cols-10 {max-width: (10 / 12) * 100%}
+    &-cols-11 {max-width: (11 / 12) * 100%}
+    &-cols-12 {max-width: (12 / 12) * 100%}
   }
+}
+
+[class*="-cols"] {
+  width: 100%;
 }
 
 .inline-flex {
@@ -129,17 +142,13 @@
 .flex-md {
   @include break-min($mq-md) {
     @include flex;
-    @if $include-flex-pseudo-grid == true {
-      @include flex-cols;
-    }
+    @include flex-cols;
   }
 }
 .flex-lg {
   @include break-min($mq-lg) {
     @include flex;
-    @if $include-flex-pseudo-grid == true {
-      @include flex-cols;
-    }
+    @include flex-cols;
   }
 }
 

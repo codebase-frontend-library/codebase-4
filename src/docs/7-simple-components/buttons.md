@@ -120,7 +120,7 @@ Buttons are normally inline elements. If you want a button to be a block element
 
 ## Buttons with Text and Icons
 
-<div class="flex flex-middle flex-wrap mb-3">
+<div class="flex flex-middle mb-3">
   <button class="btn btn-success"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg> <span>OK</span></button>&nbsp;
   <button class="btn btn-secondary"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-folder" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2" /></svg> <span>Archive</span></button>&nbsp;
   <button class="btn btn-primary"><span>Go</span> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="5" y1="12" x2="19" y2="12" /><line x1="13" y1="18" x2="19" y2="12" /><line x1="13" y1="6" x2="19" y2="12" /></svg></i></button>&nbsp;
@@ -162,9 +162,9 @@ Since `.btn-icon` renders a square, you can also use `.rounded-full` to make it 
 
 ## Button Sizes
 
-<div class="inline-flex flex-middle mb-3"><a class="btn btn-primary btn-sm" href="">Small</a>&nbsp;<a class="btn btn-primary" href="">Default</a>&nbsp;<a class="btn btn-primary btn-lg" href="">Large</a></div>
+<div class="inline-flex flex-middle mb-3"><a class="btn btn-primary btn-sm" href="#/">Small</a>&nbsp;<a class="btn btn-primary" href="#/">Default</a>&nbsp;<a class="btn btn-primary btn-lg" href="#/">Large</a></div>
 
-<div class="inline-flex flex-middle mb-3"><a class="btn btn-sucess btn-sm rounded-pill" href="">Small</a>&nbsp;<a class="btn btn-sucess rounded-pill" href="">Default</a>&nbsp;<a class="btn btn-sucess btn-lg rounded-pill" href="">Large</a></div>
+<div class="inline-flex flex-middle mb-3"><a class="btn btn-sucess btn-sm rounded-pill" href="#/">Small</a>&nbsp;<a class="btn btn-sucess rounded-pill" href="#/">Default</a>&nbsp;<a class="btn btn-sucess btn-lg rounded-pill" href="#/">Large</a></div>
 
 ```html
 <a href="" class="btn btn-sm">Small</a>
@@ -198,11 +198,11 @@ Do you want larger text and/or icon on `.btn-lg` too? Then add the `.t-lg` [text
 
 <a class="btn btn-primary btn-lg" href="">Normal text</a> – large button
 
-<a class="btn btn-primary btn-lg t-lg" href="">Larger text</a> – large button with large text
+<a class="btn btn-primary btn-lg t-lg" href="">Large text</a> – large button with large text
 
 ```html
 <a class="btn btn-primary btn-lg" href="">Normal text</a>
-<a class="btn btn-primary btn-lg t-lg" href="">Larger text</a>
+<a class="btn btn-primary btn-lg t-lg" href="">Large text</a>
 ```
 
 **Notes:**
@@ -276,6 +276,8 @@ Go large — to grab people’s attention:
 </form>
 ```
 
+**Note:** use `.flex.flex-nowrap` on inline form input/button combos.
+
 Go small – to fit a form into a menubar, or into a table cell:
 
 <div class="w-xxs mx-auto mb-3">
@@ -309,7 +311,7 @@ Example:
 
 `.btn.btn-success.bg-transparent.t-color-success`:
 
-<a class="btn btn-success bg-transparent t-color-success" href="">Find out more <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="5" y1="12" x2="19" y2="12" /><line x1="13" y1="18" x2="19" y2="12" /><line x1="13" y1="6" x2="19" y2="12" /></svg></a>
+<a class="btn btn-success bg-transparent t-color-success" href="#">Find out more <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="5" y1="12" x2="19" y2="12" /><line x1="13" y1="18" x2="19" y2="12" /><line x1="13" y1="6" x2="19" y2="12" /></svg></a>
 
 ```html
 <a class="btn btn-success bg-transparent t-color-success" href="">Find out more →</a>

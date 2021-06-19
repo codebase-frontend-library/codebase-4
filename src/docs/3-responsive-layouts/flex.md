@@ -22,19 +22,19 @@ All the following examples below use `.flex` as-is, so that the demos can be see
   <tbody>
     <tr>
       <td><code>.flex</code></td>
-      <td>Works on all viewport widths</td>
+      <td><code>display: flex;</code> on all viewport widths</td>
     </tr>
     <tr>
       <td><code>.flex-sm</code></td>
-      <td>Works from 768px (default) up</td>
+      <td><code>display: flex;</code> from 768px (default) up</td>
     </tr>
     <tr>
       <td><code>.flex-md</code></td>
-      <td>Works from 1024px (default) up</td>
+      <td><code>display: flex;</code> from 1024px (default) up</td>
     </tr>
     <tr>
       <td><code>.flex-lg</code></td>
-      <td>Works from 1280px (default) up</td>
+      <td><code>display: flex;</code> from 1280px (default) up</td>
     </tr>
   </tbody>
 </table>
@@ -42,15 +42,15 @@ All the following examples below use `.flex` as-is, so that the demos can be see
 **Notes:**
 
 1. All flexbox system wrappers affect their immediate child elements.
-2. The Codebase flexbox systems don’t constrain the immediate child elements to proportional widths (in a row) or heights (in a column). So, if you need something like “25% with sidebar with 75% main content”, then you need the Codebase [flex pseudo grid]({{ '/docs/3-responsive-layouts/flex-pseudo-grids' | url }}) – or, better – the Codebase [real grid system]({{ '/docs/3-responsive-layouts/grid' | url }}).
+2. All Codebase flexbox sytems will _wrap_ their content onto a new row if there is not enough available width to keep everything on one row. (If you want to prevent flex-row wrapping, use `.flex.flex-nowrap`.)
 
 `.flex`:
 
 <div class="flex mb-3">
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">One</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Two</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Three</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Four</div>
+  <div class="b-thin bg-color-background-alt">One</div>
+  <div class="b-thin bg-color-background-alt">Two</div>
+  <div class="b-thin bg-color-background-alt">Three</div>
+  <div class="b-thin bg-color-background-alt">Four</div>
 </div>
 
 ```html
@@ -67,10 +67,10 @@ The `.flex` wrapper, and its breakpoint width variants (see above), is great for
 `.flex.flex-grow-equal` :
 
 <div class="flex flex-grow-equal mb-3">
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">One</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Two</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Three</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Four</div>
+  <div class="b-thin bg-color-background-alt">One</div>
+  <div class="b-thin bg-color-background-alt">Two</div>
+  <div class="b-thin bg-color-background-alt">Three</div>
+  <div class="b-thin bg-color-background-alt">Four</div>
 </div>
 
 ```html
@@ -90,97 +90,97 @@ The `.flex` wrapper, and its breakpoint width variants (see above), is great for
 `.flex.flex-grow-auto` :
 
 <div class="flex flex-grow-auto mb-3">
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">First flex-item</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Another flex-item</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Third</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Last flex-item in this flexbox set</div>
+  <div class="b-thin bg-color-background-alt">First flex-item</div>
+  <div class="b-thin bg-color-background-alt">Another flex-item</div>
+  <div class="b-thin bg-color-background-alt">Third</div>
+  <div class="b-thin bg-color-background-alt">Last flex-item in this flexbox set</div>
 </div>
 
-`.flex.flex-gap.flex-grow-auto.flex-wrap` :
+`.flex.flex-gap.flex-grow-auto` :
 
-<div class="flex flex-gap flex-grow-auto flex-wrap mb-3">
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">First flex-item</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Another flex-item</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Third</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Last flex-item in this flexbox set.</div>
+<div class="flex flex-gap flex-grow-auto mb-3">
+  <div class="b-thin bg-color-background-alt">First flex-item</div>
+  <div class="b-thin bg-color-background-alt">Another flex-item</div>
+  <div class="b-thin bg-color-background-alt">Third</div>
+  <div class="b-thin bg-color-background-alt">Last flex-item in this flexbox set.</div>
 </div>
 
 `.flex.flex-space-between`:
 
 <div class="flex flex-space-between mb-3">
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Item</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Item</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Item</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Item</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Item</div>
+  <div class="b-thin bg-color-background-alt">Item</div>
+  <div class="b-thin bg-color-background-alt">Item</div>
+  <div class="b-thin bg-color-background-alt">Item</div>
+  <div class="b-thin bg-color-background-alt">Item</div>
+  <div class="b-thin bg-color-background-alt">Item</div>
 </div>
 
 `.flex.flex-space-around`:
 
 <div class="flex flex-space-around mb-3">
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Item</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Item</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Item</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Item</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Item</div>
+  <div class="b-thin bg-color-background-alt">Item</div>
+  <div class="b-thin bg-color-background-alt">Item</div>
+  <div class="b-thin bg-color-background-alt">Item</div>
+  <div class="b-thin bg-color-background-alt">Item</div>
+  <div class="b-thin bg-color-background-alt">Item</div>
 </div>
 
 `.flex.flex-start` / `.flex.flex-center` / `.flex.flex-end`:
 
-<div class="flex flex-start mb-3 b-thick">
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">One</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Two</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Three</div>
+<div class="flex flex-start mb-3 b-dashed">
+  <div class="b-thin bg-color-background-alt">One</div>
+  <div class="b-thin bg-color-background-alt">Two</div>
+  <div class="b-thin bg-color-background-alt">Three</div>
 </div>
 
-<div class="flex flex-center mb-3 b-thick">
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">One</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Two</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Three</div>
+<div class="flex flex-center mb-3 b-dashed">
+  <div class="b-thin bg-color-background-alt">One</div>
+  <div class="b-thin bg-color-background-alt">Two</div>
+  <div class="b-thin bg-color-background-alt">Three</div>
 </div>
 
-<div class="flex flex-end mb-3 b-thick">
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">One</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Two</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Three</div>
+<div class="flex flex-end mb-3 b-dashed">
+  <div class="b-thin bg-color-background-alt">One</div>
+  <div class="b-thin bg-color-background-alt">Two</div>
+  <div class="b-thin bg-color-background-alt">Three</div>
 </div>
 
 `.flex.flex-top` / `.flex.flex-middle` / `.flex.flex-bottom`:
 
-<div class="flex flex-top b-thick mb-3" style="height: 150px">
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">One</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Two</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Three</div>
+<div class="flex flex-top b-dashed mb-3" style="height: 150px">
+  <div class="b-thin bg-color-background-alt">One</div>
+  <div class="b-thin bg-color-background-alt">Two</div>
+  <div class="b-thin bg-color-background-alt">Three</div>
 </div>
 
-<div class="flex flex-middle mb-3 b-thick" style="height: 150px">
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">One</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Two</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Three</div>
+<div class="flex flex-middle mb-3 b-dashed" style="height: 150px">
+  <div class="b-thin bg-color-background-alt">One</div>
+  <div class="b-thin bg-color-background-alt">Two</div>
+  <div class="b-thin bg-color-background-alt">Three</div>
 </div>
 
-<div class="flex flex-bottom mb-3 b-thick" style="height: 150px">
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">One</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Two</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Three</div>
+<div class="flex flex-bottom mb-3 b-dashed" style="height: 150px">
+  <div class="b-thin bg-color-background-alt">One</div>
+  <div class="b-thin bg-color-background-alt">Two</div>
+  <div class="b-thin bg-color-background-alt">Three</div>
 </div>
 
 `.flex.flex-center.flex-middle`:
 
-<div class="flex flex-center flex-middle b-thick mb-3" style="height: 150px">
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">One</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Two</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Three</div>
+<div class="flex flex-center flex-middle b-dashed mb-3" style="height: 150px">
+  <div class="b-thin bg-color-background-alt">One</div>
+  <div class="b-thin bg-color-background-alt">Two</div>
+  <div class="b-thin bg-color-background-alt">Three</div>
 </div>
 
 Same as above but with `.flex-column`:
 
 `.flex.flex-column.flex-center.flex-middle`:
 
-<div class="flex flex-column flex-center flex-middle b-thick mb-3" style="height: 150px">
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">One</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Two</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Three</div>
+<div class="flex flex-column flex-center flex-middle b-dashed mb-3" style="height: 150px">
+  <div class="b-thin bg-color-background-alt">One</div>
+  <div class="b-thin bg-color-background-alt">Two</div>
+  <div class="b-thin bg-color-background-alt">Three</div>
 </div>
 
 ## Flex items
@@ -193,23 +193,23 @@ Note that these flex item will only take effect inside of a `.flex` wrapper (and
 
 Examples of `.flex-item-grow-1`:
 
-<div class="flex b-thick mb-3">
-  <div class="flex-item-grow-1 rounded p-2 bg-color-secondary t-color-ui-text"><code>.flex-item-grow-1</code></div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">Other</div>
+<div class="flex b-dashed mb-3">
+  <div class="flex-item-grow-1 b-thin bg-color-background-alt"><code>.flex-item-grow-1</code></div>
+  <div class="b-thin bg-color-background-alt">Other</div>
 </div>
 
-<div class="flex b-thick mb-3">
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">other</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">other</div>
-  <div class="flex-item-grow-1 rounded p-2 bg-color-secondary t-color-ui-text"><code>.flex-item-grow-1</code></div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">other</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">other</div>
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">other</div>
+<div class="flex b-dashed mb-3">
+  <div class="b-thin bg-color-background-alt">other</div>
+  <div class="b-thin bg-color-background-alt">other</div>
+  <div class="flex-item-grow-1 b-thin bg-color-background-alt"><code>.flex-item-grow-1</code></div>
+  <div class="b-thin bg-color-background-alt">other</div>
+  <div class="b-thin bg-color-background-alt">other</div>
+  <div class="b-thin bg-color-background-alt">other</div>
 </div>
 
 With `.flex.flex-column`:
 
-<div class="flex flex-column b-thick mb-3" style="height: 250px">
-  <div class="rounded p-2 bg-color-secondary t-color-ui-text">other</div>
-  <div class="flex-item-grow-1 rounded p-2 bg-color-secondary t-color-ui-text"><code>.flex-item-grow-1</code></div>
+<div class="flex flex-column b-dashed mb-3" style="height: 250px">
+  <div class="b-thin bg-color-background-alt">other</div>
+  <div class="flex-item-grow-1 b-thin bg-color-background-alt"><code>.flex-item-grow-1</code></div>
 </div>

@@ -97,7 +97,7 @@ With some other simple components inside for proof of concept.
 
 `.menu.flex-sm.flex-wrap`
 
-<ul class="menu flex-sm flex-wrap mb-3">
+<ul class="menu flex-sm mb-3">
   <li><a href="#/">Link 1</a></li>
   <li><a href="#/" class="t-nowrap">Link 2 with an integral badge<span class="badge bg-color-warning">1</span></a></li>
   <li><a href="#/">Link 3 with a label <span class="label bg-color-success t-white t-uppercase">New</span></a></li>
@@ -117,11 +117,11 @@ With some other simple components inside for proof of concept.
 
 Example with an [AplineJS powered dropdown]({{ '/docs/8-alpinejs-components/alpinejs-dropdowns' | url }}):
 
-<div class="flex-sm flex-wrap flex-space-between bg-color-background-alt mb-3">
+<div class="flex-sm flex-space-between bg-color-background-alt mb-3">
   <div class="p-2">
     <a class="t-lg t-bold t-decoration-none" href="#/">Brand</a>
   </div>
-  <ul class="menu flex-sm flex-middle flex-end flex-wrap">
+  <ul class="menu flex-sm flex-middle flex-end">
     <li><a href="#/">Home</a></li>
     <li class="flex-sm flex-end">
       <div
@@ -153,11 +153,11 @@ Example with an [AplineJS powered dropdown]({{ '/docs/8-alpinejs-components/alpi
 </div>
 
 ```html
-<div class="flex-sm flex-wrap flex-space-between bg-color-background-alt mb-3">
+<div class="flex-sm flex-space-between bg-color-background-alt mb-3">
   <div class="p-2">
     <a class="t-lg t-bold t-decoration-none" href="#/">Brand</a>
   </div>
-  <ul class="menu flex-sm flex-middle flex-end flex-wrap">
+  <ul class="menu flex-sm flex-middle flex-end">
     <li><a href="#/">Home</a></li>
     <li class="flex-sm flex-end">
       <div
