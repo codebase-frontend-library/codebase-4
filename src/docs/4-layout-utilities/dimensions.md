@@ -19,7 +19,7 @@ Codebase has several width utilities. Each of the following will set the _max-wi
 * `.w-md` — max-width: 1024px
 * `.w-lg` — max-width: 1280px
 * `.w-xl` — max-width: 1440px
-* `.w-xxl` (or `.x-max`) — max-width: 1600px
+* `.w-xxl` (or `.w-max`) — max-width: 1600px
 * `.w-full` — max-width: 100% (i.e. 100% of the a)
 * `.w-auto` — max-width: auto
 
