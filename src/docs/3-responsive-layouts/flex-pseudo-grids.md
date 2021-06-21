@@ -95,8 +95,8 @@ Instead of using the Codebase media-query breakpoint width modifiers (`-sm`, `-m
 
 ```html
 <div class="flex-grid flex-gap">
-<div class="flex-sm-cols-3 flex-lg-cols-4"><div class="b-dashed h-full">This column will be full width below <code>-sm</code>, then one quarter until <code>-lg</code> then one third.</div></div>
-<div class="flex-sm-cols-9 flex-lg-cols-8"><div class="b-dashed h-full">This column will be full width below <code>-sm</code>, then three quarters until <code>-lg</code> then two thirds.</div></div>
+  <div class="flex-sm-cols-3 flex-lg-cols-4"><div class="b-dashed h-full">This column will be full width below <code>-sm</code>, then one quarter until <code>-lg</code> then one third.</div></div>
+  <div class="flex-sm-cols-9 flex-lg-cols-8"><div class="b-dashed h-full">This column will be full width below <code>-sm</code>, then three quarters until <code>-lg</code> then two thirds.</div></div>
 </div>
 ```
 

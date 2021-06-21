@@ -618,19 +618,19 @@ x-data="docsOcState()"
 <tbody>
 <tr>
 <td><code>.container</code></td>
-<td>1600px minus 2rem side padding</td>
+<td>1600px – 2rem side padding = 1568px</td>
 </tr>
 <tr>
 <td><code>.container.container-lg</code></td>
-<td>1280px minus 2rem side padding</td>
+<td>1280px – 2rem side padding = 992px</td>
 </tr>
 <tr>
 <td><code>.container.container-md</code></td>
-<td>1024px minus 2rem side padding</td>
+<td>1024px – 2rem side padding = 1248px</td>
 </tr>
 <tr>
 <td><code>.container.container-sm</code></td>
-<td>768px minus 2rem side padding</td>
+<td>768px – 2rem side padding = 736px</td>
 </tr>
 </tbody>
 </table>
@@ -672,22 +672,23 @@ x-data="docsOcState()"
 <tbody>
 <tr>
 <td><code>.container-grid</code></td>
-<td>3% + 1500px + 3% ≈ 1600px</td>
+<td>3% + 1568px + 3%</td>
 </tr>
 <tr>
 <td><code>.container-grid.container-grid-lg</code></td>
-<td>3% + 1200px + 3% ≈ 1280px</td>
+<td>3% + 1248px + 3%</td>
 </tr>
 <tr>
 <td><code>.container-grid.container-grid-md</code></td>
-<td>3% + 960px + 3% ≈ 1024px</td>
+<td>3% + 902px + 3%</td>
 </tr>
 <tr>
 <td><code>.container-grid.container-grid-sm</code></td>
-<td>3% + 720px + 3% ≈ 768px</td>
+<td>3% + 736px + 3%</td>
 </tr>
 </tbody>
 </table>
+<p>So, the max-width of the middle column (column 3) of the container grids is the same as the “max-width minus side padding” of the traditional “auto margin centering” containers above.</p>
 <p>See also Codebase <a href="/codebase-4/docs/3-responsive-layouts/bleeds">bleeds</a>.</p>
 <p><strong>Notes:</strong></p>
 <ol>

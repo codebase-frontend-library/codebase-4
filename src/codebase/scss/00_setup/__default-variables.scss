@@ -162,10 +162,10 @@ $width-max:                   $width-xxl !default;
 // Containers
 $container-padding:           0 1rem !default; // for traditional containers only
 
-$container-grid-sm:           1fr 3% unquote('min(720px, 94%)') 3% 1fr !default; // 720px + 6% ≈ 768px
-$container-grid-md:           1fr 3% unquote('min(960px, 94%)') 3% 1fr !default; // 960px + 6% ≈ 1024px
-$container-grid-lg:           1fr 3% unquote('min(1200px, 94%)') 3% 1fr !default; // 1200px + 6% ≈ 1280px
-$container-grid-max:          1fr 3% unquote('min(1500px, 94%)') 3% 1fr !default; // 1500px + 6% ≈ 1600px
+$container-grid-sm:           1fr 3% unquote('min(736px, 94%)') 3% 1fr !default; // 720px + 6% ≈ 768px
+$container-grid-md:           1fr 3% unquote('min(992px, 94%)') 3% 1fr !default; // 960px + 6% ≈ 1024px
+$container-grid-lg:           1fr 3% unquote('min(1248px, 94%)') 3% 1fr !default; // 1200px + 6% ≈ 1280px
+$container-grid-max:          1fr 3% unquote('min(1568px, 94%)') 3% 1fr !default; // 1500px + 6% ≈ 1600px
 
 // Breakpoints
 $mq-sm:                       $width-sm !default;
@@ -175,7 +175,7 @@ $mq-lg:                       $width-lg !default;
 // Flexbox System
 $flex-gap-width:              1.5rem !default;
 $include-flex-pseudo-grid:    true !default;
-            // Toggling this to false will save you 2 KB in the minified CSS.
+            // Toggling this to false will save you 1 KB in the minified CSS.
 
 // CSS Grid System
 $grid-max-cols:               4 !default;
