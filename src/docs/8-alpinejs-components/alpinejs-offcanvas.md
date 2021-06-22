@@ -16,100 +16,58 @@ More important, however, is to understand the way any offcanvas panel can be bui
 
 This first example has an offcanvas panel at all viewport widths. The toggler (open/close) button is in a separate Alpine component to the offcanvas panel itself.
 
-The toggler button “talks” to the offcanvas panel using a _communication event bus_ (see [https://codewithhugo.com/alpinejs-component-communication-event-bus/](https://codewithhugo.com/alpinejs-component-communication-event-bus/)) to dispatch `offcanvastoggler`, and the close button (required) and the “click away to dismiss” backdrop (optional) both use another bus to dispatch `offcanvasclose`.
+The Codebase AlpineJS offcanvas works in a similar way to the [modal control button as a separate component]({{ '/docs/8-alpinejs-components/alpinejs-modals/#modal-control-button-as-a-separate-component' | url }}) example: the toggler button is a separate Alpine component that “talks” to the offcanvas panel component using a _communication event bus_ (see [https://codewithhugo.com/alpinejs-component-communication-event-bus/](https://codewithhugo.com/alpinejs-component-communication-event-bus/)).
 
-The state is managed by an additional tiny JavaScript function that you will need to include: `offcanvas()`.
-
-<div
-  x-data="offcanvas()"
-  @load.window="offcanvasState()"
->
-  <button
-    class="btn btn-primary"
-    aria-label="Offcanvas demo"
-    aria-expanded="false"
-    :aria-expanded="offcanvasOpen ? 'true' : 'false'"
-    x-on:offcanvasclose.window="offcanvasOpen = !offcanvasOpen"
-    @click="{offcanvasOpen = !offcanvasOpen, $dispatch('offcanvastoggler')}"
-  >&larr; Offcanvas 1</button> – opens a demo offcanvas panel to the left
+<!-- The button component -->
+<div x-data="{}" class="mb-3">
+  <button class="btn btn-primary scroll-lock" @click="$dispatch('offcanvas-ex')">Offcanvas example 1</button> – opens a demo offcanvas panel to the left
 </div>
 
-<div
-  x-data="{ isOpen: false }"
-  :class="{ 'active': isOpen }"
->
-  <div class="backdrop" x-show="isOpen" @click="isOpen = false, $dispatch('offcanvasclose')"></div>
-
-  <div class="offcanvas-panel offcanvas-panel-all offcanvas-panel-left bg-color-primary t-color-ui-text bs p-2" :class="{ 'active': isOpen }" x-on:offcanvastoggler.window="isOpen = !isOpen">
-    <div class="flex flex-end mb-3">
-      <button class="btn btn-primary b-color-ui-text" @click="isOpen = false, $dispatch('offcanvasclose')">
-        Close <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
-      </button>
+<!-- The offcanvas component -->
+<div x-data="{ offcanvas: false }">
+  <div
+    class="offcanvas-wrapper"
+    :class="{ 'active': offcanvas }"
+    x-on:offcanvas-ex.window="offcanvas = !offcanvas"
+    >
+    <div class="backdrop scroll-unlock" x-show="offcanvas" @click="offcanvas = false"></div>
+    <div class="offcanvas-panel offcanvas-panel-all offcanvas-panel-left bg-color-primary t-color-ui-text bs p-2" :class="{ 'active': offcanvas }">
+      <div class="flex flex-end mb-3">
+        <button class="btn btn-sm btn-primary btn-icon rounded-full" @click="offcanvas = false">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <p>This offcanvas panel is toggled from a separate button component outside. It is also closed by the closure button and the invisible dismisser backdrop.</p>
     </div>
-    <p>This offcanvas panel is toggled from a separate button component outside. It is also closed by the closure button and the invisible dismisser backdrop.</p>
   </div>
 </div>
-
-<script>
-  function offcanvas() {
-    return {
-      offcanvasOpen: false,
-      offcanvasState() {
-        this.offcanvasOpen = true;
-      },
-      offcanvasClose() {
-        this.offcanvasOpen = false;
-      }
-    }
-  }
-</script>
 
 <br>
 
 ```html
-<div
-  x-data="offcanvas()"
-  @load.window="offcanvasState()"
->
-  <button
-    class="btn btn-primary"
-    aria-label="Offcanvas demo"
-    aria-expanded="false"
-    :aria-expanded="offcanvasOpen ? 'true' : 'false'"
-    x-on:offcanvasclose.window="offcanvasOpen = !offcanvasOpen"
-    @click="{offcanvasOpen = !offcanvasOpen, $dispatch('offcanvastoggler')}"
-  >Offcanvas</button> – opens to the left.
+<!-- The button component -->
+<div x-data="{}" class="mb-3">
+  <button class="btn btn-primary scroll-lock" @click="$dispatch('offcanvas-ex')">Offcanvas example 1</button> – opens a demo offcanvas panel to the left
 </div>
 
-<div
-  x-data="{ isOpen: false }"
-  :class="{ 'active': isOpen }"
->
-  <div class="backdrop" x-show="isOpen" @click="isOpen = false, $dispatch('offcanvasclose')"></div>
-
-  <div class="offcanvas-panel offcanvas-panel-all offcanvas-panel-left bg-color-primary-alt bs p-2" :class="{ 'active': isOpen }" x-on:offcanvastoggler.window="isOpen = !isOpen">
-    <div class="flex flex-end mb-3">
-      <button class="btn btn-primary" @click="isOpen = false, $dispatch('offcanvasclose')">
-        Close &times;
-      </button>
+<!-- The offcanvas component -->
+<div x-data="{ offcanvas: false }">
+  <div
+    class="offcanvas-wrapper"
+    :class="{ 'active': offcanvas }"
+    x-on:offcanvas-ex.window="offcanvas = !offcanvas"
+    >
+    <div class="backdrop scroll-unlock" x-show="offcanvas" @click="offcanvas = false"></div>
+    <div class="offcanvas-panel offcanvas-panel-all offcanvas-panel-left bg-color-primary t-color-ui-text bs p-2" :class="{ 'active': offcanvas }">
+      <div class="flex flex-end mb-3">
+        <button class="btn btn-sm btn-primary btn-icon rounded-full" @click="offcanvas = false">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <p>This offcanvas panel is toggled from a separate button component outside. It is also closed by the closure button and the invisible dismisser backdrop.</p>
     </div>
-    <p>Offcanvas panel content...</p>
   </div>
 </div>
-
-<script>
-  function offcanvas() {
-    return {
-      offcanvasOpen: false,
-      offcanvasState() {
-        this.offcanvasOpen = true;
-      },
-      offcanvasClose() {
-        this.offcanvasOpen = false;
-      }
-    }
-  }
-</script>
 ```
 
 ## Example 2: Responsive Offcanvas Panels
@@ -120,34 +78,23 @@ Let’s add two more things:
 
 2. As the viewport width expands through or contracts through your chosen breakpoint (in this example, medium = 1024px (default)) you will want the offcanvas Alpine component to deactivate, so that the page layout is not messed up e.g. when rotating an tablet or large phone between landscape and portrait orientation.
 
-<div
-  class="hide-md-up"
-  x-data="offcanvas2md()"
-  @load.window="offcanvas2mdState()"
-  @resize.window="offcanvas2mdState()"
->
-  <button
-    class="btn btn-secondary"
-    aria-label="Offcanvas 2md demo"
-    aria-expanded="false"
-    :aria-expanded="offcanvas2mdOpen ? 'true' : 'false'"
-    x-on:offcanvasclose.window="offcanvas2mdOpen = !offcanvas2mdOpen"
-    @click="{offcanvas2mdOpen = !offcanvas2mdOpen, $dispatch('offcanvas2mdtoggler')}"
-  >Offcanvas 2 &rarr;</button> – opens a demo offcanvas to the right
+<!-- The button component (separate) -->
+<div x-data="{}" class="mb-3 hide-md-up">
+  <button class="btn btn-secondary scroll-lock" @click="$dispatch('offcanvas2-ex')">Offcanvas example 2</button> – opens a demo offcanvas panel to the right
 </div>
 
-<div class="mb-3">
+<!-- The offcanvas component (without button) -->
+<div x-data="{ offcanvas: false }">
   <div
-    x-data="{ isOpen: false }"
-    @resize.window="isOpen = false"
-    class="offcanvas-wrap"
-    :class="{ 'active': isOpen }"
-  >
-    <div class="backdrop hide-md-up" x-show="isOpen" @click="isOpen = false, $dispatch('offcanvas2mdclose')"></div>
-    <div class="offcanvas-panel offcanvas-panel-right offcanvas-panel-below-md bg-color-secondary p-2 t-color-ui" :class="{ 'active bs': isOpen }" x-on:offcanvas2mdtoggler.window="isOpen = !isOpen">
-      <div class="hide-md-up mb-3">
-        <button class="btn btn-secondary b-color-ui-text" @click="isOpen = false, $dispatch('offcanvas2mdclose')">
-          Close <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+    class="offcanvas-wrapper"
+    :class="{ 'active': offcanvas }"
+    x-on:offcanvas2-ex.window="offcanvas = !offcanvas"
+    >
+    <div class="backdrop scroll-unlock" x-show="offcanvas" @click="offcanvas = false"></div>
+    <div class="offcanvas-panel offcanvas-panel-right offcanvas-panel-below-md mb-3 bs p-2 bg-color-secondary t-color-ui-text " :class="{ 'active': offcanvas }">
+      <div class="mb-3 hide-md-up">
+        <button class="btn btn-sm btn-secondary btn-icon rounded-full" @click="offcanvas = false">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
       </div>
       <p>This is an offcanvas panel that becomes a normal panel above the breakpoint for medium viewports (default 1024px).</p>
@@ -156,79 +103,32 @@ Let’s add two more things:
   </div>
 </div>
 
-<script>
-  function offcanvas2md() {
-    return {
-      offcanvas2mdOpen: false,
-      offcanvas2mdState() {
-        let viewportWidth = window.innerWidth;
-        if (viewportWidth < 1024) {
-          this.offcanvas2mdOpen = false;
-        } else {
-          this.offcanvas2mdOpen = true;
-        }
-      },
-      offcanvas2mdClose() {
-        this.offcanvas2mdOpen = false;
-      }
-    }
-  }
-</script>
-
-(I have added `2md` to the labels, variables and function names in this complex demo, to distinguish these from the simple demo above.)
 
 ```html
-<div
-  class="hide-md-up"
-  x-data="offcanvas2md()"
-  @load.window="offcanvas2mdState()"
-  @resize.window="offcanvas2mdState()"
->
-  <button
-    class="btn btn-secondary"
-    aria-label="Offcanvas 2md demo"
-    aria-expanded="false"
-    :aria-expanded="offcanvas2mdOpen ? 'true' : 'false'"
-    x-on:offcanvasclose.window="offcanvas2mdOpen = !offcanvas2mdOpen"
-    @click="{offcanvas2mdOpen = !offcanvas2mdOpen, $dispatch('offcanvas2mdtoggler')}"
-  >Offcanvas 2 &rarr;</button> – opens a demo offcanvas to the right
+<!-- The button component (separate) -->
+<div x-data="{}" class="mb-3 hide-md-up">
+  <button class="btn btn-secondary scroll-lock" @click="$dispatch('offcanvas2-ex')">Offcanvas example 2</button> – opens a demo offcanvas panel to the right
 </div>
 
-<div
-  x-data="{ isOpen: false }"
-  @resize.window="isOpen = false"
-  class="offcanvas-wrap"
-  :class="{ 'active': isOpen }"
->
-  <div class="backdrop hide-md-up" x-show="isOpen" @click="isOpen = false, $dispatch('offcanvas2mdclose')"></div>
-  <div class="offcanvas-panel offcanvas-panel-right offcanvas-panel-below-md bg-color-secondary-alt p-2" :class="{ 'active bs': isOpen }" x-on:offcanvas2mdtoggler.window="isOpen = !isOpen">
-    <div class="hide-md-up mb-3">
-      <button class="btn btn-secondary" @click="isOpen = false, $dispatch('offcanvas2mdclose')">
-        Close &times;
-      </button>
+<!-- The offcanvas component (without button) -->
+<div x-data="{ offcanvas: false }">
+  <div
+    class="offcanvas-wrapper"
+    :class="{ 'active': offcanvas }"
+    x-on:offcanvas2-ex.window="offcanvas = !offcanvas"
+    >
+    <div class="backdrop scroll-unlock" x-show="offcanvas" @click="offcanvas = false"></div>
+    <div class="offcanvas-panel offcanvas-panel-right offcanvas-panel-below-md mb-3 bs p-2 bg-color-secondary t-color-ui-text " :class="{ 'active': offcanvas }">
+      <div class="mb-3 hide-md-up">
+        <button class="btn btn-sm btn-secondary btn-icon rounded-full" @click="offcanvas = false">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <p>This is an offcanvas panel that becomes a normal panel above the breakpoint for medium viewports (default 1024px).</p>
+      <p>Your browser window will need to be narrower than 1024px so that you can see this example in operation. Also, if you can open the offcanvas sidebar and then adjust your browser width, you’ll see that the panel is automatically dismissed.</p>
     </div>
-    <p>Offcanvas panel content...</p>
   </div>
 </div>
-
-<script>
-  function offcanvas2md() {
-    return {
-      offcanvas2mdOpen: false,
-      offcanvas2mdState() {
-        let viewportWidth = window.innerWidth;
-        if (viewportWidth < 1024) {
-          this.offcanvas2mdOpen = false;
-        } else {
-          this.offcanvas2mdOpen = true;
-        }
-      },
-      offcanvas2mdClose() {
-        this.offcanvas2mdOpen = false;
-      }
-    }
-  }
-</script>
 ```
 
 ## Offcanvas Panel Options

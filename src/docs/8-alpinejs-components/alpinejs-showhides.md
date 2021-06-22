@@ -66,7 +66,7 @@ For a dismissable message box, put the button _inside_ the panel.
   >
     <div class="bg-color-success">
       <button
-        class="b-0 btn-icon bg-transparent t-lg t-color-ui-text float-right"
+        class="btn btn-success btn-icon unrounded float-right t-lg"
         @click="show = false"
       >&times;</button>
       <div class="p-2 t-color-background">
@@ -88,7 +88,7 @@ For a dismissable message box, put the button _inside_ the panel.
   >
     <div class="bg-color-success">
       <button
-        class="b-0 btn-icon bg-transparent t-lg t-color-ui-text float-right"
+        class="btn btn-success btn-icon unrounded float-right t-lg"
         @click="show = false"
       >&times;</button>
       <div class="p-2 t-color-background">

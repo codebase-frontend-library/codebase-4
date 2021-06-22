@@ -38,13 +38,13 @@ The slide control indicator pips are simply buttons with no content, with a set 
 ```html
 <div class="slide-wrapper">
   <div class="slide-panel active" id="slide-panel-1">
-    <!-- Slide 1 goes in here -->
+    <!-- Slide 1 -->
   </div>
   <div class="slide-panel" id="slide-panel-2">
-    <!-- Slide 2 goes in here -->
+    <!-- Slide 2 -->
   </div>
   <div class="slide-panel" id="slide-panel-3">
-    <!-- Slide 3 goes in here -->
+    <!-- Slide 3 -->
   </div>
   <div class="flex flex-center py-3">
     <button
