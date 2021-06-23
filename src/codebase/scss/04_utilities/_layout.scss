@@ -216,29 +216,33 @@
   }
 }
 
-[class^=w-] {
-  width: 100%;
-}
 .w {
   &-xxs {
+    width: 100%;
     max-width: $width-xxs;
   }
   &-xs {
+    width: 100%;
     max-width: $width-xs;
   }
   &-sm {
+    width: 100%;
     max-width: $width-sm;
   }
   &-md {
+    width: 100%;
     max-width: $width-md;
   }
   &-lg {
+    width: 100%;
     max-width: $width-lg;
   }
   &-xl {
+    width: 100%;
     max-width: $width-xl;
   }
   &-xxl {
+    width: 100%;
     max-width: $width-xxl;
   }
   &-full {
