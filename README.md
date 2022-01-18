@@ -4,6 +4,12 @@ The super tiny website frontend library.
 
 _Version 4.0.11_
 
+***
+
+> Codebase 4 has been superceded by Codebase 5. See https://github.com/codebase-frontend-library/codebase-5
+
+***
+
 ## Features
 
 * Designed as a frontend CSS/JS codebase for content management system themes and static site generator projects
