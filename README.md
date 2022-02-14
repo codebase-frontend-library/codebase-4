@@ -1,7 +1,5 @@
 # Codebase
 
-The super tiny website frontend library.
-
 _Version 4.0.11_
 
 ***
